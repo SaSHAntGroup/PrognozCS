@@ -104,45 +104,45 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(44, 13);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.Size = new System.Drawing.Size(29, 13);
             this.label6.TabIndex = 6;
-            this.label6.Text = "label6";
+            this.label6.Text = "NaN";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(44, 26);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.Size = new System.Drawing.Size(29, 13);
             this.label7.TabIndex = 7;
-            this.label7.Text = "label7";
+            this.label7.Text = "NaN";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(44, 39);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.Size = new System.Drawing.Size(29, 13);
             this.label8.TabIndex = 8;
-            this.label8.Text = "label8";
+            this.label8.Text = "NaN";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(44, 52);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 9;
-            this.label9.Text = "label9";
+            this.label9.Text = "NaN";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(44, 65);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.Size = new System.Drawing.Size(29, 13);
             this.label10.TabIndex = 10;
-            this.label10.Text = "label10";
+            this.label10.Text = "NaN";
             // 
             // Form2
             // 

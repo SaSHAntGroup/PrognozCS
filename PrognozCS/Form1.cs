@@ -21,7 +21,7 @@ namespace PrognozCS
         public void button1_Click(object sender, EventArgs e)
         {
             //Выполнение функции с присваиванием параметров вещества
-            new Functions().AXOB();
+            new Functions().AXOB(M,tkip,P,D);
             //double Q0,//
             //    H,//
             //    T1,//

@@ -79,6 +79,7 @@
             this.jid.TabStop = true;
             this.jid.Text = "Жидкость";
             this.jid.UseVisualStyleBackColor = true;
+            this.jid.Visible = false;
             // 
             // gaz
             // 
@@ -90,6 +91,7 @@
             this.gaz.TabStop = true;
             this.gaz.Text = "Газ";
             this.gaz.UseVisualStyleBackColor = true;
+            this.gaz.Visible = false;
             // 
             // Form1
             // 
