@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace PrognozCS
 {
-    static class Program
+    class Program
     {
         /// <summary>
         /// Главная точка входа для приложения.
