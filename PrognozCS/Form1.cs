@@ -14,49 +14,41 @@ namespace PrognozCS
         public Form1()
         {
             InitializeComponent();
+            //Добавление АХОВ в комбобокс
+            substance.Items.Add("Хлор");
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public static double M,d,P,D,tkip;
+        public void button1_Click(object sender, EventArgs e)
         {
-            //
-            //
-            //
-            void AXOB(double d,
-            double Q0,
-            double H,
-            double T1,
-            double V1,
-            double Qe1,
-            double Qe2,
-            double h,
-            double T,
-            double N)
-            {
-                ;
-            }
-            void Koeff(double K1,
-                double K2,
-                double K3,
-                double K4,
-                double K5,
-                double K6,
-                double K7)
-            {
-                ;
-            }
-            void cloudAXOB(double Gh,
-                double Gm,
-                double Gb,
-                double Qb,
-                double Qm,
-                double Qh)
-            {
-                ;
-            }
-            //
-            //
-            //
-
+            //Выполнение функции с присваиванием параметров вещества
+            new Functions().AXOB();
+            //double Q0,//
+            //    H,//
+            //    T1,//
+            //    V1,//
+            //    Qe1,//
+            //    Qe2,//
+            //    h,//
+            //    T,//
+            //    N;//
+            ////Коэффициенты для инверсии, изотермии и конвекции
+            //void Koeff(double K1,double K2,double K3,double K4,
+            //    double K5,double K6,double K7)
+            //{
+            //    ;
+            //}
+            //double Gh,//
+            //    Gm,//
+            //    Gb,//
+            //    Qb,//
+            //    Qm,//
+            //    Qh;//
+            //Открытие вормы с результатом
+            new Form2().Show();
+    }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
