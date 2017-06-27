@@ -68,6 +68,7 @@
             this.substance.Name = "substance";
             this.substance.Size = new System.Drawing.Size(267, 21);
             this.substance.TabIndex = 2;
+            this.substance.SelectedIndexChanged += new System.EventHandler(this.substance_SelectedIndexChanged);
             // 
             // jid
             // 

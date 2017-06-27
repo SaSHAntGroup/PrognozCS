@@ -18,10 +18,16 @@ namespace PrognozCS
             substance.Items.Add("Хлор");
         }
         public static double M,d,P,D,tkip;
+
+        private void substance_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            new Functions().Selection();
+        }
+
         public void button1_Click(object sender, EventArgs e)
         {
             //Выполнение функции с присваиванием параметров вещества
-            new Functions().AXOB(M,tkip,P,D);
+            //new Functions().AXOB();
             //double Q0,//
             //    H,//
             //    T1,//
