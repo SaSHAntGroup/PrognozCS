@@ -33,6 +33,9 @@
             this.substance = new System.Windows.Forms.ComboBox();
             this.jid = new System.Windows.Forms.RadioButton();
             this.gaz = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.vertUst = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -64,7 +67,7 @@
             // substance
             // 
             this.substance.FormattingEnabled = true;
-            this.substance.Location = new System.Drawing.Point(12, 30);
+            this.substance.Location = new System.Drawing.Point(12, 27);
             this.substance.Name = "substance";
             this.substance.Size = new System.Drawing.Size(267, 21);
             this.substance.TabIndex = 2;
@@ -73,7 +76,7 @@
             // jid
             // 
             this.jid.AutoSize = true;
-            this.jid.Location = new System.Drawing.Point(12, 57);
+            this.jid.Location = new System.Drawing.Point(61, 54);
             this.jid.Name = "jid";
             this.jid.Size = new System.Drawing.Size(77, 17);
             this.jid.TabIndex = 3;
@@ -85,7 +88,7 @@
             // gaz
             // 
             this.gaz.AutoSize = true;
-            this.gaz.Location = new System.Drawing.Point(95, 57);
+            this.gaz.Location = new System.Drawing.Point(12, 54);
             this.gaz.Name = "gaz";
             this.gaz.Size = new System.Drawing.Size(43, 17);
             this.gaz.TabIndex = 4;
@@ -94,12 +97,42 @@
             this.gaz.UseVisualStyleBackColor = true;
             this.gaz.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 11);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Выбор АХОВ";
+            // 
+            // vertUst
+            // 
+            this.vertUst.FormattingEnabled = true;
+            this.vertUst.Location = new System.Drawing.Point(12, 94);
+            this.vertUst.Name = "vertUst";
+            this.vertUst.Size = new System.Drawing.Size(267, 21);
+            this.vertUst.TabIndex = 6;
+            this.vertUst.SelectedIndexChanged += new System.EventHandler(this.vertUst_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(212, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Вертикальная устойчивость атмосферы";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(291, 282);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.vertUst);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.gaz);
             this.Controls.Add(this.jid);
             this.Controls.Add(this.substance);
@@ -120,5 +153,8 @@
         public System.Windows.Forms.ComboBox substance;
         public System.Windows.Forms.RadioButton jid;
         public System.Windows.Forms.RadioButton gaz;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox vertUst;
+        private System.Windows.Forms.Label label2;
     }
 }
