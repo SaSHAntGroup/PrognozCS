@@ -14,13 +14,11 @@ namespace PrognozCS
         public Form2()
         {
             InitializeComponent();
-            label6.Text = Form1.M.ToString();
-            label7.Text = Form1.tkip.ToString();
-            label8.Text = Form1.P.ToString();
-            label9.Text = Form1.D.ToString();
-            label10.Text = Form1.p.ToString();
+            Form1.M = Math.Round(Form1.M,2);
+            label6.Text = Form1.h.ToString();
+            label7.Text = Form1.K5.ToString();
         }
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
