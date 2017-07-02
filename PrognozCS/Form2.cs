@@ -15,10 +15,13 @@ namespace PrognozCS
         {
             InitializeComponent();
             Form1.G = Math.Round(Form1.G, 2);
-            //label6.Text = Form1.K4.ToString();
-            label7.Text = Form1.G.ToString() + " km";
-            label8.Text = Form1.W.ToString();
-            label9.Text = Form1.Txh.ToString() + " часов " + Form1.Txm.ToString() + " минут";
+            Form1.Sf = Math.Round(Form1.Sf, 2);
+            glub.Text = Form1.G.ToString() + " км";
+            ploshad.Text = Form1.Sf.ToString() + " км²";
+            time.Text = Form1.Txh.ToString() + " часов " + Form1.Txm.ToString() + " минут";
+            poteri1.Text = Form1.P1.ToString() + " чел";
+            poteri2.Text = Form1.P2.ToString() + " чел";
+            poteri3.Text = Form1.P3.ToString() + " чел";
         }
         public void button1_Click(object sender, EventArgs e)
         {
