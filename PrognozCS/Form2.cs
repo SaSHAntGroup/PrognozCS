@@ -18,7 +18,7 @@ namespace PrognozCS
             //label6.Text = Form1.K4.ToString();
             label7.Text = Form1.G.ToString();
             label8.Text = Form1.W.ToString();
-            label9.Text = Form1.Tx.ToString();
+            label9.Text = Form1.Txh.ToString() + " часов " + Form1.Txm.ToString() + " минут";
         }
         public void button1_Click(object sender, EventArgs e)
         {

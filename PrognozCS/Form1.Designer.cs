@@ -78,7 +78,7 @@
             this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(407, 269);
+            this.button2.Location = new System.Drawing.Point(413, 269);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 33);
             this.button2.TabIndex = 1;
@@ -133,7 +133,7 @@
             this.vertUst.FormattingEnabled = true;
             this.vertUst.Location = new System.Drawing.Point(272, 27);
             this.vertUst.Name = "vertUst";
-            this.vertUst.Size = new System.Drawing.Size(244, 21);
+            this.vertUst.Size = new System.Drawing.Size(255, 21);
             this.vertUst.TabIndex = 6;
             this.vertUst.Text = "Изотермия";
             // 
@@ -265,21 +265,21 @@
             // 
             this.time.Location = new System.Drawing.Point(272, 145);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(244, 20);
+            this.time.Size = new System.Drawing.Size(255, 20);
             this.time.TabIndex = 15;
             // 
             // speedAir
             // 
             this.speedAir.Location = new System.Drawing.Point(272, 67);
             this.speedAir.Name = "speedAir";
-            this.speedAir.Size = new System.Drawing.Size(244, 20);
+            this.speedAir.Size = new System.Drawing.Size(255, 20);
             this.speedAir.TabIndex = 16;
             // 
             // tempAir
             // 
             this.tempAir.Location = new System.Drawing.Point(272, 106);
             this.tempAir.Name = "tempAir";
-            this.tempAir.Size = new System.Drawing.Size(244, 20);
+            this.tempAir.Size = new System.Drawing.Size(255, 20);
             this.tempAir.TabIndex = 17;
             // 
             // outAXOBlabel
@@ -311,7 +311,7 @@
             // 
             this.distance.Location = new System.Drawing.Point(272, 184);
             this.distance.Name = "distance";
-            this.distance.Size = new System.Drawing.Size(244, 20);
+            this.distance.Size = new System.Drawing.Size(255, 20);
             this.distance.TabIndex = 23;
             // 
             // label1
@@ -337,16 +337,17 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 253);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(327, 13);
+            this.label3.Size = new System.Drawing.Size(518, 13);
             this.label3.TabIndex = 26;
-            this.label3.Text = "время, после аварии = 4 часа. Для остальных параметров = 0!";
+            this.label3.Text = "время, после аварии = 4 часа. Значение остальных н заполненых параметров будет ра" +
+    "внятся нулю!";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(528, 312);
+            this.ClientSize = new System.Drawing.Size(534, 312);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
