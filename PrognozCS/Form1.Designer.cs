@@ -50,10 +50,13 @@
             this.time = new System.Windows.Forms.TextBox();
             this.speedAir = new System.Windows.Forms.TextBox();
             this.tempAir = new System.Windows.Forms.TextBox();
-            this.totalAXOBlabel = new System.Windows.Forms.Label();
             this.outAXOBlabel = new System.Windows.Forms.Label();
-            this.totalAXOB = new System.Windows.Forms.TextBox();
             this.outAXOB = new System.Windows.Forms.TextBox();
+            this.distancelabel = new System.Windows.Forms.Label();
+            this.distance = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +65,7 @@
             this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(12, 282);
+            this.button1.Location = new System.Drawing.Point(12, 269);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(109, 33);
             this.button1.TabIndex = 0;
@@ -75,7 +78,7 @@
             this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(403, 282);
+            this.button2.Location = new System.Drawing.Point(407, 269);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 33);
             this.button2.TabIndex = 1;
@@ -130,7 +133,7 @@
             this.vertUst.FormattingEnabled = true;
             this.vertUst.Location = new System.Drawing.Point(272, 27);
             this.vertUst.Name = "vertUst";
-            this.vertUst.Size = new System.Drawing.Size(242, 21);
+            this.vertUst.Size = new System.Drawing.Size(244, 21);
             this.vertUst.TabIndex = 6;
             this.vertUst.Text = "Изотермия";
             // 
@@ -188,7 +191,7 @@
             this.groupBox1.Controls.Add(this.svob);
             this.groupBox1.Controls.Add(this.obsh);
             this.groupBox1.Controls.Add(this.sam);
-            this.groupBox1.Location = new System.Drawing.Point(12, 149);
+            this.groupBox1.Location = new System.Drawing.Point(12, 110);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(254, 127);
             this.groupBox1.TabIndex = 11;
@@ -262,65 +265,95 @@
             // 
             this.time.Location = new System.Drawing.Point(272, 145);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(239, 20);
+            this.time.Size = new System.Drawing.Size(244, 20);
             this.time.TabIndex = 15;
             // 
             // speedAir
             // 
             this.speedAir.Location = new System.Drawing.Point(272, 67);
             this.speedAir.Name = "speedAir";
-            this.speedAir.Size = new System.Drawing.Size(239, 20);
+            this.speedAir.Size = new System.Drawing.Size(244, 20);
             this.speedAir.TabIndex = 16;
             // 
             // tempAir
             // 
             this.tempAir.Location = new System.Drawing.Point(272, 106);
             this.tempAir.Name = "tempAir";
-            this.tempAir.Size = new System.Drawing.Size(239, 20);
+            this.tempAir.Size = new System.Drawing.Size(244, 20);
             this.tempAir.TabIndex = 17;
-            // 
-            // totalAXOBlabel
-            // 
-            this.totalAXOBlabel.AutoSize = true;
-            this.totalAXOBlabel.Location = new System.Drawing.Point(9, 67);
-            this.totalAXOBlabel.Name = "totalAXOBlabel";
-            this.totalAXOBlabel.Size = new System.Drawing.Size(135, 13);
-            this.totalAXOBlabel.TabIndex = 18;
-            this.totalAXOBlabel.Text = "Общее количество АХОВ";
             // 
             // outAXOBlabel
             // 
             this.outAXOBlabel.AutoSize = true;
-            this.outAXOBlabel.Location = new System.Drawing.Point(9, 106);
+            this.outAXOBlabel.Location = new System.Drawing.Point(9, 67);
             this.outAXOBlabel.Name = "outAXOBlabel";
             this.outAXOBlabel.Size = new System.Drawing.Size(225, 13);
             this.outAXOBlabel.TabIndex = 19;
             this.outAXOBlabel.Text = "АХОВ, выброшенные в окружающую среду";
             // 
-            // totalAXOB
-            // 
-            this.totalAXOB.Location = new System.Drawing.Point(12, 84);
-            this.totalAXOB.Name = "totalAXOB";
-            this.totalAXOB.Size = new System.Drawing.Size(254, 20);
-            this.totalAXOB.TabIndex = 20;
-            // 
             // outAXOB
             // 
-            this.outAXOB.Location = new System.Drawing.Point(12, 123);
+            this.outAXOB.Location = new System.Drawing.Point(12, 84);
             this.outAXOB.Name = "outAXOB";
             this.outAXOB.Size = new System.Drawing.Size(254, 20);
             this.outAXOB.TabIndex = 21;
+            // 
+            // distancelabel
+            // 
+            this.distancelabel.AutoSize = true;
+            this.distancelabel.Location = new System.Drawing.Point(269, 168);
+            this.distancelabel.Name = "distancelabel";
+            this.distancelabel.Size = new System.Drawing.Size(187, 13);
+            this.distancelabel.TabIndex = 22;
+            this.distancelabel.Text = "Расстояние до населенного пункта";
+            // 
+            // distance
+            // 
+            this.distance.Location = new System.Drawing.Point(272, 184);
+            this.distance.Name = "distance";
+            this.distance.Size = new System.Drawing.Size(244, 20);
+            this.distance.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 240);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(284, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Значения по умолчанию для : скорости ветра = 3(м/с),";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(292, 240);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(239, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "температура воздуха = 20(градусов цельсия),";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 253);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(327, 13);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "время, после аварии = 4 часа. Для остальных параметров = 0!";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(524, 326);
+            this.ClientSize = new System.Drawing.Size(528, 312);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.distance);
+            this.Controls.Add(this.distancelabel);
             this.Controls.Add(this.outAXOB);
-            this.Controls.Add(this.totalAXOB);
             this.Controls.Add(this.outAXOBlabel);
-            this.Controls.Add(this.totalAXOBlabel);
             this.Controls.Add(this.tempAir);
             this.Controls.Add(this.speedAir);
             this.Controls.Add(this.time);
@@ -370,9 +403,12 @@
         private System.Windows.Forms.TextBox time;
         private System.Windows.Forms.TextBox speedAir;
         private System.Windows.Forms.TextBox tempAir;
-        private System.Windows.Forms.Label totalAXOBlabel;
         private System.Windows.Forms.Label outAXOBlabel;
-        private System.Windows.Forms.TextBox totalAXOB;
         private System.Windows.Forms.TextBox outAXOB;
+        private System.Windows.Forms.Label distancelabel;
+        private System.Windows.Forms.TextBox distance;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
