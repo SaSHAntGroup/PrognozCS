@@ -30,76 +30,180 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.glublabel = new System.Windows.Forms.Label();
+            this.timelabel = new System.Windows.Forms.Label();
+            this.ploshadlabel = new System.Windows.Forms.Label();
+            this.poterilabel = new System.Windows.Forms.Label();
+            this.poteri1label = new System.Windows.Forms.Label();
+            this.poteri2label = new System.Windows.Forms.Label();
+            this.poteri3label = new System.Windows.Forms.Label();
+            this.glub = new System.Windows.Forms.Label();
+            this.time = new System.Windows.Forms.Label();
+            this.poteri1 = new System.Windows.Forms.Label();
+            this.poteri2 = new System.Windows.Forms.Label();
+            this.poteri3 = new System.Windows.Forms.Label();
+            this.ploshad = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(91, 237);
+            this.button1.Location = new System.Drawing.Point(12, 344);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 33);
+            this.button1.Size = new System.Drawing.Size(511, 33);
             this.button1.TabIndex = 0;
             this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label6
+            // glublabel
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(16, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "M";
+            this.glublabel.AutoSize = true;
+            this.glublabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.glublabel.Location = new System.Drawing.Point(12, 9);
+            this.glublabel.Name = "glublabel";
+            this.glublabel.Size = new System.Drawing.Size(403, 13);
+            this.glublabel.TabIndex = 1;
+            this.glublabel.Text = "Глубина распространения зараженного облака АХОВ при аварии:";
             // 
-            // label7
+            // timelabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(12, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(24, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "tkip";
+            this.timelabel.AutoSize = true;
+            this.timelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.timelabel.Location = new System.Drawing.Point(12, 31);
+            this.timelabel.Name = "timelabel";
+            this.timelabel.Size = new System.Drawing.Size(408, 13);
+            this.timelabel.TabIndex = 2;
+            this.timelabel.Text = "Время подхода облака зараженного АХОВ до населенного пункта:";
             // 
-            // label8
+            // ploshadlabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 35);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(14, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "P";
+            this.ploshadlabel.AutoSize = true;
+            this.ploshadlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ploshadlabel.Location = new System.Drawing.Point(12, 144);
+            this.ploshadlabel.Name = "ploshadlabel";
+            this.ploshadlabel.Size = new System.Drawing.Size(285, 13);
+            this.ploshadlabel.TabIndex = 3;
+            this.ploshadlabel.Text = "Площадь зоны фактическог заражения АХОВ:";
             // 
-            // label9
+            // poterilabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 48);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(15, 13);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "D";
+            this.poterilabel.AutoSize = true;
+            this.poterilabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.poterilabel.Location = new System.Drawing.Point(12, 54);
+            this.poterilabel.Name = "poterilabel";
+            this.poterilabel.Size = new System.Drawing.Size(401, 13);
+            this.poterilabel.TabIndex = 4;
+            this.poterilabel.Text = "Величина возможных потерь населения в очаге поражения АХОВ";
+            // 
+            // poteri1label
+            // 
+            this.poteri1label.AutoSize = true;
+            this.poteri1label.Location = new System.Drawing.Point(28, 76);
+            this.poteri1label.Name = "poteri1label";
+            this.poteri1label.Size = new System.Drawing.Size(89, 13);
+            this.poteri1label.TabIndex = 5;
+            this.poteri1label.Text = "безвозвратные:";
+            // 
+            // poteri2label
+            // 
+            this.poteri2label.AutoSize = true;
+            this.poteri2label.Location = new System.Drawing.Point(28, 99);
+            this.poteri2label.Name = "poteri2label";
+            this.poteri2label.Size = new System.Drawing.Size(154, 13);
+            this.poteri2label.TabIndex = 6;
+            this.poteri2label.Text = "тяжелые и средней тяжести:";
+            // 
+            // poteri3label
+            // 
+            this.poteri3label.AutoSize = true;
+            this.poteri3label.Location = new System.Drawing.Point(28, 122);
+            this.poteri3label.Name = "poteri3label";
+            this.poteri3label.Size = new System.Drawing.Size(129, 13);
+            this.poteri3label.TabIndex = 7;
+            this.poteri3label.Text = "легкой формы тяжести:";
+            // 
+            // glub
+            // 
+            this.glub.AutoSize = true;
+            this.glub.Location = new System.Drawing.Point(421, 9);
+            this.glub.Name = "glub";
+            this.glub.Size = new System.Drawing.Size(35, 13);
+            this.glub.TabIndex = 8;
+            this.glub.Text = "label1";
+            // 
+            // time
+            // 
+            this.time.AutoSize = true;
+            this.time.Location = new System.Drawing.Point(421, 31);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(35, 13);
+            this.time.TabIndex = 9;
+            this.time.Text = "label2";
+            // 
+            // poteri1
+            // 
+            this.poteri1.AutoSize = true;
+            this.poteri1.Location = new System.Drawing.Point(197, 76);
+            this.poteri1.Name = "poteri1";
+            this.poteri1.Size = new System.Drawing.Size(35, 13);
+            this.poteri1.TabIndex = 11;
+            this.poteri1.Text = "label4";
+            // 
+            // poteri2
+            // 
+            this.poteri2.AutoSize = true;
+            this.poteri2.Location = new System.Drawing.Point(197, 99);
+            this.poteri2.Name = "poteri2";
+            this.poteri2.Size = new System.Drawing.Size(35, 13);
+            this.poteri2.TabIndex = 12;
+            this.poteri2.Text = "label5";
+            // 
+            // poteri3
+            // 
+            this.poteri3.AutoSize = true;
+            this.poteri3.Location = new System.Drawing.Point(197, 122);
+            this.poteri3.Name = "poteri3";
+            this.poteri3.Size = new System.Drawing.Size(35, 13);
+            this.poteri3.TabIndex = 13;
+            this.poteri3.Text = "label6";
+            // 
+            // ploshad
+            // 
+            this.ploshad.AutoSize = true;
+            this.ploshad.Location = new System.Drawing.Point(318, 144);
+            this.ploshad.Name = "ploshad";
+            this.ploshad.Size = new System.Drawing.Size(35, 13);
+            this.ploshad.TabIndex = 14;
+            this.ploshad.Text = "label7";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(291, 282);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.ClientSize = new System.Drawing.Size(535, 389);
+            this.Controls.Add(this.ploshad);
+            this.Controls.Add(this.poteri3);
+            this.Controls.Add(this.poteri2);
+            this.Controls.Add(this.poteri1);
+            this.Controls.Add(this.time);
+            this.Controls.Add(this.glub);
+            this.Controls.Add(this.poteri3label);
+            this.Controls.Add(this.poteri2label);
+            this.Controls.Add(this.poteri1label);
+            this.Controls.Add(this.poterilabel);
+            this.Controls.Add(this.ploshadlabel);
+            this.Controls.Add(this.timelabel);
+            this.Controls.Add(this.glublabel);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Prognoz";
+            this.Text = "Прогнозирование";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,9 +212,18 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label glublabel;
+        private System.Windows.Forms.Label timelabel;
+        private System.Windows.Forms.Label ploshadlabel;
+        private System.Windows.Forms.Label poterilabel;
+        private System.Windows.Forms.Label poteri1label;
+        private System.Windows.Forms.Label poteri2label;
+        private System.Windows.Forms.Label poteri3label;
+        private System.Windows.Forms.Label glub;
+        private System.Windows.Forms.Label time;
+        private System.Windows.Forms.Label poteri1;
+        private System.Windows.Forms.Label poteri2;
+        private System.Windows.Forms.Label poteri3;
+        private System.Windows.Forms.Label ploshad;
     }
 }
