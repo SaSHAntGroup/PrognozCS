@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.substance = new System.Windows.Forms.ComboBox();
@@ -50,10 +51,31 @@
             this.time = new System.Windows.Forms.TextBox();
             this.speedAir = new System.Windows.Forms.TextBox();
             this.tempAir = new System.Windows.Forms.TextBox();
-            this.totalAXOBlabel = new System.Windows.Forms.Label();
             this.outAXOBlabel = new System.Windows.Forms.Label();
-            this.totalAXOB = new System.Windows.Forms.TextBox();
             this.outAXOB = new System.Windows.Forms.TextBox();
+            this.distancelabel = new System.Windows.Forms.Label();
+            this.distance = new System.Windows.Forms.TextBox();
+            this.primichanie1 = new System.Windows.Forms.Label();
+            this.primichanie2 = new System.Windows.Forms.Label();
+            this.primichanie3 = new System.Windows.Forms.Label();
+            this.plotNasGlabel = new System.Windows.Forms.Label();
+            this.plotNasZlabel = new System.Windows.Forms.Label();
+            this.protivoGAZlabel = new System.Windows.Forms.Label();
+            this.plotNasG = new System.Windows.Forms.TextBox();
+            this.plotNasZ = new System.Windows.Forms.TextBox();
+            this.GAZG = new System.Windows.Forms.Label();
+            this.GAZZ = new System.Windows.Forms.Label();
+            this.outGAZG = new System.Windows.Forms.TextBox();
+            this.outGAZZ = new System.Windows.Forms.TextBox();
+            this.ubejishelabel = new System.Windows.Forms.Label();
+            this.outubejZ = new System.Windows.Forms.TextBox();
+            this.outubejG = new System.Windows.Forms.TextBox();
+            this.ubejZ = new System.Windows.Forms.Label();
+            this.ubejG = new System.Windows.Forms.Label();
+            this.percent1 = new System.Windows.Forms.Label();
+            this.percent2 = new System.Windows.Forms.Label();
+            this.percent3 = new System.Windows.Forms.Label();
+            this.percent4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,9 +84,9 @@
             this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(12, 282);
+            this.button1.Location = new System.Drawing.Point(8, 344);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 33);
+            this.button1.Size = new System.Drawing.Size(395, 33);
             this.button1.TabIndex = 0;
             this.button1.Text = "Расчитать";
             this.button1.UseVisualStyleBackColor = false;
@@ -75,7 +97,7 @@
             this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(403, 282);
+            this.button2.Location = new System.Drawing.Point(409, 344);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 33);
             this.button2.TabIndex = 1;
@@ -130,7 +152,7 @@
             this.vertUst.FormattingEnabled = true;
             this.vertUst.Location = new System.Drawing.Point(272, 27);
             this.vertUst.Name = "vertUst";
-            this.vertUst.Size = new System.Drawing.Size(242, 21);
+            this.vertUst.Size = new System.Drawing.Size(255, 21);
             this.vertUst.TabIndex = 6;
             this.vertUst.Text = "Изотермия";
             // 
@@ -188,7 +210,7 @@
             this.groupBox1.Controls.Add(this.svob);
             this.groupBox1.Controls.Add(this.obsh);
             this.groupBox1.Controls.Add(this.sam);
-            this.groupBox1.Location = new System.Drawing.Point(12, 149);
+            this.groupBox1.Location = new System.Drawing.Point(12, 110);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(254, 127);
             this.groupBox1.TabIndex = 11;
@@ -234,7 +256,7 @@
             // timelabel
             // 
             this.timelabel.AutoSize = true;
-            this.timelabel.Location = new System.Drawing.Point(269, 129);
+            this.timelabel.Location = new System.Drawing.Point(269, 90);
             this.timelabel.Name = "timelabel";
             this.timelabel.Size = new System.Drawing.Size(176, 13);
             this.timelabel.TabIndex = 12;
@@ -252,7 +274,7 @@
             // tempAirlabel
             // 
             this.tempAirlabel.AutoSize = true;
-            this.tempAirlabel.Location = new System.Drawing.Point(269, 90);
+            this.tempAirlabel.Location = new System.Drawing.Point(362, 50);
             this.tempAirlabel.Name = "tempAirlabel";
             this.tempAirlabel.Size = new System.Drawing.Size(117, 13);
             this.tempAirlabel.TabIndex = 14;
@@ -260,67 +282,267 @@
             // 
             // time
             // 
-            this.time.Location = new System.Drawing.Point(272, 145);
+            this.time.Location = new System.Drawing.Point(272, 103);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(239, 20);
+            this.time.Size = new System.Drawing.Size(255, 20);
             this.time.TabIndex = 15;
             // 
             // speedAir
             // 
             this.speedAir.Location = new System.Drawing.Point(272, 67);
             this.speedAir.Name = "speedAir";
-            this.speedAir.Size = new System.Drawing.Size(239, 20);
+            this.speedAir.Size = new System.Drawing.Size(84, 20);
             this.speedAir.TabIndex = 16;
             // 
             // tempAir
             // 
-            this.tempAir.Location = new System.Drawing.Point(272, 106);
+            this.tempAir.Location = new System.Drawing.Point(365, 67);
             this.tempAir.Name = "tempAir";
-            this.tempAir.Size = new System.Drawing.Size(239, 20);
+            this.tempAir.Size = new System.Drawing.Size(162, 20);
             this.tempAir.TabIndex = 17;
-            // 
-            // totalAXOBlabel
-            // 
-            this.totalAXOBlabel.AutoSize = true;
-            this.totalAXOBlabel.Location = new System.Drawing.Point(9, 67);
-            this.totalAXOBlabel.Name = "totalAXOBlabel";
-            this.totalAXOBlabel.Size = new System.Drawing.Size(135, 13);
-            this.totalAXOBlabel.TabIndex = 18;
-            this.totalAXOBlabel.Text = "Общее количество АХОВ";
             // 
             // outAXOBlabel
             // 
             this.outAXOBlabel.AutoSize = true;
-            this.outAXOBlabel.Location = new System.Drawing.Point(9, 106);
+            this.outAXOBlabel.Location = new System.Drawing.Point(9, 67);
             this.outAXOBlabel.Name = "outAXOBlabel";
             this.outAXOBlabel.Size = new System.Drawing.Size(225, 13);
             this.outAXOBlabel.TabIndex = 19;
             this.outAXOBlabel.Text = "АХОВ, выброшенные в окружающую среду";
             // 
-            // totalAXOB
-            // 
-            this.totalAXOB.Location = new System.Drawing.Point(12, 84);
-            this.totalAXOB.Name = "totalAXOB";
-            this.totalAXOB.Size = new System.Drawing.Size(254, 20);
-            this.totalAXOB.TabIndex = 20;
-            // 
             // outAXOB
             // 
-            this.outAXOB.Location = new System.Drawing.Point(12, 123);
+            this.outAXOB.Location = new System.Drawing.Point(12, 84);
             this.outAXOB.Name = "outAXOB";
             this.outAXOB.Size = new System.Drawing.Size(254, 20);
             this.outAXOB.TabIndex = 21;
+            // 
+            // distancelabel
+            // 
+            this.distancelabel.AutoSize = true;
+            this.distancelabel.Location = new System.Drawing.Point(269, 123);
+            this.distancelabel.Name = "distancelabel";
+            this.distancelabel.Size = new System.Drawing.Size(187, 13);
+            this.distancelabel.TabIndex = 22;
+            this.distancelabel.Text = "Расстояние до населенного пункта";
+            // 
+            // distance
+            // 
+            this.distance.Location = new System.Drawing.Point(272, 139);
+            this.distance.Name = "distance";
+            this.distance.Size = new System.Drawing.Size(255, 20);
+            this.distance.TabIndex = 23;
+            // 
+            // primichanie1
+            // 
+            this.primichanie1.AutoSize = true;
+            this.primichanie1.Location = new System.Drawing.Point(8, 315);
+            this.primichanie1.Name = "primichanie1";
+            this.primichanie1.Size = new System.Drawing.Size(281, 13);
+            this.primichanie1.TabIndex = 24;
+            this.primichanie1.Text = "Значения по умолчанию для : скорости ветра = 3 м/с,";
+            // 
+            // primichanie2
+            // 
+            this.primichanie2.AutoSize = true;
+            this.primichanie2.Location = new System.Drawing.Point(288, 315);
+            this.primichanie2.Name = "primichanie2";
+            this.primichanie2.Size = new System.Drawing.Size(236, 13);
+            this.primichanie2.TabIndex = 25;
+            this.primichanie2.Text = "температура воздуха = 20 градусов цельсия,";
+            // 
+            // primichanie3
+            // 
+            this.primichanie3.AutoSize = true;
+            this.primichanie3.Location = new System.Drawing.Point(5, 328);
+            this.primichanie3.Name = "primichanie3";
+            this.primichanie3.Size = new System.Drawing.Size(524, 13);
+            this.primichanie3.TabIndex = 26;
+            this.primichanie3.Text = "время, после аварии = 4 часа. Значение остальных не заполненых параметров будет р" +
+    "авнятся нулю!";
+            // 
+            // plotNasGlabel
+            // 
+            this.plotNasGlabel.AutoSize = true;
+            this.plotNasGlabel.Location = new System.Drawing.Point(269, 162);
+            this.plotNasGlabel.Name = "plotNasGlabel";
+            this.plotNasGlabel.Size = new System.Drawing.Size(165, 13);
+            this.plotNasGlabel.TabIndex = 27;
+            this.plotNasGlabel.Text = "Плотность населения в городе";
+            // 
+            // plotNasZlabel
+            // 
+            this.plotNasZlabel.AutoSize = true;
+            this.plotNasZlabel.Location = new System.Drawing.Point(267, 198);
+            this.plotNasZlabel.Name = "plotNasZlabel";
+            this.plotNasZlabel.Size = new System.Drawing.Size(216, 13);
+            this.plotNasZlabel.TabIndex = 28;
+            this.plotNasZlabel.Text = "Плотность населения в загородной зоне";
+            // 
+            // protivoGAZlabel
+            // 
+            this.protivoGAZlabel.AutoSize = true;
+            this.protivoGAZlabel.Location = new System.Drawing.Point(9, 240);
+            this.protivoGAZlabel.Name = "protivoGAZlabel";
+            this.protivoGAZlabel.Size = new System.Drawing.Size(232, 13);
+            this.protivoGAZlabel.TabIndex = 29;
+            this.protivoGAZlabel.Text = "Обеспеченность населения противогазами:";
+            // 
+            // plotNasG
+            // 
+            this.plotNasG.Location = new System.Drawing.Point(272, 211);
+            this.plotNasG.Name = "plotNasG";
+            this.plotNasG.Size = new System.Drawing.Size(255, 20);
+            this.plotNasG.TabIndex = 30;
+            // 
+            // plotNasZ
+            // 
+            this.plotNasZ.Location = new System.Drawing.Point(272, 175);
+            this.plotNasZ.Name = "plotNasZ";
+            this.plotNasZ.Size = new System.Drawing.Size(255, 20);
+            this.plotNasZ.TabIndex = 31;
+            // 
+            // GAZG
+            // 
+            this.GAZG.AutoSize = true;
+            this.GAZG.Location = new System.Drawing.Point(9, 258);
+            this.GAZG.Name = "GAZG";
+            this.GAZG.Size = new System.Drawing.Size(55, 13);
+            this.GAZG.TabIndex = 32;
+            this.GAZG.Text = "В городе:";
+            // 
+            // GAZZ
+            // 
+            this.GAZZ.AutoSize = true;
+            this.GAZZ.Location = new System.Drawing.Point(9, 284);
+            this.GAZZ.Name = "GAZZ";
+            this.GAZZ.Size = new System.Drawing.Size(106, 13);
+            this.GAZZ.TabIndex = 33;
+            this.GAZZ.Text = "В загородной зоне:";
+            // 
+            // outGAZG
+            // 
+            this.outGAZG.Location = new System.Drawing.Point(121, 255);
+            this.outGAZG.Name = "outGAZG";
+            this.outGAZG.Size = new System.Drawing.Size(66, 20);
+            this.outGAZG.TabIndex = 34;
+            // 
+            // outGAZZ
+            // 
+            this.outGAZZ.Location = new System.Drawing.Point(121, 281);
+            this.outGAZZ.Name = "outGAZZ";
+            this.outGAZZ.Size = new System.Drawing.Size(66, 20);
+            this.outGAZZ.TabIndex = 35;
+            // 
+            // ubejishelabel
+            // 
+            this.ubejishelabel.AutoSize = true;
+            this.ubejishelabel.Location = new System.Drawing.Point(269, 240);
+            this.ubejishelabel.Name = "ubejishelabel";
+            this.ubejishelabel.Size = new System.Drawing.Size(214, 13);
+            this.ubejishelabel.TabIndex = 36;
+            this.ubejishelabel.Text = "Обеспеченность населения убежищами:";
+            // 
+            // outubejZ
+            // 
+            this.outubejZ.Location = new System.Drawing.Point(381, 281);
+            this.outubejZ.Name = "outubejZ";
+            this.outubejZ.Size = new System.Drawing.Size(64, 20);
+            this.outubejZ.TabIndex = 40;
+            // 
+            // outubejG
+            // 
+            this.outubejG.Location = new System.Drawing.Point(381, 255);
+            this.outubejG.Name = "outubejG";
+            this.outubejG.Size = new System.Drawing.Size(64, 20);
+            this.outubejG.TabIndex = 39;
+            // 
+            // ubejZ
+            // 
+            this.ubejZ.AutoSize = true;
+            this.ubejZ.Location = new System.Drawing.Point(269, 284);
+            this.ubejZ.Name = "ubejZ";
+            this.ubejZ.Size = new System.Drawing.Size(106, 13);
+            this.ubejZ.TabIndex = 38;
+            this.ubejZ.Text = "В загородной зоне:";
+            // 
+            // ubejG
+            // 
+            this.ubejG.AutoSize = true;
+            this.ubejG.Location = new System.Drawing.Point(269, 258);
+            this.ubejG.Name = "ubejG";
+            this.ubejG.Size = new System.Drawing.Size(55, 13);
+            this.ubejG.TabIndex = 37;
+            this.ubejG.Text = "В городе:";
+            // 
+            // percent1
+            // 
+            this.percent1.AutoSize = true;
+            this.percent1.Location = new System.Drawing.Point(193, 258);
+            this.percent1.Name = "percent1";
+            this.percent1.Size = new System.Drawing.Size(15, 13);
+            this.percent1.TabIndex = 41;
+            this.percent1.Text = "%";
+            // 
+            // percent2
+            // 
+            this.percent2.AutoSize = true;
+            this.percent2.Location = new System.Drawing.Point(193, 284);
+            this.percent2.Name = "percent2";
+            this.percent2.Size = new System.Drawing.Size(15, 13);
+            this.percent2.TabIndex = 42;
+            this.percent2.Text = "%";
+            // 
+            // percent3
+            // 
+            this.percent3.AutoSize = true;
+            this.percent3.Location = new System.Drawing.Point(451, 258);
+            this.percent3.Name = "percent3";
+            this.percent3.Size = new System.Drawing.Size(15, 13);
+            this.percent3.TabIndex = 43;
+            this.percent3.Text = "%";
+            // 
+            // percent4
+            // 
+            this.percent4.AutoSize = true;
+            this.percent4.Location = new System.Drawing.Point(451, 284);
+            this.percent4.Name = "percent4";
+            this.percent4.Size = new System.Drawing.Size(15, 13);
+            this.percent4.TabIndex = 44;
+            this.percent4.Text = "%";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(524, 323);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(535, 389);
+            this.Controls.Add(this.percent4);
+            this.Controls.Add(this.percent3);
+            this.Controls.Add(this.percent2);
+            this.Controls.Add(this.percent1);
+            this.Controls.Add(this.outubejZ);
+            this.Controls.Add(this.outubejG);
+            this.Controls.Add(this.ubejZ);
+            this.Controls.Add(this.ubejG);
+            this.Controls.Add(this.ubejishelabel);
+            this.Controls.Add(this.outGAZZ);
+            this.Controls.Add(this.outGAZG);
+            this.Controls.Add(this.GAZZ);
+            this.Controls.Add(this.GAZG);
+            this.Controls.Add(this.plotNasZ);
+            this.Controls.Add(this.plotNasG);
+            this.Controls.Add(this.protivoGAZlabel);
+            this.Controls.Add(this.plotNasZlabel);
+            this.Controls.Add(this.plotNasGlabel);
+            this.Controls.Add(this.primichanie3);
+            this.Controls.Add(this.primichanie2);
+            this.Controls.Add(this.primichanie1);
+            this.Controls.Add(this.distance);
+            this.Controls.Add(this.distancelabel);
             this.Controls.Add(this.outAXOB);
-            this.Controls.Add(this.totalAXOB);
             this.Controls.Add(this.outAXOBlabel);
-            this.Controls.Add(this.totalAXOBlabel);
             this.Controls.Add(this.tempAir);
             this.Controls.Add(this.speedAir);
             this.Controls.Add(this.time);
@@ -336,6 +558,7 @@
             this.Controls.Add(this.substance);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Prognoz";
@@ -370,9 +593,30 @@
         private System.Windows.Forms.TextBox time;
         private System.Windows.Forms.TextBox speedAir;
         private System.Windows.Forms.TextBox tempAir;
-        private System.Windows.Forms.Label totalAXOBlabel;
         private System.Windows.Forms.Label outAXOBlabel;
-        private System.Windows.Forms.TextBox totalAXOB;
         private System.Windows.Forms.TextBox outAXOB;
+        private System.Windows.Forms.Label distancelabel;
+        private System.Windows.Forms.TextBox distance;
+        private System.Windows.Forms.Label primichanie1;
+        private System.Windows.Forms.Label primichanie2;
+        private System.Windows.Forms.Label primichanie3;
+        private System.Windows.Forms.Label plotNasGlabel;
+        private System.Windows.Forms.Label plotNasZlabel;
+        private System.Windows.Forms.Label protivoGAZlabel;
+        private System.Windows.Forms.TextBox plotNasG;
+        private System.Windows.Forms.TextBox plotNasZ;
+        private System.Windows.Forms.Label GAZG;
+        private System.Windows.Forms.Label GAZZ;
+        private System.Windows.Forms.TextBox outGAZG;
+        private System.Windows.Forms.TextBox outGAZZ;
+        private System.Windows.Forms.Label ubejishelabel;
+        private System.Windows.Forms.TextBox outubejZ;
+        private System.Windows.Forms.TextBox outubejG;
+        private System.Windows.Forms.Label ubejZ;
+        private System.Windows.Forms.Label ubejG;
+        private System.Windows.Forms.Label percent1;
+        private System.Windows.Forms.Label percent2;
+        private System.Windows.Forms.Label percent3;
+        private System.Windows.Forms.Label percent4;
     }
 }
