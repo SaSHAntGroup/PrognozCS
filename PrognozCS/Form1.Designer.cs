@@ -41,8 +41,9 @@
             this.sam = new System.Windows.Forms.RadioButton();
             this.obsh = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ploshlabel = new System.Windows.Forms.TextBox();
-            this.plosh = new System.Windows.Forms.Label();
+            this.meter = new System.Windows.Forms.Label();
+            this.plosh = new System.Windows.Forms.TextBox();
+            this.ploshlabel = new System.Windows.Forms.Label();
             this.visPodlabel = new System.Windows.Forms.Label();
             this.visPod = new System.Windows.Forms.TextBox();
             this.timelabel = new System.Windows.Forms.Label();
@@ -82,8 +83,9 @@
             this.menkm2 = new System.Windows.Forms.Label();
             this.hours = new System.Windows.Forms.Label();
             this.km = new System.Windows.Forms.Label();
-            this.meter = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -92,7 +94,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(8, 344);
+            this.button1.Location = new System.Drawing.Point(10, 342);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(395, 33);
             this.button1.TabIndex = 0;
@@ -105,7 +107,7 @@
             this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(409, 344);
+            this.button2.Location = new System.Drawing.Point(411, 342);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 33);
             this.button2.TabIndex = 1;
@@ -116,7 +118,7 @@
             // substance
             // 
             this.substance.FormattingEnabled = true;
-            this.substance.Location = new System.Drawing.Point(12, 27);
+            this.substance.Location = new System.Drawing.Point(14, 25);
             this.substance.Name = "substance";
             this.substance.Size = new System.Drawing.Size(254, 21);
             this.substance.TabIndex = 2;
@@ -125,7 +127,7 @@
             // jid
             // 
             this.jid.AutoSize = true;
-            this.jid.Location = new System.Drawing.Point(61, 48);
+            this.jid.Location = new System.Drawing.Point(63, 46);
             this.jid.Name = "jid";
             this.jid.Size = new System.Drawing.Size(77, 17);
             this.jid.TabIndex = 3;
@@ -137,7 +139,7 @@
             // gaz
             // 
             this.gaz.AutoSize = true;
-            this.gaz.Location = new System.Drawing.Point(12, 48);
+            this.gaz.Location = new System.Drawing.Point(14, 46);
             this.gaz.Name = "gaz";
             this.gaz.Size = new System.Drawing.Size(43, 17);
             this.gaz.TabIndex = 4;
@@ -149,7 +151,7 @@
             // vibAXOB
             // 
             this.vibAXOB.AutoSize = true;
-            this.vibAXOB.Location = new System.Drawing.Point(12, 11);
+            this.vibAXOB.Location = new System.Drawing.Point(14, 9);
             this.vibAXOB.Name = "vibAXOB";
             this.vibAXOB.Size = new System.Drawing.Size(72, 13);
             this.vibAXOB.TabIndex = 5;
@@ -158,7 +160,7 @@
             // vertUst
             // 
             this.vertUst.FormattingEnabled = true;
-            this.vertUst.Location = new System.Drawing.Point(272, 27);
+            this.vertUst.Location = new System.Drawing.Point(274, 25);
             this.vertUst.Name = "vertUst";
             this.vertUst.Size = new System.Drawing.Size(255, 21);
             this.vertUst.TabIndex = 6;
@@ -167,7 +169,7 @@
             // ustAtm
             // 
             this.ustAtm.AutoSize = true;
-            this.ustAtm.Location = new System.Drawing.Point(269, 11);
+            this.ustAtm.Location = new System.Drawing.Point(271, 9);
             this.ustAtm.Name = "ustAtm";
             this.ustAtm.Size = new System.Drawing.Size(212, 13);
             this.ustAtm.TabIndex = 7;
@@ -212,37 +214,47 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.meter);
-            this.groupBox1.Controls.Add(this.ploshlabel);
             this.groupBox1.Controls.Add(this.plosh);
+            this.groupBox1.Controls.Add(this.ploshlabel);
             this.groupBox1.Controls.Add(this.visPodlabel);
             this.groupBox1.Controls.Add(this.visPod);
             this.groupBox1.Controls.Add(this.svob);
             this.groupBox1.Controls.Add(this.obsh);
             this.groupBox1.Controls.Add(this.sam);
-            this.groupBox1.Location = new System.Drawing.Point(12, 110);
+            this.groupBox1.Location = new System.Drawing.Point(14, 108);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(254, 127);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Характер разлива АХОВ";
             // 
-            // ploshlabel
+            // meter
             // 
-            this.ploshlabel.Location = new System.Drawing.Point(9, 101);
-            this.ploshlabel.Name = "ploshlabel";
-            this.ploshlabel.Size = new System.Drawing.Size(183, 20);
-            this.ploshlabel.TabIndex = 14;
-            this.ploshlabel.Visible = false;
+            this.meter.AutoSize = true;
+            this.meter.Location = new System.Drawing.Point(192, 104);
+            this.meter.Name = "meter";
+            this.meter.Size = new System.Drawing.Size(56, 13);
+            this.meter.TabIndex = 15;
+            this.meter.Text = "метра(ов)";
+            this.meter.Visible = false;
             // 
             // plosh
             // 
-            this.plosh.AutoSize = true;
-            this.plosh.Location = new System.Drawing.Point(3, 85);
+            this.plosh.Location = new System.Drawing.Point(9, 101);
             this.plosh.Name = "plosh";
-            this.plosh.Size = new System.Drawing.Size(147, 13);
-            this.plosh.TabIndex = 13;
-            this.plosh.Text = "Площадь розлива в поддон";
+            this.plosh.Size = new System.Drawing.Size(183, 20);
+            this.plosh.TabIndex = 14;
             this.plosh.Visible = false;
+            // 
+            // ploshlabel
+            // 
+            this.ploshlabel.AutoSize = true;
+            this.ploshlabel.Location = new System.Drawing.Point(3, 85);
+            this.ploshlabel.Name = "ploshlabel";
+            this.ploshlabel.Size = new System.Drawing.Size(147, 13);
+            this.ploshlabel.TabIndex = 13;
+            this.ploshlabel.Text = "Площадь розлива в поддон";
+            this.ploshlabel.Visible = false;
             // 
             // visPodlabel
             // 
@@ -265,7 +277,7 @@
             // timelabel
             // 
             this.timelabel.AutoSize = true;
-            this.timelabel.Location = new System.Drawing.Point(269, 90);
+            this.timelabel.Location = new System.Drawing.Point(271, 88);
             this.timelabel.Name = "timelabel";
             this.timelabel.Size = new System.Drawing.Size(176, 13);
             this.timelabel.TabIndex = 12;
@@ -274,7 +286,7 @@
             // speedAirlabel
             // 
             this.speedAirlabel.AutoSize = true;
-            this.speedAirlabel.Location = new System.Drawing.Point(269, 51);
+            this.speedAirlabel.Location = new System.Drawing.Point(271, 49);
             this.speedAirlabel.Name = "speedAirlabel";
             this.speedAirlabel.Size = new System.Drawing.Size(87, 13);
             this.speedAirlabel.TabIndex = 13;
@@ -283,7 +295,7 @@
             // tempAirlabel
             // 
             this.tempAirlabel.AutoSize = true;
-            this.tempAirlabel.Location = new System.Drawing.Point(392, 52);
+            this.tempAirlabel.Location = new System.Drawing.Point(394, 50);
             this.tempAirlabel.Name = "tempAirlabel";
             this.tempAirlabel.Size = new System.Drawing.Size(117, 13);
             this.tempAirlabel.TabIndex = 14;
@@ -291,21 +303,21 @@
             // 
             // time
             // 
-            this.time.Location = new System.Drawing.Point(272, 103);
+            this.time.Location = new System.Drawing.Point(274, 101);
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(203, 20);
             this.time.TabIndex = 15;
             // 
             // speedAir
             // 
-            this.speedAir.Location = new System.Drawing.Point(272, 67);
+            this.speedAir.Location = new System.Drawing.Point(274, 65);
             this.speedAir.Name = "speedAir";
             this.speedAir.Size = new System.Drawing.Size(88, 20);
             this.speedAir.TabIndex = 16;
             // 
             // tempAir
             // 
-            this.tempAir.Location = new System.Drawing.Point(398, 68);
+            this.tempAir.Location = new System.Drawing.Point(400, 66);
             this.tempAir.Name = "tempAir";
             this.tempAir.Size = new System.Drawing.Size(87, 20);
             this.tempAir.TabIndex = 17;
@@ -313,7 +325,7 @@
             // outAXOBlabel
             // 
             this.outAXOBlabel.AutoSize = true;
-            this.outAXOBlabel.Location = new System.Drawing.Point(9, 67);
+            this.outAXOBlabel.Location = new System.Drawing.Point(11, 65);
             this.outAXOBlabel.Name = "outAXOBlabel";
             this.outAXOBlabel.Size = new System.Drawing.Size(225, 13);
             this.outAXOBlabel.TabIndex = 19;
@@ -321,7 +333,7 @@
             // 
             // outAXOB
             // 
-            this.outAXOB.Location = new System.Drawing.Point(12, 84);
+            this.outAXOB.Location = new System.Drawing.Point(14, 82);
             this.outAXOB.Name = "outAXOB";
             this.outAXOB.Size = new System.Drawing.Size(176, 20);
             this.outAXOB.TabIndex = 21;
@@ -329,7 +341,7 @@
             // distancelabel
             // 
             this.distancelabel.AutoSize = true;
-            this.distancelabel.Location = new System.Drawing.Point(269, 123);
+            this.distancelabel.Location = new System.Drawing.Point(271, 121);
             this.distancelabel.Name = "distancelabel";
             this.distancelabel.Size = new System.Drawing.Size(187, 13);
             this.distancelabel.TabIndex = 22;
@@ -337,7 +349,7 @@
             // 
             // distance
             // 
-            this.distance.Location = new System.Drawing.Point(272, 139);
+            this.distance.Location = new System.Drawing.Point(274, 137);
             this.distance.Name = "distance";
             this.distance.Size = new System.Drawing.Size(203, 20);
             this.distance.TabIndex = 23;
@@ -345,7 +357,7 @@
             // primichanie1
             // 
             this.primichanie1.AutoSize = true;
-            this.primichanie1.Location = new System.Drawing.Point(5, 315);
+            this.primichanie1.Location = new System.Drawing.Point(7, 313);
             this.primichanie1.Name = "primichanie1";
             this.primichanie1.Size = new System.Drawing.Size(526, 13);
             this.primichanie1.TabIndex = 24;
@@ -355,7 +367,7 @@
             // primichanie3
             // 
             this.primichanie3.AutoSize = true;
-            this.primichanie3.Location = new System.Drawing.Point(5, 328);
+            this.primichanie3.Location = new System.Drawing.Point(7, 326);
             this.primichanie3.Name = "primichanie3";
             this.primichanie3.Size = new System.Drawing.Size(486, 13);
             this.primichanie3.TabIndex = 26;
@@ -365,7 +377,7 @@
             // plotNasGlabel
             // 
             this.plotNasGlabel.AutoSize = true;
-            this.plotNasGlabel.Location = new System.Drawing.Point(269, 162);
+            this.plotNasGlabel.Location = new System.Drawing.Point(271, 160);
             this.plotNasGlabel.Name = "plotNasGlabel";
             this.plotNasGlabel.Size = new System.Drawing.Size(165, 13);
             this.plotNasGlabel.TabIndex = 27;
@@ -374,7 +386,7 @@
             // plotNasZlabel
             // 
             this.plotNasZlabel.AutoSize = true;
-            this.plotNasZlabel.Location = new System.Drawing.Point(267, 198);
+            this.plotNasZlabel.Location = new System.Drawing.Point(269, 196);
             this.plotNasZlabel.Name = "plotNasZlabel";
             this.plotNasZlabel.Size = new System.Drawing.Size(216, 13);
             this.plotNasZlabel.TabIndex = 28;
@@ -383,7 +395,7 @@
             // protivoGAZlabel
             // 
             this.protivoGAZlabel.AutoSize = true;
-            this.protivoGAZlabel.Location = new System.Drawing.Point(9, 240);
+            this.protivoGAZlabel.Location = new System.Drawing.Point(11, 238);
             this.protivoGAZlabel.Name = "protivoGAZlabel";
             this.protivoGAZlabel.Size = new System.Drawing.Size(232, 13);
             this.protivoGAZlabel.TabIndex = 29;
@@ -391,14 +403,14 @@
             // 
             // plotNasZ
             // 
-            this.plotNasZ.Location = new System.Drawing.Point(272, 211);
+            this.plotNasZ.Location = new System.Drawing.Point(274, 209);
             this.plotNasZ.Name = "plotNasZ";
             this.plotNasZ.Size = new System.Drawing.Size(203, 20);
             this.plotNasZ.TabIndex = 30;
             // 
             // plotNasG
             // 
-            this.plotNasG.Location = new System.Drawing.Point(272, 175);
+            this.plotNasG.Location = new System.Drawing.Point(274, 173);
             this.plotNasG.Name = "plotNasG";
             this.plotNasG.Size = new System.Drawing.Size(203, 20);
             this.plotNasG.TabIndex = 31;
@@ -406,7 +418,7 @@
             // GAZG
             // 
             this.GAZG.AutoSize = true;
-            this.GAZG.Location = new System.Drawing.Point(9, 258);
+            this.GAZG.Location = new System.Drawing.Point(11, 256);
             this.GAZG.Name = "GAZG";
             this.GAZG.Size = new System.Drawing.Size(55, 13);
             this.GAZG.TabIndex = 32;
@@ -415,7 +427,7 @@
             // GAZZ
             // 
             this.GAZZ.AutoSize = true;
-            this.GAZZ.Location = new System.Drawing.Point(9, 284);
+            this.GAZZ.Location = new System.Drawing.Point(11, 282);
             this.GAZZ.Name = "GAZZ";
             this.GAZZ.Size = new System.Drawing.Size(106, 13);
             this.GAZZ.TabIndex = 33;
@@ -423,14 +435,14 @@
             // 
             // outGAZG
             // 
-            this.outGAZG.Location = new System.Drawing.Point(121, 255);
+            this.outGAZG.Location = new System.Drawing.Point(123, 253);
             this.outGAZG.Name = "outGAZG";
             this.outGAZG.Size = new System.Drawing.Size(66, 20);
             this.outGAZG.TabIndex = 34;
             // 
             // outGAZZ
             // 
-            this.outGAZZ.Location = new System.Drawing.Point(121, 281);
+            this.outGAZZ.Location = new System.Drawing.Point(123, 279);
             this.outGAZZ.Name = "outGAZZ";
             this.outGAZZ.Size = new System.Drawing.Size(66, 20);
             this.outGAZZ.TabIndex = 35;
@@ -438,7 +450,7 @@
             // ubejishelabel
             // 
             this.ubejishelabel.AutoSize = true;
-            this.ubejishelabel.Location = new System.Drawing.Point(269, 240);
+            this.ubejishelabel.Location = new System.Drawing.Point(271, 238);
             this.ubejishelabel.Name = "ubejishelabel";
             this.ubejishelabel.Size = new System.Drawing.Size(214, 13);
             this.ubejishelabel.TabIndex = 36;
@@ -446,14 +458,14 @@
             // 
             // outubejZ
             // 
-            this.outubejZ.Location = new System.Drawing.Point(381, 281);
+            this.outubejZ.Location = new System.Drawing.Point(383, 279);
             this.outubejZ.Name = "outubejZ";
             this.outubejZ.Size = new System.Drawing.Size(64, 20);
             this.outubejZ.TabIndex = 40;
             // 
             // outubejG
             // 
-            this.outubejG.Location = new System.Drawing.Point(381, 255);
+            this.outubejG.Location = new System.Drawing.Point(383, 253);
             this.outubejG.Name = "outubejG";
             this.outubejG.Size = new System.Drawing.Size(64, 20);
             this.outubejG.TabIndex = 39;
@@ -461,7 +473,7 @@
             // ubejZ
             // 
             this.ubejZ.AutoSize = true;
-            this.ubejZ.Location = new System.Drawing.Point(269, 284);
+            this.ubejZ.Location = new System.Drawing.Point(271, 282);
             this.ubejZ.Name = "ubejZ";
             this.ubejZ.Size = new System.Drawing.Size(106, 13);
             this.ubejZ.TabIndex = 38;
@@ -470,7 +482,7 @@
             // ubejG
             // 
             this.ubejG.AutoSize = true;
-            this.ubejG.Location = new System.Drawing.Point(269, 258);
+            this.ubejG.Location = new System.Drawing.Point(271, 256);
             this.ubejG.Name = "ubejG";
             this.ubejG.Size = new System.Drawing.Size(55, 13);
             this.ubejG.TabIndex = 37;
@@ -479,7 +491,7 @@
             // percent1
             // 
             this.percent1.AutoSize = true;
-            this.percent1.Location = new System.Drawing.Point(193, 258);
+            this.percent1.Location = new System.Drawing.Point(195, 256);
             this.percent1.Name = "percent1";
             this.percent1.Size = new System.Drawing.Size(15, 13);
             this.percent1.TabIndex = 41;
@@ -488,7 +500,7 @@
             // percent2
             // 
             this.percent2.AutoSize = true;
-            this.percent2.Location = new System.Drawing.Point(193, 284);
+            this.percent2.Location = new System.Drawing.Point(195, 282);
             this.percent2.Name = "percent2";
             this.percent2.Size = new System.Drawing.Size(15, 13);
             this.percent2.TabIndex = 42;
@@ -497,7 +509,7 @@
             // percent3
             // 
             this.percent3.AutoSize = true;
-            this.percent3.Location = new System.Drawing.Point(451, 258);
+            this.percent3.Location = new System.Drawing.Point(453, 256);
             this.percent3.Name = "percent3";
             this.percent3.Size = new System.Drawing.Size(15, 13);
             this.percent3.TabIndex = 43;
@@ -506,7 +518,7 @@
             // percent4
             // 
             this.percent4.AutoSize = true;
-            this.percent4.Location = new System.Drawing.Point(451, 284);
+            this.percent4.Location = new System.Drawing.Point(453, 282);
             this.percent4.Name = "percent4";
             this.percent4.Size = new System.Drawing.Size(15, 13);
             this.percent4.TabIndex = 44;
@@ -515,7 +527,7 @@
             // celsium
             // 
             this.celsium.AutoSize = true;
-            this.celsium.Location = new System.Drawing.Point(491, 70);
+            this.celsium.Location = new System.Drawing.Point(493, 68);
             this.celsium.Name = "celsium";
             this.celsium.Size = new System.Drawing.Size(18, 13);
             this.celsium.TabIndex = 45;
@@ -524,7 +536,7 @@
             // MvS
             // 
             this.MvS.AutoSize = true;
-            this.MvS.Location = new System.Drawing.Point(366, 70);
+            this.MvS.Location = new System.Drawing.Point(368, 68);
             this.MvS.Name = "MvS";
             this.MvS.Size = new System.Drawing.Size(26, 13);
             this.MvS.TabIndex = 46;
@@ -533,7 +545,7 @@
             // kolvoTOHHlabel
             // 
             this.kolvoTOHHlabel.AutoSize = true;
-            this.kolvoTOHHlabel.Location = new System.Drawing.Point(190, 87);
+            this.kolvoTOHHlabel.Location = new System.Drawing.Point(192, 85);
             this.kolvoTOHHlabel.Name = "kolvoTOHHlabel";
             this.kolvoTOHHlabel.Size = new System.Drawing.Size(72, 13);
             this.kolvoTOHHlabel.TabIndex = 47;
@@ -542,7 +554,7 @@
             // menkm1
             // 
             this.menkm1.AutoSize = true;
-            this.menkm1.Location = new System.Drawing.Point(479, 182);
+            this.menkm1.Location = new System.Drawing.Point(481, 180);
             this.menkm1.Name = "menkm1";
             this.menkm1.Size = new System.Drawing.Size(46, 13);
             this.menkm1.TabIndex = 48;
@@ -551,7 +563,7 @@
             // menkm2
             // 
             this.menkm2.AutoSize = true;
-            this.menkm2.Location = new System.Drawing.Point(479, 218);
+            this.menkm2.Location = new System.Drawing.Point(481, 216);
             this.menkm2.Name = "menkm2";
             this.menkm2.Size = new System.Drawing.Size(46, 13);
             this.menkm2.TabIndex = 49;
@@ -560,7 +572,7 @@
             // hours
             // 
             this.hours.AutoSize = true;
-            this.hours.Location = new System.Drawing.Point(479, 110);
+            this.hours.Location = new System.Drawing.Point(481, 108);
             this.hours.Name = "hours";
             this.hours.Size = new System.Drawing.Size(30, 13);
             this.hours.TabIndex = 50;
@@ -569,20 +581,64 @@
             // km
             // 
             this.km.AutoSize = true;
-            this.km.Location = new System.Drawing.Point(481, 146);
+            this.km.Location = new System.Drawing.Point(483, 144);
             this.km.Name = "km";
             this.km.Size = new System.Drawing.Size(21, 13);
             this.km.TabIndex = 51;
             this.km.Text = "км";
             // 
-            // meter
+            // panel1
             // 
-            this.meter.AutoSize = true;
-            this.meter.Location = new System.Drawing.Point(192, 104);
-            this.meter.Name = "meter";
-            this.meter.Size = new System.Drawing.Size(56, 13);
-            this.meter.TabIndex = 15;
-            this.meter.Text = "метра(ов)";
+            this.panel1.Controls.Add(this.vibAXOB);
+            this.panel1.Controls.Add(this.km);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.hours);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.menkm2);
+            this.panel1.Controls.Add(this.substance);
+            this.panel1.Controls.Add(this.menkm1);
+            this.panel1.Controls.Add(this.jid);
+            this.panel1.Controls.Add(this.kolvoTOHHlabel);
+            this.panel1.Controls.Add(this.gaz);
+            this.panel1.Controls.Add(this.MvS);
+            this.panel1.Controls.Add(this.vertUst);
+            this.panel1.Controls.Add(this.celsium);
+            this.panel1.Controls.Add(this.ustAtm);
+            this.panel1.Controls.Add(this.percent4);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.percent3);
+            this.panel1.Controls.Add(this.timelabel);
+            this.panel1.Controls.Add(this.percent2);
+            this.panel1.Controls.Add(this.speedAirlabel);
+            this.panel1.Controls.Add(this.percent1);
+            this.panel1.Controls.Add(this.tempAirlabel);
+            this.panel1.Controls.Add(this.outubejZ);
+            this.panel1.Controls.Add(this.time);
+            this.panel1.Controls.Add(this.outubejG);
+            this.panel1.Controls.Add(this.speedAir);
+            this.panel1.Controls.Add(this.ubejZ);
+            this.panel1.Controls.Add(this.tempAir);
+            this.panel1.Controls.Add(this.ubejG);
+            this.panel1.Controls.Add(this.outAXOBlabel);
+            this.panel1.Controls.Add(this.ubejishelabel);
+            this.panel1.Controls.Add(this.outAXOB);
+            this.panel1.Controls.Add(this.outGAZZ);
+            this.panel1.Controls.Add(this.distancelabel);
+            this.panel1.Controls.Add(this.outGAZG);
+            this.panel1.Controls.Add(this.distance);
+            this.panel1.Controls.Add(this.GAZZ);
+            this.panel1.Controls.Add(this.primichanie1);
+            this.panel1.Controls.Add(this.GAZG);
+            this.panel1.Controls.Add(this.primichanie3);
+            this.panel1.Controls.Add(this.plotNasG);
+            this.panel1.Controls.Add(this.plotNasGlabel);
+            this.panel1.Controls.Add(this.plotNasZ);
+            this.panel1.Controls.Add(this.plotNasZlabel);
+            this.panel1.Controls.Add(this.protivoGAZlabel);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(541, 387);
+            this.panel1.TabIndex = 52;
             // 
             // Form1
             // 
@@ -590,53 +646,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(535, 389);
-            this.Controls.Add(this.km);
-            this.Controls.Add(this.hours);
-            this.Controls.Add(this.menkm2);
-            this.Controls.Add(this.menkm1);
-            this.Controls.Add(this.kolvoTOHHlabel);
-            this.Controls.Add(this.MvS);
-            this.Controls.Add(this.celsium);
-            this.Controls.Add(this.percent4);
-            this.Controls.Add(this.percent3);
-            this.Controls.Add(this.percent2);
-            this.Controls.Add(this.percent1);
-            this.Controls.Add(this.outubejZ);
-            this.Controls.Add(this.outubejG);
-            this.Controls.Add(this.ubejZ);
-            this.Controls.Add(this.ubejG);
-            this.Controls.Add(this.ubejishelabel);
-            this.Controls.Add(this.outGAZZ);
-            this.Controls.Add(this.outGAZG);
-            this.Controls.Add(this.GAZZ);
-            this.Controls.Add(this.GAZG);
-            this.Controls.Add(this.plotNasG);
-            this.Controls.Add(this.plotNasZ);
-            this.Controls.Add(this.protivoGAZlabel);
-            this.Controls.Add(this.plotNasZlabel);
-            this.Controls.Add(this.plotNasGlabel);
-            this.Controls.Add(this.primichanie3);
-            this.Controls.Add(this.primichanie1);
-            this.Controls.Add(this.distance);
-            this.Controls.Add(this.distancelabel);
-            this.Controls.Add(this.outAXOB);
-            this.Controls.Add(this.outAXOBlabel);
-            this.Controls.Add(this.tempAir);
-            this.Controls.Add(this.speedAir);
-            this.Controls.Add(this.time);
-            this.Controls.Add(this.tempAirlabel);
-            this.Controls.Add(this.speedAirlabel);
-            this.Controls.Add(this.timelabel);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.ustAtm);
-            this.Controls.Add(this.vertUst);
-            this.Controls.Add(this.vibAXOB);
-            this.Controls.Add(this.gaz);
-            this.Controls.Add(this.jid);
-            this.Controls.Add(this.substance);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(543, 388);
+            this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -644,8 +655,9 @@
             this.Text = "Прогнозирование";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -665,8 +677,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label visPodlabel;
         private System.Windows.Forms.TextBox visPod;
-        private System.Windows.Forms.TextBox ploshlabel;
-        private System.Windows.Forms.Label plosh;
+        private System.Windows.Forms.TextBox plosh;
+        private System.Windows.Forms.Label ploshlabel;
         private System.Windows.Forms.Label timelabel;
         private System.Windows.Forms.Label speedAirlabel;
         private System.Windows.Forms.Label tempAirlabel;
@@ -705,5 +717,6 @@
         private System.Windows.Forms.Label hours;
         private System.Windows.Forms.Label km;
         private System.Windows.Forms.Label meter;
+        private System.Windows.Forms.Panel panel1;
     }
 }
