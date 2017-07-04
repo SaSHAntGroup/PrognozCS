@@ -88,7 +88,7 @@ namespace PrognozCS
             InitializeComponent();
             //Добавление АХОВ
             substance.Items.Add("Аммиак");
-            //substance.Items.Add("Водород фтористый");
+            substance.Items.Add("Водород фтористый");
             //substance.Items.Add("Водород хлористый");
             //substance.Items.Add("Водород бромистый");
             //substance.Items.Add("Водород цианистый");
@@ -96,7 +96,7 @@ namespace PrognozCS
             //substance.Items.Add("Сернистый ангидрид");
             //substance.Items.Add("Сероводород");
             //substance.Items.Add("Сероуглерод");
-            //substance.Items.Add("Соляная кислота");
+            substance.Items.Add("Соляная кислота");
             //substance.Items.Add("Формальдегид");
             //substance.Items.Add("Фосген");
             //substance.Items.Add("Фтор");
@@ -755,7 +755,11 @@ namespace PrognozCS
             //Определение эквивалентного количества вещества по первичному облаку
             Qe1 = K1 * K3 * K5 * K7 * Q0;
             //Время испарения АХОВ
-            T = (h * p) / (K2 * K4 * K72);
+            if (gaz.Checked) { T = 0; }
+            else
+            {
+                T = (h * p) / (K2 * K4 * K72);
+            }
             //Определение коэффициента К6
             if (N < T)
             {
