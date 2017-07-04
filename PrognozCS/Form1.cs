@@ -89,19 +89,19 @@ namespace PrognozCS
             //Добавление АХОВ
             substance.Items.Add("Аммиак");
             substance.Items.Add("Водород фтористый");
-            //substance.Items.Add("Водород хлористый");
-            //substance.Items.Add("Водород бромистый");
-            //substance.Items.Add("Водород цианистый");
+            substance.Items.Add("Водород хлористый");
+            substance.Items.Add("Водород бромистый");
+            substance.Items.Add("Водород цианистый");
             substance.Items.Add("Двуокись азота");
-            //substance.Items.Add("Сернистый ангидрид");
-            //substance.Items.Add("Сероводород");
-            //substance.Items.Add("Сероуглерод");
+            substance.Items.Add("Сернистый ангидрид");
+            substance.Items.Add("Сероводород");
+            substance.Items.Add("Сероуглерод");
             substance.Items.Add("Соляная кислота");
-            //substance.Items.Add("Формальдегид");
-            //substance.Items.Add("Фосген");
-            //substance.Items.Add("Фтор");
+            substance.Items.Add("Формальдегид");
+            substance.Items.Add("Фосген");
+            substance.Items.Add("Фтор");
             substance.Items.Add("Хлор");
-            //substance.Items.Add("Хлорциан");
+            substance.Items.Add("Хлорциан");
             //Вертикальная устойчивость атмосферы
             vertUst.Items.Add("Изотермия");
             vertUst.Items.Add("Инверсия");
@@ -218,6 +218,8 @@ namespace PrognozCS
             //////////////////////////////////////====================================
             if (substance.Text == "Водород фтористый")
             {
+                jid.Visible = false;
+                gaz.Visible = false;
                 M = 20.01;
                 tkip = 19.52;
                 P = 103;
@@ -227,6 +229,8 @@ namespace PrognozCS
             //////////////////////////////////////
             if (substance.Text == "Водород цианистый")
             {
+                jid.Visible = false;
+                gaz.Visible = false;
                 M = 27.03;
                 tkip = 25.7;
                 p = 0.687;
@@ -236,6 +240,8 @@ namespace PrognozCS
             //////////////////////////////////////
             if (substance.Text == "Двуокись азота")
             {
+                jid.Visible = false;
+                gaz.Visible = false;
                 M = 46.01;
                 tkip = 21.0;
                 p = 1.491;
@@ -245,6 +251,8 @@ namespace PrognozCS
             //////////////////////////////////////
             if (substance.Text == "Сернистый ангидрид")
             {
+                jid.Visible = false;
+                gaz.Visible = false;
                 M = 64.06;
                 tkip = -10.1;
                 p = 1.462;
@@ -254,6 +262,8 @@ namespace PrognozCS
             //////////////////////////////////////
             if (substance.Text == "Сероуглерод")
             {
+                jid.Visible = false;
+                gaz.Visible = false;
                 M = 76.14;
                 tkip = 46.2;
                 p = 1.263;
@@ -263,6 +273,8 @@ namespace PrognozCS
             //////////////////////////////////////
             if (substance.Text == "Соляная кислота")
             {
+                jid.Visible = false;
+                gaz.Visible = false;
                 M = 36.46;
                 tkip = 108.6;
                 p = 1.198;
@@ -272,6 +284,8 @@ namespace PrognozCS
             //////////////////////////////////////
             if (substance.Text == "Формальдегид")
             {
+                jid.Visible = false;
+                gaz.Visible = false;
                 M = 30.03;
                 tkip = -19.0;
                 p = 0.815;
