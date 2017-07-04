@@ -57,7 +57,7 @@
             this.distancelabel = new System.Windows.Forms.Label();
             this.distance = new System.Windows.Forms.TextBox();
             this.primichanie1 = new System.Windows.Forms.Label();
-            this.primichanie3 = new System.Windows.Forms.Label();
+            this.primichanie2 = new System.Windows.Forms.Label();
             this.plotNasGlabel = new System.Windows.Forms.Label();
             this.plotNasZlabel = new System.Windows.Forms.Label();
             this.protivoGAZlabel = new System.Windows.Forms.Label();
@@ -84,6 +84,7 @@
             this.hours = new System.Windows.Forms.Label();
             this.km = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.primichanie3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -94,9 +95,9 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(10, 342);
+            this.button1.Location = new System.Drawing.Point(14, 346);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(395, 33);
+            this.button1.Size = new System.Drawing.Size(404, 33);
             this.button1.TabIndex = 0;
             this.button1.Text = "Произвести расчет";
             this.button1.UseVisualStyleBackColor = false;
@@ -107,7 +108,7 @@
             this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(411, 342);
+            this.button2.Location = new System.Drawing.Point(424, 346);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(109, 33);
             this.button2.TabIndex = 1;
@@ -357,21 +358,21 @@
             // primichanie1
             // 
             this.primichanie1.AutoSize = true;
-            this.primichanie1.Location = new System.Drawing.Point(7, 313);
+            this.primichanie1.Location = new System.Drawing.Point(7, 302);
             this.primichanie1.Name = "primichanie1";
             this.primichanie1.Size = new System.Drawing.Size(526, 13);
             this.primichanie1.TabIndex = 24;
             this.primichanie1.Text = "Значения по умолчанию для: скорости ветра = 3 м/с, температура воздуха = 20 °C, в" +
     "ремя прошедшее";
             // 
-            // primichanie3
+            // primichanie2
             // 
-            this.primichanie3.AutoSize = true;
-            this.primichanie3.Location = new System.Drawing.Point(7, 326);
-            this.primichanie3.Name = "primichanie3";
-            this.primichanie3.Size = new System.Drawing.Size(486, 13);
-            this.primichanie3.TabIndex = 26;
-            this.primichanie3.Text = "после аварии = 4 часа. Значение остальных не заполненых параметров будет равнятся" +
+            this.primichanie2.AutoSize = true;
+            this.primichanie2.Location = new System.Drawing.Point(7, 315);
+            this.primichanie2.Name = "primichanie2";
+            this.primichanie2.Size = new System.Drawing.Size(486, 13);
+            this.primichanie2.TabIndex = 26;
+            this.primichanie2.Text = "после аварии = 4 часа. Значение остальных не заполненых параметров будет равнятся" +
     " нулю!";
             // 
             // plotNasGlabel
@@ -589,6 +590,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.primichanie3);
             this.panel1.Controls.Add(this.vibAXOB);
             this.panel1.Controls.Add(this.km);
             this.panel1.Controls.Add(this.button1);
@@ -629,7 +631,7 @@
             this.panel1.Controls.Add(this.GAZZ);
             this.panel1.Controls.Add(this.primichanie1);
             this.panel1.Controls.Add(this.GAZG);
-            this.panel1.Controls.Add(this.primichanie3);
+            this.panel1.Controls.Add(this.primichanie2);
             this.panel1.Controls.Add(this.plotNasG);
             this.panel1.Controls.Add(this.plotNasGlabel);
             this.panel1.Controls.Add(this.plotNasZ);
@@ -637,8 +639,17 @@
             this.panel1.Controls.Add(this.protivoGAZlabel);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(541, 387);
+            this.panel1.Size = new System.Drawing.Size(541, 388);
             this.panel1.TabIndex = 52;
+            // 
+            // primichanie3
+            // 
+            this.primichanie3.AutoSize = true;
+            this.primichanie3.Location = new System.Drawing.Point(6, 328);
+            this.primichanie3.Name = "primichanie3";
+            this.primichanie3.Size = new System.Drawing.Size(262, 13);
+            this.primichanie3.TabIndex = 52;
+            this.primichanie3.Text = "Дробные данные следует вводить через запятую!";
             // 
             // Form1
             // 
@@ -646,7 +657,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(543, 388);
+            this.ClientSize = new System.Drawing.Size(543, 390);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -690,7 +701,7 @@
         private System.Windows.Forms.Label distancelabel;
         private System.Windows.Forms.TextBox distance;
         private System.Windows.Forms.Label primichanie1;
-        private System.Windows.Forms.Label primichanie3;
+        private System.Windows.Forms.Label primichanie2;
         private System.Windows.Forms.Label plotNasGlabel;
         private System.Windows.Forms.Label plotNasZlabel;
         private System.Windows.Forms.Label protivoGAZlabel;
@@ -718,5 +729,6 @@
         private System.Windows.Forms.Label km;
         private System.Windows.Forms.Label meter;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label primichanie3;
     }
 }
