@@ -753,13 +753,19 @@ namespace PrognozCS
             if (sam.Checked == true)
             {
                 if (visPod.Text == "") { H = 0; }
-                else { H = Convert.ToDouble(visPod.Text); }
+                else
+                {
+                    H = Convert.ToDouble(visPod.Text);
+                }
                 h = H - 0.2;
             }
             if (obsh.Checked == true)
             {
                 if (plosh.Text == "") { F = 0; }
-                else { F = Convert.ToDouble(plosh.Text); }
+                else
+                {
+                    F = Convert.ToDouble(plosh.Text);
+                }
                 h = Q0 / F * p;
             }
             //Коэффициенты К2, К3 и К4
@@ -1327,49 +1333,69 @@ namespace PrognozCS
                 }
                 else
                 {
-                    if ((n1g < 0) || (n1g > 100))
+
+                    if (F < 0)
                     {
-                        MessageBox.Show("Введите реальные данные для " +
-                            "<<Обеспеченные противогазами населения в городе>>!",
-                     "Уточните параметры!", MessageBoxButtons.OK);
+                        MessageBox.Show("Укажите реальную площадь общего поддона (обвалования)!",
+                            "Уточните параметры!", MessageBoxButtons.OK);
                     }
                     else
                     {
-                        if ((n1z < 0) || (n1z > 100))
+
+                        if (H < 0)
                         {
-                            MessageBox.Show("Введите реальные данные для " +
-                                "<<Обеспеченные противогазами населения в загoродной зоне>>!",
-                         "Уточните параметры!", MessageBoxButtons.OK);
+                            MessageBox.Show("Укажите реальную высоту поддона (обвалования)!",
+                                "Уточните параметры!", MessageBoxButtons.OK);
                         }
-                        else
+                        else 
                         {
-                            if ((n2g < 0) || (n2g > 100))
+                            if ((n1g < 0) || (n1g > 100))
                             {
                                 MessageBox.Show("Введите реальные данные для " +
-                                    "<<Обеспеченные убежищами населения в городе>>!",
+                                    "'Обеспеченные противогазами населения в городе'!",
                              "Уточните параметры!", MessageBoxButtons.OK);
                             }
                             else
                             {
-                                if ((n2z < 0) || (n2z > 100))
+                                if ((n1z < 0) || (n1z > 100))
                                 {
                                     MessageBox.Show("Введите реальные данные для " +
-                                        "<<Обеспеченные убежищами населения в загородной зоне>>!",
+                                        "'Обеспеченные противогазами населения в загoродной зоне'!",
                                  "Уточните параметры!", MessageBoxButtons.OK);
                                 }
                                 else
                                 {
-                                    if (v < 0)
+                                    if ((n2g < 0) || (n2g > 100))
                                     {
                                         MessageBox.Show("Введите реальные данные для " +
-                                        "параметра <<Скорость ветра>>!",
-                                 "Уточните параметры!", MessageBoxButtons.OK);
+                                            "'Обеспеченные убежищами населения в городе'!",
+                                     "Уточните параметры!", MessageBoxButtons.OK);
                                     }
-                                    else { new Form2().Show(); }
+                                    else
+                                    {
+                                        if ((n2z < 0) || (n2z > 100))
+                                        {
+                                            MessageBox.Show("Введите реальные данные для " +
+                                                "'Обеспеченные убежищами населения в загородной зоне'!",
+                                         "Уточните параметры!", MessageBoxButtons.OK);
+                                        }
+                                        else
+                                        {
+                                            if (v < 0)
+                                            {
+                                                MessageBox.Show("Введите реальные данные для " +
+                                                "параметра 'Скорость ветра'!",
+                                         "Уточните параметры!", MessageBoxButtons.OK);
+                                            }
+                                            else { new Form2().Show(); }
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
+
+                    
                 }
             }
         }
