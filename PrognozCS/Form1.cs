@@ -88,20 +88,20 @@ namespace PrognozCS
             InitializeComponent();
             //Добавление АХОВ
             substance.Items.Add("Аммиак");
-            substance.Items.Add("Водород фтористый");
-            substance.Items.Add("Водород хлористый");
-            substance.Items.Add("Водород бромистый");
-            substance.Items.Add("Водород цианистый");
-            substance.Items.Add("Двуокись азота");
-            substance.Items.Add("Сернистый ангидрид");
-            substance.Items.Add("Сероводород");
-            substance.Items.Add("Сероуглерод");
+            //substance.Items.Add("Водород фтористый");
+            //substance.Items.Add("Водород хлористый");
+            //substance.Items.Add("Водород бромистый");
+            //substance.Items.Add("Водород цианистый");
+            //substance.Items.Add("Двуокись азота");
+            //substance.Items.Add("Сернистый ангидрид");
+            //substance.Items.Add("Сероводород");
+            //substance.Items.Add("Сероуглерод");
             substance.Items.Add("Соляная кислота");
-            substance.Items.Add("Формальдегид");
-            substance.Items.Add("Фосген");
-            substance.Items.Add("Фтор");
+            //substance.Items.Add("Формальдегид");
+            //substance.Items.Add("Фосген");
+            //substance.Items.Add("Фтор");
             substance.Items.Add("Хлор");
-            substance.Items.Add("Хлорциан");
+            //substance.Items.Add("Хлорциан");
             //Вертикальная устойчивость атмосферы
             vertUst.Items.Add("Изотермия");
             vertUst.Items.Add("Инверсия");
@@ -1394,8 +1394,6 @@ namespace PrognozCS
                             }
                         }
                     }
-
-                    
                 }
             }
         }
