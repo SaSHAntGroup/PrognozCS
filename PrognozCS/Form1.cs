@@ -88,20 +88,20 @@ namespace PrognozCS
             InitializeComponent();
             //Добавление АХОВ
             substance.Items.Add("Аммиак");
-            //substance.Items.Add("Водород фтористый");
-            //substance.Items.Add("Водород хлористый");
-            //substance.Items.Add("Водород бромистый");
-            //substance.Items.Add("Водород цианистый");
-            //substance.Items.Add("Двуокись азота");
-            //substance.Items.Add("Сернистый ангидрид");
-            //substance.Items.Add("Сероводород");
-            //substance.Items.Add("Сероуглерод");
+            substance.Items.Add("Водород фтористый");
+            substance.Items.Add("Водород хлористый");
+            substance.Items.Add("Водород бромистый");
+            substance.Items.Add("Водород цианистый");
+            substance.Items.Add("Двуокись азота");
+            substance.Items.Add("Сернистый ангидрид");
+            substance.Items.Add("Сероводород");
+            substance.Items.Add("Сероуглерод");
             substance.Items.Add("Соляная кислота");
-            //substance.Items.Add("Формальдегид");
-            //substance.Items.Add("Фосген");
-            //substance.Items.Add("Фтор");
+            substance.Items.Add("Формальдегид");
+            substance.Items.Add("Фосген");
+            substance.Items.Add("Фтор");
             substance.Items.Add("Хлор");
-            //substance.Items.Add("Хлорциан");
+            substance.Items.Add("Хлорциан");
             //Вертикальная устойчивость атмосферы
             vertUst.Items.Add("Изотермия");
             vertUst.Items.Add("Инверсия");
@@ -1326,68 +1326,77 @@ namespace PrognozCS
             }
             else
             {
-                if (p == 0)
+                if (F < 0)
                 {
-                    MessageBox.Show("Выберите агрегатное состояние для выбранного вещества!",
-                 "Уточните параметры!", MessageBoxButtons.OK);
+                    MessageBox.Show("Укажите реальную площадь общего поддона (обвалования)!",
+                        "Уточните параметры!", MessageBoxButtons.OK);
                 }
                 else
                 {
 
-                    if (F < 0)
+                    if (H < 0)
                     {
-                        MessageBox.Show("Укажите реальную площадь общего поддона (обвалования)!",
+                        MessageBox.Show("Укажите реальную высоту поддона (обвалования)!",
                             "Уточните параметры!", MessageBoxButtons.OK);
                     }
-                    else
+                    else 
                     {
-
-                        if (H < 0)
+                        if ((n1g < 0) || (n1g > 100))
                         {
-                            MessageBox.Show("Укажите реальную высоту поддона (обвалования)!",
-                                "Уточните параметры!", MessageBoxButtons.OK);
+                            MessageBox.Show("Введите реальные данные для " +
+                                "'Обеспеченные противогазами населения в городе'!",
+                            "Уточните параметры!", MessageBoxButtons.OK);
                         }
-                        else 
+                        else
                         {
-                            if ((n1g < 0) || (n1g > 100))
+                            if ((n1z < 0) || (n1z > 100))
                             {
                                 MessageBox.Show("Введите реальные данные для " +
-                                    "'Обеспеченные противогазами населения в городе'!",
-                             "Уточните параметры!", MessageBoxButtons.OK);
+                                    "'Обеспеченные противогазами населения в загoродной зоне'!",
+                                "Уточните параметры!", MessageBoxButtons.OK);
                             }
                             else
                             {
-                                if ((n1z < 0) || (n1z > 100))
+                                if ((n2g < 0) || (n2g > 100))
                                 {
                                     MessageBox.Show("Введите реальные данные для " +
-                                        "'Обеспеченные противогазами населения в загoродной зоне'!",
-                                 "Уточните параметры!", MessageBoxButtons.OK);
+                                        "'Обеспеченные убежищами населения в городе'!",
+                                    "Уточните параметры!", MessageBoxButtons.OK);
                                 }
                                 else
                                 {
-                                    if ((n2g < 0) || (n2g > 100))
+                                    if ((n2z < 0) || (n2z > 100))
                                     {
                                         MessageBox.Show("Введите реальные данные для " +
-                                            "'Обеспеченные убежищами населения в городе'!",
-                                     "Уточните параметры!", MessageBoxButtons.OK);
+                                            "'Обеспеченные убежищами населения в загородной зоне'!",
+                                        "Уточните параметры!", MessageBoxButtons.OK);
                                     }
                                     else
                                     {
-                                        if ((n2z < 0) || (n2z > 100))
+                                        if (v < 0)
                                         {
                                             MessageBox.Show("Введите реальные данные для " +
-                                                "'Обеспеченные убежищами населения в загородной зоне'!",
-                                         "Уточните параметры!", MessageBoxButtons.OK);
+                                            "параметра 'Скорость ветра'!",
+                                        "Уточните параметры!", MessageBoxButtons.OK);
                                         }
                                         else
                                         {
-                                            if (v < 0)
+                                            if (Q0 < 0)
                                             {
                                                 MessageBox.Show("Введите реальные данные для " +
-                                                "параметра 'Скорость ветра'!",
-                                         "Уточните параметры!", MessageBoxButtons.OK);
+                                                "поля 'АХОВ, выброшеные в окружающую среду'!",
+                                            "Уточните параметры!", MessageBoxButtons.OK);
                                             }
-                                            else { new Form2().Show(); }
+                                            
+                                            else
+                                            {
+                                                if (p == 0)
+                                                {
+                                                    MessageBox.Show("Выберите агрегатное состояние для выбранного вещества!",
+                                                    "Уточните параметры!", MessageBoxButtons.OK);
+                                                }
+                                                else { new Form2().Show(); }
+                                            }
                                         }
                                     }
                                 }
