@@ -16,6 +16,7 @@ namespace PrognozCS
             InitializeComponent();
             Form1.G = Math.Round(Form1.G, 2);
             Form1.Sf = Math.Round(Form1.Sf, 2);
+            Form1.Txm = Math.Round(Form1.Txm, 0);
             glub.Text = Form1.G.ToString() + " км";
             ploshad.Text = Form1.Sf.ToString() + " км²";
             time.Text = Form1.Txh.ToString() + " часов " + Form1.Txm.ToString() + " минут";

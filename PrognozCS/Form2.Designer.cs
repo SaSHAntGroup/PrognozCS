@@ -53,7 +53,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Location = new System.Drawing.Point(12, 344);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(511, 33);
+            this.button1.Size = new System.Drawing.Size(511, 34);
             this.button1.TabIndex = 0;
             this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = false;
@@ -63,7 +63,7 @@
             // 
             this.glublabel.AutoSize = true;
             this.glublabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.glublabel.Location = new System.Drawing.Point(12, 9);
+            this.glublabel.Location = new System.Drawing.Point(12, 19);
             this.glublabel.Name = "glublabel";
             this.glublabel.Size = new System.Drawing.Size(403, 13);
             this.glublabel.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             this.timelabel.AutoSize = true;
             this.timelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.timelabel.Location = new System.Drawing.Point(12, 31);
+            this.timelabel.Location = new System.Drawing.Point(12, 47);
             this.timelabel.Name = "timelabel";
             this.timelabel.Size = new System.Drawing.Size(408, 13);
             this.timelabel.TabIndex = 2;
@@ -83,7 +83,7 @@
             // 
             this.ploshadlabel.AutoSize = true;
             this.ploshadlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ploshadlabel.Location = new System.Drawing.Point(12, 144);
+            this.ploshadlabel.Location = new System.Drawing.Point(12, 181);
             this.ploshadlabel.Name = "ploshadlabel";
             this.ploshadlabel.Size = new System.Drawing.Size(285, 13);
             this.ploshadlabel.TabIndex = 3;
@@ -93,7 +93,7 @@
             // 
             this.poterilabel.AutoSize = true;
             this.poterilabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.poterilabel.Location = new System.Drawing.Point(12, 54);
+            this.poterilabel.Location = new System.Drawing.Point(12, 79);
             this.poterilabel.Name = "poterilabel";
             this.poterilabel.Size = new System.Drawing.Size(401, 13);
             this.poterilabel.TabIndex = 4;
@@ -102,7 +102,7 @@
             // poteri1label
             // 
             this.poteri1label.AutoSize = true;
-            this.poteri1label.Location = new System.Drawing.Point(28, 76);
+            this.poteri1label.Location = new System.Drawing.Point(28, 101);
             this.poteri1label.Name = "poteri1label";
             this.poteri1label.Size = new System.Drawing.Size(89, 13);
             this.poteri1label.TabIndex = 5;
@@ -111,7 +111,7 @@
             // poteri2label
             // 
             this.poteri2label.AutoSize = true;
-            this.poteri2label.Location = new System.Drawing.Point(28, 99);
+            this.poteri2label.Location = new System.Drawing.Point(28, 124);
             this.poteri2label.Name = "poteri2label";
             this.poteri2label.Size = new System.Drawing.Size(154, 13);
             this.poteri2label.TabIndex = 6;
@@ -120,7 +120,7 @@
             // poteri3label
             // 
             this.poteri3label.AutoSize = true;
-            this.poteri3label.Location = new System.Drawing.Point(28, 122);
+            this.poteri3label.Location = new System.Drawing.Point(28, 147);
             this.poteri3label.Name = "poteri3label";
             this.poteri3label.Size = new System.Drawing.Size(129, 13);
             this.poteri3label.TabIndex = 7;
@@ -129,7 +129,7 @@
             // glub
             // 
             this.glub.AutoSize = true;
-            this.glub.Location = new System.Drawing.Point(421, 9);
+            this.glub.Location = new System.Drawing.Point(421, 19);
             this.glub.Name = "glub";
             this.glub.Size = new System.Drawing.Size(35, 13);
             this.glub.TabIndex = 8;
@@ -138,7 +138,7 @@
             // time
             // 
             this.time.AutoSize = true;
-            this.time.Location = new System.Drawing.Point(421, 31);
+            this.time.Location = new System.Drawing.Point(421, 47);
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(35, 13);
             this.time.TabIndex = 9;
@@ -147,7 +147,7 @@
             // poteri1
             // 
             this.poteri1.AutoSize = true;
-            this.poteri1.Location = new System.Drawing.Point(197, 76);
+            this.poteri1.Location = new System.Drawing.Point(197, 101);
             this.poteri1.Name = "poteri1";
             this.poteri1.Size = new System.Drawing.Size(35, 13);
             this.poteri1.TabIndex = 11;
@@ -156,7 +156,7 @@
             // poteri2
             // 
             this.poteri2.AutoSize = true;
-            this.poteri2.Location = new System.Drawing.Point(197, 99);
+            this.poteri2.Location = new System.Drawing.Point(197, 124);
             this.poteri2.Name = "poteri2";
             this.poteri2.Size = new System.Drawing.Size(35, 13);
             this.poteri2.TabIndex = 12;
@@ -165,7 +165,7 @@
             // poteri3
             // 
             this.poteri3.AutoSize = true;
-            this.poteri3.Location = new System.Drawing.Point(197, 122);
+            this.poteri3.Location = new System.Drawing.Point(197, 147);
             this.poteri3.Name = "poteri3";
             this.poteri3.Size = new System.Drawing.Size(35, 13);
             this.poteri3.TabIndex = 13;
@@ -174,7 +174,7 @@
             // ploshad
             // 
             this.ploshad.AutoSize = true;
-            this.ploshad.Location = new System.Drawing.Point(318, 144);
+            this.ploshad.Location = new System.Drawing.Point(318, 181);
             this.ploshad.Name = "ploshad";
             this.ploshad.Size = new System.Drawing.Size(35, 13);
             this.ploshad.TabIndex = 14;
@@ -185,7 +185,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(535, 389);
+            this.ClientSize = new System.Drawing.Size(543, 390);
             this.Controls.Add(this.ploshad);
             this.Controls.Add(this.poteri3);
             this.Controls.Add(this.poteri2);
