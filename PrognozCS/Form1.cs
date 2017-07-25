@@ -14,13 +14,13 @@ namespace PrognozCS
     public partial class Form1 : Form
     {
         //Заявление переменных для расчета
-        public static double M,M2,M3,M4,M5,M6,//Молекулярная масса
-            p,p2,p3,p4,p5,p6,//Плотность вещества
-            P,Pi2,Pi3,Pi4,Pi5,Pi6,//Давление насыщенного пара Р при tкип
-            D,D2,D3,D4,D5,D6,//Пороговая токсодоза Д, мг * мин / л
+        public static double M,M1,M2,M3,M4,M5,M6,//Молекулярная масса
+            p,p1,p2,p3,p4,p5,p6,//Плотность вещества
+            P,Pi1,Pi2,Pi3,Pi4,Pi5,Pi6,//Давление насыщенного пара Р при tкип
+            D,D1,D2,D3,D4,D5,D6,//Пороговая токсодоза Д, мг * мин / л
             Dhlor=0.6,////Пороговая токсодоза Д для хлора, мг * мин / л
-            tkip,tkip2,tkip3,tkip4,tkip5,tkip6,//Температура кипения,tкип ,0С
-            Q0,Q02,Q03,Q04,Q05,Q06,//количество выброшенного (разлившегося) при аварии вещества, т.
+            tkip,tkip1,tkip2,tkip3,tkip4,tkip5,tkip6,//Температура кипения,tкип ,0С
+            Q0,Q01,Q02,Q03,Q04,Q05,Q06,//количество выброшенного (разлившегося) при аварии вещества, т.
             Cp,//удельная теплоемкость  жидкого АХОВ, кДж/(кг*град)
             dT,//разность температур жидкого АХОВ до и после разрушения емкости, 0С
             dHisp,//удельная теплота испарения жидкого АХОВ при температуре испарения, кДж/кг
@@ -37,7 +37,7 @@ namespace PrognozCS
             Qe2,//Эквивалентное количество вещества по вторичному облаку (в тоннах)
             h,//Толщина слоя жидкости разлившейся свободно, постоянна, м
             H,//высота поддона (обвалования), м
-            T,T2,T3,T4,T5,T6,//продолжительность поражающего действия АХОВ
+            T,T1,T2,T3,T4,T5,T6,//продолжительность поражающего действия АХОВ
             N,//время прошедшее с момента аварии, час
             L,//расстояния от химически опасного объекта до объекта попадающего в зону риска, км
             Tx,//время подхода облака зараженного воздуха к населенному пункту, час
@@ -74,24 +74,39 @@ namespace PrognozCS
             P1,P2,P3,//для оперативных расчетов вычисление потерь: безвозвратные, санитарные и легкой формы
             N11,N12,N21,N22,//перевод процентов в десятичные значения
             Kv,//коэффициент, зависящий от степени вертикальной устойчивости воздуха
-            K1,K12,K13,K14,K15,K16,//коэффициент, зависящий от условий хранения АХОВ
-            K2,K22,K23,K24,K25,K26,//коэффициент, зависящий от физико-химических свойств АХОВ
-            K3,K32,K33,K34,K35,K36,//коэффициент, равный отношению пороговой токсодозы хлора к пороговой токсодозе другого АХОВ
+            K1,K11,K12,K13,K14,K15,K16,//коэффициент, зависящий от условий хранения АХОВ
+            K2,K21,K22,K23,K24,K25,K26,//коэффициент, зависящий от физико-химических свойств АХОВ
+            K3,K31,K32,K33,K34,K35,K36,//коэффициент, равный отношению пороговой токсодозы хлора к пороговой токсодозе другого АХОВ
             K4,//доп. коэф.
             K5,//коэффициент, учитывающий влияние степени вертикальной устойчивости атмосферы 
-            K6,K62,K63,K64,K65,K66,//доп. коэф.
-            K7,K712,K73,K74,K75,K76,//коэффициент, учитывающий влияние температуры воздуха первичное облако
-            K72,K722,K723,K724,K725,K726;//коэффициент, учитывающий влияние температуры воздуха вторичное облако
+            K6,K61,K62,K63,K64,K65,K66,//доп. коэф.
+            K7,K711,K712,K73,K74,K75,K76,//коэффициент, учитывающий влияние температуры воздуха первичное облако
+            K72,K721,K722,K723,K724,K725,K726;//коэффициент, учитывающий влияние температуры воздуха вторичное облако
 
-        private void substance3_SelectedIndexChanged(object sender, EventArgs e)
+        private void AXOBkolvo2_CheckedChanged(object sender, EventArgs e)
         {
+            vibAXOB.Visible = false;
+            substance.Visible = false;
+            outAXOBlabel.Visible = false;
+            outAXOB.Visible = false;
+            kolvoTOHHlabel.Visible = false;
+            viborAXOB.Visible = true;
+        }
 
+        private void AXOBkolvo1_CheckedChanged(object sender, EventArgs e)
+        {
+            vibAXOB.Visible = true;
+            substance.Visible = true;
+            outAXOBlabel.Visible = true;
+            outAXOB.Visible = true;
+            kolvoTOHHlabel.Visible = true;
+            viborAXOB.Visible = false;
         }
 
         public Form1()
         {
             InitializeComponent();
-            //Добавление АХОВ1
+            //Добавление АХОВ
             substance.Items.Add("Аммиак");
             substance.Items.Add("Водород фтористый");
             substance.Items.Add("Водород хлористый");
@@ -107,6 +122,22 @@ namespace PrognozCS
             substance.Items.Add("Фтор");
             substance.Items.Add("Хлор");
             substance.Items.Add("Хлорциан");
+            //Добавление АХОВ1
+            substance1.Items.Add("Аммиак");
+            substance1.Items.Add("Водород фтористый");
+            substance1.Items.Add("Водород хлористый");
+            substance1.Items.Add("Водород бромистый");
+            substance1.Items.Add("Водород цианистый");
+            substance1.Items.Add("Двуокись азота");
+            substance1.Items.Add("Сернистый ангидрид");
+            substance1.Items.Add("Сероводород");
+            substance1.Items.Add("Сероуглерод");
+            substance1.Items.Add("Соляная кислота");
+            substance1.Items.Add("Формальдегид");
+            substance1.Items.Add("Фосген");
+            substance1.Items.Add("Фтор");
+            substance1.Items.Add("Хлор");
+            substance1.Items.Add("Хлорциан");
             //Добавление АХОВ2
             substance2.Items.Add("Аммиак");
             substance2.Items.Add("Водород фтористый");
@@ -222,1021 +253,511 @@ namespace PrognozCS
         public void substance_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             //Присваивание параметров АХОВ1
+            ///////////////////////////////////////////////
             if (substance.Text == "")
             {
                 jid.Visible = false;
                 gaz.Visible = false;
-                M = 0;
-                tkip = 0;
-                P = 0;
-                D = 0;
-                p = 0;
             }
             if (substance.Text == "Хлор")
             {
                 jid.Visible = true;
                 gaz.Visible = true;
-                M = 70.91;
-                tkip = -34.7;
-                P = 101.58;
-                D = 0.6;
             }
-            //////////////////////////////////////
             if (substance.Text == "Аммиак")
             {
                 jid.Visible = true;
                 gaz.Visible = true;
-                M = 17.03;
-                tkip = -33.42;
-                P = 99.7;
-                D = 15;
             }
-            //////////////////////////////////////
             if (substance.Text == "Водород хлористый")
             {
                 jid.Visible = true;
                 gaz.Visible = true;
-                M = 36.46;
-                tkip = -85.1;
-                P = 100.8;
-                D = 2;
             }
-            //////////////////////////////////////
             if (substance.Text == "Водород бромистый")
             {
                 jid.Visible = true;
                 gaz.Visible = true;
-                M = 80.92;
-                tkip = -66.77;
-                P = 101.6;
-                D = 2.4;
             }
-            //////////////////////////////////////
             if (substance.Text == "Сероводород")
             {
                 jid.Visible = true;
                 gaz.Visible = true;
-                M = 34.08;
-                tkip = -60.35;
-                P = 118.37;
-                D = 16.1;
             }
-            //////////////////////////////////////
             if (substance.Text == "Фосген")
             {
                 jid.Visible = true;
                 gaz.Visible = true;
-                M = 98.92;
-                tkip = 8.2;
-                P = 100.9;
-                D = 0.6;
             }
-            //////////////////////////////////////
             if (substance.Text == "Фтор")
             {
                 jid.Visible = true;
                 gaz.Visible = true;
-                M = 38.0;
-                tkip = -188.2;
-                P = 101.44;
-                D = 0.2;
             }
-            //////////////////////////////////////
             if (substance.Text == "Хлорициан")
             {
                 jid.Visible = true;
                 gaz.Visible = true;
-                M = 61.47;
-                tkip = 12.6;
-                P = 100.80;
-                D = 0.75;
             }
-            //////////////////////////////////////====================================
             if (substance.Text == "Водород фтористый")
             {
                 jid.Visible = false;
                 gaz.Visible = false;
-                M = 20.01;
-                tkip = 19.52;
-                P = 103;
-                D = 4;
-                p = 0.989;
             }
-            //////////////////////////////////////
             if (substance.Text == "Водород цианистый")
             {
                 jid.Visible = false;
                 gaz.Visible = false;
-                M = 27.03;
-                tkip = 25.7;
-                p = 0.687;
-                P = 82.25;
-                D = 0.2;
             }
-            //////////////////////////////////////
             if (substance.Text == "Двуокись азота")
             {
                 jid.Visible = false;
                 gaz.Visible = false;
-                M = 46.01;
-                tkip = 21.0;
-                p = 1.491;
-                P = 97.04;
-                D = 1.5;
             }
-            //////////////////////////////////////
             if (substance.Text == "Сернистый ангидрид")
             {
                 jid.Visible = false;
                 gaz.Visible = false;
-                M = 64.06;
-                tkip = -10.1;
-                p = 1.462;
-                P = 100.8;
-                D = 1.8;
             }
-            //////////////////////////////////////
             if (substance.Text == "Сероуглерод")
             {
                 jid.Visible = false;
                 gaz.Visible = false;
-                M = 76.14;
-                tkip = 46.2;
-                p = 1.263;
-                P = 39.60;
-                D = 45;
             }
-            //////////////////////////////////////
             if (substance.Text == "Соляная кислота")
             {
                 jid.Visible = false;
                 gaz.Visible = false;
-                M = 36.46;
-                tkip = 108.6;
-                p = 1.198;
-                P = 57.19;
-                D = 2;
             }
-            //////////////////////////////////////
             if (substance.Text == "Формальдегид")
             {
                 jid.Visible = false;
                 gaz.Visible = false;
-                M = 30.03;
-                tkip = -19.0;
-                p = 0.815;
-                P = 102.10;
-                D = 0.6;
             }
         }
         public void substance2_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             //Присваивание параметров АХОВ2
+            //////////////////////////////////////////////////
             if (substance2.Text == "")
             {
                 jid2.Visible = false;
                 gaz2.Visible = false;
-                M2 = 0;
-                tkip2 = 0;
-                Pi2 = 0;
-                D2 = 0;
-                p2 = 0;
             }
             if (substance2.Text == "Хлор")
             {
                 jid2.Visible = true;
                 gaz2.Visible = true;
-                M2 = 70.91;
-                tkip2 = -34.7;
-                Pi2 = 101.58;
-                D2 = 0.6;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Аммиак")
             {
                 jid2.Visible = true;
                 gaz2.Visible = true;
-                M2 = 17.03;
-                tkip2 = -33.42;
-                Pi2 = 99.7;
-                D2 = 15;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Водород хлористый")
             {
                 jid2.Visible = true;
                 gaz2.Visible = true;
-                M2 = 36.46;
-                tkip2 = -85.1;
-                Pi2 = 100.8;
-                D2 = 2;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Водород бромистый")
             {
                 jid2.Visible = true;
                 gaz2.Visible = true;
-                M2 = 80.92;
-                tkip2 = -66.77;
-                Pi2 = 101.6;
-                D2 = 2.4;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Сероводород")
             {
                 jid2.Visible = true;
                 gaz2.Visible = true;
-                M2 = 34.08;
-                tkip2 = -60.35;
-                Pi2 = 118.37;
-                D2 = 16.1;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Фосген")
             {
                 jid2.Visible = true;
                 gaz2.Visible = true;
-                M2 = 98.92;
-                tkip2 = 8.2;
-                Pi2 = 100.9;
-                D2 = 0.6;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Фтор")
             {
                 jid2.Visible = true;
                 gaz2.Visible = true;
-                M2 = 38.0;
-                tkip2 = -188.2;
-                Pi2 = 101.44;
-                D2 = 0.2;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Хлорициан")
             {
                 jid2.Visible = true;
                 gaz2.Visible = true;
-                M2 = 61.47;
-                tkip2 = 12.6;
-                Pi2 = 100.80;
-                D2 = 0.75;
             }
-            //////////////////////////////////////====================================
             if (substance2.Text == "Водород фтористый")
             {
                 jid2.Visible = false;
                 gaz2.Visible = false;
-                M2 = 20.01;
-                tkip2 = 19.52;
-                p2 = 0.989;
-                Pi2 = 103;
-                D2 = 4;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Водород цианистый")
             {
                 jid2.Visible = false;
                 gaz2.Visible = false;
-                M2 = 27.03;
-                tkip2 = 25.7;
-                p2 = 0.687;
-                Pi2 = 82.25;
-                D2 = 0.2;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Двуокись азота")
             {
                 jid2.Visible = false;
                 gaz2.Visible = false;
-                M2 = 46.01;
-                tkip2 = 21.0;
-                p2 = 1.491;
-                Pi2 = 97.04;
-                D2 = 1.5;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Сернистый ангидрид")
             {
                 jid2.Visible = false;
                 gaz2.Visible = false;
-                M2 = 64.06;
-                tkip2 = -10.1;
-                p2 = 1.462;
-                Pi2 = 100.8;
-                D2 = 1.8;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Сероуглерод")
             {
                 jid2.Visible = false;
                 gaz2.Visible = false;
-                M2 = 76.14;
-                tkip2 = 46.2;
-                p2 = 1.263;
-                Pi2 = 39.60;
-                D2 = 45;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Соляная кислота")
             {
                 jid2.Visible = false;
                 gaz2.Visible = false;
-                M2 = 36.46;
-                tkip2 = 108.6;
-                p2 = 1.198;
-                Pi2 = 57.19;
-                D2 = 2;
             }
-            //////////////////////////////////////
             if (substance2.Text == "Формальдегид")
             {
                 jid2.Visible = false;
                 gaz2.Visible = false;
-                M2 = 30.03;
-                tkip2 = -19.0;
-                p2 = 0.815;
-                Pi2 = 102.10;
-                D2 = 0.6;
             }
         }
         public void substance3_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            //Присваивание параметров АХОВ1
+            //Присваивание параметров АХОВ3
+            /////////////////////////////////////////////
             if (substance3.Text == "")
             {
                 jid3.Visible = false;
                 gaz3.Visible = false;
-                M3 = 0;
-                tkip3 = 0;
-                Pi3 = 0;
-                D3 = 0;
-                p3 = 0;
             }
             if (substance3.Text == "Хлор")
             {
                 jid3.Visible = true;
                 gaz3.Visible = true;
-                M3 = 70.91;
-                tkip3 = -34.7;
-                Pi3 = 101.58;
-                D3 = 0.6;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Аммиак")
             {
                 jid3.Visible = true;
                 gaz3.Visible = true;
-                M3 = 17.03;
-                tkip3 = -33.42;
-                Pi3 = 99.7;
-                D3 = 15;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Водород хлористый")
             {
                 jid3.Visible = true;
                 gaz3.Visible = true;
-                M3 = 36.46;
-                tkip3 = -85.1;
-                Pi3 = 100.8;
-                D3 = 2;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Водород бромистый")
             {
                 jid3.Visible = true;
                 gaz3.Visible = true;
-                M3 = 80.92;
-                tkip3 = -66.77;
-                Pi3 = 101.6;
-                D3 = 2.4;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Сероводород")
             {
                 jid3.Visible = true;
                 gaz3.Visible = true;
-                M3 = 34.08;
-                tkip3 = -60.35;
-                Pi3 = 118.37;
-                D3 = 16.1;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Фосген")
             {
                 jid3.Visible = true;
                 gaz3.Visible = true;
-                M3 = 98.92;
-                tkip3 = 8.2;
-                Pi3 = 100.9;
-                D3 = 0.6;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Фтор")
             {
                 jid3.Visible = true;
                 gaz3.Visible = true;
-                M3 = 38.0;
-                tkip3 = -188.2;
-                Pi3 = 101.44;
-                D3 = 0.2;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Хлорициан")
             {
                 jid3.Visible = true;
                 gaz3.Visible = true;
-                M3 = 61.47;
-                tkip3 = 12.6;
-                Pi3 = 100.80;
-                D3 = 0.75;
             }
-            //////////////////////////////////////====================================
             if (substance3.Text == "Водород фтористый")
             {
                 jid3.Visible = false;
                 gaz3.Visible = false;
-                M3 = 20.01;
-                tkip3 = 19.52;
-                Pi3 = 103;
-                D3 = 4;
-                p3 = 0.989;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Водород цианистый")
             {
                 jid3.Visible = false;
                 gaz3.Visible = false;
-                M3 = 27.03;
-                tkip3 = 25.7;
-                p3 = 0.687;
-                Pi3 = 82.25;
-                D3 = 0.2;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Двуокись азота")
             {
                 jid3.Visible = false;
                 gaz3.Visible = false;
-                M3 = 46.01;
-                tkip3 = 21.0;
-                p3 = 1.491;
-                Pi3 = 97.04;
-                D3 = 1.5;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Сернистый ангидрид")
             {
                 jid3.Visible = false;
                 gaz3.Visible = false;
-                M3 = 64.06;
-                tkip3 = -10.1;
-                p3 = 1.462;
-                Pi3 = 100.8;
-                D3 = 1.8;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Сероуглерод")
             {
                 jid3.Visible = false;
                 gaz3.Visible = false;
-                M3 = 76.14;
-                tkip3 = 46.2;
-                p3 = 1.263;
-                Pi3 = 39.60;
-                D3 = 45;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Соляная кислота")
             {
                 jid3.Visible = false;
                 gaz3.Visible = false;
-                M3 = 36.46;
-                tkip3 = 108.6;
-                p3 = 1.198;
-                Pi3 = 57.19;
-                D3 = 2;
             }
-            //////////////////////////////////////
             if (substance3.Text == "Формальдегид")
             {
                 jid3.Visible = false;
                 gaz3.Visible = false;
-                M3 = 30.03;
-                tkip3 = -19.0;
-                p3 = 0.815;
-                Pi3 = 102.10;
-                D3 = 0.6;
             }
         }
         public void substance4_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            //Присваивание параметров АХОВ1
+            //Присваивание параметров АХОВ4
+            ////////////////////////////////////////
             if (substance4.Text == "")
             {
                 jid4.Visible = false;
                 gaz4.Visible = false;
-                M4 = 0;
-                tkip4 = 0;
-                Pi4 = 0;
-                D4 = 0;
-                p4 = 0;
             }
             if (substance4.Text == "Хлор")
             {
                 jid4.Visible = true;
                 gaz4.Visible = true;
-                M4 = 70.91;
-                tkip4 = -34.7;
-                Pi4 = 101.58;
-                D4 = 0.6;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Аммиак")
             {
                 jid4.Visible = true;
                 gaz4.Visible = true;
-                M4 = 17.03;
-                tkip4 = -33.42;
-                Pi4 = 99.7;
-                D4 = 15;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Водород хлористый")
             {
                 jid4.Visible = true;
                 gaz4.Visible = true;
-                M4 = 36.46;
-                tkip4 = -85.1;
-                Pi4 = 100.8;
-                D4 = 2;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Водород бромистый")
             {
                 jid4.Visible = true;
                 gaz4.Visible = true;
-                M4 = 80.92;
-                tkip4 = -66.77;
-                Pi4 = 101.6;
-                D4 = 2.4;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Сероводород")
             {
                 jid4.Visible = true;
                 gaz4.Visible = true;
-                M4 = 34.08;
-                tkip4 = -60.35;
-                Pi4 = 118.37;
-                D4 = 16.1;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Фосген")
             {
                 jid4.Visible = true;
                 gaz4.Visible = true;
-                M4 = 98.92;
-                tkip4 = 8.2;
-                Pi4 = 100.9;
-                D4 = 0.6;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Фтор")
             {
                 jid4.Visible = true;
                 gaz4.Visible = true;
-                M4 = 38.0;
-                tkip4 = -188.2;
-                Pi4 = 101.44;
-                D4 = 0.2;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Хлорициан")
             {
                 jid4.Visible = true;
                 gaz4.Visible = true;
-                M4 = 61.47;
-                tkip4 = 12.6;
-                Pi4 = 100.80;
-                D4 = 0.75;
             }
-            //////////////////////////////////////====================================
             if (substance4.Text == "Водород фтористый")
             {
                 jid4.Visible = false;
                 gaz4.Visible = false;
-                M4 = 20.01;
-                tkip4 = 19.52;
-                Pi4 = 103;
-                D4 = 4;
-                p4 = 0.989;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Водород цианистый")
             {
                 jid4.Visible = false;
                 gaz4.Visible = false;
-                M4 = 27.03;
-                tkip4 = 25.7;
-                p4 = 0.687;
-                Pi4 = 82.25;
-                D4 = 0.2;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Двуокись азота")
             {
                 jid4.Visible = false;
                 gaz4.Visible = false;
-                M4 = 46.01;
-                tkip4 = 21.0;
-                p4 = 1.491;
-                Pi4 = 97.04;
-                D4 = 1.5;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Сернистый ангидрид")
             {
                 jid4.Visible = false;
                 gaz4.Visible = false;
-                M4 = 64.06;
-                tkip4 = -10.1;
-                p4 = 1.462;
-                Pi4 = 100.8;
-                D4 = 1.8;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Сероуглерод")
             {
                 jid4.Visible = false;
                 gaz4.Visible = false;
-                M4 = 76.14;
-                tkip4 = 46.2;
-                p4 = 1.263;
-                Pi4 = 39.60;
-                D4 = 45;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Соляная кислота")
             {
                 jid4.Visible = false;
                 gaz4.Visible = false;
-                M4 = 36.46;
-                tkip4 = 108.6;
-                p4 = 1.198;
-                Pi4 = 57.19;
-                D4 = 2;
             }
-            //////////////////////////////////////
             if (substance4.Text == "Формальдегид")
             {
                 jid4.Visible = false;
                 gaz4.Visible = false;
-                M4 = 30.03;
-                tkip4 = -19.0;
-                p4 = 0.815;
-                Pi4 = 102.10;
-                D4 = 0.6;
             }
         }
         public void substance5_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            //Присваивание параметров АХОВ1
+            //Присваивание параметров АХОВ5
+            ////////////////////////////////////////////
             if (substance5.Text == "")
             {
                 jid5.Visible = false;
                 gaz5.Visible = false;
-                M5 = 0;
-                tkip5 = 0;
-                Pi5 = 0;
-                D5 = 0;
-                p5 = 0;
             }
             if (substance5.Text == "Хлор")
             {
                 jid5.Visible = true;
                 gaz5.Visible = true;
-                M5 = 70.91;
-                tkip5 = -34.7;
-                Pi5 = 101.58;
-                D5 = 0.6;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Аммиак")
             {
                 jid5.Visible = true;
                 gaz5.Visible = true;
-                M5 = 17.03;
-                tkip5 = -33.42;
-                Pi5 = 99.7;
-                D5 = 15;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Водород хлористый")
             {
                 jid5.Visible = true;
                 gaz5.Visible = true;
-                M5 = 36.46;
-                tkip5 = -85.1;
-                Pi5 = 100.8;
-                D5 = 2;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Водород бромистый")
             {
                 jid5.Visible = true;
                 gaz5.Visible = true;
-                M5 = 80.92;
-                tkip5 = -66.77;
-                Pi5 = 101.6;
-                D5 = 2.4;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Сероводород")
             {
                 jid5.Visible = true;
                 gaz5.Visible = true;
-                M5 = 34.08;
-                tkip5 = -60.35;
-                Pi5 = 118.37;
-                D5 = 16.1;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Фосген")
             {
                 jid5.Visible = true;
                 gaz5.Visible = true;
-                M5 = 98.92;
-                tkip5 = 8.2;
-                Pi5 = 100.9;
-                D5 = 0.6;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Фтор")
             {
                 jid5.Visible = true;
                 gaz5.Visible = true;
-                M5 = 38.0;
-                tkip5 = -188.2;
-                Pi5 = 101.44;
-                D5 = 0.2;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Хлорициан")
             {
                 jid5.Visible = true;
                 gaz5.Visible = true;
-                M5 = 61.47;
-                tkip5 = 12.6;
-                Pi5 = 100.80;
-                D5 = 0.75;
             }
-            //////////////////////////////////////====================================
             if (substance5.Text == "Водород фтористый")
             {
                 jid5.Visible = false;
                 gaz5.Visible = false;
-                M5 = 20.01;
-                tkip5 = 19.52;
-                Pi5 = 103;
-                D5 = 4;
-                p5 = 0.989;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Водород цианистый")
             {
                 jid5.Visible = false;
                 gaz5.Visible = false;
-                M5 = 27.03;
-                tkip5 = 25.7;
-                p5 = 0.687;
-                Pi5 = 82.25;
-                D5 = 0.2;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Двуокись азота")
             {
                 jid5.Visible = false;
                 gaz5.Visible = false;
-                M5 = 46.01;
-                tkip5 = 21.0;
-                p5 = 1.491;
-                Pi5 = 97.04;
-                D5 = 1.5;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Сернистый ангидрид")
             {
                 jid5.Visible = false;
                 gaz5.Visible = false;
-                M5 = 64.06;
-                tkip5 = -10.1;
-                p5 = 1.462;
-                Pi5 = 100.8;
-                D5 = 1.8;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Сероуглерод")
             {
                 jid5.Visible = false;
                 gaz5.Visible = false;
-                M5 = 76.14;
-                tkip5 = 46.2;
-                p5 = 1.263;
-                Pi5 = 39.60;
-                D5 = 45;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Соляная кислота")
             {
                 jid5.Visible = false;
                 gaz5.Visible = false;
-                M5 = 36.46;
-                tkip5 = 108.6;
-                p5 = 1.198;
-                Pi5 = 57.19;
-                D5 = 2;
             }
-            //////////////////////////////////////
             if (substance5.Text == "Формальдегид")
             {
                 jid5.Visible = false;
                 gaz5.Visible = false;
-                M5 = 30.03;
-                tkip5 = -19.0;
-                p5 = 0.815;
-                Pi5 = 102.10;
-                D5 = 0.6;
             }
         }
         public void substance6_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            //Присваивание параметров АХОВ1
+            //Присваивание параметров АХОВ6
+            /////////////////////////////////////////
             if (substance6.Text == "")
             {
                 jid6.Visible = false;
                 gaz6.Visible = false;
-                M6 = 0;
-                tkip6 = 0;
-                Pi6 = 0;
-                D6 = 0;
-                p6 = 0;
             }
             if (substance6.Text == "Хлор")
             {
                 jid6.Visible = true;
                 gaz6.Visible = true;
-                M6 = 70.91;
-                tkip6 = -34.7;
-                Pi6 = 101.58;
-                D6 = 0.6;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Аммиак")
             {
                 jid6.Visible = true;
                 gaz6.Visible = true;
-                M6 = 17.03;
-                tkip6 = -33.42;
-                Pi6 = 99.7;
-                D6 = 15;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Водород хлористый")
             {
                 jid6.Visible = true;
                 gaz6.Visible = true;
-                M6 = 36.46;
-                tkip6 = -85.1;
-                Pi6 = 100.8;
-                D6 = 2;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Водород бромистый")
             {
                 jid6.Visible = true;
                 gaz6.Visible = true;
-                M6 = 80.92;
-                tkip6 = -66.77;
-                Pi6 = 101.6;
-                D6 = 2.4;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Сероводород")
             {
                 jid6.Visible = true;
                 gaz6.Visible = true;
-                M6 = 34.08;
-                tkip6 = -60.35;
-                Pi6 = 118.37;
-                D6 = 16.1;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Фосген")
             {
                 jid6.Visible = true;
                 gaz6.Visible = true;
-                M6 = 98.92;
-                tkip6 = 8.2;
-                Pi6 = 100.9;
-                D6 = 0.6;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Фтор")
             {
                 jid6.Visible = true;
                 gaz6.Visible = true;
-                M6 = 38.0;
-                tkip6 = -188.2;
-                Pi6 = 101.44;
-                D6 = 0.2;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Хлорициан")
             {
                 jid6.Visible = true;
                 gaz6.Visible = true;
-                M6 = 61.47;
-                tkip6 = 12.6;
-                Pi6 = 100.80;
-                D6 = 0.75;
             }
-            //////////////////////////////////////====================================
             if (substance6.Text == "Водород фтористый")
             {
                 jid6.Visible = false;
                 gaz6.Visible = false;
-                M6 = 20.01;
-                tkip6 = 19.52;
-                Pi6 = 103;
-                D6 = 4;
-                p6 = 0.989;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Водород цианистый")
             {
                 jid6.Visible = false;
                 gaz6.Visible = false;
-                M6 = 27.03;
-                tkip6 = 25.7;
-                p6 = 0.687;
-                Pi6 = 82.25;
-                D6 = 0.2;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Двуокись азота")
             {
                 jid6.Visible = false;
                 gaz6.Visible = false;
-                M6 = 46.01;
-                tkip6 = 21.0;
-                p6 = 1.491;
-                Pi6 = 97.04;
-                D6 = 1.5;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Сернистый ангидрид")
             {
                 jid6.Visible = false;
                 gaz6.Visible = false;
-                M6 = 64.06;
-                tkip6 = -10.1;
-                p6 = 1.462;
-                Pi6 = 100.8;
-                D6 = 1.8;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Сероуглерод")
             {
                 jid6.Visible = false;
                 gaz6.Visible = false;
-                M6 = 76.14;
-                tkip6 = 46.2;
-                p6 = 1.263;
-                Pi6 = 39.60;
-                D6 = 45;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Соляная кислота")
             {
                 jid6.Visible = false;
                 gaz6.Visible = false;
-                M6 = 36.46;
-                tkip6 = 108.6;
-                p6 = 1.198;
-                Pi6 = 57.19;
-                D6 = 2;
             }
-            //////////////////////////////////////
             if (substance6.Text == "Формальдегид")
             {
                 jid6.Visible = false;
                 gaz6.Visible = false;
-                M6 = 30.03;
-                tkip6 = -19.0;
-                p6 = 0.815;
-                Pi6 = 102.10;
-                D6 = 0.6;
             }
         }
         public void RASCHETbutt_Click(object sender, EventArgs e)
@@ -1275,7 +796,7 @@ namespace PrognozCS
             ///
             if (tempAir.Text == "") { t = 20; }
             else { t = Convert.ToDouble(tempAir.Text); }
-            /////////////////////////////////
+            //////
             if (plotNasG.Text == "") { Ag = 0; }
             else { Ag = Convert.ToDouble(plotNasG.Text); }
             ///
@@ -1409,18 +930,7 @@ namespace PrognozCS
             //Выбор химически опасного вещества
             if (substance.Text == "Хлор")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0; K72 = 0.9; }
-                if ((t < -20) && (t < -20)) { K7 = 0.15; K72 = 0.95; }
-                if (t == -20) { K7 = 0.3; K72 = 1; }
-                if ((t > -20) && (t < 0)) { K7 = 0.45; K72 = 1; }
-                if (t == 0) { K7 = 0.6; K72 = 1; }
-                if ((t > 0) && (t < 20)) { K7 = 0.8; K72 = 1; }
-                if (t == 20) { K7 = 1; K72 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1.2; K72 = 1.5; }
-                if (t >= 40) { K7 = 1.4; K72 = 2; }
-                //Коэффициент К1
-                K1 = 0.18;
+                substanceAXOB.Chlor();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid.Checked)
                 {
@@ -1432,21 +942,9 @@ namespace PrognozCS
                     p = 0.0032;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Аммиак")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0; K72 = 0.9; }
-                if ((t < -20) && (t < -20)) { K7 = 0.15; K72 = 0.95; }
-                if (t == -20) { K7 = 0.3; K72 = 1; }
-                if ((t > -20) && (t < 0)) { K7 = 0.45; K72 = 1; }
-                if (t == 0) { K7 = 0.6; K72 = 1; }
-                if ((t > 0) && (t < 20)) { K7 = 0.8; K72 = 1; }
-                if (t == 20) { K7 = 1; K72 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1.2; K72 = 1.5; }
-                if (t >= 40) { K7 = 1.4; K72 = 1; }
-                //Коэффициент К1
-                K1 = 0.18;
+                substanceAXOB.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid.Checked)
                 {
@@ -1458,38 +956,13 @@ namespace PrognozCS
                     p = 0.0032;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Водород фтористый")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0.1; }
-                if ((t < -20) && (t < -20)) { K7 = 0.15; }
-                if (t == -20) { K7 = 0.2; }
-                if ((t > -20) && (t < 0)) { K7 = 0.35; }
-                if (t == 0) { K7 = 0.5; }
-                if ((t > 0) && (t < 20)) { K7 = 0.75; }
-                if (t == 20) { K7 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1; }
-                if (t >= 40) { K7 = 1; }
-                K72 = K7;
-                //Коэффициент К1
-                K1 = 0;
+                substanceAXOB.VodorodFtoristiy();
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Водород хлористый")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0.64; K72 = 1; }
-                if ((t < -20) && (t < -20)) { K7 = 0.62; K72 = 1; }
-                if (t == -20) { K7 = 0.6; K72 = 1; }
-                if ((t > -20) && (t < 0)) { K7 = 0.7; K72 = 1; }
-                if (t == 0) { K7 = 0.8; K72 = 1; }
-                if ((t > 0) && (t < 20)) { K7 = 0.9; K72 = 1; }
-                if (t == 20) { K7 = 1; K72 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1.1; K72 = 1; }
-                if (t >= 40) { K7 = 1.2; K72 = 1; }
-                //Коэффициент К1
-                K1 = 0.28;
+                substanceAXOB.VodorodChlor();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid.Checked)
                 {
@@ -1501,21 +974,9 @@ namespace PrognozCS
                     p = 0.0016;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Водород бромистый")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0.2; K72 = 1; }
-                if ((t < -20) && (t < -20)) { K7 = 0.35; K72 = 1; }
-                if (t == -20) { K7 = 0.5; K72 = 1; }
-                if ((t > -20) && (t < 0)) { K7 = 0.65; K72 = 1; }
-                if (t == 0) { K7 = 0.8; K72 = 1; }
-                if ((t > 0) && (t < 20)) { K7 = 0.9; K72 = 1; }
-                if (t == 20) { K7 = 1; K72 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1.1; K72 = 1; }
-                if (t >= 40) { K7 = 1.2; K72 = 1; }
-                //Коэффициент К1
-                K1 = 0.13;
+                substanceAXOB.VodorodBrom();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid.Checked)
                 {
@@ -1527,137 +988,37 @@ namespace PrognozCS
                     p = 0.0036;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Водород цианистый")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0; }
-                if ((t < -20) && (t < -20)) { K7 = 0; }
-                if (t == -20) { K7 = 0; }
-                if ((t > -20) && (t < 0)) { K7 = 0.2; }
-                if (t == 0) { K7 = 0.4; }
-                if ((t > 0) && (t < 20)) { K7 = 0.7; }
-                if (t == 20) { K7 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1.15; }
-                if (t >= 40) { K7 = 1.3; }
-                K72 = K7;
-                //Коэффициент К1
-                K1 = 0;
+                substanceAXOB.VodorodCianistiy();
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Двуокись азота")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0; }
-                if ((t < -20) && (t < -20)) { K7 = 0; }
-                if (t == -20) { K7 = 0; }
-                if ((t > -20) && (t < 0)) { K7 = 0.2; }
-                if (t == 0) { K7 = 0.4; }
-                if ((t > 0) && (t < 20)) { K7 = 0.7; }
-                if (t == 20) { K7 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1; }
-                if (t >= 40) { K7 = 1; }
-                K72 = K7;
-                //Коэффициент К1
-                K1 = 0;
+                substanceAXOB.DvuokisAzota();
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Сернистый ангидрид")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0; K72 = 0.2; }
-                if ((t < -20) && (t < -20)) { K7 = 0; K72 = 0.35; }
-                if (t == -20) { K7 = 0; K72 = 0.5; }
-                if ((t > -20) && (t < 0)) { K7 = 0.15; K72 = 0.75; }
-                if (t == 0) { K7 = 0.3; K72 = 1; }
-                if ((t > 0) && (t < 20)) { K7 = 0.65; K72 = 1; }
-                if (t == 20) { K7 = 1; K72 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1.35; K72 = 1; }
-                if (t >= 40) { K7 = 1.7; K72 = 1; }
-                //Коэффициент К1
-                K1 = 0.11;
+                substanceAXOB.SernistiyAngidrid();
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Сероводород")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0.3; K72 = 1; }
-                if ((t < -20) && (t < -20)) { K7 = 0.4; K72 = 1; }
-                if (t == -20) { K7 = 0.5; K72 = 1; }
-                if ((t > -20) && (t < 0)) { K7 = 0.65; K72 = 1; }
-                if (t == 0) { K7 = 0.8; K72 = 1; }
-                if ((t > 0) && (t < 20)) { K7 = 0.9; K72 = 1; }
-                if (t == 20) { K7 = 1; K72 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1.1; K72 = 1; }
-                if (t >= 40) { K7 = 1.2; K72 = 1; }
-                //Коэффициент К1
-                K1 = 0.27;
+                substanceAXOB.Serovodorod();
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Сероуглерод")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0.1; }
-                if ((t < -20) && (t < -20)) { K7 = 0.15; }
-                if (t == -20) { K7 = 0.2; }
-                if ((t > -20) && (t < 0)) { K7 = 0.3; }
-                if (t == 0) { K7 = 0.4; }
-                if ((t > 0) && (t < 20)) { K7 = 0.7; }
-                if (t == 20) { K7 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1.55; }
-                if (t >= 40) { K7 = 2.1; }
-                K72 = K7;
-                //Коэффициент К1
-                K1 = 0;
+                substanceAXOB.Serouglerod();
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Соляная кислота")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0; }
-                if ((t < -20) && (t < -20)) { K7 = 0.05; }
-                if (t == -20) { K7 = 0.1; }
-                if ((t > -20) && (t < 0)) { K7 = 0.2; }
-                if (t == 0) { K7 = 0.3; }
-                if ((t > 0) && (t < 20)) { K7 = 0.75; }
-                if (t == 20) { K7 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1.3; }
-                if (t >= 40) { K7 = 1.6; }
-                K72 = K7;
-                //Коэффициент К1
-                K1 = 0;
+                substanceAXOB.SolyanayaKislota();
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Формальдегид")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0; K72 = 0.4; }
-                if ((t < -20) && (t < -20)) { K7 = 0; K72 = 0.7; }
-                if (t == -20) { K7 = 0; K72 = 1; }
-                if ((t > -20) && (t < 0)) { K7 = 0.25; K72 = 1; }
-                if (t == 0) { K7 = 0.5; K2 = 1; }
-                if ((t > 0) && (t < 20)) { K7 = 0.75; K72 = 1; }
-                if (t == 20) { K7 = 1; K72 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1.25; K72 = 1; }
-                if (t >= 40) { K7 = 1.5; K72 = 1; }
-                //Коэффициент К1
-                K1 = 0.19;
+                substanceAXOB.Formaldegid();
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Фосген")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0; K72 = 0.1; }
-                if ((t < -20) && (t < -20)) { K7 = 0; K72 = 0.2; }
-                if (t == -20) { K7 = 0; K72 = 0.3; }
-                if ((t > -20) && (t < 0)) { K7 = 0; K72 = 0.5; }
-                if (t == 0) { K7 = 0; K72 = 0.7; }
-                if ((t > 0) && (t < 20)) { K7 = 0.5; K72 = 0.85; }
-                if (t == 20) { K7 = 1; K72 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1.6; K72 = 1; }
-                if (t >= 40) { K7 = 2.2; K72 = 1; }
-                //Коэффициент К1
-                K1 = 0.05;
+                substanceAXOB.Fosgen();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid.Checked)
                 {
@@ -1669,21 +1030,9 @@ namespace PrognozCS
                     p = 0.0035;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Фтор")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0.7; K72 = 1; }
-                if ((t < -20) && (t < -20)) { K7 = 0.75; K72 = 1; }
-                if (t == -20) { K7 = 0.8; K72 = 1; }
-                if ((t > -20) && (t < 0)) { K7 = 0.85; K72 = 1; }
-                if (t == 0) { K7 = 0.9; K72 = 1; }
-                if ((t > 0) && (t < 20)) { K7 = 0.95; K72 = 1; }
-                if (t == 20) { K7 = 1; K72 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 1.05; K72 = 1; }
-                if (t >= 40) { K7 = 1.1; K72 = 1; }
-                //Коэффициент К1
-                K1 = 0.95;
+                substanceAXOB.Ftor();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid.Checked)
                 {
@@ -1695,21 +1044,9 @@ namespace PrognozCS
                     p = 0.0017;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Хлорциан")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K7 = 0; K72 = 0; }
-                if ((t < -20) && (t < -20)) { K7 = 0; K72 = 0; }
-                if (t == -20) { K7 = 0; K72 = 0; }
-                if ((t > -20) && (t < 0)) { K7 = 0; K72 = 0.3; }
-                if (t == 0) { K7 = 0; K72 = 0.6; }
-                if ((t > 0) && (t < 20)) { K7 = 0.5; K72 = 0.8; }
-                if (t == 20) { K7 = 1; K72 = 1; }
-                if ((t > 20) && (t < 40)) { K7 = 2.45; K72 = 1; }
-                if (t >= 40) { K7 = 3.9; K72 = 1; }
-                //Коэффициент К1
-                K1 = 0.04;
+                substanceAXOB.Chlorician();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid.Checked)
                 {
@@ -1726,18 +1063,7 @@ namespace PrognozCS
             /////////////////////////////////////////
             if (substance2.Text == "Хлор")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0; K722 = 0.9; }
-                if ((t < -20) && (t < -20)) { K712 = 0.15; K722 = 0.95; }
-                if (t == -20) { K712 = 0.3; K722 = 1; }
-                if ((t > -20) && (t < 0)) { K712 = 0.45; K722 = 1; }
-                if (t == 0) { K712 = 0.6; K722 = 1; }
-                if ((t > 0) && (t < 20)) { K712 = 0.8; K722 = 1; }
-                if (t == 20) { K712 = 1; K722 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1.2; K722 = 1.5; }
-                if (t >= 40) { K712 = 1.4; K722 = 2; }
-                //Коэффициент К1
-                K12 = 0.18;
+                substanceAXOB2.Chlor();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid2.Checked)
                 {
@@ -1749,21 +1075,9 @@ namespace PrognozCS
                     p2 = 0.0032;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance2.Text == "Аммиак")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0; K722 = 0.9; }
-                if ((t < -20) && (t < -20)) { K712 = 0.15; K722 = 0.95; }
-                if (t == -20) { K712 = 0.3; K722 = 1; }
-                if ((t > -20) && (t < 0)) { K712 = 0.45; K722 = 1; }
-                if (t == 0) { K712 = 0.6; K722 = 1; }
-                if ((t > 0) && (t < 20)) { K712 = 0.8; K722 = 1; }
-                if (t == 20) { K712 = 1; K722 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1.2; K722 = 1.5; }
-                if (t >= 40) { K712 = 1.4; K722 = 1; }
-                //Коэффициент К1
-                K12 = 0.18;
+                substanceAXOB2.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid2.Checked)
                 {
@@ -1775,38 +1089,13 @@ namespace PrognozCS
                     p2 = 0.0032;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance2.Text == "Водород фтористый")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0.1; }
-                if ((t < -20) && (t < -20)) { K712 = 0.15; }
-                if (t == -20) { K712 = 0.2; }
-                if ((t > -20) && (t < 0)) { K712 = 0.35; }
-                if (t == 0) { K712 = 0.5; }
-                if ((t > 0) && (t < 20)) { K712 = 0.75; }
-                if (t == 20) { K712 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1; }
-                if (t >= 40) { K712 = 1; }
-                K722 = K712;
-                //Коэффициент К1
-                K12 = 0;
+                substanceAXOB2.VodorodFtoristiy();
             }
-            /////////////////////////////////////////////////////////////
             if (substance2.Text == "Водород хлористый")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0.64; K722 = 1; }
-                if ((t < -20) && (t < -20)) { K712 = 0.62; K722 = 1; }
-                if (t == -20) { K712 = 0.6; K722 = 1; }
-                if ((t > -20) && (t < 0)) { K712 = 0.7; K722 = 1; }
-                if (t == 0) { K712 = 0.8; K722 = 1; }
-                if ((t > 0) && (t < 20)) { K712 = 0.9; K722 = 1; }
-                if (t == 20) { K712 = 1; K722 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1.1; K722 = 1; }
-                if (t >= 40) { K712 = 1.2; K722 = 1; }
-                //Коэффициент К1
-                K12 = 0.28;
+                substanceAXOB2.VodorodChlor();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid2.Checked)
                 {
@@ -1818,21 +1107,9 @@ namespace PrognozCS
                     p2 = 0.0016;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance2.Text == "Водород бромистый")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0.2; K722 = 1; }
-                if ((t < -20) && (t < -20)) { K712 = 0.35; K722 = 1; }
-                if (t == -20) { K712 = 0.5; K722 = 1; }
-                if ((t > -20) && (t < 0)) { K712 = 0.65; K722 = 1; }
-                if (t == 0) { K712 = 0.8; K722 = 1; }
-                if ((t > 0) && (t < 20)) { K712 = 0.9; K722 = 1; }
-                if (t == 20) { K712 = 1; K722 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1.1; K722 = 1; }
-                if (t >= 40) { K712 = 1.2; K722 = 1; }
-                //Коэффициент К1
-                K12 = 0.13;
+                substanceAXOB2.VodorodBrom();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid2.Checked)
                 {
@@ -1844,137 +1121,37 @@ namespace PrognozCS
                     p2 = 0.0036;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance2.Text == "Водород цианистый")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0; }
-                if ((t < -20) && (t < -20)) { K712 = 0; }
-                if (t == -20) { K712 = 0; }
-                if ((t > -20) && (t < 0)) { K712 = 0.2; }
-                if (t == 0) { K712 = 0.4; }
-                if ((t > 0) && (t < 20)) { K712 = 0.7; }
-                if (t == 20) { K712 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1.15; }
-                if (t >= 40) { K712 = 1.3; }
-                K722 = K712;
-                //Коэффициент К1
-                K12 = 0;
+                substanceAXOB2.VodorodCianistiy();
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Двуокись азота")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0; }
-                if ((t < -20) && (t < -20)) { K712 = 0; }
-                if (t == -20) { K712 = 0; }
-                if ((t > -20) && (t < 0)) { K712 = 0.2; }
-                if (t == 0) { K712 = 0.4; }
-                if ((t > 0) && (t < 20)) { K712 = 0.7; }
-                if (t == 20) { K712 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1; }
-                if (t >= 40) { K712 = 1; }
-                K722 = K712;
-                //Коэффициент К1
-                K12 = 0;
+                substanceAXOB2.DvuokisAzota();
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Сернистый ангидрид")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0; K722 = 0.2; }
-                if ((t < -20) && (t < -20)) { K712 = 0; K722 = 0.35; }
-                if (t == -20) { K712 = 0; K722 = 0.5; }
-                if ((t > -20) && (t < 0)) { K712 = 0.15; K722 = 0.75; }
-                if (t == 0) { K712 = 0.3; K722 = 1; }
-                if ((t > 0) && (t < 20)) { K712 = 0.65; K722 = 1; }
-                if (t == 20) { K712 = 1; K722 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1.35; K722 = 1; }
-                if (t >= 40) { K712 = 1.7; K722 = 1; }
-                //Коэффициент К1
-                K12 = 0.11;
+                substanceAXOB2.SernistiyAngidrid();
             }
-            /////////////////////////////////////////////////////////////
             if (substance2.Text == "Сероводород")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0.3; K722 = 1; }
-                if ((t < -20) && (t < -20)) { K712 = 0.4; K722 = 1; }
-                if (t == -20) { K712 = 0.5; K722 = 1; }
-                if ((t > -20) && (t < 0)) { K712 = 0.65; K722 = 1; }
-                if (t == 0) { K712 = 0.8; K722 = 1; }
-                if ((t > 0) && (t < 20)) { K712 = 0.9; K722 = 1; }
-                if (t == 20) { K712 = 1; K722 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1.1; K722 = 1; }
-                if (t >= 40) { K712 = 1.2; K722 = 1; }
-                //Коэффициент К1
-                K12 = 0.27;
+                substanceAXOB2.Serovodorod();
             }
-            /////////////////////////////////////////////////////////////
             if (substance2.Text == "Сероуглерод")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0.1; }
-                if ((t < -20) && (t < -20)) { K712 = 0.15; }
-                if (t == -20) { K712 = 0.2; }
-                if ((t > -20) && (t < 0)) { K712 = 0.3; }
-                if (t == 0) { K712 = 0.4; }
-                if ((t > 0) && (t < 20)) { K712 = 0.7; }
-                if (t == 20) { K712 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1.55; }
-                if (t >= 40) { K712 = 2.1; }
-                K722 = K712;
-                //Коэффициент К1
-                K12 = 0;
+                substanceAXOB2.Serouglerod();
             }
-            /////////////////////////////////////////////////////////////
             if (substance2.Text == "Соляная кислота")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0; }
-                if ((t < -20) && (t < -20)) { K712 = 0.05; }
-                if (t == -20) { K712 = 0.1; }
-                if ((t > -20) && (t < 0)) { K712 = 0.2; }
-                if (t == 0) { K712 = 0.3; }
-                if ((t > 0) && (t < 20)) { K712 = 0.75; }
-                if (t == 20) { K712 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1.3; }
-                if (t >= 40) { K712 = 1.6; }
-                K722 = K712;
-                //Коэффициент К1
-                K12 = 0;
+                substanceAXOB2.SolyanayaKislota();
             }
-            /////////////////////////////////////////////////////////////
             if (substance2.Text == "Формальдегид")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0; K722 = 0.4; }
-                if ((t < -20) && (t < -20)) { K712 = 0; K722 = 0.7; }
-                if (t == -20) { K712 = 0; K722 = 1; }
-                if ((t > -20) && (t < 0)) { K712 = 0.25; K722 = 1; }
-                if (t == 0) { K712 = 0.5; K722 = 1; }
-                if ((t > 0) && (t < 20)) { K712 = 0.75; K722 = 1; }
-                if (t == 20) { K712 = 1; K722 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1.25; K722 = 1; }
-                if (t >= 40) { K712 = 1.5; K722 = 1; }
-                //Коэффициент К1
-                K12 = 0.19;
+                substanceAXOB2.Formaldegid();
             }
-            /////////////////////////////////////////////////////////////
             if (substance2.Text == "Фосген")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0; K722 = 0.1; }
-                if ((t < -20) && (t < -20)) { K712 = 0; K722 = 0.2; }
-                if (t == -20) { K712 = 0; K722 = 0.3; }
-                if ((t > -20) && (t < 0)) { K712 = 0; K722 = 0.5; }
-                if (t == 0) { K712 = 0; K722 = 0.7; }
-                if ((t > 0) && (t < 20)) { K712 = 0.5; K722 = 0.85; }
-                if (t == 20) { K712 = 1; K722 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1.6; K722 = 1; }
-                if (t >= 40) { K712 = 2.2; K722 = 1; }
-                //Коэффициент К1
-                K12 = 0.05;
+                substanceAXOB2.Fosgen();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid2.Checked)
                 {
@@ -1986,21 +1163,9 @@ namespace PrognozCS
                     p2 = 0.0035;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance2.Text == "Фтор")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0.7; K722 = 1; }
-                if ((t < -20) && (t < -20)) { K712 = 0.75; K722 = 1; }
-                if (t == -20) { K712 = 0.8; K722 = 1; }
-                if ((t > -20) && (t < 0)) { K712 = 0.85; K722 = 1; }
-                if (t == 0) { K712 = 0.9; K722 = 1; }
-                if ((t > 0) && (t < 20)) { K712 = 0.95; K722 = 1; }
-                if (t == 20) { K712 = 1; K722 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 1.05; K722 = 1; }
-                if (t >= 40) { K712 = 1.1; K722 = 1; }
-                //Коэффициент К1
-                K12 = 0.95;
+                substanceAXOB2.Ftor();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid2.Checked)
                 {
@@ -2012,21 +1177,9 @@ namespace PrognozCS
                     p2 = 0.0017;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance2.Text == "Хлорциан")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K712 = 0; K722 = 0; }
-                if ((t < -20) && (t < -20)) { K712 = 0; K722 = 0; }
-                if (t == -20) { K712 = 0; K722 = 0; }
-                if ((t > -20) && (t < 0)) { K712 = 0; K722 = 0.3; }
-                if (t == 0) { K712 = 0; K722 = 0.6; }
-                if ((t > 0) && (t < 20)) { K712 = 0.5; K722 = 0.8; }
-                if (t == 20) { K712 = 1; K722 = 1; }
-                if ((t > 20) && (t < 40)) { K712 = 2.45; K722 = 1; }
-                if (t >= 40) { K712 = 3.9; K722 = 1; }
-                //Коэффициент К1
-                K12 = 0.04;
+                substanceAXOB2.Chlorician();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid2.Checked)
                 {
@@ -2043,18 +1196,7 @@ namespace PrognozCS
             ///////////////////////////////////////////////
             if (substance3.Text == "Хлор")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0; K723 = 0.9; }
-                if ((t < -20) && (t < -20)) { K73 = 0.15; K723 = 0.95; }
-                if (t == -20) { K73 = 0.3; K723 = 1; }
-                if ((t > -20) && (t < 0)) { K73 = 0.45; K723 = 1; }
-                if (t == 0) { K73 = 0.6; K723 = 1; }
-                if ((t > 0) && (t < 20)) { K73 = 0.8; K723 = 1; }
-                if (t == 20) { K73 = 1; K723 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1.2; K723 = 1.5; }
-                if (t >= 40) { K73 = 1.4; K723 = 2; }
-                //Коэффициент К1
-                K13 = 0.18;
+                substanceAXOB3.Chlor();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid3.Checked)
                 {
@@ -2066,21 +1208,9 @@ namespace PrognozCS
                     p3 = 0.0032;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Аммиак")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0; K723 = 0.9; }
-                if ((t < -20) && (t < -20)) { K73 = 0.15; K723 = 0.95; }
-                if (t == -20) { K73 = 0.3; K723 = 1; }
-                if ((t > -20) && (t < 0)) { K73 = 0.45; K723 = 1; }
-                if (t == 0) { K73 = 0.6; K723 = 1; }
-                if ((t > 0) && (t < 20)) { K73 = 0.8; K723 = 1; }
-                if (t == 20) { K73 = 1; K723 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1.2; K723 = 1.5; }
-                if (t >= 40) { K73 = 1.4; K723 = 1; }
-                //Коэффициент К1
-                K13 = 0.18;
+                substanceAXOB3.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid3.Checked)
                 {
@@ -2092,38 +1222,13 @@ namespace PrognozCS
                     p3 = 0.0032;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Водород фтористый")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0.1; }
-                if ((t < -20) && (t < -20)) { K73 = 0.15; }
-                if (t == -20) { K73 = 0.2; }
-                if ((t > -20) && (t < 0)) { K73 = 0.35; }
-                if (t == 0) { K73 = 0.5; }
-                if ((t > 0) && (t < 20)) { K73 = 0.75; }
-                if (t == 20) { K73 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1; }
-                if (t >= 40) { K73 = 1; }
-                K723 = K73;
-                //Коэффициент К1
-                K13 = 0;
+                substanceAXOB3.VodorodFtoristiy();
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Водород хлористый")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0.64; K723 = 1; }
-                if ((t < -20) && (t < -20)) { K73 = 0.62; K723 = 1; }
-                if (t == -20) { K73 = 0.6; K723 = 1; }
-                if ((t > -20) && (t < 0)) { K73 = 0.7; K723 = 1; }
-                if (t == 0) { K73 = 0.8; K723 = 1; }
-                if ((t > 0) && (t < 20)) { K73 = 0.9; K723 = 1; }
-                if (t == 20) { K73 = 1; K723 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1.1; K723 = 1; }
-                if (t >= 40) { K73 = 1.2; K723 = 1; }
-                //Коэффициент К1
-                K13 = 0.28;
+                substanceAXOB3.VodorodChlor();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid3.Checked)
                 {
@@ -2135,21 +1240,9 @@ namespace PrognozCS
                     p3 = 0.0016;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Водород бромистый")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0.2; K723 = 1; }
-                if ((t < -20) && (t < -20)) { K73 = 0.35; K723 = 1; }
-                if (t == -20) { K73 = 0.5; K723 = 1; }
-                if ((t > -20) && (t < 0)) { K73 = 0.65; K723 = 1; }
-                if (t == 0) { K73 = 0.8; K723 = 1; }
-                if ((t > 0) && (t < 20)) { K73 = 0.9; K723 = 1; }
-                if (t == 20) { K73 = 1; K723 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1.1; K723 = 1; }
-                if (t >= 40) { K73 = 1.2; K723 = 1; }
-                //Коэффициент К1
-                K13 = 0.13;
+                substanceAXOB3.VodorodBrom();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid3.Checked)
                 {
@@ -2161,137 +1254,37 @@ namespace PrognozCS
                     p3 = 0.0036;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Водород цианистый")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0; }
-                if ((t < -20) && (t < -20)) { K73 = 0; }
-                if (t == -20) { K73 = 0; }
-                if ((t > -20) && (t < 0)) { K73 = 0.2; }
-                if (t == 0) { K73 = 0.4; }
-                if ((t > 0) && (t < 20)) { K73 = 0.7; }
-                if (t == 20) { K73 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1.15; }
-                if (t >= 40) { K73 = 1.3; }
-                K723 = K73;
-                //Коэффициент К1
-                K13 = 0;
+                substanceAXOB3.VodorodCianistiy();
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Двуокись азота")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0; }
-                if ((t < -20) && (t < -20)) { K73 = 0; }
-                if (t == -20) { K73 = 0; }
-                if ((t > -20) && (t < 0)) { K73 = 0.2; }
-                if (t == 0) { K73 = 0.4; }
-                if ((t > 0) && (t < 20)) { K73 = 0.7; }
-                if (t == 20) { K73 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1; }
-                if (t >= 40) { K73 = 1; }
-                K723 = K73;
-                //Коэффициент К1
-                K13 = 0;
+                substanceAXOB3.DvuokisAzota();
             }
-            /////////////////////////////////////////////////////////////
             if (substance.Text == "Сернистый ангидрид")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0; K723 = 0.2; }
-                if ((t < -20) && (t < -20)) { K73 = 0; K723 = 0.35; }
-                if (t == -20) { K73 = 0; K723 = 0.5; }
-                if ((t > -20) && (t < 0)) { K73 = 0.15; K723 = 0.75; }
-                if (t == 0) { K73 = 0.3; K723 = 1; }
-                if ((t > 0) && (t < 20)) { K73 = 0.65; K723 = 1; }
-                if (t == 20) { K73 = 1; K723 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1.35; K723 = 1; }
-                if (t >= 40) { K73 = 1.7; K723 = 1; }
-                //Коэффициент К1
-                K13 = 0.11;
+                substanceAXOB3.SernistiyAngidrid();
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Сероводород")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0.3; K723 = 1; }
-                if ((t < -20) && (t < -20)) { K73 = 0.4; K723 = 1; }
-                if (t == -20) { K73 = 0.5; K723 = 1; }
-                if ((t > -20) && (t < 0)) { K73 = 0.65; K723 = 1; }
-                if (t == 0) { K73 = 0.8; K723 = 1; }
-                if ((t > 0) && (t < 20)) { K73 = 0.9; K723 = 1; }
-                if (t == 20) { K73 = 1; K723 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1.1; K723 = 1; }
-                if (t >= 40) { K73 = 1.2; K723 = 1; }
-                //Коэффициент К1
-                K13 = 0.27;
+                substanceAXOB3.Serovodorod();
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Сероуглерод")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0.1; }
-                if ((t < -20) && (t < -20)) { K73 = 0.15; }
-                if (t == -20) { K73 = 0.2; }
-                if ((t > -20) && (t < 0)) { K73 = 0.3; }
-                if (t == 0) { K73 = 0.4; }
-                if ((t > 0) && (t < 20)) { K73 = 0.7; }
-                if (t == 20) { K73 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1.55; }
-                if (t >= 40) { K73 = 2.1; }
-                K723 = K73;
-                //Коэффициент К1
-                K13 = 0;
+                substanceAXOB3.Serouglerod();
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Соляная кислота")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0; }
-                if ((t < -20) && (t < -20)) { K73 = 0.05; }
-                if (t == -20) { K73 = 0.1; }
-                if ((t > -20) && (t < 0)) { K73 = 0.2; }
-                if (t == 0) { K73 = 0.3; }
-                if ((t > 0) && (t < 20)) { K73 = 0.75; }
-                if (t == 20) { K73 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1.3; }
-                if (t >= 40) { K73 = 1.6; }
-                K723 = K73;
-                //Коэффициент К1
-                K13 = 0;
+                substanceAXOB3.SolyanayaKislota();
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Формальдегид")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0; K723 = 0.4; }
-                if ((t < -20) && (t < -20)) { K73 = 0; K723 = 0.7; }
-                if (t == -20) { K73 = 0; K723 = 1; }
-                if ((t > -20) && (t < 0)) { K73 = 0.25; K723 = 1; }
-                if (t == 0) { K73 = 0.5; K723 = 1; }
-                if ((t > 0) && (t < 20)) { K73 = 0.75; K723 = 1; }
-                if (t == 20) { K73 = 1; K723 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1.25; K723 = 1; }
-                if (t >= 40) { K73 = 1.5; K723 = 1; }
-                //Коэффициент К1
-                K13 = 0.19;
+                substanceAXOB3.Formaldegid();
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Фосген")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0; K723 = 0.1; }
-                if ((t < -20) && (t < -20)) { K73 = 0; K723 = 0.2; }
-                if (t == -20) { K73 = 0; K723 = 0.3; }
-                if ((t > -20) && (t < 0)) { K73 = 0; K723 = 0.5; }
-                if (t == 0) { K73 = 0; K723 = 0.7; }
-                if ((t > 0) && (t < 20)) { K73 = 0.5; K723 = 0.85; }
-                if (t == 20) { K73 = 1; K723 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1.6; K723 = 1; }
-                if (t >= 40) { K73 = 2.2; K723 = 1; }
-                //Коэффициент К1
-                K13 = 0.05;
+                substanceAXOB3.Fosgen();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid3.Checked)
                 {
@@ -2303,21 +1296,9 @@ namespace PrognozCS
                     p3 = 0.0035;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Фтор")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0.7; K723 = 1; }
-                if ((t < -20) && (t < -20)) { K73 = 0.75; K723 = 1; }
-                if (t == -20) { K73 = 0.8; K723 = 1; }
-                if ((t > -20) && (t < 0)) { K73 = 0.85; K723 = 1; }
-                if (t == 0) { K73 = 0.9; K723 = 1; }
-                if ((t > 0) && (t < 20)) { K73 = 0.95; K723 = 1; }
-                if (t == 20) { K73 = 1; K723 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 1.05; K723 = 1; }
-                if (t >= 40) { K73 = 1.1; K723 = 1; }
-                //Коэффициент К1
-                K13 = 0.95;
+                substanceAXOB3.Ftor();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid3.Checked)
                 {
@@ -2329,21 +1310,9 @@ namespace PrognozCS
                     p3 = 0.0017;
                 }
             }
-            /////////////////////////////////////////////////////////////
             if (substance3.Text == "Хлорциан")
             {
-                //Определение К7 при температуре окружающей среды
-                if (t <= -40) { K73 = 0; K723 = 0; }
-                if ((t < -20) && (t < -20)) { K73 = 0; K723 = 0; }
-                if (t == -20) { K73 = 0; K723 = 0; }
-                if ((t > -20) && (t < 0)) { K73 = 0; K723 = 0.3; }
-                if (t == 0) { K73 = 0; K723 = 0.6; }
-                if ((t > 0) && (t < 20)) { K73 = 0.5; K723 = 0.8; }
-                if (t == 20) { K73 = 1; K723 = 1; }
-                if ((t > 20) && (t < 40)) { K73 = 2.45; K723 = 1; }
-                if (t >= 40) { K73 = 3.9; K723 = 1; }
-                //Коэффициент К1
-                K13 = 0.04;
+                substanceAXOB3.Chlorician();
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid3.Checked)
                 {
@@ -2355,6 +1324,19 @@ namespace PrognozCS
                     p3 = 0.0021;
                 }
             }
+            ///////////////////////////////////////////////
+            //Выбор химически опасного вещества4///////////
+            ///////////////////////////////////////////////
+
+            ///////////////////////////////////////////////
+            //Выбор химически опасного вещества5///////////
+            ///////////////////////////////////////////////
+
+            ///////////////////////////////////////////////
+            //Выбор химически опасного вещества6///////////
+            ///////////////////////////////////////////////
+
+            ///////////////////////////////////////////////////
             //Расчет высоты/площади поддона
             if (sam.Checked == true)
             {
@@ -2374,147 +1356,182 @@ namespace PrognozCS
                 }
                 h = Q0 / F * p;
             }
-            //Коэффициенты К2, К3 и К4
-            K2 = 6.08 * Math.Pow(10,-5) * P * Math.Pow(M,0.5);
-            K22 = 6.08 * Math.Pow(10, -5) * Pi2 * Math.Pow(M2, 0.5);
-            K23 = 6.08 * Math.Pow(10, -5) * Pi3 * Math.Pow(M3, 0.5);
-            K24 = 6.08 * Math.Pow(10, -5) * Pi4 * Math.Pow(M4, 0.5);
-            K25 = 6.08 * Math.Pow(10, -5) * Pi5 * Math.Pow(M5, 0.5);
-            K26 = 6.08 * Math.Pow(10, -5) * Pi6 * Math.Pow(M6, 0.5);
-            K3 = Dhlor / D;
-            K32 = Dhlor / D2;
-            K33 = Dhlor / D3;
-            K34 = Dhlor / D4;
-            K35 = Dhlor / D5;
-            K36 = Dhlor / D6;
-            if (D == 0) { K3 = 0; }
-            if (D2 == 0) { K32 = 0; }
-            if (D3 == 0) { K33 = 0; }
-            if (D4 == 0) { K34 = 0; }
-            if (D5 == 0) { K35 = 0; }
-            if (D6 == 0) { K36 = 0; }
-            K4 = v / 3 + 0.67;
-            //Определение эквивалентного количества вещества по первичному облаку
-            Qe1 = K1 * K3 * K5 * K7 * Q0;
-            //Время испарения АХОВ1
-            if (gaz.Checked) { T = 0; }
-            else
+            //Расчет для одного вещества
+            /////////////////////////////
+            if (AXOBkolvo2.Checked)
             {
-                T = (h * p) / (K2 * K4 * K72);
+                //Коэффициенты К2, К3 и К4
+                K2 = 6.08 * Math.Pow(10, -5) * P * Math.Pow(M, 0.5);
+                K3 = Dhlor / D;
+                if (D == 0) { K3 = 0; }
+                K4 = v / 3 + 0.67;
+                //Определение эквивалентного количества вещества по первичному облаку
+                Qe1 = K1 * K3 * K5 * K7 * Q0;
+                //Время испарения АХОВ
+                if (gaz.Checked) { T = 0; }
+                else
+                {
+                    T = (h * p) / (K2 * K4 * K72);
+                }
+                //Определение коэффициента К6
+                if (N < T)
+                {
+                    K6 = Math.Pow(N, 0.8);
+                }
+                if (N > T)
+                {
+                    K6 = Math.Pow(T, 0.8);
+                }
+                if (T < 1)
+                {
+                    K6 = 1;
+                }
+                //Определение эквивалентного количества вещества по вторичному облаку
+                Qe2 = ((1 - K1) * K2 * K3 * K4 * K5 * K6 * K72 * Q0) / (h * p);
             }
-            //Определение коэффициента К6
-            if (N < T)
+            //Расчет для нескольких веществ
+            ////////////////////////////////
+            if (AXOBkolvo2.Checked)
             {
-                K6 = Math.Pow(N, 0.8);
+                //Коэффициенты К2, К3 и К4
+                K21 = 6.08 * Math.Pow(10, -5) * Pi1 * Math.Pow(M1, 0.5);
+                K22 = 6.08 * Math.Pow(10, -5) * Pi2 * Math.Pow(M2, 0.5);
+                K23 = 6.08 * Math.Pow(10, -5) * Pi3 * Math.Pow(M3, 0.5);
+                K24 = 6.08 * Math.Pow(10, -5) * Pi4 * Math.Pow(M4, 0.5);
+                K25 = 6.08 * Math.Pow(10, -5) * Pi5 * Math.Pow(M5, 0.5);
+                K26 = 6.08 * Math.Pow(10, -5) * Pi6 * Math.Pow(M6, 0.5);
+                K31 = Dhlor / D1;
+                K32 = Dhlor / D2;
+                K33 = Dhlor / D3;
+                K34 = Dhlor / D4;
+                K35 = Dhlor / D5;
+                K36 = Dhlor / D6;
+                if (D1 == 0) { K31 = 0; }
+                if (D2 == 0) { K32 = 0; }
+                if (D3 == 0) { K33 = 0; }
+                if (D4 == 0) { K34 = 0; }
+                if (D5 == 0) { K35 = 0; }
+                if (D6 == 0) { K36 = 0; }
+                //Время испарения АХОВ1
+                if (gaz1.Checked) { T1 = 0; }
+                else
+                {
+                    T1 = (h * p1) / (K21 * K4 * K721);
+                }
+                //Определение коэффициента К6
+                if (N < T1)
+                {
+                    K61 = Math.Pow(N, 0.8);
+                }
+                if (N > T2)
+                {
+                    K61 = Math.Pow(T1, 0.8);
+                }
+                if (T1 < 1)
+                {
+                    K61 = 1;
+                }
+                //Время испарения АХОВ2
+                if (gaz2.Checked) { T2 = 0; }
+                else
+                {
+                    T2 = (h * p2) / (K22 * K4 * K722);
+                }
+                //Определение коэффициента К6
+                if (N < T2)
+                {
+                    K62 = Math.Pow(N, 0.8);
+                }
+                if (N > T2)
+                {
+                    K62 = Math.Pow(T2, 0.8);
+                }
+                if (T2 < 1)
+                {
+                    K62 = 1;
+                }
+                //Время испарения АХОВ3
+                if (gaz3.Checked) { T3 = 0; }
+                else
+                {
+                    T3 = (h * p3) / (K23 * K4 * K723);
+                }
+                //Определение коэффициента К6
+                if (N < T3)
+                {
+                    K63 = Math.Pow(N, 0.8);
+                }
+                if (N > T3)
+                {
+                    K63 = Math.Pow(T3, 0.8);
+                }
+                if (T3 < 1)
+                {
+                    K63 = 1;
+                }
+                //Время испарения АХОВ4
+                if (gaz4.Checked) { T4 = 0; }
+                else
+                {
+                    T4 = (h * p4) / (K24 * K4 * K724);
+                }
+                //Определение коэффициента К6
+                if (N < T4)
+                {
+                    K64 = Math.Pow(N, 0.8);
+                }
+                if (N > T4)
+                {
+                    K64 = Math.Pow(T4, 0.8);
+                }
+                if (T4 < 1)
+                {
+                    K64 = 1;
+                }
+                //Время испарения АХОВ5
+                if (gaz5.Checked) { T5 = 0; }
+                else
+                {
+                    T5 = (h * p5) / (K25 * K4 * K725);
+                }
+                //Определение коэффициента К6
+                if (N < T5)
+                {
+                    K65 = Math.Pow(N, 0.8);
+                }
+                if (N > T5)
+                {
+                    K65 = Math.Pow(T5, 0.8);
+                }
+                if (T5 < 1)
+                {
+                    K65 = 1;
+                }
+                //Время испарения АХОВ6
+                if (gaz6.Checked) { T6 = 0; }
+                else
+                {
+                    T6 = (h * p6) / (K26 * K4 * K726);
+                }
+                //Определение коэффициента К6
+                if (N < T6)
+                {
+                    K66 = Math.Pow(N, 0.8);
+                }
+                if (N > T6)
+                {
+                    K66 = Math.Pow(T6, 0.8);
+                }
+                if (T6 < 1)
+                {
+                    K66 = 1;
+                }
+                ////Определение эквивалентного количества вещества по нескольким веществам
+                Qe2 = (20 * K4 * K5) * (((K2 * K3 * K6 * K7 * Q0) / p + K22 * K32 * K62 * K72 * Q02) / p2 +
+                    (K23 * K33 * K63 * K73 * Q03) / p3 + (K24 * K34 * K64 * K74 * Q04) / p4 +
+                    (K25 * K35 * K65 * K75 * Q05) / p5 + (K26 * K36 * K66 * K76 * Q06) / p6);
+                Qe1 = Qe2;
             }
-            if (N > T)
-            {
-                K6 = Math.Pow(T, 0.8);
-            }
-            if (T < 1)
-            {
-                K6 = 1;
-            }
-            //Время испарения АХОВ2
-            if (gaz2.Checked) { T2 = 0; }
-            else
-            {
-                T2 = (h * p2) / (K22 * K4 * K722);
-            }
-            //Определение коэффициента К6
-            if (N < T2)
-            {
-                K62 = Math.Pow(N, 0.8);
-            }
-            if (N > T2)
-            {
-                K62 = Math.Pow(T2, 0.8);
-            }
-            if (T2 < 1)
-            {
-                K62 = 1;
-            }
-            //Время испарения АХОВ3
-            if (gaz3.Checked) { T3 = 0; }
-            else
-            {
-                T3 = (h * p3) / (K23 * K4 * K723);
-            }
-            //Определение коэффициента К6
-            if (N < T3)
-            {
-                K63 = Math.Pow(N, 0.8);
-            }
-            if (N > T3)
-            {
-                K63 = Math.Pow(T3, 0.8);
-            }
-            if (T3 < 1)
-            {
-                K63 = 1;
-            }
-            //Время испарения АХОВ4
-            if (gaz4.Checked) { T4 = 0; }
-            else
-            {
-                T4 = (h * p4) / (K24 * K4 * K724);
-            }
-            //Определение коэффициента К6
-            if (N < T4)
-            {
-                K64 = Math.Pow(N, 0.8);
-            }
-            if (N > T4)
-            {
-                K64 = Math.Pow(T4, 0.8);
-            }
-            if (T4 < 1)
-            {
-                K64 = 1;
-            }
-            //Время испарения АХОВ5
-            if (gaz5.Checked) { T5 = 0; }
-            else
-            {
-                T5 = (h * p5) / (K25 * K4 * K725);
-            }
-            //Определение коэффициента К6
-            if (N < T5)
-            {
-                K65 = Math.Pow(N, 0.8);
-            }
-            if (N > T5)
-            {
-                K65 = Math.Pow(T5, 0.8);
-            }
-            if (T5 < 1)
-            {
-                K65 = 1;
-            }
-            //Время испарения АХОВ6
-            if (gaz6.Checked) { T6 = 0; }
-            else
-            {
-                T6 = (h * p6) / (K26 * K4 * K726);
-            }
-            //Определение коэффициента К6
-            if (N < T6)
-            {
-                K66 = Math.Pow(N, 0.8);
-            }
-            if (N > T6)
-            {
-                K66 = Math.Pow(T6, 0.8);
-            }
-            if (T6 < 1)
-            {
-                K66 = 1;
-            }
-            //Определение эквивалентного количества вещества по вторичному облаку
-            //Qe2 = ((1 - K1) * K2 * K3 * K4 * K5 * K6 * K72 * Q0) / (h * p);
-            Qe2 = (20 * K4 * K5) * (((K2 * K3 * K6 * K7 * Q0) / p + K22 * K32 * K62 * K72 * Q02) / p2 + 
-                (K23 * K33 * K63 * K73 * Q03) / p3 + (K24 * K34 * K64 * K74 * Q04) / p4 + 
-                (K25 * K35 * K65 * K75 * Q05) / p5 + (K26 * K36 * K66 * K76 * Q06) / p6);
             //Определение большего и меньшего кол-ва АХОВ и глубины заражения облаками 
             if ((v >= 1) && (v < 1))
             {

@@ -60,6 +60,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="substanceAXOB6.cs" />
+    <Compile Include="substanceAXOB5.cs" />
+    <Compile Include="substanceAXOB4.cs" />
+    <Compile Include="substanceAXOB3.cs" />
+    <Compile Include="substanceAXOB.cs" />
+    <Compile Include="substanceAXOB1.cs" />
+    <Compile Include="substanceAXOB2.cs" />
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>

@@ -26,7 +26,7 @@
         /// Требуемый метод для поддержки конструктора — не изменяйте 
         /// содержимое этого метода с помощью редактора кода.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.RASCHETbutt = new System.Windows.Forms.Button();
@@ -77,16 +77,16 @@
             this.hours = new System.Windows.Forms.Label();
             this.km = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.GAZGG = new System.Windows.Forms.Label();
+            this.vibAXOB = new System.Windows.Forms.Label();
             this.viborAXOB = new System.Windows.Forms.TabControl();
             this.AXOB1 = new System.Windows.Forms.TabPage();
-            this.vibAXOB = new System.Windows.Forms.Label();
-            this.substance = new System.Windows.Forms.ComboBox();
-            this.jid = new System.Windows.Forms.RadioButton();
-            this.kolvoTOHHlabel = new System.Windows.Forms.Label();
-            this.gaz = new System.Windows.Forms.RadioButton();
-            this.outAXOBlabel = new System.Windows.Forms.Label();
-            this.outAXOB = new System.Windows.Forms.TextBox();
+            this.vibAXOB1 = new System.Windows.Forms.Label();
+            this.substance1 = new System.Windows.Forms.ComboBox();
+            this.gaz1 = new System.Windows.Forms.RadioButton();
+            this.jid1 = new System.Windows.Forms.RadioButton();
+            this.outAXOBlabel1 = new System.Windows.Forms.Label();
+            this.outAXOB1 = new System.Windows.Forms.TextBox();
+            this.kolvoTOHHlabel1 = new System.Windows.Forms.Label();
             this.AXOB2 = new System.Windows.Forms.TabPage();
             this.vibAXOB2 = new System.Windows.Forms.Label();
             this.substance2 = new System.Windows.Forms.ComboBox();
@@ -127,7 +127,16 @@
             this.gaz6 = new System.Windows.Forms.RadioButton();
             this.outAXOBlabel6 = new System.Windows.Forms.Label();
             this.outAXOB6 = new System.Windows.Forms.TextBox();
+            this.substance = new System.Windows.Forms.ComboBox();
+            this.AXOBkolvo2 = new System.Windows.Forms.RadioButton();
+            this.AXOBkolvo1 = new System.Windows.Forms.RadioButton();
+            this.GAZGG = new System.Windows.Forms.Label();
+            this.jid = new System.Windows.Forms.RadioButton();
             this.primichanie3 = new System.Windows.Forms.Label();
+            this.outAXOB = new System.Windows.Forms.TextBox();
+            this.kolvoTOHHlabel = new System.Windows.Forms.Label();
+            this.outAXOBlabel = new System.Windows.Forms.Label();
+            this.gaz = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.viborAXOB.SuspendLayout();
@@ -573,12 +582,21 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.GAZGG);
+            this.panel1.Controls.Add(this.vibAXOB);
             this.panel1.Controls.Add(this.viborAXOB);
+            this.panel1.Controls.Add(this.substance);
+            this.panel1.Controls.Add(this.AXOBkolvo2);
+            this.panel1.Controls.Add(this.AXOBkolvo1);
+            this.panel1.Controls.Add(this.GAZGG);
+            this.panel1.Controls.Add(this.jid);
             this.panel1.Controls.Add(this.primichanie3);
+            this.panel1.Controls.Add(this.outAXOB);
             this.panel1.Controls.Add(this.km);
+            this.panel1.Controls.Add(this.kolvoTOHHlabel);
             this.panel1.Controls.Add(this.RASCHETbutt);
+            this.panel1.Controls.Add(this.outAXOBlabel);
             this.panel1.Controls.Add(this.hours);
+            this.panel1.Controls.Add(this.gaz);
             this.panel1.Controls.Add(this.EXITbutt);
             this.panel1.Controls.Add(this.menkm2);
             this.panel1.Controls.Add(this.menkm1);
@@ -620,14 +638,14 @@
             this.panel1.Size = new System.Drawing.Size(545, 429);
             this.panel1.TabIndex = 52;
             // 
-            // GAZGG
+            // vibAXOB
             // 
-            this.GAZGG.AutoSize = true;
-            this.GAZGG.Location = new System.Drawing.Point(8, 289);
-            this.GAZGG.Name = "GAZGG";
-            this.GAZGG.Size = new System.Drawing.Size(55, 13);
-            this.GAZGG.TabIndex = 54;
-            this.GAZGG.Text = "В городе:";
+            this.vibAXOB.AutoSize = true;
+            this.vibAXOB.Location = new System.Drawing.Point(15, 38);
+            this.vibAXOB.Name = "vibAXOB";
+            this.vibAXOB.Size = new System.Drawing.Size(72, 13);
+            this.vibAXOB.TabIndex = 51;
+            this.vibAXOB.Text = "Выбор АХОВ";
             // 
             // viborAXOB
             // 
@@ -642,17 +660,18 @@
             this.viborAXOB.SelectedIndex = 0;
             this.viborAXOB.Size = new System.Drawing.Size(272, 128);
             this.viborAXOB.TabIndex = 53;
+            this.viborAXOB.Visible = false;
             // 
             // AXOB1
             // 
             this.AXOB1.BackColor = System.Drawing.Color.Silver;
-            this.AXOB1.Controls.Add(this.vibAXOB);
-            this.AXOB1.Controls.Add(this.substance);
-            this.AXOB1.Controls.Add(this.jid);
-            this.AXOB1.Controls.Add(this.kolvoTOHHlabel);
-            this.AXOB1.Controls.Add(this.gaz);
-            this.AXOB1.Controls.Add(this.outAXOBlabel);
-            this.AXOB1.Controls.Add(this.outAXOB);
+            this.AXOB1.Controls.Add(this.vibAXOB1);
+            this.AXOB1.Controls.Add(this.substance1);
+            this.AXOB1.Controls.Add(this.gaz1);
+            this.AXOB1.Controls.Add(this.jid1);
+            this.AXOB1.Controls.Add(this.outAXOBlabel1);
+            this.AXOB1.Controls.Add(this.outAXOB1);
+            this.AXOB1.Controls.Add(this.kolvoTOHHlabel1);
             this.AXOB1.Location = new System.Drawing.Point(4, 22);
             this.AXOB1.Name = "AXOB1";
             this.AXOB1.Padding = new System.Windows.Forms.Padding(3);
@@ -660,72 +679,71 @@
             this.AXOB1.TabIndex = 0;
             this.AXOB1.Text = "№1";
             // 
-            // vibAXOB
+            // vibAXOB1
             // 
-            this.vibAXOB.AutoSize = true;
-            this.vibAXOB.Location = new System.Drawing.Point(7, 3);
-            this.vibAXOB.Name = "vibAXOB";
-            this.vibAXOB.Size = new System.Drawing.Size(72, 13);
-            this.vibAXOB.TabIndex = 51;
-            this.vibAXOB.Text = "Выбор АХОВ";
+            this.vibAXOB1.AutoSize = true;
+            this.vibAXOB1.Location = new System.Drawing.Point(6, 5);
+            this.vibAXOB1.Name = "vibAXOB1";
+            this.vibAXOB1.Size = new System.Drawing.Size(72, 13);
+            this.vibAXOB1.TabIndex = 58;
+            this.vibAXOB1.Text = "Выбор АХОВ";
             // 
-            // substance
+            // substance1
             // 
-            this.substance.FormattingEnabled = true;
-            this.substance.Location = new System.Drawing.Point(7, 19);
-            this.substance.Name = "substance";
-            this.substance.Size = new System.Drawing.Size(254, 21);
-            this.substance.TabIndex = 48;
-            this.substance.SelectedIndexChanged += new System.EventHandler(this.substance_SelectedIndexChanged_1);
+            this.substance1.FormattingEnabled = true;
+            this.substance1.Location = new System.Drawing.Point(6, 21);
+            this.substance1.Name = "substance1";
+            this.substance1.Size = new System.Drawing.Size(254, 21);
+            this.substance1.TabIndex = 55;
             // 
-            // jid
+            // gaz1
             // 
-            this.jid.AutoSize = true;
-            this.jid.Location = new System.Drawing.Point(56, 40);
-            this.jid.Name = "jid";
-            this.jid.Size = new System.Drawing.Size(77, 17);
-            this.jid.TabIndex = 49;
-            this.jid.TabStop = true;
-            this.jid.Text = "Жидкость";
-            this.jid.UseVisualStyleBackColor = true;
-            this.jid.Visible = false;
+            this.gaz1.AutoSize = true;
+            this.gaz1.Location = new System.Drawing.Point(6, 42);
+            this.gaz1.Name = "gaz1";
+            this.gaz1.Size = new System.Drawing.Size(43, 17);
+            this.gaz1.TabIndex = 57;
+            this.gaz1.TabStop = true;
+            this.gaz1.Text = "Газ";
+            this.gaz1.UseVisualStyleBackColor = true;
+            this.gaz1.Visible = false;
             // 
-            // kolvoTOHHlabel
+            // jid1
             // 
-            this.kolvoTOHHlabel.AutoSize = true;
-            this.kolvoTOHHlabel.Location = new System.Drawing.Point(185, 79);
-            this.kolvoTOHHlabel.Name = "kolvoTOHHlabel";
-            this.kolvoTOHHlabel.Size = new System.Drawing.Size(72, 13);
-            this.kolvoTOHHlabel.TabIndex = 54;
-            this.kolvoTOHHlabel.Text = ", кол-во тонн";
+            this.jid1.AutoSize = true;
+            this.jid1.Location = new System.Drawing.Point(55, 42);
+            this.jid1.Name = "jid1";
+            this.jid1.Size = new System.Drawing.Size(77, 17);
+            this.jid1.TabIndex = 56;
+            this.jid1.TabStop = true;
+            this.jid1.Text = "Жидкость";
+            this.jid1.UseVisualStyleBackColor = true;
+            this.jid1.Visible = false;
             // 
-            // gaz
+            // outAXOBlabel1
             // 
-            this.gaz.AutoSize = true;
-            this.gaz.Location = new System.Drawing.Point(7, 40);
-            this.gaz.Name = "gaz";
-            this.gaz.Size = new System.Drawing.Size(43, 17);
-            this.gaz.TabIndex = 50;
-            this.gaz.TabStop = true;
-            this.gaz.Text = "Газ";
-            this.gaz.UseVisualStyleBackColor = true;
-            this.gaz.Visible = false;
+            this.outAXOBlabel1.AutoSize = true;
+            this.outAXOBlabel1.Location = new System.Drawing.Point(6, 61);
+            this.outAXOBlabel1.Name = "outAXOBlabel1";
+            this.outAXOBlabel1.Size = new System.Drawing.Size(225, 13);
+            this.outAXOBlabel1.TabIndex = 59;
+            this.outAXOBlabel1.Text = "АХОВ, выброшенные в окружающую среду";
             // 
-            // outAXOBlabel
+            // outAXOB1
             // 
-            this.outAXOBlabel.AutoSize = true;
-            this.outAXOBlabel.Location = new System.Drawing.Point(4, 59);
-            this.outAXOBlabel.Name = "outAXOBlabel";
-            this.outAXOBlabel.Size = new System.Drawing.Size(225, 13);
-            this.outAXOBlabel.TabIndex = 52;
-            this.outAXOBlabel.Text = "АХОВ, выброшенные в окружающую среду";
+            this.outAXOB1.Location = new System.Drawing.Point(6, 78);
+            this.outAXOB1.Name = "outAXOB1";
+            this.outAXOB1.Size = new System.Drawing.Size(176, 20);
+            this.outAXOB1.TabIndex = 60;
             // 
-            // outAXOB
+            // kolvoTOHHlabel1
             // 
-            this.outAXOB.Location = new System.Drawing.Point(7, 76);
-            this.outAXOB.Name = "outAXOB";
-            this.outAXOB.Size = new System.Drawing.Size(176, 20);
-            this.outAXOB.TabIndex = 53;
+            this.kolvoTOHHlabel1.AutoSize = true;
+            this.kolvoTOHHlabel1.Location = new System.Drawing.Point(184, 81);
+            this.kolvoTOHHlabel1.Name = "kolvoTOHHlabel1";
+            this.kolvoTOHHlabel1.Size = new System.Drawing.Size(72, 13);
+            this.kolvoTOHHlabel1.TabIndex = 61;
+            this.kolvoTOHHlabel1.Text = ", кол-во тонн";
             // 
             // AXOB2
             // 
@@ -756,7 +774,7 @@
             // substance2
             // 
             this.substance2.FormattingEnabled = true;
-            this.substance2.Location = new System.Drawing.Point(7, 21);
+            this.substance2.Location = new System.Drawing.Point(6, 21);
             this.substance2.Name = "substance2";
             this.substance2.Size = new System.Drawing.Size(254, 21);
             this.substance2.TabIndex = 55;
@@ -765,7 +783,7 @@
             // jid2
             // 
             this.jid2.AutoSize = true;
-            this.jid2.Location = new System.Drawing.Point(56, 42);
+            this.jid2.Location = new System.Drawing.Point(55, 42);
             this.jid2.Name = "jid2";
             this.jid2.Size = new System.Drawing.Size(77, 17);
             this.jid2.TabIndex = 56;
@@ -777,7 +795,7 @@
             // kolvoTOHHlabel2
             // 
             this.kolvoTOHHlabel2.AutoSize = true;
-            this.kolvoTOHHlabel2.Location = new System.Drawing.Point(185, 81);
+            this.kolvoTOHHlabel2.Location = new System.Drawing.Point(184, 81);
             this.kolvoTOHHlabel2.Name = "kolvoTOHHlabel2";
             this.kolvoTOHHlabel2.Size = new System.Drawing.Size(72, 13);
             this.kolvoTOHHlabel2.TabIndex = 61;
@@ -786,7 +804,7 @@
             // gaz2
             // 
             this.gaz2.AutoSize = true;
-            this.gaz2.Location = new System.Drawing.Point(7, 42);
+            this.gaz2.Location = new System.Drawing.Point(6, 42);
             this.gaz2.Name = "gaz2";
             this.gaz2.Size = new System.Drawing.Size(43, 17);
             this.gaz2.TabIndex = 57;
@@ -798,7 +816,7 @@
             // outAXOBlabel2
             // 
             this.outAXOBlabel2.AutoSize = true;
-            this.outAXOBlabel2.Location = new System.Drawing.Point(4, 61);
+            this.outAXOBlabel2.Location = new System.Drawing.Point(6, 61);
             this.outAXOBlabel2.Name = "outAXOBlabel2";
             this.outAXOBlabel2.Size = new System.Drawing.Size(225, 13);
             this.outAXOBlabel2.TabIndex = 59;
@@ -806,7 +824,7 @@
             // 
             // outAXOB2
             // 
-            this.outAXOB2.Location = new System.Drawing.Point(7, 78);
+            this.outAXOB2.Location = new System.Drawing.Point(6, 78);
             this.outAXOB2.Name = "outAXOB2";
             this.outAXOB2.Size = new System.Drawing.Size(176, 20);
             this.outAXOB2.TabIndex = 60;
@@ -839,7 +857,7 @@
             // substance3
             // 
             this.substance3.FormattingEnabled = true;
-            this.substance3.Location = new System.Drawing.Point(7, 21);
+            this.substance3.Location = new System.Drawing.Point(6, 21);
             this.substance3.Name = "substance3";
             this.substance3.Size = new System.Drawing.Size(254, 21);
             this.substance3.TabIndex = 55;
@@ -848,7 +866,7 @@
             // jid3
             // 
             this.jid3.AutoSize = true;
-            this.jid3.Location = new System.Drawing.Point(56, 42);
+            this.jid3.Location = new System.Drawing.Point(55, 42);
             this.jid3.Name = "jid3";
             this.jid3.Size = new System.Drawing.Size(77, 17);
             this.jid3.TabIndex = 56;
@@ -860,7 +878,7 @@
             // kolvoTOHHlabel3
             // 
             this.kolvoTOHHlabel3.AutoSize = true;
-            this.kolvoTOHHlabel3.Location = new System.Drawing.Point(185, 81);
+            this.kolvoTOHHlabel3.Location = new System.Drawing.Point(184, 81);
             this.kolvoTOHHlabel3.Name = "kolvoTOHHlabel3";
             this.kolvoTOHHlabel3.Size = new System.Drawing.Size(72, 13);
             this.kolvoTOHHlabel3.TabIndex = 61;
@@ -869,7 +887,7 @@
             // gaz3
             // 
             this.gaz3.AutoSize = true;
-            this.gaz3.Location = new System.Drawing.Point(7, 42);
+            this.gaz3.Location = new System.Drawing.Point(6, 42);
             this.gaz3.Name = "gaz3";
             this.gaz3.Size = new System.Drawing.Size(43, 17);
             this.gaz3.TabIndex = 57;
@@ -881,7 +899,7 @@
             // outAXOBlabel3
             // 
             this.outAXOBlabel3.AutoSize = true;
-            this.outAXOBlabel3.Location = new System.Drawing.Point(4, 61);
+            this.outAXOBlabel3.Location = new System.Drawing.Point(6, 61);
             this.outAXOBlabel3.Name = "outAXOBlabel3";
             this.outAXOBlabel3.Size = new System.Drawing.Size(225, 13);
             this.outAXOBlabel3.TabIndex = 59;
@@ -889,7 +907,7 @@
             // 
             // outAXOB3
             // 
-            this.outAXOB3.Location = new System.Drawing.Point(7, 78);
+            this.outAXOB3.Location = new System.Drawing.Point(6, 78);
             this.outAXOB3.Name = "outAXOB3";
             this.outAXOB3.Size = new System.Drawing.Size(176, 20);
             this.outAXOB3.TabIndex = 60;
@@ -922,7 +940,7 @@
             // substance4
             // 
             this.substance4.FormattingEnabled = true;
-            this.substance4.Location = new System.Drawing.Point(7, 21);
+            this.substance4.Location = new System.Drawing.Point(6, 21);
             this.substance4.Name = "substance4";
             this.substance4.Size = new System.Drawing.Size(254, 21);
             this.substance4.TabIndex = 55;
@@ -931,7 +949,7 @@
             // jid4
             // 
             this.jid4.AutoSize = true;
-            this.jid4.Location = new System.Drawing.Point(56, 42);
+            this.jid4.Location = new System.Drawing.Point(55, 42);
             this.jid4.Name = "jid4";
             this.jid4.Size = new System.Drawing.Size(77, 17);
             this.jid4.TabIndex = 56;
@@ -943,7 +961,7 @@
             // kolvoTOHHlabel4
             // 
             this.kolvoTOHHlabel4.AutoSize = true;
-            this.kolvoTOHHlabel4.Location = new System.Drawing.Point(185, 81);
+            this.kolvoTOHHlabel4.Location = new System.Drawing.Point(184, 81);
             this.kolvoTOHHlabel4.Name = "kolvoTOHHlabel4";
             this.kolvoTOHHlabel4.Size = new System.Drawing.Size(72, 13);
             this.kolvoTOHHlabel4.TabIndex = 61;
@@ -952,7 +970,7 @@
             // gaz4
             // 
             this.gaz4.AutoSize = true;
-            this.gaz4.Location = new System.Drawing.Point(7, 42);
+            this.gaz4.Location = new System.Drawing.Point(6, 42);
             this.gaz4.Name = "gaz4";
             this.gaz4.Size = new System.Drawing.Size(43, 17);
             this.gaz4.TabIndex = 57;
@@ -964,7 +982,7 @@
             // outAXOBlabel4
             // 
             this.outAXOBlabel4.AutoSize = true;
-            this.outAXOBlabel4.Location = new System.Drawing.Point(4, 61);
+            this.outAXOBlabel4.Location = new System.Drawing.Point(6, 61);
             this.outAXOBlabel4.Name = "outAXOBlabel4";
             this.outAXOBlabel4.Size = new System.Drawing.Size(225, 13);
             this.outAXOBlabel4.TabIndex = 59;
@@ -972,7 +990,7 @@
             // 
             // outAXOB4
             // 
-            this.outAXOB4.Location = new System.Drawing.Point(7, 78);
+            this.outAXOB4.Location = new System.Drawing.Point(6, 78);
             this.outAXOB4.Name = "outAXOB4";
             this.outAXOB4.Size = new System.Drawing.Size(176, 20);
             this.outAXOB4.TabIndex = 60;
@@ -1005,7 +1023,7 @@
             // substance5
             // 
             this.substance5.FormattingEnabled = true;
-            this.substance5.Location = new System.Drawing.Point(7, 21);
+            this.substance5.Location = new System.Drawing.Point(6, 21);
             this.substance5.Name = "substance5";
             this.substance5.Size = new System.Drawing.Size(254, 21);
             this.substance5.TabIndex = 55;
@@ -1014,7 +1032,7 @@
             // jid5
             // 
             this.jid5.AutoSize = true;
-            this.jid5.Location = new System.Drawing.Point(56, 42);
+            this.jid5.Location = new System.Drawing.Point(55, 42);
             this.jid5.Name = "jid5";
             this.jid5.Size = new System.Drawing.Size(77, 17);
             this.jid5.TabIndex = 56;
@@ -1026,7 +1044,7 @@
             // kolvoTOHHlabel5
             // 
             this.kolvoTOHHlabel5.AutoSize = true;
-            this.kolvoTOHHlabel5.Location = new System.Drawing.Point(185, 81);
+            this.kolvoTOHHlabel5.Location = new System.Drawing.Point(184, 81);
             this.kolvoTOHHlabel5.Name = "kolvoTOHHlabel5";
             this.kolvoTOHHlabel5.Size = new System.Drawing.Size(72, 13);
             this.kolvoTOHHlabel5.TabIndex = 61;
@@ -1035,7 +1053,7 @@
             // gaz5
             // 
             this.gaz5.AutoSize = true;
-            this.gaz5.Location = new System.Drawing.Point(7, 42);
+            this.gaz5.Location = new System.Drawing.Point(6, 42);
             this.gaz5.Name = "gaz5";
             this.gaz5.Size = new System.Drawing.Size(43, 17);
             this.gaz5.TabIndex = 57;
@@ -1047,7 +1065,7 @@
             // outAXOBlabel5
             // 
             this.outAXOBlabel5.AutoSize = true;
-            this.outAXOBlabel5.Location = new System.Drawing.Point(4, 61);
+            this.outAXOBlabel5.Location = new System.Drawing.Point(6, 61);
             this.outAXOBlabel5.Name = "outAXOBlabel5";
             this.outAXOBlabel5.Size = new System.Drawing.Size(225, 13);
             this.outAXOBlabel5.TabIndex = 59;
@@ -1055,7 +1073,7 @@
             // 
             // outAXOB5
             // 
-            this.outAXOB5.Location = new System.Drawing.Point(7, 78);
+            this.outAXOB5.Location = new System.Drawing.Point(6, 78);
             this.outAXOB5.Name = "outAXOB5";
             this.outAXOB5.Size = new System.Drawing.Size(176, 20);
             this.outAXOB5.TabIndex = 60;
@@ -1088,7 +1106,7 @@
             // substance6
             // 
             this.substance6.FormattingEnabled = true;
-            this.substance6.Location = new System.Drawing.Point(7, 21);
+            this.substance6.Location = new System.Drawing.Point(6, 21);
             this.substance6.Name = "substance6";
             this.substance6.Size = new System.Drawing.Size(254, 21);
             this.substance6.TabIndex = 55;
@@ -1097,7 +1115,7 @@
             // jid6
             // 
             this.jid6.AutoSize = true;
-            this.jid6.Location = new System.Drawing.Point(56, 42);
+            this.jid6.Location = new System.Drawing.Point(55, 42);
             this.jid6.Name = "jid6";
             this.jid6.Size = new System.Drawing.Size(77, 17);
             this.jid6.TabIndex = 56;
@@ -1109,7 +1127,7 @@
             // kolvoTOHHlabel6
             // 
             this.kolvoTOHHlabel6.AutoSize = true;
-            this.kolvoTOHHlabel6.Location = new System.Drawing.Point(185, 81);
+            this.kolvoTOHHlabel6.Location = new System.Drawing.Point(184, 81);
             this.kolvoTOHHlabel6.Name = "kolvoTOHHlabel6";
             this.kolvoTOHHlabel6.Size = new System.Drawing.Size(72, 13);
             this.kolvoTOHHlabel6.TabIndex = 61;
@@ -1118,7 +1136,7 @@
             // gaz6
             // 
             this.gaz6.AutoSize = true;
-            this.gaz6.Location = new System.Drawing.Point(7, 42);
+            this.gaz6.Location = new System.Drawing.Point(6, 42);
             this.gaz6.Name = "gaz6";
             this.gaz6.Size = new System.Drawing.Size(43, 17);
             this.gaz6.TabIndex = 57;
@@ -1130,7 +1148,7 @@
             // outAXOBlabel6
             // 
             this.outAXOBlabel6.AutoSize = true;
-            this.outAXOBlabel6.Location = new System.Drawing.Point(4, 61);
+            this.outAXOBlabel6.Location = new System.Drawing.Point(6, 61);
             this.outAXOBlabel6.Name = "outAXOBlabel6";
             this.outAXOBlabel6.Size = new System.Drawing.Size(225, 13);
             this.outAXOBlabel6.TabIndex = 59;
@@ -1138,10 +1156,65 @@
             // 
             // outAXOB6
             // 
-            this.outAXOB6.Location = new System.Drawing.Point(7, 78);
+            this.outAXOB6.Location = new System.Drawing.Point(6, 78);
             this.outAXOB6.Name = "outAXOB6";
             this.outAXOB6.Size = new System.Drawing.Size(176, 20);
             this.outAXOB6.TabIndex = 60;
+            // 
+            // substance
+            // 
+            this.substance.FormattingEnabled = true;
+            this.substance.Location = new System.Drawing.Point(15, 54);
+            this.substance.Name = "substance";
+            this.substance.Size = new System.Drawing.Size(254, 21);
+            this.substance.TabIndex = 48;
+            this.substance.SelectedIndexChanged += new System.EventHandler(this.substance_SelectedIndexChanged_1);
+            // 
+            // AXOBkolvo2
+            // 
+            this.AXOBkolvo2.AutoSize = true;
+            this.AXOBkolvo2.Location = new System.Drawing.Point(367, 11);
+            this.AXOBkolvo2.Name = "AXOBkolvo2";
+            this.AXOBkolvo2.Size = new System.Drawing.Size(120, 17);
+            this.AXOBkolvo2.TabIndex = 56;
+            this.AXOBkolvo2.TabStop = true;
+            this.AXOBkolvo2.Text = "Два и более АХОВ";
+            this.AXOBkolvo2.UseVisualStyleBackColor = true;
+            this.AXOBkolvo2.CheckedChanged += new System.EventHandler(this.AXOBkolvo2_CheckedChanged);
+            // 
+            // AXOBkolvo1
+            // 
+            this.AXOBkolvo1.AutoSize = true;
+            this.AXOBkolvo1.Checked = true;
+            this.AXOBkolvo1.Location = new System.Drawing.Point(278, 11);
+            this.AXOBkolvo1.Name = "AXOBkolvo1";
+            this.AXOBkolvo1.Size = new System.Drawing.Size(83, 17);
+            this.AXOBkolvo1.TabIndex = 55;
+            this.AXOBkolvo1.TabStop = true;
+            this.AXOBkolvo1.Text = "Одно АХОВ";
+            this.AXOBkolvo1.UseVisualStyleBackColor = true;
+            this.AXOBkolvo1.CheckedChanged += new System.EventHandler(this.AXOBkolvo1_CheckedChanged);
+            // 
+            // GAZGG
+            // 
+            this.GAZGG.AutoSize = true;
+            this.GAZGG.Location = new System.Drawing.Point(8, 289);
+            this.GAZGG.Name = "GAZGG";
+            this.GAZGG.Size = new System.Drawing.Size(55, 13);
+            this.GAZGG.TabIndex = 54;
+            this.GAZGG.Text = "В городе:";
+            // 
+            // jid
+            // 
+            this.jid.AutoSize = true;
+            this.jid.Location = new System.Drawing.Point(64, 75);
+            this.jid.Name = "jid";
+            this.jid.Size = new System.Drawing.Size(77, 17);
+            this.jid.TabIndex = 49;
+            this.jid.TabStop = true;
+            this.jid.Text = "Жидкость";
+            this.jid.UseVisualStyleBackColor = true;
+            this.jid.Visible = false;
             // 
             // primichanie3
             // 
@@ -1152,13 +1225,50 @@
             this.primichanie3.TabIndex = 52;
             this.primichanie3.Text = "Дробные данные следует вводить через запятую!";
             // 
+            // outAXOB
+            // 
+            this.outAXOB.Location = new System.Drawing.Point(15, 111);
+            this.outAXOB.Name = "outAXOB";
+            this.outAXOB.Size = new System.Drawing.Size(176, 20);
+            this.outAXOB.TabIndex = 53;
+            // 
+            // kolvoTOHHlabel
+            // 
+            this.kolvoTOHHlabel.AutoSize = true;
+            this.kolvoTOHHlabel.Location = new System.Drawing.Point(193, 114);
+            this.kolvoTOHHlabel.Name = "kolvoTOHHlabel";
+            this.kolvoTOHHlabel.Size = new System.Drawing.Size(72, 13);
+            this.kolvoTOHHlabel.TabIndex = 54;
+            this.kolvoTOHHlabel.Text = ", кол-во тонн";
+            // 
+            // outAXOBlabel
+            // 
+            this.outAXOBlabel.AutoSize = true;
+            this.outAXOBlabel.Location = new System.Drawing.Point(15, 94);
+            this.outAXOBlabel.Name = "outAXOBlabel";
+            this.outAXOBlabel.Size = new System.Drawing.Size(225, 13);
+            this.outAXOBlabel.TabIndex = 52;
+            this.outAXOBlabel.Text = "АХОВ, выброшенные в окружающую среду";
+            // 
+            // gaz
+            // 
+            this.gaz.AutoSize = true;
+            this.gaz.Location = new System.Drawing.Point(15, 75);
+            this.gaz.Name = "gaz";
+            this.gaz.Size = new System.Drawing.Size(43, 17);
+            this.gaz.TabIndex = 50;
+            this.gaz.TabStop = true;
+            this.gaz.Text = "Газ";
+            this.gaz.UseVisualStyleBackColor = true;
+            this.gaz.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(547, 430);
+            this.ClientSize = new System.Drawing.Size(546, 430);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1287,5 +1397,14 @@
         private System.Windows.Forms.Label outAXOBlabel6;
         private System.Windows.Forms.TextBox outAXOB6;
         private System.Windows.Forms.Label GAZGG;
+        private System.Windows.Forms.Label vibAXOB1;
+        public System.Windows.Forms.ComboBox substance1;
+        public System.Windows.Forms.RadioButton gaz1;
+        public System.Windows.Forms.RadioButton jid1;
+        private System.Windows.Forms.Label outAXOBlabel1;
+        private System.Windows.Forms.TextBox outAXOB1;
+        private System.Windows.Forms.Label kolvoTOHHlabel1;
+        private System.Windows.Forms.RadioButton AXOBkolvo2;
+        private System.Windows.Forms.RadioButton AXOBkolvo1;
     }
 }
