@@ -58,15 +58,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="KolvoAndGlub.cs" />
+    <Compile Include="moreAXOB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="substanceAXOB6.cs" />
-    <Compile Include="substanceAXOB5.cs" />
-    <Compile Include="substanceAXOB4.cs" />
-    <Compile Include="substanceAXOB3.cs" />
-    <Compile Include="substanceAXOB.cs" />
-    <Compile Include="substanceAXOB1.cs" />
-    <Compile Include="substanceAXOB2.cs" />
+    <Compile Include="substance\substanceAXOB6.cs" />
+    <Compile Include="substance\substanceAXOB5.cs" />
+    <Compile Include="substance\substanceAXOB4.cs" />
+    <Compile Include="substance\substanceAXOB3.cs" />
+    <Compile Include="substance\substanceAXOB.cs" />
+    <Compile Include="substance\substanceAXOB1.cs" />
+    <Compile Include="substance\substanceAXOB2.cs" />
+    <Compile Include="verUstAir.cs" />
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,8 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ico.ico" />
-    <Content Include="main.ico" />
-    <Content Include="main1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

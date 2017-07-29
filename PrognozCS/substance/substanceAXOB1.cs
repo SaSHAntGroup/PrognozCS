@@ -24,7 +24,7 @@ namespace PrognozCS
             Form1.Pi1 = 101.58;
             Form1.D1 = 0.6;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.9; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.9; }
             if (Form1.t >= -20) { Form1.K711 = 0.3; Form1.K721 = 1; }
             if (Form1.t >= 0) { Form1.K711 = 0.6; Form1.K721 = 1; }
             if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
@@ -40,7 +40,7 @@ namespace PrognozCS
             Form1.Pi1 = 99.7;
             Form1.D1 = 15;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.9; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.9; }
             if (Form1.t >= -20) { Form1.K711 = 0.3; Form1.K721 = 1; }
             if (Form1.t >= 0) { Form1.K711 = 0.6; Form1.K721 = 1; }
             if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
@@ -56,7 +56,7 @@ namespace PrognozCS
             Form1.Pi1 = 100.8;
             Form1.D1 = 2;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0.64; Form1.K721 = 1; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0.64; Form1.K721 = 1; }
             if (Form1.t >= -20) { Form1.K711 = 0.6; Form1.K721 = 1; }
             if (Form1.t >= 0) { Form1.K711 = 0.8; Form1.K721 = 1; }
             if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
@@ -72,7 +72,7 @@ namespace PrognozCS
             Form1.Pi1 = 101.6;
             Form1.D1 = 2.4;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0.2; Form1.K721 = 1; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0.2; Form1.K721 = 1; }
             if (Form1.t >= -20) { Form1.K711 = 0.5; Form1.K721 = 1; }
             if (Form1.t >= 0) { Form1.K711 = 0.8; Form1.K721 = 1; }
             if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
@@ -88,7 +88,7 @@ namespace PrognozCS
             Form1.Pi1 = 118.37;
             Form1.D1 = 16.1;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0.3; Form1.K721 = 1; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0.3; Form1.K721 = 1; }
             if (Form1.t >= -20) { Form1.K711 = 0.5; Form1.K721 = 1; }
             if (Form1.t >= 0) { Form1.K711 = 0.8; Form1.K721 = 1; }
             if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
@@ -104,7 +104,7 @@ namespace PrognozCS
             Form1.Pi1 = 100.9;
             Form1.D1 = 0.6;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.1; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.1; }
             if (Form1.t >= -20) { Form1.K711 = 0; Form1.K721 = 0.3; }
             if (Form1.t >= 0) { Form1.K711 = 0; Form1.K721 = 0.7; }
             if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
@@ -120,7 +120,7 @@ namespace PrognozCS
             Form1.Pi1 = 101.44;
             Form1.D1 = 0.2;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0.7; Form1.K721 = 1; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0.7; Form1.K721 = 1; }
             if (Form1.t >= -20) { Form1.K711 = 0.8; Form1.K721 = 1; }
             if (Form1.t >= 0) { Form1.K711 = 0.9; Form1.K721 = 1; }
             if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
@@ -136,7 +136,7 @@ namespace PrognozCS
             Form1.Pi1 = 100.80;
             Form1.D1 = 0.75;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0; }
             if (Form1.t >= -20) { Form1.K711 = 0; Form1.K721 = 0; }
             if (Form1.t >= 0) { Form1.K711 = 0; Form1.K721 = 0.6; }
             if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
@@ -153,7 +153,7 @@ namespace PrognozCS
             Form1.D1 = 4;
             Form1.p1 = 0.989;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0.1; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0.1; }
             if (Form1.t >= -20) { Form1.K711 = 0.2; }
             if (Form1.t >= 0) { Form1.K711 = 0.5; }
             if (Form1.t >= 20) { Form1.K711 = 1; }
@@ -171,7 +171,7 @@ namespace PrognozCS
             Form1.Pi1 = 82.25;
             Form1.D1 = 0.2;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; }
             if (Form1.t >= -20) { Form1.K711 = 0; }
             if (Form1.t >= 0) { Form1.K711 = 0.4; }
             if (Form1.t >= 20) { Form1.K711 = 1; }
@@ -189,7 +189,7 @@ namespace PrognozCS
             Form1.Pi1 = 97.04;
             Form1.D1 = 1.5;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; }
             if (Form1.t >= -20) { Form1.K711 = 0; }
             if (Form1.t >= 0) { Form1.K711 = 0.4; }
             if (Form1.t >= 20) { Form1.K711 = 1; }
@@ -207,7 +207,7 @@ namespace PrognozCS
             Form1.Pi1 = 100.8;
             Form1.D1 = 1.8;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.2; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.2; }
             if (Form1.t >= -20) { Form1.K711 = 0; Form1.K721 = 0.5; }
             if (Form1.t >= 0) { Form1.K711 = 0.3; Form1.K721 = 1; }
             if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
@@ -224,7 +224,7 @@ namespace PrognozCS
             Form1.Pi1 = 39.60;
             Form1.D1 = 45;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0.1; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0.1; }
             if (Form1.t >= -20) { Form1.K711 = 0.2; }
             if (Form1.t >= 0) { Form1.K711 = 0.4; }
             if (Form1.t >= 20) { Form1.K711 = 1; }
@@ -242,7 +242,7 @@ namespace PrognozCS
             Form1.Pi1 = 57.19;
             Form1.D1 = 2;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; }
             if (Form1.t >= -20) { Form1.K711 = 0.1; }
             if (Form1.t >= 0) { Form1.K711 = 0.3; }
             if (Form1.t >= 20) { Form1.K711 = 1; }
@@ -260,13 +260,91 @@ namespace PrognozCS
             Form1.Pi1 = 102.10;
             Form1.D1 = 0.6;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) && (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.4; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.4; }
             if (Form1.t >= -20) { Form1.K711 = 0; Form1.K721 = 1; }
             if (Form1.t >= 0) { Form1.K711 = 0.5; Form1.K721 = 1; }
             if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
             if (Form1.t >= 40) { Form1.K711 = 1.5; Form1.K721 = 1; }
             //Коэффициент К1
             Form1.K11 = 0.19;
+        }
+        //////////////////////////////////////
+        //////////////////////////////////////
+        public static void VodorodMishyak()
+        {
+            Form1.tkip1 = -62.47;
+            Form1.D1 = 0.2;
+            //Определение К7 при температуре окружающей среды
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0.3; Form1.K721 = 1; }
+            if (Form1.t >= -20) { Form1.K711 = 0.5; Form1.K721 = 1; }
+            if (Form1.t >= 0) { Form1.K711 = 0.8; Form1.K721 = 1; }
+            if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 1.2; Form1.K721 = 1; }
+            //Коэффициент К1
+            Form1.K11 = 0.17;
+            Form1.K21 = 0.054;
+        }
+        //////////////////////////////////////
+        public static void Dimetilamin()
+        {
+            Form1.tkip1 = 6.9;
+            Form1.D1 = 1.2;
+            //Определение К7 при температуре окружающей среды
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.1; }
+            if (Form1.t >= -20) { Form1.K711 = 0; Form1.K721 = 0.3; }
+            if (Form1.t >= 0) { Form1.K711 = 0; Form1.K721 = 0.8; }
+            if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 2.5; Form1.K721 = 1; }
+            //Коэффициент К1
+            Form1.K11 = 0.06;
+            Form1.K21 = 0.041;
+        }
+        //////////////////////////////////////
+        public static void Metilamin()
+        {
+            Form1.tkip1 = -6.5;
+            Form1.D1 = 1.2;
+            //Определение К7 при температуре окружающей среды
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.3; }
+            if (Form1.t >= -20) { Form1.K711 = 0; Form1.K721 = 0.7; }
+            if (Form1.t >= 0) { Form1.K711 = 0.5; Form1.K721 = 1; }
+            if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 2.5; Form1.K721 = 1; }
+            //Коэффициент К1
+            Form1.K11 = 0.13;
+            Form1.K21 = 0.034;
+        }
+        //////////////////////////////////////
+        public static void MetilChlor()
+        {
+            Form1.tkip1 = -23.76;
+            Form1.D1 = 10.8;
+            //Определение К7 при температуре окружающей среды
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 130.5; }
+            if (Form1.t >= -20) { Form1.K711 = 0.1; Form1.K721 = 1; }
+            if (Form1.t >= 0) { Form1.K711 = 0.6; Form1.K721 = 1; }
+            if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 1.5; Form1.K721 = 1; }
+            //Коэффициент К1
+            Form1.K11 = 0.125;
+            Form1.K21 = 0.044;
+        }
+        //////////////////////////////////////
+        public static void NitrilAkrilKisl()
+        {
+            Form1.tkip1 = 77.3;
+            Form1.p1 = 0.806;
+            Form1.D1 = 0.75;
+            //Определение К7 при температуре окружающей среды
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0.04; }
+            if (Form1.t >= -20) { Form1.K711 = 0.1; }
+            if (Form1.t >= 0) { Form1.K711 = 0.4; }
+            if (Form1.t >= 20) { Form1.K711 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 2.4; }
+            Form1.K721 = Form1.K711;
+            //Коэффициент К1
+            Form1.K11 = 0;
+            Form1.K21 = 0.007;
         }
     }
 }

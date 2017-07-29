@@ -137,6 +137,7 @@
             this.kolvoTOHHlabel = new System.Windows.Forms.Label();
             this.outAXOBlabel = new System.Windows.Forms.Label();
             this.gaz = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.viborAXOB.SuspendLayout();
@@ -146,6 +147,7 @@
             this.AXOB4.SuspendLayout();
             this.AXOB5.SuspendLayout();
             this.AXOB6.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // RASCHETbutt
@@ -582,11 +584,10 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.vibAXOB);
             this.panel1.Controls.Add(this.viborAXOB);
             this.panel1.Controls.Add(this.substance);
-            this.panel1.Controls.Add(this.AXOBkolvo2);
-            this.panel1.Controls.Add(this.AXOBkolvo1);
             this.panel1.Controls.Add(this.GAZGG);
             this.panel1.Controls.Add(this.jid);
             this.panel1.Controls.Add(this.primichanie3);
@@ -635,7 +636,7 @@
             this.panel1.Controls.Add(this.protivoGAZlabel);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(545, 429);
+            this.panel1.Size = new System.Drawing.Size(556, 429);
             this.panel1.TabIndex = 52;
             // 
             // vibAXOB
@@ -695,6 +696,7 @@
             this.substance1.Name = "substance1";
             this.substance1.Size = new System.Drawing.Size(254, 21);
             this.substance1.TabIndex = 55;
+            this.substance1.SelectedIndexChanged += new System.EventHandler(this.substance1_SelectedIndexChanged);
             // 
             // gaz1
             // 
@@ -1173,7 +1175,7 @@
             // AXOBkolvo2
             // 
             this.AXOBkolvo2.AutoSize = true;
-            this.AXOBkolvo2.Location = new System.Drawing.Point(367, 11);
+            this.AXOBkolvo2.Location = new System.Drawing.Point(94, 12);
             this.AXOBkolvo2.Name = "AXOBkolvo2";
             this.AXOBkolvo2.Size = new System.Drawing.Size(120, 17);
             this.AXOBkolvo2.TabIndex = 56;
@@ -1186,7 +1188,7 @@
             // 
             this.AXOBkolvo1.AutoSize = true;
             this.AXOBkolvo1.Checked = true;
-            this.AXOBkolvo1.Location = new System.Drawing.Point(278, 11);
+            this.AXOBkolvo1.Location = new System.Drawing.Point(5, 12);
             this.AXOBkolvo1.Name = "AXOBkolvo1";
             this.AXOBkolvo1.Size = new System.Drawing.Size(83, 17);
             this.AXOBkolvo1.TabIndex = 55;
@@ -1262,13 +1264,25 @@
             this.gaz.UseVisualStyleBackColor = true;
             this.gaz.Visible = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.AXOBkolvo2);
+            this.groupBox2.Controls.Add(this.AXOBkolvo1);
+            this.groupBox2.Location = new System.Drawing.Point(279, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(258, 29);
+            this.groupBox2.TabIndex = 57;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Количество АХОВ на объекте";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(546, 430);
+            this.ClientSize = new System.Drawing.Size(558, 430);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1292,6 +1306,8 @@
             this.AXOB5.PerformLayout();
             this.AXOB6.ResumeLayout(false);
             this.AXOB6.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1406,5 +1422,6 @@
         private System.Windows.Forms.Label kolvoTOHHlabel1;
         private System.Windows.Forms.RadioButton AXOBkolvo2;
         private System.Windows.Forms.RadioButton AXOBkolvo1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
