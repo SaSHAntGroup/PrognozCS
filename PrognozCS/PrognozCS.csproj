@@ -58,6 +58,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="KoeffZ.cs" />
     <Compile Include="KolvoAndGlub.cs" />
     <Compile Include="moreAXOB.cs" />
     <Compile Include="Program.cs" />
