@@ -45,13 +45,6 @@ namespace PrognozCS
             Graphics g = e.Graphics;
             g.DrawRectangle(black, rect);
             g.DrawEllipse(black, circle);
-
-        
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
