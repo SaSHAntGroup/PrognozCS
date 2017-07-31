@@ -185,7 +185,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(543, 390);
+            this.ClientSize = new System.Drawing.Size(569, 426);
             this.Controls.Add(this.ploshad);
             this.Controls.Add(this.poteri3);
             this.Controls.Add(this.poteri2);
@@ -204,6 +204,8 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Прогнозирование";
+            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form2_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 
