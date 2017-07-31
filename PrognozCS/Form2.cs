@@ -27,31 +27,12 @@ namespace PrognozCS
         }
     public void button1_Click(object sender, EventArgs e)
     {
-        this.Close();
+        Close();
     }
-        Pen black = new Pen(Color.Black);
 
-        static int G = (int)Form1.G;
-
-        System.Drawing.SolidBrush FillBlack = new System.Drawing.SolidBrush(Color.Black);
-        
-
-        Rectangle rect = new Rectangle(200, 200, 80, 70);// город
-        Rectangle circle = new Rectangle(200, 200, G, G);// область поражения
-
-
-        private void Form2_Paint(object sender, PaintEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Graphics g = e.Graphics;
-            g.DrawRectangle(black, rect);
-            g.DrawEllipse(black, circle);
-
-        
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
+            new Form3().Show();
         }
     }
 }

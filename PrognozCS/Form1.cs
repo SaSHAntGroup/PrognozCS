@@ -1537,6 +1537,7 @@ namespace PrognozCS
                     p1 = 0.0021;
                 }
             }
+            /////////////////////////////////////////////////
             if (substance1.Text == "Водород мышьяковистый")
             {
                 substanceAXOB1.VodorodMishyak();
@@ -1625,6 +1626,7 @@ namespace PrognozCS
             {
                 substanceAXOB1.Formaldegid();
             }
+            ///////////////////////////////
             if (substance1.Text == "Акролеин")
             {
 

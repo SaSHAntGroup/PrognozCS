@@ -7,6 +7,7 @@ namespace PrognozCS
 {
     class KoeffZ
     {
+        //Городские оповещенные
         public static void GorOpovesh()
         {
             if (Form1.N <= 0.25)
@@ -65,6 +66,7 @@ namespace PrognozCS
                 if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = ; }
             }
         }
+        //Городские не оповещенные
         public static void GorNeOpovesh()
         {
             if (Form1.N <= 0.25)
@@ -123,6 +125,7 @@ namespace PrognozCS
                 if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = ; }
             }
         }
+        //Загородная зона, зимой, оповещенные
         public static void SelOpovZim()
         {
             if (Form1.N <= 0.25)
@@ -181,6 +184,7 @@ namespace PrognozCS
                 if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
             }
         }
+        //Загородная зона, зимой, не оповещенные
         public static void SelNeOpovZim()
         {
             if (Form1.N <= 0.25)
@@ -239,6 +243,7 @@ namespace PrognozCS
                 if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
             }
         }
+        //Загородная зона, с\х период, оповещенные
         public static void SelOpovSH()
         {
             if (Form1.N <= 0.25)
@@ -297,6 +302,7 @@ namespace PrognozCS
                 if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
             }
         }
+        //Загородная зона, с\х период, не оповещенные
         public static void SelNeOpovSH()
         {
             if (Form1.N <= 0.25)
