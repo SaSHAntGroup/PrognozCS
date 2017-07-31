@@ -23,10 +23,35 @@ namespace PrognozCS
             poteri1.Text = Form1.P1.ToString() + " чел";
             poteri2.Text = Form1.P2.ToString() + " чел";
             poteri3.Text = Form1.P3.ToString() + " чел";
+
         }
-        public void button1_Click(object sender, EventArgs e)
+    public void button1_Click(object sender, EventArgs e)
+    {
+        this.Close();
+    }
+        Pen black = new Pen(Color.Black);
+
+        static int G = (int)Form1.G;
+
+        System.Drawing.SolidBrush FillBlack = new System.Drawing.SolidBrush(Color.Black);
+        
+
+        Rectangle rect = new Rectangle(200, 200, 80, 70);// город
+        Rectangle circle = new Rectangle(200, 200, G, G);// область поражения
+
+
+        private void Form2_Paint(object sender, PaintEventArgs e)
         {
-            this.Close();
+            Graphics g = e.Graphics;
+            g.DrawRectangle(black, rect);
+            g.DrawEllipse(black, circle);
+
+        
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
