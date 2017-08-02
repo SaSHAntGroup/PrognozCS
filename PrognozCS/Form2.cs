@@ -16,7 +16,7 @@ namespace PrognozCS
             InitializeComponent();
             Form1.G = Math.Round(Form1.G, 2);
             Form1.Sf = Math.Round(Form1.Sf, 2);
-            Form1.Txm = Math.Round(Form1.Txm, 0);
+            int Txm = (int)Form1.Txm;
             glub.Text = Form1.G.ToString() + " км";
             ploshad.Text = Form1.Sf.ToString() + " км²";
             time.Text = Form1.Txh.ToString() + " часов " + Form1.Txm.ToString() + " минут";
@@ -27,24 +27,11 @@ namespace PrognozCS
         }
     public void button1_Click(object sender, EventArgs e)
     {
-        this.Close();
+        Close();
     }
-        Pen black = new Pen(Color.Black);
-
-        static int G = (int)Form1.G;
-
-        System.Drawing.SolidBrush FillBlack = new System.Drawing.SolidBrush(Color.Black);
-        
-
-        Rectangle rect = new Rectangle(200, 200, 80, 70);// город
-        Rectangle circle = new Rectangle(200, 200, G, G);// область поражения
-
-
-        private void Form2_Paint(object sender, PaintEventArgs e)
-        {
-            Graphics g = e.Graphics;
-            g.DrawRectangle(black, rect);
-            g.DrawEllipse(black, circle);
-        }
+    private void button2_Click(object sender, EventArgs e)
+    {
+        new Form3().Show();
+    }
     }
 }

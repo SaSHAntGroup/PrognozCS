@@ -42,6 +42,7 @@ namespace PrognozCS
             L,//расстояния от химически опасного объекта до объекта попадающего в зону риска, км
             Tx,//время подхода облака зараженного воздуха к населенному пункту, час
             Txh,Txm,Txh1,Txm1,//часы и минуты по отдельности для визуального оформления
+            Tsut,//время суток
             //первичное облако
             Ge1,//искомое значение глубины распространения зараженного АХОВ воздуха, км
             Gm1,//меньшее значение глубины распространения зараженного АХОВ воздуха, км
@@ -69,6 +70,8 @@ namespace PrognozCS
             n2z,//обеспеченость населения убежищами в загородной зоне, %
             Kg,//доля незащищенного населения в городе
             Kz,//доля незащищенного населения в загородной зоне
+            Kgk,//коэффициент населения в городе
+            Kzk,//коэффициент населения в загородной зоне
             Pg,Pz,//сокращение действий в выраженний для расчета P0
             P0,//величина возможных потерь населения в очаге поражения АХОВ
             P1,P2,P3,//для оперативных расчетов вычисление потерь: безвозвратные, санитарные и легкой формы
@@ -230,7 +233,7 @@ namespace PrognozCS
                 jid1.Visible = false;
                 gaz1.Visible = false;
             }
-            if (substance1.Text == "Фтор треххлористый")
+            if (substance1.Text == "Фосфор треххлористый")
             {
                 jid1.Visible = false;
                 gaz1.Visible = false;
@@ -286,38 +289,37 @@ namespace PrognozCS
         {
             InitializeComponent();
             //Добавление АХОВ
+            substance.Items.Add("Акролеин");
             substance.Items.Add("Аммиак");
+            substance.Items.Add("Ацетонитрил");
+            substance.Items.Add("Ацетонциангидрин");
+            substance.Items.Add("Водород мышьяковистый");
             substance.Items.Add("Водород фтористый");
             substance.Items.Add("Водород хлористый");
             substance.Items.Add("Водород бромистый");
             substance.Items.Add("Водород цианистый");
-            substance.Items.Add("Двуокись азота");
-            substance.Items.Add("Сернистый ангидрид");
-            substance.Items.Add("Сероводород");
-            substance.Items.Add("Сероуглерод");
-            substance.Items.Add("Соляная кислота");
-            substance.Items.Add("Формальдегид");
-            substance.Items.Add("Фосген");
-            substance.Items.Add("Фтор");
-            substance.Items.Add("Хлор");
-            substance.Items.Add("Хлорциан");
-            //
-            substance.Items.Add("Водород мышьяковистый");
             substance.Items.Add("Диметиламин");
             substance.Items.Add("Метиламин");
             substance.Items.Add("Метил Хлористый");
-            substance.Items.Add("Акролеин");
-            substance.Items.Add("Ацетонитрил");
-            substance.Items.Add("Ацетонциангидрин");
             substance.Items.Add("Метил бромистый");
             substance.Items.Add("Метилакрилат");
             substance.Items.Add("Метилмеркаптан");
             substance.Items.Add("Нитрил акриловой кислоты");
+            substance.Items.Add("Двуокись азота");
             substance.Items.Add("Окись этилена");
+            substance.Items.Add("Сернистый ангидрид");
+            substance.Items.Add("Сероводород");
+            substance.Items.Add("Сероуглерод");
+            substance.Items.Add("Соляная кислота");
             substance.Items.Add("Триметиламин");
-            substance.Items.Add("Фтор треххлористый");
+            substance.Items.Add("Формальдегид");
+            substance.Items.Add("Фосген");
+            substance.Items.Add("Фтор");
+            substance.Items.Add("Фосфор треххлористый");
             substance.Items.Add("Фосфора хлорокись");
+            substance.Items.Add("Хлор");
             substance.Items.Add("Хлорпикрин");
+            substance.Items.Add("Хлорциан");
             substance.Items.Add("Этиленимин");
             substance.Items.Add("Этиленсульфид");
             substance.Items.Add("Этилмеркаптан");
@@ -351,44 +353,82 @@ namespace PrognozCS
             substance1.Items.Add("Нитрил акриловой кислоты");
             substance1.Items.Add("Окись этилена");
             substance1.Items.Add("Триметиламин");
-            substance1.Items.Add("Фтор треххлористый");
+            substance1.Items.Add("Фосфор треххлористый");
             substance1.Items.Add("Фосфора хлорокись");
             substance1.Items.Add("Хлорпикрин");
             substance1.Items.Add("Этиленимин");
             substance1.Items.Add("Этиленсульфид");
             substance1.Items.Add("Этилмеркаптан");
             //Добавление АХОВ2
+            substance2.Items.Add("Акролеин");
             substance2.Items.Add("Аммиак");
+            substance2.Items.Add("Ацетонитрил");
+            substance2.Items.Add("Ацетонциангидрин");
+            substance2.Items.Add("Водород мышьяковистый");
             substance2.Items.Add("Водород фтористый");
             substance2.Items.Add("Водород хлористый");
             substance2.Items.Add("Водород бромистый");
             substance2.Items.Add("Водород цианистый");
+            substance2.Items.Add("Диметиламин");
+            substance2.Items.Add("Метиламин");
+            substance2.Items.Add("Метил Хлористый");
+            substance2.Items.Add("Метил бромистый");
+            substance2.Items.Add("Метилакрилат");
+            substance2.Items.Add("Метилмеркаптан");
+            substance2.Items.Add("Нитрил акриловой кислоты");
             substance2.Items.Add("Двуокись азота");
+            substance2.Items.Add("Окись этилена");
             substance2.Items.Add("Сернистый ангидрид");
             substance2.Items.Add("Сероводород");
             substance2.Items.Add("Сероуглерод");
             substance2.Items.Add("Соляная кислота");
+            substance2.Items.Add("Триметиламин");
             substance2.Items.Add("Формальдегид");
             substance2.Items.Add("Фосген");
             substance2.Items.Add("Фтор");
+            substance2.Items.Add("Фосфор треххлористый");
+            substance2.Items.Add("Фосфора хлорокись");
             substance2.Items.Add("Хлор");
+            substance2.Items.Add("Хлорпикрин");
             substance2.Items.Add("Хлорциан");
+            substance2.Items.Add("Этиленимин");
+            substance2.Items.Add("Этиленсульфид");
+            substance2.Items.Add("Этилмеркаптан");
             //Добавление АХОВ3
+            substance3.Items.Add("Акролеин");
             substance3.Items.Add("Аммиак");
+            substance3.Items.Add("Ацетонитрил");
+            substance3.Items.Add("Ацетонциангидрин");
+            substance3.Items.Add("Водород мышьяковистый");
             substance3.Items.Add("Водород фтористый");
             substance3.Items.Add("Водород хлористый");
             substance3.Items.Add("Водород бромистый");
             substance3.Items.Add("Водород цианистый");
+            substance3.Items.Add("Диметиламин");
+            substance3.Items.Add("Метиламин");
+            substance3.Items.Add("Метил Хлористый");
+            substance3.Items.Add("Метил бромистый");
+            substance3.Items.Add("Метилакрилат");
+            substance3.Items.Add("Метилмеркаптан");
+            substance3.Items.Add("Нитрил акриловой кислоты");
             substance3.Items.Add("Двуокись азота");
+            substance3.Items.Add("Окись этилена");
             substance3.Items.Add("Сернистый ангидрид");
             substance3.Items.Add("Сероводород");
             substance3.Items.Add("Сероуглерод");
             substance3.Items.Add("Соляная кислота");
+            substance3.Items.Add("Триметиламин");
             substance3.Items.Add("Формальдегид");
             substance3.Items.Add("Фосген");
             substance3.Items.Add("Фтор");
+            substance3.Items.Add("Фосфор треххлористый");
+            substance3.Items.Add("Фосфора хлорокись");
             substance3.Items.Add("Хлор");
+            substance3.Items.Add("Хлорпикрин");
             substance3.Items.Add("Хлорциан");
+            substance3.Items.Add("Этиленимин");
+            substance3.Items.Add("Этиленсульфид");
+            substance3.Items.Add("Этилмеркаптан");
             //Добавление АХОВ4
             substance4.Items.Add("Аммиак");
             substance4.Items.Add("Водород фтористый");
@@ -618,7 +658,7 @@ namespace PrognozCS
                 jid.Visible = false;
                 gaz.Visible = false;
             }
-            if (substance.Text == "Фтор треххлористый")
+            if (substance.Text == "Фосфор треххлористый")
             {
                 jid.Visible = false;
                 gaz.Visible = false;
@@ -1128,6 +1168,9 @@ namespace PrognozCS
             ///
             if (outubejZ.Text == "") { n2z = 0; }
             else { n2z = Convert.ToDouble(outubejZ.Text); }
+            ///
+            if (timeday.Text == "") { Tsut = 0; }
+            else { Tsut = Convert.ToDouble(timeday.Text); }
             //Угловые размеры возможного заражения АХОВ
             if (v <= 0.5) { f = 360; }
             if ((v > 0.5) && (v <= 1)) { f = 180; }
@@ -1369,7 +1412,7 @@ namespace PrognozCS
             {
                 
             }
-            if (substance.Text == "Фтор треххлористый")
+            if (substance.Text == "Фосфор треххлористый")
             {
                 
             }
@@ -1494,6 +1537,7 @@ namespace PrognozCS
                     p1 = 0.0021;
                 }
             }
+            /////////////////////////////////////////////////
             if (substance1.Text == "Водород мышьяковистый")
             {
                 substanceAXOB1.VodorodMishyak();
@@ -1582,6 +1626,7 @@ namespace PrognozCS
             {
                 substanceAXOB1.Formaldegid();
             }
+            ///////////////////////////////
             if (substance1.Text == "Акролеин")
             {
 
@@ -1618,7 +1663,7 @@ namespace PrognozCS
             {
 
             }
-            if (substance1.Text == "Фтор треххлористый")
+            if (substance1.Text == "Фосфор треххлористый")
             {
 
             }
@@ -1774,7 +1819,7 @@ namespace PrognozCS
             if (substance2.Text == "Формальдегид")
             {
                 substanceAXOB2.Formaldegid();
-            }
+            } 
             ///////////////////////////////////////////////
             //Выбор химически опасного вещества3///////////
             ///////////////////////////////////////////////
@@ -1939,6 +1984,32 @@ namespace PrognozCS
                     F = Convert.ToDouble(plosh.Text);
                 }
                 h = Q0 / F * p;
+            }
+            /*Коэффициенты защищенности населения в зависимости
+             * от времени суток и времени года*/
+            if (opovesh.Checked)
+            {
+                KoeffZ.GorOpovesh();
+                if (periodSH.Checked)
+                {
+                    KoeffZ.SelOpovSH();
+                }
+                if (periodZIMA.Checked)
+                {
+                    KoeffZ.SelOpovZim();
+                }
+            }
+            if (noopovesh.Checked)
+            {
+                KoeffZ.GorNeOpovesh();
+                if (periodSH.Checked)
+                {
+                    KoeffZ.SelNeOpovSH();
+                }
+                if (periodZIMA.Checked)
+                {
+                    KoeffZ.SelNeOpovZim();
+                }
             }
             //Расчет для одного вещества
             /////////////////////////////

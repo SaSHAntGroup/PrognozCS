@@ -77,6 +77,18 @@
             this.hours = new System.Windows.Forms.Label();
             this.km = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.noopovesh = new System.Windows.Forms.RadioButton();
+            this.opovesh = new System.Windows.Forms.RadioButton();
+            this.timedaylabel = new System.Windows.Forms.Label();
+            this.hoursper = new System.Windows.Forms.Label();
+            this.timeday = new System.Windows.Forms.TextBox();
+            this.periodZIMA = new System.Windows.Forms.RadioButton();
+            this.periodSH = new System.Windows.Forms.RadioButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.AXOBkolvo2 = new System.Windows.Forms.RadioButton();
+            this.AXOBkolvo1 = new System.Windows.Forms.RadioButton();
             this.vibAXOB = new System.Windows.Forms.Label();
             this.viborAXOB = new System.Windows.Forms.TabControl();
             this.AXOB1 = new System.Windows.Forms.TabPage();
@@ -128,8 +140,6 @@
             this.outAXOBlabel6 = new System.Windows.Forms.Label();
             this.outAXOB6 = new System.Windows.Forms.TextBox();
             this.substance = new System.Windows.Forms.ComboBox();
-            this.AXOBkolvo2 = new System.Windows.Forms.RadioButton();
-            this.AXOBkolvo1 = new System.Windows.Forms.RadioButton();
             this.GAZGG = new System.Windows.Forms.Label();
             this.jid = new System.Windows.Forms.RadioButton();
             this.primichanie3 = new System.Windows.Forms.Label();
@@ -137,9 +147,11 @@
             this.kolvoTOHHlabel = new System.Windows.Forms.Label();
             this.outAXOBlabel = new System.Windows.Forms.Label();
             this.gaz = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.viborAXOB.SuspendLayout();
             this.AXOB1.SuspendLayout();
             this.AXOB2.SuspendLayout();
@@ -147,7 +159,6 @@
             this.AXOB4.SuspendLayout();
             this.AXOB5.SuspendLayout();
             this.AXOB6.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // RASCHETbutt
@@ -156,7 +167,7 @@
             this.RASCHETbutt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RASCHETbutt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RASCHETbutt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.RASCHETbutt.Location = new System.Drawing.Point(18, 388);
+            this.RASCHETbutt.Location = new System.Drawing.Point(11, 419);
             this.RASCHETbutt.Name = "RASCHETbutt";
             this.RASCHETbutt.Size = new System.Drawing.Size(404, 33);
             this.RASCHETbutt.TabIndex = 0;
@@ -169,9 +180,9 @@
             this.EXITbutt.BackColor = System.Drawing.Color.WhiteSmoke;
             this.EXITbutt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EXITbutt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.EXITbutt.Location = new System.Drawing.Point(428, 388);
+            this.EXITbutt.Location = new System.Drawing.Point(421, 419);
             this.EXITbutt.Name = "EXITbutt";
-            this.EXITbutt.Size = new System.Drawing.Size(109, 33);
+            this.EXITbutt.Size = new System.Drawing.Size(112, 33);
             this.EXITbutt.TabIndex = 1;
             this.EXITbutt.Text = "Выход";
             this.EXITbutt.UseVisualStyleBackColor = false;
@@ -361,7 +372,7 @@
             // primichanie1
             // 
             this.primichanie1.AutoSize = true;
-            this.primichanie1.Location = new System.Drawing.Point(11, 344);
+            this.primichanie1.Location = new System.Drawing.Point(13, 377);
             this.primichanie1.Name = "primichanie1";
             this.primichanie1.Size = new System.Drawing.Size(526, 13);
             this.primichanie1.TabIndex = 24;
@@ -371,7 +382,7 @@
             // primichanie2
             // 
             this.primichanie2.AutoSize = true;
-            this.primichanie2.Location = new System.Drawing.Point(11, 357);
+            this.primichanie2.Location = new System.Drawing.Point(13, 390);
             this.primichanie2.Name = "primichanie2";
             this.primichanie2.Size = new System.Drawing.Size(486, 13);
             this.primichanie2.TabIndex = 26;
@@ -569,9 +580,9 @@
             this.hours.AutoSize = true;
             this.hours.Location = new System.Drawing.Point(487, 141);
             this.hours.Name = "hours";
-            this.hours.Size = new System.Drawing.Size(30, 13);
+            this.hours.Size = new System.Drawing.Size(36, 13);
             this.hours.TabIndex = 50;
-            this.hours.Text = "часа";
+            this.hours.Text = "час(а)";
             // 
             // km
             // 
@@ -584,7 +595,8 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.vibAXOB);
             this.panel1.Controls.Add(this.viborAXOB);
             this.panel1.Controls.Add(this.substance);
@@ -636,13 +648,138 @@
             this.panel1.Controls.Add(this.protivoGAZlabel);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(556, 429);
+            this.panel1.Size = new System.Drawing.Size(545, 463);
             this.panel1.TabIndex = 52;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.timedaylabel);
+            this.panel3.Controls.Add(this.hoursper);
+            this.panel3.Controls.Add(this.timeday);
+            this.panel3.Controls.Add(this.periodZIMA);
+            this.panel3.Controls.Add(this.periodSH);
+            this.panel3.Location = new System.Drawing.Point(11, 331);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(522, 43);
+            this.panel3.TabIndex = 59;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.noopovesh);
+            this.panel4.Controls.Add(this.opovesh);
+            this.panel4.Location = new System.Drawing.Point(132, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(238, 40);
+            this.panel4.TabIndex = 53;
+            // 
+            // noopovesh
+            // 
+            this.noopovesh.AutoSize = true;
+            this.noopovesh.Location = new System.Drawing.Point(3, 20);
+            this.noopovesh.Name = "noopovesh";
+            this.noopovesh.Size = new System.Drawing.Size(227, 17);
+            this.noopovesh.TabIndex = 1;
+            this.noopovesh.TabStop = true;
+            this.noopovesh.Text = "Население не оповещено об опасности";
+            this.noopovesh.UseVisualStyleBackColor = true;
+            // 
+            // opovesh
+            // 
+            this.opovesh.AutoSize = true;
+            this.opovesh.Location = new System.Drawing.Point(3, 4);
+            this.opovesh.Name = "opovesh";
+            this.opovesh.Size = new System.Drawing.Size(212, 17);
+            this.opovesh.TabIndex = 0;
+            this.opovesh.TabStop = true;
+            this.opovesh.Text = "Население оповещено об опасности";
+            this.opovesh.UseVisualStyleBackColor = true;
+            // 
+            // timedaylabel
+            // 
+            this.timedaylabel.AutoSize = true;
+            this.timedaylabel.Location = new System.Drawing.Point(373, 1);
+            this.timedaylabel.Name = "timedaylabel";
+            this.timedaylabel.Size = new System.Drawing.Size(74, 13);
+            this.timedaylabel.TabIndex = 52;
+            this.timedaylabel.Text = "Время суток:";
+            // 
+            // hoursper
+            // 
+            this.hoursper.AutoSize = true;
+            this.hoursper.Location = new System.Drawing.Point(484, 22);
+            this.hoursper.Name = "hoursper";
+            this.hoursper.Size = new System.Drawing.Size(30, 13);
+            this.hoursper.TabIndex = 51;
+            this.hoursper.Text = "часа";
+            // 
+            // timeday
+            // 
+            this.timeday.Location = new System.Drawing.Point(376, 17);
+            this.timeday.Name = "timeday";
+            this.timeday.Size = new System.Drawing.Size(102, 20);
+            this.timeday.TabIndex = 2;
+            // 
+            // periodZIMA
+            // 
+            this.periodZIMA.AutoSize = true;
+            this.periodZIMA.Location = new System.Drawing.Point(5, 20);
+            this.periodZIMA.Name = "periodZIMA";
+            this.periodZIMA.Size = new System.Drawing.Size(103, 17);
+            this.periodZIMA.TabIndex = 1;
+            this.periodZIMA.TabStop = true;
+            this.periodZIMA.Text = "Зимний период";
+            this.periodZIMA.UseVisualStyleBackColor = true;
+            // 
+            // periodSH
+            // 
+            this.periodSH.AutoSize = true;
+            this.periodSH.Location = new System.Drawing.Point(5, 4);
+            this.periodSH.Name = "periodSH";
+            this.periodSH.Size = new System.Drawing.Size(114, 17);
+            this.periodSH.TabIndex = 0;
+            this.periodSH.TabStop = true;
+            this.periodSH.Text = "Период с/х работ";
+            this.periodSH.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.AXOBkolvo2);
+            this.panel2.Controls.Add(this.AXOBkolvo1);
+            this.panel2.Location = new System.Drawing.Point(281, 7);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(254, 24);
+            this.panel2.TabIndex = 58;
+            // 
+            // AXOBkolvo2
+            // 
+            this.AXOBkolvo2.AutoSize = true;
+            this.AXOBkolvo2.Location = new System.Drawing.Point(93, 3);
+            this.AXOBkolvo2.Name = "AXOBkolvo2";
+            this.AXOBkolvo2.Size = new System.Drawing.Size(120, 17);
+            this.AXOBkolvo2.TabIndex = 56;
+            this.AXOBkolvo2.TabStop = true;
+            this.AXOBkolvo2.Text = "Два и более АХОВ";
+            this.AXOBkolvo2.UseVisualStyleBackColor = true;
+            this.AXOBkolvo2.CheckedChanged += new System.EventHandler(this.AXOBkolvo2_CheckedChanged);
+            // 
+            // AXOBkolvo1
+            // 
+            this.AXOBkolvo1.AutoSize = true;
+            this.AXOBkolvo1.Checked = true;
+            this.AXOBkolvo1.Location = new System.Drawing.Point(4, 3);
+            this.AXOBkolvo1.Name = "AXOBkolvo1";
+            this.AXOBkolvo1.Size = new System.Drawing.Size(83, 17);
+            this.AXOBkolvo1.TabIndex = 55;
+            this.AXOBkolvo1.TabStop = true;
+            this.AXOBkolvo1.Text = "Одно АХОВ";
+            this.AXOBkolvo1.UseVisualStyleBackColor = true;
+            this.AXOBkolvo1.CheckedChanged += new System.EventHandler(this.AXOBkolvo1_CheckedChanged);
             // 
             // vibAXOB
             // 
             this.vibAXOB.AutoSize = true;
-            this.vibAXOB.Location = new System.Drawing.Point(15, 38);
+            this.vibAXOB.Location = new System.Drawing.Point(13, 34);
             this.vibAXOB.Name = "vibAXOB";
             this.vibAXOB.Size = new System.Drawing.Size(72, 13);
             this.vibAXOB.TabIndex = 51;
@@ -656,7 +793,7 @@
             this.viborAXOB.Controls.Add(this.AXOB4);
             this.viborAXOB.Controls.Add(this.AXOB5);
             this.viborAXOB.Controls.Add(this.AXOB6);
-            this.viborAXOB.Location = new System.Drawing.Point(5, 11);
+            this.viborAXOB.Location = new System.Drawing.Point(3, 7);
             this.viborAXOB.Name = "viborAXOB";
             this.viborAXOB.SelectedIndex = 0;
             this.viborAXOB.Size = new System.Drawing.Size(272, 128);
@@ -1166,36 +1303,11 @@
             // substance
             // 
             this.substance.FormattingEnabled = true;
-            this.substance.Location = new System.Drawing.Point(15, 54);
+            this.substance.Location = new System.Drawing.Point(13, 50);
             this.substance.Name = "substance";
             this.substance.Size = new System.Drawing.Size(254, 21);
             this.substance.TabIndex = 48;
             this.substance.SelectedIndexChanged += new System.EventHandler(this.substance_SelectedIndexChanged_1);
-            // 
-            // AXOBkolvo2
-            // 
-            this.AXOBkolvo2.AutoSize = true;
-            this.AXOBkolvo2.Location = new System.Drawing.Point(94, 12);
-            this.AXOBkolvo2.Name = "AXOBkolvo2";
-            this.AXOBkolvo2.Size = new System.Drawing.Size(120, 17);
-            this.AXOBkolvo2.TabIndex = 56;
-            this.AXOBkolvo2.TabStop = true;
-            this.AXOBkolvo2.Text = "Два и более АХОВ";
-            this.AXOBkolvo2.UseVisualStyleBackColor = true;
-            this.AXOBkolvo2.CheckedChanged += new System.EventHandler(this.AXOBkolvo2_CheckedChanged);
-            // 
-            // AXOBkolvo1
-            // 
-            this.AXOBkolvo1.AutoSize = true;
-            this.AXOBkolvo1.Checked = true;
-            this.AXOBkolvo1.Location = new System.Drawing.Point(5, 12);
-            this.AXOBkolvo1.Name = "AXOBkolvo1";
-            this.AXOBkolvo1.Size = new System.Drawing.Size(83, 17);
-            this.AXOBkolvo1.TabIndex = 55;
-            this.AXOBkolvo1.TabStop = true;
-            this.AXOBkolvo1.Text = "Одно АХОВ";
-            this.AXOBkolvo1.UseVisualStyleBackColor = true;
-            this.AXOBkolvo1.CheckedChanged += new System.EventHandler(this.AXOBkolvo1_CheckedChanged);
             // 
             // GAZGG
             // 
@@ -1209,7 +1321,7 @@
             // jid
             // 
             this.jid.AutoSize = true;
-            this.jid.Location = new System.Drawing.Point(64, 75);
+            this.jid.Location = new System.Drawing.Point(62, 71);
             this.jid.Name = "jid";
             this.jid.Size = new System.Drawing.Size(77, 17);
             this.jid.TabIndex = 49;
@@ -1221,7 +1333,7 @@
             // primichanie3
             // 
             this.primichanie3.AutoSize = true;
-            this.primichanie3.Location = new System.Drawing.Point(10, 370);
+            this.primichanie3.Location = new System.Drawing.Point(12, 403);
             this.primichanie3.Name = "primichanie3";
             this.primichanie3.Size = new System.Drawing.Size(262, 13);
             this.primichanie3.TabIndex = 52;
@@ -1229,7 +1341,7 @@
             // 
             // outAXOB
             // 
-            this.outAXOB.Location = new System.Drawing.Point(15, 111);
+            this.outAXOB.Location = new System.Drawing.Point(13, 107);
             this.outAXOB.Name = "outAXOB";
             this.outAXOB.Size = new System.Drawing.Size(176, 20);
             this.outAXOB.TabIndex = 53;
@@ -1237,7 +1349,7 @@
             // kolvoTOHHlabel
             // 
             this.kolvoTOHHlabel.AutoSize = true;
-            this.kolvoTOHHlabel.Location = new System.Drawing.Point(193, 114);
+            this.kolvoTOHHlabel.Location = new System.Drawing.Point(191, 110);
             this.kolvoTOHHlabel.Name = "kolvoTOHHlabel";
             this.kolvoTOHHlabel.Size = new System.Drawing.Size(72, 13);
             this.kolvoTOHHlabel.TabIndex = 54;
@@ -1246,7 +1358,7 @@
             // outAXOBlabel
             // 
             this.outAXOBlabel.AutoSize = true;
-            this.outAXOBlabel.Location = new System.Drawing.Point(15, 94);
+            this.outAXOBlabel.Location = new System.Drawing.Point(13, 90);
             this.outAXOBlabel.Name = "outAXOBlabel";
             this.outAXOBlabel.Size = new System.Drawing.Size(225, 13);
             this.outAXOBlabel.TabIndex = 52;
@@ -1255,7 +1367,7 @@
             // gaz
             // 
             this.gaz.AutoSize = true;
-            this.gaz.Location = new System.Drawing.Point(15, 75);
+            this.gaz.Location = new System.Drawing.Point(13, 71);
             this.gaz.Name = "gaz";
             this.gaz.Size = new System.Drawing.Size(43, 17);
             this.gaz.TabIndex = 50;
@@ -1264,25 +1376,13 @@
             this.gaz.UseVisualStyleBackColor = true;
             this.gaz.Visible = false;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.AXOBkolvo2);
-            this.groupBox2.Controls.Add(this.AXOBkolvo1);
-            this.groupBox2.Location = new System.Drawing.Point(279, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(258, 29);
-            this.groupBox2.TabIndex = 57;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Количество АХОВ на объекте";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(558, 430);
+            this.ClientSize = new System.Drawing.Size(546, 465);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1293,6 +1393,12 @@
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.viborAXOB.ResumeLayout(false);
             this.AXOB1.ResumeLayout(false);
             this.AXOB1.PerformLayout();
@@ -1306,8 +1412,6 @@
             this.AXOB5.PerformLayout();
             this.AXOB6.ResumeLayout(false);
             this.AXOB6.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1422,6 +1526,15 @@
         private System.Windows.Forms.Label kolvoTOHHlabel1;
         private System.Windows.Forms.RadioButton AXOBkolvo2;
         private System.Windows.Forms.RadioButton AXOBkolvo1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.RadioButton noopovesh;
+        private System.Windows.Forms.RadioButton opovesh;
+        private System.Windows.Forms.Label timedaylabel;
+        private System.Windows.Forms.Label hoursper;
+        private System.Windows.Forms.TextBox timeday;
+        private System.Windows.Forms.RadioButton periodZIMA;
+        private System.Windows.Forms.RadioButton periodSH;
+        private System.Windows.Forms.Panel panel2;
     }
 }

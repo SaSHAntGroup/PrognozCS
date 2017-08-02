@@ -346,5 +346,6 @@ namespace PrognozCS
             Form1.K1 = 0;
             Form1.K2 = 0.007;
         }
+
     }
 }
