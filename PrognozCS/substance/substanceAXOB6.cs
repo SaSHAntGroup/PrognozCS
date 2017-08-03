@@ -268,5 +268,88 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K16 = 0.19;
         }
+        /// <summary>
+        /// /////////////////////////
+        /// </summary>
+        public static void VodorodMishyak()
+        {
+            substanceAXOB1.VodorodMishyak();
+        }
+        //////////////////////////////////////
+        public static void Dimetilamin()
+        {
+            substanceAXOB1.Dimetilamin();
+        }
+        //////////////////////////////////////
+        public static void Metilamin()
+        {
+            substanceAXOB1.Metilamin();
+        }
+        //////////////////////////////////////
+        public static void MetilChlor()
+        {
+            substanceAXOB1.MetilChlor();
+        }
+        //////////////////////////////////////
+        public static void NitrilAkrilKisl()
+        {
+            
+        }
+        public static void Akrolein()
+        {
+
+        }
+        public static void Azetonitril()
+        {
+
+        }
+        public static void Azetonziangidrin()
+        {
+
+        }
+        public static void MetilBrom()
+        {
+
+        }
+        public static void Metilakrilat()
+        {
+
+        }
+        public static void Metilmerkaptan()
+        {
+
+        }
+        public static void OkisEtilen()
+        {
+
+        }
+        public static void Trimetilamin()
+        {
+
+        }
+        public static void FosforTrehchlor()
+        {
+
+        }
+        public static void FosforaChlorokis()
+        {
+
+        }
+        public static void Chlorpikrin()
+        {
+
+        }
+        public static void Etilenimin()
+        {
+
+        }
+        public static void Etilensulfid()
+        {
+
+        }
+        public static void Etilmerkaptan()
+        {
+
+        }
     }
 }

@@ -268,5 +268,119 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K13 = 0.19;
         }
+        /// <summary>
+        /// /////////////////////////
+        /// </summary>
+        public static void VodorodMishyak()
+        {
+            substanceAXOB1.VodorodMishyak();
+            Form1.tkip2 = Form1.tkip1;
+            Form1.D2 = Form1.D1;
+            Form1.K712 = Form1.K711;
+            Form1.K722 = Form1.K721;
+            Form1.K12 = Form1.K11;
+            Form1.K22 = Form1.K21;
+        }
+        //////////////////////////////////////
+        public static void Dimetilamin()
+        {
+            substanceAXOB1.Dimetilamin();
+            Form1.tkip2 = Form1.tkip1;
+            Form1.D2 = Form1.D1;
+            Form1.K712 = Form1.K711;
+            Form1.K722 = Form1.K721;
+            Form1.K12 = Form1.K11;
+            Form1.K22 = Form1.K21;
+        }
+        //////////////////////////////////////
+        public static void Metilamin()
+        {
+            substanceAXOB1.Metilamin();
+            Form1.tkip2 = Form1.tkip1;
+            Form1.D2 = Form1.D1;
+            Form1.K712 = Form1.K711;
+            Form1.K722 = Form1.K721;
+            Form1.K12 = Form1.K11;
+            Form1.K22 = Form1.K21;
+        }
+        //////////////////////////////////////
+        public static void MetilChlor()
+        {
+            substanceAXOB1.MetilChlor();
+            Form1.tkip2 = Form1.tkip1;
+            Form1.D2 = Form1.D1;
+            Form1.K712 = Form1.K711;
+            Form1.K722 = Form1.K721;
+            Form1.K12 = Form1.K11;
+            Form1.K22 = Form1.K21;
+        }
+        //////////////////////////////////////
+        public static void NitrilAkrilKisl()
+        {
+            substanceAXOB1.;
+            Form1.tkip2 = Form1.tkip1;
+            Form1.p2 = Form1.p1;
+            Form1.D2 = Form1.D1;
+            Form1.K712 = Form1.K711;
+            Form1.K722 = Form1.K721;
+            Form1.K12 = Form1.K11;
+            Form1.K22 = Form1.K21;
+        }
+        public static void Akrolein()
+        {
+
+        }
+        public static void Azetonitril()
+        {
+
+        }
+        public static void Azetonziangidrin()
+        {
+
+        }
+        public static void MetilBrom()
+        {
+
+        }
+        public static void Metilakrilat()
+        {
+
+        }
+        public static void Metilmerkaptan()
+        {
+
+        }
+        public static void OkisEtilen()
+        {
+
+        }
+        public static void Trimetilamin()
+        {
+
+        }
+        public static void FosforTrehchlor()
+        {
+
+        }
+        public static void FosforaChlorokis()
+        {
+
+        }
+        public static void Chlorpikrin()
+        {
+
+        }
+        public static void Etilenimin()
+        {
+
+        }
+        public static void Etilensulfid()
+        {
+
+        }
+        public static void Etilmerkaptan()
+        {
+
+        }
     }
 }
