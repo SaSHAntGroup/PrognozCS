@@ -351,227 +351,227 @@ namespace PrognozCS
         /// </summary>
         public static void Akrolein()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 52.7;
+            Form1.p1 = 0.839;
+            Form1.D1 = 0.2;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0.1; }
+            if (Form1.t >= -20) { Form1.K711 = 0.2; }
+            if (Form1.t >= 0) { Form1.K711 = 0.4; }
+            if (Form1.t >= 20) { Form1.K711 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 2.2; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0;
+            Form1.K21 = 0.013;
         }
         public static void Azetonitril()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 81.6;
+            Form1.p1 = 0.786;
+            Form1.D1 = 21.6;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0.02; }
+            if (Form1.t >= -20) { Form1.K711 = 0.1; }
+            if (Form1.t >= 0) { Form1.K711 = 0.3; }
+            if (Form1.t >= 20) { Form1.K711 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 2.6; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0;
+            Form1.K21 = 0.004;
         }
         public static void Azetonziangidrin()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 120;
+            Form1.p1 = 0.932;
+            Form1.D1 = 1.9;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; }
+            if (Form1.t >= -20) { Form1.K711 = 0; }
+            if (Form1.t >= 0) { Form1.K711 = 0.3; }
+            if (Form1.t >= 20) { Form1.K711 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 1.5; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0;
+            Form1.K21 = 0.002;
         }
         public static void MetilBrom()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 3.6;
+            Form1.p1 = 1.732;
+            Form1.D1 = 1.2;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.2; }
+            if (Form1.t >= -20) { Form1.K711 = 0; Form1.K721 = 0.4; }
+            if (Form1.t >= 0) { Form1.K711 = 0; Form1.K721 = 0.9; }
+            if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 2.3; Form1.K721 = 1; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0.04;
+            Form1.K21 = 0.039;
         }
         public static void Metilakrilat()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 80.2;
+            Form1.p1 = 0.953;
+            Form1.D1 = 6;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = 0.1; }
+            if (Form1.t >= -20) { Form1.K711 = 0.2; }
+            if (Form1.t >= 0) { Form1.K711 = 0.4; }
+            if (Form1.t >= 20) { Form1.K711 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 3.1; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0;
+            Form1.K21 = 0.005;
         }
         public static void Metilmerkaptan()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 5.95;
+            Form1.p1 = 0.867;
+            Form1.D1 = 1.7;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.1; }
+            if (Form1.t >= -20) { Form1.K711 = 0; Form1.K721 = 0.3; }
+            if (Form1.t >= 0) { Form1.K711 = 0; Form1.K721 = 0.8; }
+            if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 2.4; Form1.K721 = 1; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0.06;
+            Form1.K21 = 0.043;
         }
         public static void OkisEtilen()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 10.7;
+            Form1.p1 = 0.806;
+            Form1.D1 = 0.75;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.1; }
+            if (Form1.t >= -20) { Form1.K711 = 0.1; Form1.K721 = 0.3; }
+            if (Form1.t >= 0) { Form1.K711 = 0.6; Form1.K721 = 0.7; }
+            if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 3.2; Form1.K721 = 1; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0;
+            Form1.K21 = 0.007;
         }
         public static void Trimetilamin()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 2.9;
+            Form1.p1 = 0.671;
+            Form1.D1 = 6;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.1; }
+            if (Form1.t >= -20) { Form1.K711 = 0; Form1.K721 = 0.4; }
+            if (Form1.t >= 0) { Form1.K711 = 0; Form1.K721 = 0.9; }
+            if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 2.2; Form1.K721 = 1; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0.07;
+            Form1.K21 = 0.047;
         }
         public static void FosforTrehchlor()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 75.3;
+            Form1.p1 = 1.570;
+            Form1.D1 = 3;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = 0.1; }
+            if (Form1.t >= -20) { Form1.K711 = 0.2; }
+            if (Form1.t >= 0) { Form1.K711 = 0.4; }
+            if (Form1.t >= 20) { Form1.K711 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 2.3; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0;
+            Form1.K21 = 0.010;
         }
         public static void FosforaChlorokis()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 107.2;
+            Form1.p1 = 1.675;
+            Form1.D1 = 0.06;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = 0.05; }
+            if (Form1.t >= -20) { Form1.K711 = 0.1; }
+            if (Form1.t >= 0) { Form1.K711 = 0.3; }
+            if (Form1.t >= 20) { Form1.K711 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 2.6; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0;
+            Form1.K21 = 0.003;
         }
         public static void Chlorpikrin()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 112.3;
+            Form1.p1 = 1.658;
+            Form1.D1 = 0.02;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = 0.03; }
+            if (Form1.t >= -20) { Form1.K711 = 0.1; }
+            if (Form1.t >= 0) { Form1.K711 = 0.3; }
+            if (Form1.t >= 20) { Form1.K711 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 2.9; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0;
+            Form1.K21 = 0.002;
         }
         public static void Etilenimin()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 55.0;
+            Form1.p1 = 0.838;
+            Form1.D1 = 4.8;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = 0.05; }
+            if (Form1.t >= -20) { Form1.K711 = 0.1; }
+            if (Form1.t >= 0) { Form1.K711 = 0.4; }
+            if (Form1.t >= 20) { Form1.K711 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 2.2; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0;
+            Form1.K21 = 0.009;
         }
         public static void Etilensulfid()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 55.0;
+            Form1.p1 = 1.005;
+            Form1.D1 = 0.1;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = 0.05; }
+            if (Form1.t >= -20) { Form1.K711 = 0.1; }
+            if (Form1.t >= 0) { Form1.K711 = 0.4; }
+            if (Form1.t >= 20) { Form1.K711 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 1.7; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0;
+            Form1.K21 = 0.013;
         }
         public static void Etilmerkaptan()
         {
-            Form1.tkip1 = ;
-            Form1.p1 = ;
-            Form1.D1 = ;
+            Form1.tkip1 = 35;
+            Form1.p1 = 0.839;
+            Form1.D1 = 2.2;
             //Определение К7 при температуре окружающей среды
-            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = ; }
-            if (Form1.t >= -20) { Form1.K711 = ; }
-            if (Form1.t >= 0) { Form1.K711 = ; }
-            if (Form1.t >= 20) { Form1.K711 = ; }
-            if (Form1.t >= 40) { Form1.K711 = ; }
+            if ((Form1.t >= -40) || (Form1.t< -40)) { Form1.K711 = 0.1; }
+            if (Form1.t >= -20) { Form1.K711 = 0.2; }
+            if (Form1.t >= 0) { Form1.K711 = 0.5; }
+            if (Form1.t >= 20) { Form1.K711 = 1; }
+            if (Form1.t >= 40) { Form1.K711 = 1.7; }
             Form1.K721 = Form1.K711;
             //Коэффициент К1
-            Form1.K11 = ;
-            Form1.K21 = ;
+            Form1.K11 = 0;
+            Form1.K21 = 0.028;
         }
     }
 }
