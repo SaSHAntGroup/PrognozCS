@@ -452,7 +452,7 @@ namespace PrognozCS
             Form1.D1 = 0.75;
             //Определение К7 при температуре окружающей среды
             if ((Form1.t >= -40) || (Form1.t < -40)) { Form1.K711 = 0; Form1.K721 = 0.1; }
-            if (Form1.t >= -20) { Form1.K711 = 0.1; Form1.K721 = 0.3; }
+            if (Form1.t >= -20) { Form1.K711 = 0.1; Form1.K721 = 0.3;  }
             if (Form1.t >= 0) { Form1.K711 = 0.6; Form1.K721 = 0.7; }
             if (Form1.t >= 20) { Form1.K711 = 1; Form1.K721 = 1; }
             if (Form1.t >= 40) { Form1.K711 = 3.2; Form1.K721 = 1; }

@@ -317,7 +317,7 @@ namespace PrognozCS
         //////////////////////////////////////
         public static void NitrilAkrilKisl()
         {
-            substanceAXOB1.;
+            substanceAXOB1.NitrilAkrilKisl();
             Form1.tkip2 = Form1.tkip1;
             Form1.p2 = Form1.p1;
             Form1.D2 = Form1.D1;
