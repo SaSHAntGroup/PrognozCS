@@ -346,6 +346,145 @@ namespace PrognozCS
             Form1.K1 = 0;
             Form1.K2 = 0.007;
         }
-
+        public static void Akrolein()
+        {
+            substanceAXOB1.Akrolein();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void Azetonitril()
+        {
+            substanceAXOB1.Azetonitril();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void Azetonziangidrin()
+        {
+            substanceAXOB1.Azetonziangidrin();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void MetilBrom()
+        {
+            substanceAXOB1.MetilBrom();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void Metilakrilat()
+        {
+            substanceAXOB1.Metilakrilat();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void Metilmerkaptan()
+        {
+            substanceAXOB1.Metilmerkaptan();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void OkisEtilen()
+        {
+            substanceAXOB1.OkisEtilen();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void Trimetilamin()
+        {
+            substanceAXOB1.Trimetilamin();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void FosforTrehchlor()
+        {
+            substanceAXOB1.FosforTrehchlor();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void FosforaChlorokis()
+        {
+            substanceAXOB1.FosforaChlorokis();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void Chlorpikrin()
+        {
+            substanceAXOB1.Chlorpikrin();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void Etilenimin()
+        {
+            substanceAXOB1.Etilenimin();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void Etilensulfid()
+        {
+            substanceAXOB1.Etilensulfid();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
+        public static void Etilmerkaptan()
+        {
+            substanceAXOB1.Etilmerkaptan();
+            Form1.tkip = Form1.tkip1;
+            Form1.D = Form1.D1;
+            Form1.K7 = Form1.K711;
+            Form1.K72 = Form1.K721;
+            Form1.K1 = Form1.K11;
+            Form1.K2 = Form1.K21;
+        }
     }
 }
