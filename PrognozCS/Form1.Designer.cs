@@ -209,6 +209,7 @@
             // svob
             // 
             this.svob.AutoSize = true;
+            this.svob.Checked = true;
             this.svob.Location = new System.Drawing.Point(6, 19);
             this.svob.Name = "svob";
             this.svob.Size = new System.Drawing.Size(74, 17);
@@ -225,7 +226,6 @@
             this.sam.Name = "sam";
             this.sam.Size = new System.Drawing.Size(169, 17);
             this.sam.TabIndex = 9;
-            this.sam.TabStop = true;
             this.sam.Text = "В самостоятельный поддон ";
             this.sam.UseVisualStyleBackColor = true;
             this.sam.CheckedChanged += new System.EventHandler(this.sam_CheckedChanged);
@@ -237,7 +237,6 @@
             this.obsh.Name = "obsh";
             this.obsh.Size = new System.Drawing.Size(244, 17);
             this.obsh.TabIndex = 10;
-            this.obsh.TabStop = true;
             this.obsh.Text = "В общий поддон от нескольких источников";
             this.obsh.UseVisualStyleBackColor = true;
             this.obsh.CheckedChanged += new System.EventHandler(this.obsh_CheckedChanged);
@@ -680,13 +679,13 @@
             this.noopovesh.Name = "noopovesh";
             this.noopovesh.Size = new System.Drawing.Size(227, 17);
             this.noopovesh.TabIndex = 1;
-            this.noopovesh.TabStop = true;
             this.noopovesh.Text = "Население не оповещено об опасности";
             this.noopovesh.UseVisualStyleBackColor = true;
             // 
             // opovesh
             // 
             this.opovesh.AutoSize = true;
+            this.opovesh.Checked = true;
             this.opovesh.Location = new System.Drawing.Point(3, 4);
             this.opovesh.Name = "opovesh";
             this.opovesh.Size = new System.Drawing.Size(212, 17);
@@ -727,13 +726,13 @@
             this.periodZIMA.Name = "periodZIMA";
             this.periodZIMA.Size = new System.Drawing.Size(103, 17);
             this.periodZIMA.TabIndex = 1;
-            this.periodZIMA.TabStop = true;
             this.periodZIMA.Text = "Зимний период";
             this.periodZIMA.UseVisualStyleBackColor = true;
             // 
             // periodSH
             // 
             this.periodSH.AutoSize = true;
+            this.periodSH.Checked = true;
             this.periodSH.Location = new System.Drawing.Point(5, 4);
             this.periodSH.Name = "periodSH";
             this.periodSH.Size = new System.Drawing.Size(114, 17);
