@@ -2392,23 +2392,14 @@ namespace PrognozCS
                                         }
                                         else
                                         {
-                                            if ((sam.Checked == false) 
-                                                && (svob.Checked == false) && (obsh.Checked == false))
+                                            if ((AXOBkolvo1.Checked == false) && (AXOBkolvo2.Checked == false))
                                             {
-                                                MessageBox.Show("Выберите характер розлива АХОВ!",
-                                        "Уточните параметры!", MessageBoxButtons.OK);
+                                                MessageBox.Show("Укажите количество АХОВ!",
+                                    "Уточните параметры!", MessageBoxButtons.OK);
                                             }
                                             else
                                             {
-                                                if ((AXOBkolvo1.Checked == false) && (AXOBkolvo2.Checked == false))
-                                                {
-                                                    MessageBox.Show("Укажите количество АХОВ!",
-                                        "Уточните параметры!", MessageBoxButtons.OK);
-                                                }
-                                                else
-                                                {
-                                                    new Form2().Show();
-                                                }
+                                                new Form2().Show();
                                             }
                                         }
                                     }

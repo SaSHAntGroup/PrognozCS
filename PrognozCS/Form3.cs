@@ -29,5 +29,10 @@ namespace PrognozCS
             g.DrawRectangle(black, rect);
             g.DrawEllipse(black, circle);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
