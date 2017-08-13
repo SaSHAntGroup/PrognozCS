@@ -2073,21 +2073,762 @@ namespace PrognozCS
                 {
                     substanceAXOB3.Etilmerkaptan();
                 }
-                ///////////////////////////////////////////////
-                //Выбор химически опасного вещества4///////////
-                ///////////////////////////////////////////////
-
-                ///////////////////////////////////////////////
-                //Выбор химически опасного вещества5///////////
-                ///////////////////////////////////////////////
-
-                ///////////////////////////////////////////////
-                //Выбор химически опасного вещества6///////////
-                ///////////////////////////////////////////////
-
-                ///////////////////////////////////////////////////
-                //Расчет высоты/площади поддона
-                if (sam.Checked == true)
+            ///////////////////////////////////////////////
+            //Выбор химически опасного вещества4///////////
+            ///////////////////////////////////////////////
+            if (substance4.Text == "Хлор")
+            {
+                substanceAXOB4.Chlor();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid4.Checked)
+                {
+                    p4 = 1.553;
+                    if (t < tkip4) { K74 = K724; }
+                }
+                if (gaz4.Checked)
+                {
+                    p4 = 0.0032;
+                }
+            }
+            if (substance4.Text == "Аммиак")
+            {
+                substanceAXOB4.Ammiak();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid4.Checked)
+                {
+                    p4 = 1.553;
+                    if (t < tkip4) { K74 = K724; }
+                }
+                if (gaz4.Checked)
+                {
+                    p4 = 0.0032;
+                }
+            }
+            if (substance4.Text == "Водород хлористый")
+            {
+                substanceAXOB4.VodorodChlor();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid4.Checked)
+                {
+                    p4 = 1.191;
+                    if (t < tkip4) { K74 = K724; }
+                }
+                if (gaz4.Checked)
+                {
+                    p4 = 0.0016;
+                }
+            }
+            if (substance4.Text == "Водород бромистый")
+            {
+                substanceAXOB4.VodorodBrom();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid4.Checked)
+                {
+                    p4 = 1.49;
+                    if (t < tkip4) { K74 = K724; }
+                }
+                if (gaz4.Checked)
+                {
+                    p4 = 0.0036;
+                }
+            }
+            if (substance4.Text == "Фосген")
+            {
+                substanceAXOB4.Fosgen();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid4.Checked)
+                {
+                    p4 = 1.432;
+                    if (t < tkip4) { K74 = K724; }
+                }
+                if (gaz4.Checked)
+                {
+                    p4 = 0.0035;
+                }
+            }
+            if (substance4.Text == "Фтор")
+            {
+                substanceAXOB4.Ftor();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid4.Checked)
+                {
+                    p4 = 1.512;
+                    if (t < tkip4) { K74 = K724; }
+                }
+                if (gaz4.Checked)
+                {
+                    p4 = 0.0017;
+                }
+            }
+            if (substance4.Text == "Хлорциан")
+            {
+                substanceAXOB4.Chlorician();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid4.Checked)
+                {
+                    p4 = 1.22;
+                    if (t < tkip4) { K74 = K724; }
+                }
+                if (gaz4.Checked)
+                {
+                    p4 = 0.0021;
+                }
+            }
+            /////////////////////////////////////////////////
+            if (substance4.Text == "Водород мышьяковистый")
+            {
+                substanceAXOB4.VodorodMishyak();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid4.Checked)
+                {
+                    p4 = 1.64;
+                    if (t < tkip4) { K74 = K724; }
+                }
+                if (gaz4.Checked)
+                {
+                    p4 = 0.0035;
+                }
+            }
+            if (substance4.Text == "Диметиламин")
+            {
+                substanceAXOB4.Dimetilamin();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid4.Checked)
+                {
+                    p4 = 0.680;
+                    if (t < tkip4) { K74 = K724; }
+                }
+                if (gaz4.Checked)
+                {
+                    p4 = 0.0020;
+                }
+            }
+            if (substance4.Text == "Метиламин")
+            {
+                substanceAXOB4.Metilamin();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid4.Checked)
+                {
+                    p4 = 0.699;
+                    if (t < tkip4) { K74 = K724; }
+                }
+                if (gaz4.Checked)
+                {
+                    p4 = 0.0014;
+                }
+            }
+            if (substance4.Text == "Метил Хлористый")
+            {
+                substanceAXOB4.MetilChlor();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid4.Checked)
+                {
+                    p4 = 0.983;
+                    if (t < tkip4) { K74 = K724; }
+                }
+                if (gaz4.Checked)
+                {
+                    p4 = 0.0023;
+                }
+            }
+            if (substance4.Text == "Водород фтористый")
+            {
+                substanceAXOB4.VodorodFtoristiy();
+            }
+            if (substance4.Text == "Водород цианистый")
+            {
+                substanceAXOB4.VodorodCianistiy();
+            }
+            if (substance4.Text == "Двуокись азота")
+            {
+                substanceAXOB4.DvuokisAzota();
+            }
+            if (substance4.Text == "Сернистый ангидрид")
+            {
+                substanceAXOB4.SernistiyAngidrid();
+            }
+            if (substance4.Text == "Сероводород")
+            {
+                substanceAXOB4.Serovodorod();
+            }
+            if (substance4.Text == "Сероуглерод")
+            {
+                substanceAXOB4.Serouglerod();
+            }
+            if (substance4.Text == "Соляная кислота")
+            {
+                substanceAXOB4.SolyanayaKislota();
+            }
+            if (substance4.Text == "Формальдегид")
+            {
+                substanceAXOB4.Formaldegid();
+            }
+            ///////////////////////////////
+            if (substance4.Text == "Акролеин")
+            {
+                substanceAXOB4.Akrolein();
+            }
+            if (substance4.Text == "Ацетонитрил")
+            {
+                substanceAXOB4.Azetonitril();
+            }
+            if (substance4.Text == "Ацетонциангидрин")
+            {
+                substanceAXOB4.Azetonziangidrin();
+            }
+            if (substance4.Text == "Метил бромистый")
+            {
+                substanceAXOB4.MetilBrom();
+            }
+            if (substance4.Text == "Метилакрилат")
+            {
+                substanceAXOB4.Metilakrilat();
+            }
+            if (substance4.Text == "Метилмеркаптан")
+            {
+                substanceAXOB4.Metilmerkaptan();
+            }
+            if (substance4.Text == "Нитрил акриловой кислоты")
+            {
+                substanceAXOB4.NitrilAkrilKisl();
+            }
+            if (substance4.Text == "Окись этилена")
+            {
+                substanceAXOB4.OkisEtilen();
+            }
+            if (substance4.Text == "Триметиламин")
+            {
+                substanceAXOB4.Trimetilamin();
+            }
+            if (substance4.Text == "Фосфор треххлористый")
+            {
+                substanceAXOB4.FosforTrehchlor();
+            }
+            if (substance4.Text == "Фосфора хлорокись")
+            {
+                substanceAXOB4.FosforaChlorokis();
+            }
+            if (substance4.Text == "Хлорпикрин")
+            {
+                substanceAXOB4.Chlorpikrin();
+            }
+            if (substance4.Text == "Этиленимин")
+            {
+                substanceAXOB4.Etilenimin();
+            }
+            if (substance4.Text == "Этиленсульфид")
+            {
+                substanceAXOB4.Etilensulfid();
+            }
+            if (substance4.Text == "Этилмеркаптан")
+            {
+                substanceAXOB4.Etilmerkaptan();
+            }
+            ///////////////////////////////////////////////
+            //Выбор химически опасного вещества5///////////
+            ///////////////////////////////////////////////
+            if (substance5.Text == "Хлор")
+            {
+                substanceAXOB5.Chlor();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid5.Checked)
+                {
+                    p5 = 1.553;
+                    if (t < tkip5) { K75 = K725; }
+                }
+                if (gaz5.Checked)
+                {
+                    p5 = 0.0032;
+                }
+            }
+            if (substance5.Text == "Аммиак")
+            {
+                substanceAXOB5.Ammiak();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid5.Checked)
+                {
+                    p5 = 1.553;
+                    if (t < tkip5) { K75 = K725; }
+                }
+                if (gaz5.Checked)
+                {
+                    p5 = 0.0032;
+                }
+            }
+            if (substance5.Text == "Водород хлористый")
+            {
+                substanceAXOB5.VodorodChlor();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid5.Checked)
+                {
+                    p5 = 1.191;
+                    if (t < tkip5) { K75 = K725; }
+                }
+                if (gaz5.Checked)
+                {
+                    p5 = 0.0016;
+                }
+            }
+            if (substance5.Text == "Водород бромистый")
+            {
+                substanceAXOB5.VodorodBrom();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid5.Checked)
+                {
+                    p5 = 1.49;
+                    if (t < tkip5) { K75 = K725; }
+                }
+                if (gaz5.Checked)
+                {
+                    p5 = 0.0036;
+                }
+            }
+            if (substance5.Text == "Фосген")
+            {
+                substanceAXOB5.Fosgen();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid5.Checked)
+                {
+                    p5 = 1.432;
+                    if (t < tkip5) { K75 = K725; }
+                }
+                if (gaz5.Checked)
+                {
+                    p5 = 0.0035;
+                }
+            }
+            if (substance5.Text == "Фтор")
+            {
+                substanceAXOB5.Ftor();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid5.Checked)
+                {
+                    p5 = 1.512;
+                    if (t < tkip5) { K75 = K725; }
+                }
+                if (gaz5.Checked)
+                {
+                    p5 = 0.0017;
+                }
+            }
+            if (substance5.Text == "Хлорциан")
+            {
+                substanceAXOB5.Chlorician();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid5.Checked)
+                {
+                    p5 = 1.22;
+                    if (t < tkip5) { K75 = K725; }
+                }
+                if (gaz5.Checked)
+                {
+                    p5 = 0.0021;
+                }
+            }
+            /////////////////////////////////////////////////
+            if (substance5.Text == "Водород мышьяковистый")
+            {
+                substanceAXOB5.VodorodMishyak();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid5.Checked)
+                {
+                    p5 = 1.64;
+                    if (t < tkip5) { K75 = K725; }
+                }
+                if (gaz5.Checked)
+                {
+                    p5 = 0.0035;
+                }
+            }
+            if (substance5.Text == "Диметиламин")
+            {
+                substanceAXOB5.Dimetilamin();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid5.Checked)
+                {
+                    p5 = 0.680;
+                    if (t < tkip5) { K75 = K725; }
+                }
+                if (gaz5.Checked)
+                {
+                    p5 = 0.0020;
+                }
+            }
+            if (substance5.Text == "Метиламин")
+            {
+                substanceAXOB5.Metilamin();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid5.Checked)
+                {
+                    p5 = 0.699;
+                    if (t < tkip5) { K75 = K725; }
+                }
+                if (gaz5.Checked)
+                {
+                    p5 = 0.0014;
+                }
+            }
+            if (substance5.Text == "Метил Хлористый")
+            {
+                substanceAXOB5.MetilChlor();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid5.Checked)
+                {
+                    p5 = 0.983;
+                    if (t < tkip5) { K75 = K725; }
+                }
+                if (gaz5.Checked)
+                {
+                    p5 = 0.0023;
+                }
+            }
+            if (substance5.Text == "Водород фтористый")
+            {
+                substanceAXOB5.VodorodFtoristiy();
+            }
+            if (substance5.Text == "Водород цианистый")
+            {
+                substanceAXOB5.VodorodCianistiy();
+            }
+            if (substance5.Text == "Двуокись азота")
+            {
+                substanceAXOB5.DvuokisAzota();
+            }
+            if (substance5.Text == "Сернистый ангидрид")
+            {
+                substanceAXOB5.SernistiyAngidrid();
+            }
+            if (substance5.Text == "Сероводород")
+            {
+                substanceAXOB5.Serovodorod();
+            }
+            if (substance5.Text == "Сероуглерод")
+            {
+                substanceAXOB5.Serouglerod();
+            }
+            if (substance5.Text == "Соляная кислота")
+            {
+                substanceAXOB5.SolyanayaKislota();
+            }
+            if (substance5.Text == "Формальдегид")
+            {
+                substanceAXOB5.Formaldegid();
+            }
+            ///////////////////////////////
+            if (substance5.Text == "Акролеин")
+            {
+                substanceAXOB5.Akrolein();
+            }
+            if (substance5.Text == "Ацетонитрил")
+            {
+                substanceAXOB5.Azetonitril();
+            }
+            if (substance5.Text == "Ацетонциангидрин")
+            {
+                substanceAXOB5.Azetonziangidrin();
+            }
+            if (substance5.Text == "Метил бромистый")
+            {
+                substanceAXOB5.MetilBrom();
+            }
+            if (substance5.Text == "Метилакрилат")
+            {
+                substanceAXOB5.Metilakrilat();
+            }
+            if (substance5.Text == "Метилмеркаптан")
+            {
+                substanceAXOB5.Metilmerkaptan();
+            }
+            if (substance5.Text == "Нитрил акриловой кислоты")
+            {
+                substanceAXOB5.NitrilAkrilKisl();
+            }
+            if (substance5.Text == "Окись этилена")
+            {
+                substanceAXOB5.OkisEtilen();
+            }
+            if (substance5.Text == "Триметиламин")
+            {
+                substanceAXOB5.Trimetilamin();
+            }
+            if (substance5.Text == "Фосфор треххлористый")
+            {
+                substanceAXOB5.FosforTrehchlor();
+            }
+            if (substance5.Text == "Фосфора хлорокись")
+            {
+                substanceAXOB5.FosforaChlorokis();
+            }
+            if (substance5.Text == "Хлорпикрин")
+            {
+                substanceAXOB5.Chlorpikrin();
+            }
+            if (substance5.Text == "Этиленимин")
+            {
+                substanceAXOB5.Etilenimin();
+            }
+            if (substance5.Text == "Этиленсульфид")
+            {
+                substanceAXOB5.Etilensulfid();
+            }
+            if (substance5.Text == "Этилмеркаптан")
+            {
+                substanceAXOB5.Etilmerkaptan();
+            }
+            ///////////////////////////////////////////////
+            //Выбор химически опасного вещества6///////////
+            ///////////////////////////////////////////////
+            if (substance6.Text == "Хлор")
+            {
+                substanceAXOB6.Chlor();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid6.Checked)
+                {
+                    p6 = 1.553;
+                    if (t < tkip6) { K76 = K726; }
+                }
+                if (gaz6.Checked)
+                {
+                    p6 = 0.0032;
+                }
+            }
+            if (substance6.Text == "Аммиак")
+            {
+                substanceAXOB6.Ammiak();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid6.Checked)
+                {
+                    p6 = 1.553;
+                    if (t < tkip1) { K76 = K726; }
+                }
+                if (gaz6.Checked)
+                {
+                    p6 = 0.0032;
+                }
+            }
+            if (substance6.Text == "Водород хлористый")
+            {
+                substanceAXOB6.VodorodChlor();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid6.Checked)
+                {
+                    p6 = 1.191;
+                    if (t < tkip6) { K76 = K726; }
+                }
+                if (gaz6.Checked)
+                {
+                    p6 = 0.0016;
+                }
+            }
+            if (substance6.Text == "Водород бромистый")
+            {
+                substanceAXOB6.VodorodBrom();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid6.Checked)
+                {
+                    p6 = 1.49;
+                    if (t < tkip6) { K76 = K726; }
+                }
+                if (gaz6.Checked)
+                {
+                    p6 = 0.0036;
+                }
+            }
+            if (substance6.Text == "Фосген")
+            {
+                substanceAXOB6.Fosgen();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid6.Checked)
+                {
+                    p6 = 1.432;
+                    if (t < tkip6) { K76 = K726; }
+                }
+                if (gaz6.Checked)
+                {
+                    p6 = 0.0035;
+                }
+            }
+            if (substance6.Text == "Фтор")
+            {
+                substanceAXOB6.Ftor();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid6.Checked)
+                {
+                    p6 = 1.512;
+                    if (t < tkip6) { K76 = K726; }
+                }
+                if (gaz6.Checked)
+                {
+                    p6 = 0.0017;
+                }
+            }
+            if (substance6.Text == "Хлорциан")
+            {
+                substanceAXOB6.Chlorician();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid6.Checked)
+                {
+                    p6 = 1.22;
+                    if (t < tkip6) { K76 = K726; }
+                }
+                if (gaz6.Checked)
+                {
+                    p6 = 0.0021;
+                }
+            }
+            /////////////////////////////////////////////////
+            if (substance6.Text == "Водород мышьяковистый")
+            {
+                substanceAXOB6.VodorodMishyak();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid6.Checked)
+                {
+                    p6 = 1.64;
+                    if (t < tkip6) { K76 = K726; }
+                }
+                if (gaz6.Checked)
+                {
+                    p6 = 0.0035;
+                }
+            }
+            if (substance6.Text == "Диметиламин")
+            {
+                substanceAXOB6.Dimetilamin();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid6.Checked)
+                {
+                    p6 = 0.680;
+                    if (t < tkip6) { K76 = K726; }
+                }
+                if (gaz6.Checked)
+                {
+                    p6 = 0.0020;
+                }
+            }
+            if (substance6.Text == "Метиламин")
+            {
+                substanceAXOB6.Metilamin();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid6.Checked)
+                {
+                    p6 = 0.699;
+                    if (t < tkip6) { K76 = K726; }
+                }
+                if (gaz6.Checked)
+                {
+                    p6 = 0.0014;
+                }
+            }
+            if (substance6.Text == "Метил Хлористый")
+            {
+                substanceAXOB6.MetilChlor();
+                //Выбор АХОВ с агрегатным состоянием
+                if (jid6.Checked)
+                {
+                    p6 = 0.983;
+                    if (t < tkip6) { K76 = K726; }
+                }
+                if (gaz6.Checked)
+                {
+                    p6 = 0.0023;
+                }
+            }
+            if (substance6.Text == "Водород фтористый")
+            {
+                substanceAXOB6.VodorodFtoristiy();
+            }
+            if (substance6.Text == "Водород цианистый")
+            {
+                substanceAXOB6.VodorodCianistiy();
+            }
+            if (substance6.Text == "Двуокись азота")
+            {
+                substanceAXOB6.DvuokisAzota();
+            }
+            if (substance6.Text == "Сернистый ангидрид")
+            {
+                substanceAXOB6.SernistiyAngidrid();
+            }
+            if (substance6.Text == "Сероводород")
+            {
+                substanceAXOB6.Serovodorod();
+            }
+            if (substance6.Text == "Сероуглерод")
+            {
+                substanceAXOB6.Serouglerod();
+            }
+            if (substance6.Text == "Соляная кислота")
+            {
+                substanceAXOB6.SolyanayaKislota();
+            }
+            if (substance6.Text == "Формальдегид")
+            {
+                substanceAXOB6.Formaldegid();
+            }
+            ///////////////////////////////
+            if (substance6.Text == "Акролеин")
+            {
+                substanceAXOB6.Akrolein();
+            }
+            if (substance6.Text == "Ацетонитрил")
+            {
+                substanceAXOB6.Azetonitril();
+            }
+            if (substance6.Text == "Ацетонциангидрин")
+            {
+                substanceAXOB6.Azetonziangidrin();
+            }
+            if (substance6.Text == "Метил бромистый")
+            {
+                substanceAXOB6.MetilBrom();
+            }
+            if (substance6.Text == "Метилакрилат")
+            {
+                substanceAXOB6.Metilakrilat();
+            }
+            if (substance6.Text == "Метилмеркаптан")
+            {
+                substanceAXOB6.Metilmerkaptan();
+            }
+            if (substance6.Text == "Нитрил акриловой кислоты")
+            {
+                substanceAXOB6.NitrilAkrilKisl();
+            }
+            if (substance6.Text == "Окись этилена")
+            {
+                substanceAXOB6.OkisEtilen();
+            }
+            if (substance6.Text == "Триметиламин")
+            {
+                substanceAXOB6.Trimetilamin();
+            }
+            if (substance6.Text == "Фосфор треххлористый")
+            {
+                substanceAXOB6.FosforTrehchlor();
+            }
+            if (substance6.Text == "Фосфора хлорокись")
+            {
+                substanceAXOB6.FosforaChlorokis();
+            }
+            if (substance6.Text == "Хлорпикрин")
+            {
+                substanceAXOB6.Chlorpikrin();
+            }
+            if (substance6.Text == "Этиленимин")
+            {
+                substanceAXOB6.Etilenimin();
+            }
+            if (substance6.Text == "Этиленсульфид")
+            {
+                substanceAXOB6.Etilensulfid();
+            }
+            if (substance6.Text == "Этилмеркаптан")
+            {
+                substanceAXOB6.Etilmerkaptan();
+            }
+            ///////////////////////////////////////////////////
+            //Расчет высоты/площади поддона
+            if (sam.Checked == true)
             {
                 if (visPod.Text == "") { H = 0; }
                 else
