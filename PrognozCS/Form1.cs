@@ -1117,7 +1117,7 @@ namespace PrognozCS
         public void RASCHETbutt_Click(object sender, EventArgs e)
         {
             //Определение случаев когда пользователь не ввел значения в текстовые поля
-            if (distance.Text == "") { X = 10; }
+            if (distance.Text == "") { X = 0; }
             else { X = Convert.ToDouble(distance.Text); }
             ///
             if (visPod.Text == "") { H = 0; }
@@ -3133,17 +3133,24 @@ namespace PrognozCS
                                         }
                                         else
                                         {
-                                            
-                                            if ((AXOBkolvo1.Checked == false) && (AXOBkolvo2.Checked == false))
+                                            if ((sam.Checked == false) 
+                                                && (svob.Checked == false) && (obsh.Checked == false))
                                             {
-                                                MessageBox.Show("Укажите количество АХОВ!",
-                                    "Уточните параметры!", MessageBoxButtons.OK);
+                                                MessageBox.Show("Выберите характер розлива АХОВ!",
+                                        "Уточните параметры!", MessageBoxButtons.OK);
                                             }
                                             else
                                             {
-                                                new Form3().Show();
+                                                if ((AXOBkolvo1.Checked == false) && (AXOBkolvo2.Checked == false))
+                                                {
+                                                    MessageBox.Show("Укажите количество АХОВ!",
+                                        "Уточните параметры!", MessageBoxButtons.OK);
+                                                }
+                                                else
+                                                {
+                                                    new Form2().Show();
+                                                }
                                             }
-                                            
                                         }
                                     }
                                 }

@@ -64,6 +64,7 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
+    <Compile Include="KoeffZ.cs" />
     <Compile Include="KolvoAndGlub.cs" />
     <Compile Include="moreAXOB.cs" />
     <Compile Include="Program.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="substance\substanceAXOB4.cs" />
     <Compile Include="substance\substanceAXOB3.cs" />
     <Compile Include="substance\substanceAXOB.cs" />
+    <Compile Include="substance\substanceAXOB1.cs" />
     <Compile Include="substance\substanceAXOB2.cs" />
     <Compile Include="verUstAir.cs" />
     <EmbeddedResource Include="Form2.resx">
