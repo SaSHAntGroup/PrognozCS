@@ -16,7 +16,7 @@ namespace PrognozCS
             InitializeComponent();
             Form1.G = Math.Round(Form1.G, 2);
             Form1.Sf = Math.Round(Form1.Sf, 2);
-            Form1.Txm = Math.Round(Form1.Txm, 0);
+            int Txm = (int)Form1.Txm;
             glub.Text = Form1.G.ToString() + " км";
             ploshad.Text = Form1.Sf.ToString() + " км²";
             time.Text = Form1.Txh.ToString() + " часов " + Form1.Txm.ToString() + " минут";
@@ -25,11 +25,10 @@ namespace PrognozCS
             poteri3.Text = Form1.P3.ToString() + " чел";
 
         }
-    public void button1_Click(object sender, EventArgs e)
-    {
-        Close();
-    }
-
+        public void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             new Form3().Show();
