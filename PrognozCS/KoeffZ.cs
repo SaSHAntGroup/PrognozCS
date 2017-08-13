@@ -7,11 +7,75 @@ namespace PrognozCS
 {
     class KoeffZ
     {
+<<<<<<< HEAD
         //Городские НЕ оповещенные !!
+=======
+        //Городские оповещенные
+        public static void GorOpovesh()
+        {
+            if (Form1.N <= 0.25)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kgk = 0.95; }
+                if (Form1.Tsut >= 6) { Form1.Kgk = 0.84; }
+                if (Form1.Tsut >= 7) { Form1.Kgk = 0.64; }
+                if (Form1.Tsut >= 10) { Form1.Kgk = 0.69; }
+                if (Form1.Tsut >= 13) { Form1.Kgk = 0.72; }
+                if (Form1.Tsut >= 15) { Form1.Kgk = 0.68; }
+                if (Form1.Tsut >= 17) { Form1.Kgk = 0.69; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.88; }
+            }
+            if (Form1.N <= 0.5)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kgk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = ; }
+            }
+            if (Form1.N <= 1)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kgk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = ; }
+            }
+            if (Form1.N <= 2)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kgk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = ; }
+            }
+            if (Form1.N > 2)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kgk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = ; }
+            }
+        }
+        //Городские не оповещенные
+>>>>>>> parent of 78227da... Поправки..
         public static void GorNeOpovesh()
         {
             if (Form1.N <= 0.25)
             {
+<<<<<<< HEAD
                 if (Form1.Tsut >= 1) { Form1.Kgk = 0.95; }
                 if (Form1.Tsut >= 6) { Form1.Kgk = 0.84; }
                 if (Form1.Tsut >= 7) { Form1.Kgk = 0.64; }
@@ -64,6 +128,60 @@ namespace PrognozCS
                 if (Form1.Tsut >= 15) { Form1.Kgk = 0.03; }
                 if (Form1.Tsut >= 17) { Form1.Kgk = 0.04; }
                 if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.07; }
+=======
+                if (Form1.Tsut >= 1) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kgk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = ; }
+            }
+            if (Form1.N <= 0.5)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kgk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = ; }
+            }
+            if (Form1.N <= 1)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kgk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = ; }
+            }
+            if (Form1.N <= 2)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kgk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = ; }
+            }
+            if (Form1.N > 2)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kgk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kgk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = ; }
+>>>>>>> parent of 78227da... Поправки..
             }
         }
         //Городские  оповещенные !!!
@@ -71,6 +189,7 @@ namespace PrognozCS
         {
             if (Form1.N <= 0.25)
             {
+<<<<<<< HEAD
                 if (Form1.Tsut >= 1) { Form1.Kgk = 0.95; }
                 if (Form1.Tsut >= 6) { Form1.Kgk = 0.93; }
                 if (Form1.Tsut >= 7) { Form1.Kgk = 0.78; }
@@ -123,6 +242,60 @@ namespace PrognozCS
                 if (Form1.Tsut >= 15) { Form1.Kgk = 0.04; }
                 if (Form1.Tsut >= 17) { Form1.Kgk = 0.06; }
                 if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.09; }
+=======
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N <= 0.5)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N <= 1)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N <= 2)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N > 2)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+>>>>>>> parent of 78227da... Поправки..
             }
         }
         //Загородная зона,  НЕ зимой, оповещенные !!!
@@ -130,6 +303,7 @@ namespace PrognozCS
         {
             if (Form1.N <= 0.25)
             {
+<<<<<<< HEAD
                 if (Form1.Tsut >= 1) { Form1.Kzk = 0.87; }
                 if (Form1.Tsut >= 6) { Form1.Kzk = 0.59; }
                 if (Form1.Tsut >= 7) { Form1.Kzk = 0.24; }
@@ -182,6 +356,60 @@ namespace PrognozCS
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.05; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.05; }
                 if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.07; }
+=======
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N <= 0.5)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N <= 1)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N <= 2)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N > 2)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+>>>>>>> parent of 78227da... Поправки..
             }
         }
         //Загородная зона, зимой, оповещенные !!!
@@ -189,6 +417,7 @@ namespace PrognozCS
         {
             if (Form1.N <= 0.25)
             {
+<<<<<<< HEAD
                 if (Form1.Tsut >= 1) { Form1.Kzk = 0.89; }
                 if (Form1.Tsut >= 6) { Form1.Kzk = 0.81; }
                 if (Form1.Tsut >= 7) { Form1.Kzk = 0.39; }
@@ -241,6 +470,60 @@ namespace PrognozCS
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.05; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.04; }
                 if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.06; }
+=======
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N <= 0.5)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N <= 1)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N <= 2)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N > 2)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+>>>>>>> parent of 78227da... Поправки..
             }
         }
         //Загородная зона, с\х период,  НЕ оповещенные !!
@@ -248,6 +531,7 @@ namespace PrognozCS
         {
             if (Form1.N <= 0.25)
             {
+<<<<<<< HEAD
                 if (Form1.Tsut >= 1) { Form1.Kzk = 0.72; }
                 if (Form1.Tsut >= 6) { Form1.Kzk = 0.39; }
                 if (Form1.Tsut >= 7) { Form1.Kzk = 0.24; }
@@ -359,6 +643,60 @@ namespace PrognozCS
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.05; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.03; }
                 if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.7; }
+=======
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N <= 0.5)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N <= 1)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N <= 2)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+            }
+            if (Form1.N > 2)
+            {
+                if (Form1.Tsut >= 1) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 6) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 7) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 10) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 13) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 15) { Form1.Kzk = ; }
+                if (Form1.Tsut >= 17) { Form1.Kzk = ; }
+                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = ; }
+>>>>>>> parent of 78227da... Поправки..
             }
         }
     }

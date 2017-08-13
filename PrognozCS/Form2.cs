@@ -25,13 +25,13 @@ namespace PrognozCS
             poteri3.Text = Form1.P3.ToString() + " чел";
 
         }
-    public void button1_Click(object sender, EventArgs e)
-    {
-        Close();
-    }
-    private void button2_Click(object sender, EventArgs e)
-    {
-        new Form3().Show();
-    }
+        public void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new Form3().Show();
+        }
     }
 }

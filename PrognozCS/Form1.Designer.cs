@@ -209,6 +209,7 @@
             // svob
             // 
             this.svob.AutoSize = true;
+            this.svob.Checked = true;
             this.svob.Location = new System.Drawing.Point(6, 19);
             this.svob.Name = "svob";
             this.svob.Size = new System.Drawing.Size(74, 17);
@@ -225,7 +226,6 @@
             this.sam.Name = "sam";
             this.sam.Size = new System.Drawing.Size(169, 17);
             this.sam.TabIndex = 9;
-            this.sam.TabStop = true;
             this.sam.Text = "В самостоятельный поддон ";
             this.sam.UseVisualStyleBackColor = true;
             this.sam.CheckedChanged += new System.EventHandler(this.sam_CheckedChanged);
@@ -237,7 +237,6 @@
             this.obsh.Name = "obsh";
             this.obsh.Size = new System.Drawing.Size(244, 17);
             this.obsh.TabIndex = 10;
-            this.obsh.TabStop = true;
             this.obsh.Text = "В общий поддон от нескольких источников";
             this.obsh.UseVisualStyleBackColor = true;
             this.obsh.CheckedChanged += new System.EventHandler(this.obsh_CheckedChanged);
@@ -372,7 +371,7 @@
             // primichanie1
             // 
             this.primichanie1.AutoSize = true;
-            this.primichanie1.Location = new System.Drawing.Point(13, 377);
+            this.primichanie1.Location = new System.Drawing.Point(8, 377);
             this.primichanie1.Name = "primichanie1";
             this.primichanie1.Size = new System.Drawing.Size(526, 13);
             this.primichanie1.TabIndex = 24;
@@ -382,7 +381,7 @@
             // primichanie2
             // 
             this.primichanie2.AutoSize = true;
-            this.primichanie2.Location = new System.Drawing.Point(13, 390);
+            this.primichanie2.Location = new System.Drawing.Point(8, 390);
             this.primichanie2.Name = "primichanie2";
             this.primichanie2.Size = new System.Drawing.Size(486, 13);
             this.primichanie2.TabIndex = 26;
@@ -659,9 +658,9 @@
             this.panel3.Controls.Add(this.timeday);
             this.panel3.Controls.Add(this.periodZIMA);
             this.panel3.Controls.Add(this.periodSH);
-            this.panel3.Location = new System.Drawing.Point(11, 331);
+            this.panel3.Location = new System.Drawing.Point(3, 331);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(522, 43);
+            this.panel3.Size = new System.Drawing.Size(539, 43);
             this.panel3.TabIndex = 59;
             // 
             // panel4
@@ -680,13 +679,13 @@
             this.noopovesh.Name = "noopovesh";
             this.noopovesh.Size = new System.Drawing.Size(227, 17);
             this.noopovesh.TabIndex = 1;
-            this.noopovesh.TabStop = true;
             this.noopovesh.Text = "Население не оповещено об опасности";
             this.noopovesh.UseVisualStyleBackColor = true;
             // 
             // opovesh
             // 
             this.opovesh.AutoSize = true;
+            this.opovesh.Checked = true;
             this.opovesh.Location = new System.Drawing.Point(3, 4);
             this.opovesh.Name = "opovesh";
             this.opovesh.Size = new System.Drawing.Size(212, 17);
@@ -698,7 +697,7 @@
             // timedaylabel
             // 
             this.timedaylabel.AutoSize = true;
-            this.timedaylabel.Location = new System.Drawing.Point(373, 1);
+            this.timedaylabel.Location = new System.Drawing.Point(376, 4);
             this.timedaylabel.Name = "timedaylabel";
             this.timedaylabel.Size = new System.Drawing.Size(74, 13);
             this.timedaylabel.TabIndex = 52;
@@ -707,7 +706,7 @@
             // hoursper
             // 
             this.hoursper.AutoSize = true;
-            this.hoursper.Location = new System.Drawing.Point(484, 22);
+            this.hoursper.Location = new System.Drawing.Point(487, 25);
             this.hoursper.Name = "hoursper";
             this.hoursper.Size = new System.Drawing.Size(30, 13);
             this.hoursper.TabIndex = 51;
@@ -715,7 +714,7 @@
             // 
             // timeday
             // 
-            this.timeday.Location = new System.Drawing.Point(376, 17);
+            this.timeday.Location = new System.Drawing.Point(379, 20);
             this.timeday.Name = "timeday";
             this.timeday.Size = new System.Drawing.Size(102, 20);
             this.timeday.TabIndex = 2;
@@ -727,13 +726,13 @@
             this.periodZIMA.Name = "periodZIMA";
             this.periodZIMA.Size = new System.Drawing.Size(103, 17);
             this.periodZIMA.TabIndex = 1;
-            this.periodZIMA.TabStop = true;
             this.periodZIMA.Text = "Зимний период";
             this.periodZIMA.UseVisualStyleBackColor = true;
             // 
             // periodSH
             // 
             this.periodSH.AutoSize = true;
+            this.periodSH.Checked = true;
             this.periodSH.Location = new System.Drawing.Point(5, 4);
             this.periodSH.Name = "periodSH";
             this.periodSH.Size = new System.Drawing.Size(114, 17);
@@ -746,7 +745,7 @@
             // 
             this.panel2.Controls.Add(this.AXOBkolvo2);
             this.panel2.Controls.Add(this.AXOBkolvo1);
-            this.panel2.Location = new System.Drawing.Point(281, 7);
+            this.panel2.Location = new System.Drawing.Point(280, 11);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(254, 24);
             this.panel2.TabIndex = 58;
@@ -838,11 +837,10 @@
             // gaz1
             // 
             this.gaz1.AutoSize = true;
-            this.gaz1.Location = new System.Drawing.Point(6, 42);
+            this.gaz1.Location = new System.Drawing.Point(90, 42);
             this.gaz1.Name = "gaz1";
             this.gaz1.Size = new System.Drawing.Size(43, 17);
             this.gaz1.TabIndex = 57;
-            this.gaz1.TabStop = true;
             this.gaz1.Text = "Газ";
             this.gaz1.UseVisualStyleBackColor = true;
             this.gaz1.Visible = false;
@@ -850,7 +848,8 @@
             // jid1
             // 
             this.jid1.AutoSize = true;
-            this.jid1.Location = new System.Drawing.Point(55, 42);
+            this.jid1.Checked = true;
+            this.jid1.Location = new System.Drawing.Point(9, 42);
             this.jid1.Name = "jid1";
             this.jid1.Size = new System.Drawing.Size(77, 17);
             this.jid1.TabIndex = 56;
@@ -1333,7 +1332,7 @@
             // primichanie3
             // 
             this.primichanie3.AutoSize = true;
-            this.primichanie3.Location = new System.Drawing.Point(12, 403);
+            this.primichanie3.Location = new System.Drawing.Point(7, 403);
             this.primichanie3.Name = "primichanie3";
             this.primichanie3.Size = new System.Drawing.Size(262, 13);
             this.primichanie3.TabIndex = 52;
