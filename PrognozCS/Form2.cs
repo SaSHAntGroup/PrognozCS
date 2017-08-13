@@ -29,9 +29,9 @@ namespace PrognozCS
         {
             Close();
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            new Form3().Show();
-        }
+    private void button2_Click(object sender, EventArgs e)
+    {
+        new Form3().Show();
+    }
     }
 }
