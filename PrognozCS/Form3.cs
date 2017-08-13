@@ -99,5 +99,10 @@ namespace PrognozCS
                 //Вывод картинки
                 picture.Image = bpm;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
