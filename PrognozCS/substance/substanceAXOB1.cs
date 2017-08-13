@@ -571,7 +571,7 @@ namespace PrognozCS
             Form1.K721 = Form1.K711;
             //Коэффициент К1
             Form1.K11 = 0;
-            Form1.K21 = 0.028;
+            Form1.K21 = 0.028; 
         }
     }
 }

@@ -361,6 +361,5 @@ namespace PrognozCS
                 if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.7; }
             }
         }
-
     }
 }
