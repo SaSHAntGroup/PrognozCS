@@ -19,7 +19,7 @@ namespace PrognozCS
             int Txm = (int)Form1.Txm;
             glub.Text = Form1.G.ToString() + " км";
             ploshad.Text = Form1.Sf.ToString() + " км²";
-            time.Text = Form1.Txh.ToString() + " часов " + Form1.Txm.ToString() + " минут";
+            time.Text = Form1.Txh.ToString() + " часов " + Txm.ToString() + " минут";
             poteri1.Text = Form1.P1.ToString() + " чел";
             poteri2.Text = Form1.P2.ToString() + " чел";
             poteri3.Text = Form1.P3.ToString() + " чел";

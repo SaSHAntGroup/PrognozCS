@@ -3141,7 +3141,7 @@ namespace PrognozCS
                                             }
                                             else
                                             {
-                                                new Form3().Show();
+                                                new Form2().Show();
                                             }
                                             
                                         }

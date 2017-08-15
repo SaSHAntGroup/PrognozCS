@@ -45,7 +45,7 @@ namespace PrognozCS
             int Se = 260;//Площадь поражения
             int r = 130;//Расстояния от края глубины поражения до очага
             int O = 156;//Расстояние от верха и края формы до очага поражения
-            double S = 15;
+            double S = 150;
 
             //Масштабирование значений на рисунок
             double Mas = r / Form1.G;
@@ -92,7 +92,6 @@ namespace PrognozCS
                 distance = distance * 5;
                 Mod.FillEllipse(BrB, border, border, Se, Se);//Заполнение зоны поражения
                 Mod.FillRectangle(BrSilver, 0, border, O, Se);//Отрезающий квадрат, для визуала
-                Mod.DrawLine(PTurq, O, border, O, Se + 27);//Отрезающая линия, для визуала
                 Mod.FillEllipse(BrBl, O - 4, O - 3, point, point);//Очаг поражения (центр. точка)
 
                 Mod.DrawLine(PBlue, O, O, O + r - 10, O + 50);//Линия глубины
@@ -112,6 +111,7 @@ namespace PrognozCS
                 }
 
                 Mod.DrawString(TextGlub, Font, BrBlack, O + 55, O + 36);//Текст глубины
+                Mod.DrawLine(PTurq, O, border, O, Se + 27);//Отрезающая линия, для визуала
                 Mod.DrawArc(PTurq, border, border, Se, Se, 270, 180);//Дуговая обводка
             }
             if (Form1.f == 90)
@@ -120,8 +120,6 @@ namespace PrognozCS
                 Mod.FillEllipse(BrB, border, border, Se, Se);//Заполнение зоны поражения
                 Mod.DrawLine(PSilverB, border - 20, O - 45, Se, border - 22);//Отрезающая линия, для визуала
                 Mod.DrawLine(PSilverB, border - 20, O + 45, Se, Se + 48);//Отрезающая линия, для визуала 2
-                Mod.DrawLine(PTurq, border, O, O + 93, O - 92);//Отрезающая линия, для визуала 3
-                Mod.DrawLine(PTurq, border, O, O + 93, O + 92);//Отрезающая линия, для визуала 4
                 Mod.FillEllipse(BrBl, border - 4, O - 4, point + 1, point + 1);//Очаг поражения (центр. точка)
 
                 Mod.DrawLine(PBlue, border + 4, O - 1, Se + 21, O + 35);//Линия глубины
@@ -137,6 +135,8 @@ namespace PrognozCS
                 }
 
                 Mod.DrawString(TextGlub, Font, BrBlack, O, O + 23);//Текст глубины
+                Mod.DrawLine(PTurq, border, O, O + 93, O - 92);//Отрезающая линия, для визуала 3
+                Mod.DrawLine(PTurq, border, O, O + 93, O + 92);//Отрезающая линия, для визуала 4
                 Mod.DrawArc(PTurq, border, border, Se, Se, 315, 90);//Дуговая обводка
             }
             if (Form1.f == 45)
@@ -145,8 +145,6 @@ namespace PrognozCS
                 Mod.FillEllipse(BrB, border, border, Se, Se);//Заполнение зоны поражения
                 Mod.DrawLine(PSilverB, border - 20, O - 45, Se, border - 22);//Отрезающая линия, для визуала
                 Mod.DrawLine(PSilverB, border - 20, O + 45, Se, Se + 48);//Отрезающая линия, для визуала 2
-                Mod.DrawLine(PTurq, border, O, O + 93, O - 92);//Отрезающая линия, для визуала 3
-                Mod.DrawLine(PTurq, border, O, O + 93, O + 92);//Отрезающая линия, для визуала 4
                 Mod.FillEllipse(BrBl, border - 4, O - 4, point + 1, point + 1);//Очаг поражения (центр. точка)
 
                 Mod.DrawLine(PBlue, border + 4, O - 1, Se + 21, O + 35);//Линия глубины
@@ -162,6 +160,8 @@ namespace PrognozCS
                 }
 
                 Mod.DrawString(TextGlub, Font, BrBlack, O, O + 23);//Текст глубины
+                Mod.DrawLine(PTurq, border, O, O + 93, O - 92);//Отрезающая линия, для визуала 3
+                Mod.DrawLine(PTurq, border, O, O + 93, O + 92);//Отрезающая линия, для визуала 4
                 Mod.DrawArc(PTurq, border, border, Se, Se, 315, 90);//Дуговая обводка
             }
             //Вывод картинки
