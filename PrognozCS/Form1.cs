@@ -324,38 +324,37 @@ namespace PrognozCS
             substance.Items.Add("Этиленсульфид");
             substance.Items.Add("Этилмеркаптан");
             //Добавление АХОВ1
+            substance1.Items.Add("Акролеин");
             substance1.Items.Add("Аммиак");
+            substance1.Items.Add("Ацетонитрил");
+            substance1.Items.Add("Ацетонциангидрин");
+            substance1.Items.Add("Водород мышьяковистый");
             substance1.Items.Add("Водород фтористый");
             substance1.Items.Add("Водород хлористый");
             substance1.Items.Add("Водород бромистый");
             substance1.Items.Add("Водород цианистый");
-            substance1.Items.Add("Двуокись азота");
-            substance1.Items.Add("Сернистый ангидрид");
-            substance1.Items.Add("Сероводород");
-            substance1.Items.Add("Сероуглерод");
-            substance1.Items.Add("Соляная кислота");
-            substance1.Items.Add("Формальдегид");
-            substance1.Items.Add("Фосген");
-            substance1.Items.Add("Фтор");
-            substance1.Items.Add("Хлор");
-            substance1.Items.Add("Хлорциан");
-            //
-            substance1.Items.Add("Водород мышьяковистый");
             substance1.Items.Add("Диметиламин");
             substance1.Items.Add("Метиламин");
             substance1.Items.Add("Метил Хлористый");
-            substance1.Items.Add("Акролеин");
-            substance1.Items.Add("Ацетонитрил");
-            substance1.Items.Add("Ацетонциангидрин");
             substance1.Items.Add("Метил бромистый");
             substance1.Items.Add("Метилакрилат");
             substance1.Items.Add("Метилмеркаптан");
             substance1.Items.Add("Нитрил акриловой кислоты");
+            substance1.Items.Add("Двуокись азота");
             substance1.Items.Add("Окись этилена");
+            substance1.Items.Add("Сернистый ангидрид");
+            substance1.Items.Add("Сероводород");
+            substance1.Items.Add("Сероуглерод");
+            substance1.Items.Add("Соляная кислота");
             substance1.Items.Add("Триметиламин");
+            substance1.Items.Add("Формальдегид");
+            substance1.Items.Add("Фосген");
+            substance1.Items.Add("Фтор");
             substance1.Items.Add("Фосфор треххлористый");
             substance1.Items.Add("Фосфора хлорокись");
+            substance1.Items.Add("Хлор");
             substance1.Items.Add("Хлорпикрин");
+            substance1.Items.Add("Хлорциан");
             substance1.Items.Add("Этиленимин");
             substance1.Items.Add("Этиленсульфид");
             substance1.Items.Add("Этилмеркаптан");
@@ -485,7 +484,6 @@ namespace PrognozCS
 
         public void svob_CheckedChanged(object sender, EventArgs e)
         {
-            h = 0.05;
             visPod.Visible = false;
             visPodlabel.Visible = false;
             ploshlabel.Visible = false;
@@ -1185,7 +1183,17 @@ namespace PrognozCS
                 verUstAir.Konvekcia();
             }
             //Выбор химически опасного вещества
-            if (substance.Text == "Хлор")
+            ///////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////
+            //if (substance.Text == "")
+            //{
+            //    substanceAXOB.Ammiak();
+            //    //Выбор АХОВ с агрегатным состоянием
+            //    p = 0.681;
+            //    if (t < tkip) { K7 = K72; }
+            //}
+                if (substance.Text == "Хлор")
             {
                 substanceAXOB.Chlor();
                 //Выбор АХОВ с агрегатным состоянием
@@ -1205,12 +1213,12 @@ namespace PrognozCS
                 //Выбор АХОВ с агрегатным состоянием
                 if (jid.Checked)
                 {
-                    p = 1.553;
+                    p = 0.681;
                     if (t < tkip) { K7 = K72; }
                 }
                 if (gaz.Checked)
                 {
-                    p = 0.0032;
+                    p = 0.0008;
                 }
             }
             if (substance.Text == "Водород хлористый")
@@ -1450,16 +1458,16 @@ namespace PrognozCS
             }
             if (substance1.Text == "Аммиак")
             {
-                substanceAXOB1.Ammiak();
+                substanceAXOB.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
-                if (jid1.Checked)
+                if (jid.Checked)
                 {
-                    p1 = 1.553;
-                    if (t < tkip1) { K711 = K721; }
+                    p = 0.681;
+                    if (t < tkip) { K7 = K72; }
                 }
-                if (gaz1.Checked)
+                if (gaz.Checked)
                 {
-                    p1 = 0.0032;
+                    p = 0.0008;
                 }
             }
             if (substance1.Text == "Водород хлористый")
@@ -1701,16 +1709,16 @@ namespace PrognozCS
             }
             if (substance2.Text == "Аммиак")
             {
-                substanceAXOB2.Ammiak();
+                substanceAXOB.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
-                if (jid2.Checked)
+                if (jid.Checked)
                 {
-                    p2 = 1.553;
-                    if (t < tkip2) { K712 = K722; }
+                    p = 0.681;
+                    if (t < tkip) { K7 = K72; }
                 }
-                if (gaz2.Checked)
+                if (gaz.Checked)
                 {
-                    p2 = 0.0032;
+                    p = 0.0008;
                 }
             }
             if (substance2.Text == "Водород хлористый")
@@ -1894,16 +1902,16 @@ namespace PrognozCS
                 }
                 if (substance3.Text == "Аммиак")
                 {
-                    substanceAXOB3.Ammiak();
+                    substanceAXOB.Ammiak();
                     //Выбор АХОВ с агрегатным состоянием
-                    if (jid3.Checked)
+                    if (jid.Checked)
                     {
-                        p3 = 1.553;
-                        if (t < tkip3) { K73 = K723; }
+                        p = 0.681;
+                        if (t < tkip) { K7 = K72; }
                     }
-                    if (gaz3.Checked)
+                    if (gaz.Checked)
                     {
-                        p3 = 0.0032;
+                        p = 0.0008;
                     }
                 }
                 if (substance3.Text == "Водород хлористый")
@@ -2087,16 +2095,16 @@ namespace PrognozCS
             }
             if (substance4.Text == "Аммиак")
             {
-                substanceAXOB4.Ammiak();
+                substanceAXOB.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
-                if (jid4.Checked)
+                if (jid.Checked)
                 {
-                    p4 = 1.553;
-                    if (t < tkip4) { K74 = K724; }
+                    p = 0.681;
+                    if (t < tkip) { K7 = K72; }
                 }
-                if (gaz4.Checked)
+                if (gaz.Checked)
                 {
-                    p4 = 0.0032;
+                    p = 0.0008;
                 }
             }
             if (substance4.Text == "Водород хлористый")
@@ -2338,16 +2346,16 @@ namespace PrognozCS
             }
             if (substance5.Text == "Аммиак")
             {
-                substanceAXOB5.Ammiak();
+                substanceAXOB.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
-                if (jid5.Checked)
+                if (jid.Checked)
                 {
-                    p5 = 1.553;
-                    if (t < tkip5) { K75 = K725; }
+                    p = 0.681;
+                    if (t < tkip) { K7 = K72; }
                 }
-                if (gaz5.Checked)
+                if (gaz.Checked)
                 {
-                    p5 = 0.0032;
+                    p = 0.0008;
                 }
             }
             if (substance5.Text == "Водород хлористый")
@@ -2589,16 +2597,16 @@ namespace PrognozCS
             }
             if (substance6.Text == "Аммиак")
             {
-                substanceAXOB6.Ammiak();
+                substanceAXOB.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
-                if (jid6.Checked)
+                if (jid.Checked)
                 {
-                    p6 = 1.553;
-                    if (t < tkip1) { K76 = K726; }
+                    p = 0.681;
+                    if (t < tkip) { K7 = K72; }
                 }
-                if (gaz6.Checked)
+                if (gaz.Checked)
                 {
-                    p6 = 0.0032;
+                    p = 0.0008;
                 }
             }
             if (substance6.Text == "Водород хлористый")
@@ -2823,6 +2831,10 @@ namespace PrognozCS
             }
             ///////////////////////////////////////////////////
             //Расчет высоты/площади поддона
+            if (svob.Checked == true)
+            {
+                h = 0.05;
+            }
             if (sam.Checked == true)
             {
                 if (visPod.Text == "") { H = 0; }
@@ -2886,7 +2898,7 @@ namespace PrognozCS
                 //Время испарения АХОВ
                 if (gaz.Checked) { T = 0; }
                 else
-                {
+                { 
                     T = (h * p) / (K2 * K4 * K72);
                 }
                 //Определение коэффициента К6
@@ -3141,7 +3153,7 @@ namespace PrognozCS
                                             }
                                             else
                                             {
-                                                new Form2().Show();
+                                                new Form3().Show();
                                             }
                                             
                                         }

@@ -11,15 +11,15 @@ namespace PrognozCS
         {
             Form1.K5 = 1.0;
             Form1.Kv = 0.081;
-            if (Form1.v <= 1)
+            if (Form1.v >= 0)
             {
                 Form1.W = 5;
             }
-            if (Form1.v <= 2)
+            if (Form1.v > 1)
             {
                 Form1.W = 10;
             }
-            if (Form1.v <= 3)
+            if (Form1.v > 2)
             {
                 Form1.W = 16;
             }
