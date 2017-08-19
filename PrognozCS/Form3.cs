@@ -23,27 +23,32 @@ namespace PrognozCS
             Bitmap bpm = new Bitmap(picture.Width, picture.Height);
             //Импортируем созданную картинку
             Graphics Mod = Graphics.FromImage(bpm);
-            //Создаем картинку
+            //Создаем картинку 2
             Bitmap bpm2 = new Bitmap(picture2.Width, picture2.Height);
-            //Импортируем созданную картинку
+            //Импортируем созданную картинку 2
             Graphics Mod2 = Graphics.FromImage(bpm2);
 
             //Создание карандашей
             Pen PTurq = new Pen(Color.Turquoise, 2);
             Pen PBlue = new Pen(Color.Blue, 2);
+            Pen PBlueS = new Pen(Color.Blue, 1);
             Pen PRed = new Pen(Color.Red, 2);
+            Pen PGreen = new Pen(Color.Green, 1);
+            Pen PRedS = new Pen(Color.Red, 1);
             Pen PBlack = new Pen(Color.Black, 1);
             Pen PSilver = new Pen(Color.Silver, 1);
             Pen PSilverB = new Pen(Color.Silver, 130);
             SolidBrush BrB = new SolidBrush(Color.Beige);
+            SolidBrush BrBr = new SolidBrush(Color.SkyBlue);
             SolidBrush BrBl = new SolidBrush(Color.Blue);
             SolidBrush BrBlack = new SolidBrush(Color.Black);
             SolidBrush BrSilver = new SolidBrush(Color.Silver);
             SolidBrush BrWhite = new SolidBrush(Color.White);
+            SolidBrush BrRed = new SolidBrush(Color.DarkSalmon);
 
             //Указатели
             //Form1.f = 90;//////////////////////
-            //Form1.X = 36;////
+            //Form1.X = 72;////
             string TextGlub = Form1.G.ToString() + " км";
             string TextDistance = Form1.X.ToString() + " км";
 
@@ -129,12 +134,12 @@ namespace PrognozCS
 
                 if (Form1.X > 0)
                 {
-                    Mod.DrawLine(PRed, border, O, border + (int)distance * 2 + (int)Plosh / 2,
+                    Mod.DrawLine(PRed, border, O, border + (int)distance * 2,
                         O);//Линия расстояния до н/п
-                    Mod.FillEllipse(BrWhite, border + (int)distance * 2 + (int)Plosh / 2,
-                        O - (int)Plosh / 2, (int)Plosh, (int)Plosh);//Заполнение площади н/п
-                    Mod.DrawEllipse(PBlack, border + (int)distance * 2 + (int)Plosh / 2,
-                        O - (int)Plosh / 2, (int)Plosh, (int)Plosh);//Обводка н/п
+                    Mod.FillEllipse(BrWhite, border + (int)distance * 2,
+                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Заполнение площади н/п
+                    Mod.DrawEllipse(PBlack, border + (int)distance * 2 ,
+                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Обводка н/п
                     //Mod.FillPolygon(BrSilver, p);//Заполнение площади н/п
                     //Mod.DrawPolygon(PBlack, p);//Обводка н/п
                     Mod.DrawString(TextDistance, Font, BrBlack, border + (int)distance * 2 - 35,
@@ -159,12 +164,12 @@ namespace PrognozCS
                     Mod.DrawLine(PRed, border, O, border + (int)distance * 2 + (int)Plosh / 2,
                         O);//Линия расстояния до н/п
                     Mod.FillEllipse(BrWhite, border + (int)distance * 2 + (int)Plosh / 2,
-                        O - (int)Plosh / 2, (int)Plosh, (int)Plosh);//Заполнение площади н/п
+                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Заполнение площади н/п
                     Mod.DrawEllipse(PBlack, border + (int)distance * 2 + (int)Plosh / 2,
-                        O - (int)Plosh / 2, (int)Plosh, (int)Plosh);//Обводка н/п
+                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Обводка н/п
                     //Mod.FillPolygon(BrSilver, p);//Заполнение площади н/п
                     //Mod.DrawPolygon(PBlack, p);//Обводка н/п
-                    Mod.DrawString(TextDistance, Font, BrBlack, border + (int)distance * 2 - 35,
+                    Mod.DrawString(TextDistance, Font, BrBlack, border + (int)distance * 2 - 25,
                         O - 14);//Текст расстояния до н/п
                 }
                 
@@ -172,18 +177,187 @@ namespace PrognozCS
                 Mod.FillEllipse(BrBlack, border - 4, O - 4, point + 1, point + 1);//Очаг поражения (центр. точка)
                 Mod.DrawArc(PTurq, border, border, Se, Se, 338, 46);//Дуговая обводка
             }
-            //
-            int l = r + border + 138;
-            int x = border;
-            int y = border;
-            distance = distance / r * (l + 180);
-            int m = 57;
+            //Расчетные данные
+            int l = r + border + 138;//Условные величины
+            int x = border;//для упрощения
+            int y = border;//расчета, px
+
+            int L = l + 220;//Глубина поражения в пикселях в картинке 2
+            distance = distance / r * L;//Расстояние до города в пикселях в картинке 2
+            Mas = (double)L / 100;//Расчет шага 1% в пикселях от глубины в картинке 2
+            Plosh = Mas * S;//Площадь н/п в картинке 2
+            int m = 57;//Средняя точка по у
+            double z = L / 4;//Разделение глубины поражения на 4 зоны
+            double I = L - (distance + Plosh);//
+
             //Mod.DrawLine(PBlack, Se + border * 2, border - 15, Se + border * 2, l);//
-            Mod.DrawLine(PBlack, border - 15, l, Se * 2 + 15, l);//
+            Mod.DrawLine(PBlack, border - 40, l - 1, Se * 2 + 150, l - 1);//Разделяющая черта рисунков
+            Mod.DrawLine(PBlack, border - 40, l, Se * 2 + 150, l);//Разделяющая черта рисунков 2
+            
+            S = (int)S;
+            string TextDiametr = S.ToString() + " км";//Текст диаметра площади н/п
+            Mod2.FillEllipse(BrBr, x - 2, -10, l + 195, m + y * 4);//Заполнение зоны поражения
 
-            Mod2.FillEllipse(BrB, x - 2, -10, l + 195, m + y * 4);//Заполнение зоны поражения
-
-            //
+            //Н/п попадающий в 4 части зоны
+            /////////////////////////////////////
+            if ((int)distance + (int)Plosh >= z * 4)
+            {
+                if (((int)distance > 0) && ((int)distance + (int)Plosh < z * 4))
+                {
+                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrRed, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if ((int)distance > z)
+                {
+                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if ((int)distance > z * 2)
+                {
+                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if ((int)distance > z * 3)
+                {
+                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if ((int)distance >= z * 4)
+                {
+                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+            }
+            //Н/п попадающий в 3 части зоны
+            ///////////////////////////////////
+            if (((int)distance + (int)Plosh < z * 4))
+            {
+                if (((int)distance > 0) && ((int)distance + (int)Plosh < z * 3))
+                {
+                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrRed, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if (((int)distance > z) && ((int)distance + (int)Plosh < z * 4))
+                {
+                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if ((int)distance > z * 2)
+                {
+                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if ((int)distance > z * 3)
+                {
+                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if ((int)distance >= z * 4)
+                {
+                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+            }
+            //Н/п попадающий в 2 части зоны
+            ////////////////////////////////////
+            if (((int)distance + (int)Plosh < z * 3))
+            {
+                if (((int)distance > 0) && ((int)distance + (int)Plosh < z * 2))
+                {
+                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrRed, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if (((int)distance > z) && ((int)distance + (int)Plosh < z * 3))
+                {
+                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if (((int)distance > z * 2) && ((int)distance + (int)Plosh < z * 4))
+                {
+                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if ((int)distance > z * 3)
+                {
+                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if ((int)distance >= z * 4)
+                {
+                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+            }
+            //Н/п попадающий в 1 часть зоны
+            //////////////////////////////////////
+            if (((int)distance + (int)Plosh < z))
+            {
+                if (((int)distance < z) && ((int)distance > 0))
+                {
+                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrRed, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if (((int)distance > z) && ((int)distance < z * 2))
+                {
+                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if (((int)distance > z * 2) && ((int)distance < z * 3))
+                {
+                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+                if (((int)distance > z * 3) && ((int)distance < z * 4))
+                {
+                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                }
+                if ((int)distance >= z * 4)
+                {
+                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                }
+            }
 
             Mod2.DrawLine(PSilverB, x - 40, y - 18, l * 2, y - 77);//Отрезающая линия, для визуала 3
             Mod2.DrawLine(PSilverB, x - 40, y + 106, l * 2, y + 165);//Отрезающая линия, для визуала 4
@@ -197,14 +371,31 @@ namespace PrognozCS
             f = 62;
             Mod2.DrawArc(PTurq, x + r * 2, y / 2, m * 4, m * 2, 360 - f / 2, f);//Дуговая обводка 4
 
-            if ((Form1.X < Form1.G) || (Form1.X > 0))
-            {
-                Mod2.DrawLine(PRed, x - 2, m + y / 2, x + (int)distance + (int)Plosh / 3, m + y / 2);//Линия расстояния до н/п
-            }
-
             Mod2.DrawLine(PTurq, x - 5, m + y / 2, l + 180, y / 2 + 13);//Отрезающая линия, для визуала 1
             Mod2.DrawLine(PTurq, x - 5, m + y / 2, l + 180, y / 2 + 101);//Отрезающая линия, для визуала 2
+
+            Mod2.DrawLine(PBlack, L, 5, L, m + y / 2);//Конечный отрезок глубины
+            Mod2.DrawLine(PBlack, x - 2, 5, x - 2, m + y / 2);//Начальный отрезок глубины
+            Mod2.DrawLine(PBlueS, border - 2, 18, L, 18);//Линия соединяющая отрезки глубины
+
+            if ((int)distance > 0)
+            {
+                Mod2.DrawLine(PGreen, (int)distance - 2, m + y / 2,
+                    (int)distance + (int)Plosh - 2, m + y / 2);//Радиус н/п
+                Mod2.DrawLine(PBlack, (int)distance + (int)Plosh - 2, m + y / 2 - 15,
+                    (int)distance + (int)Plosh - 2, m + y / 2);//Конечный отрезок радиуса н/п
+                Mod2.DrawLine(PRedS, x - 2, m + y / 2,
+                    (int)distance, m + y / 2);//Линия соединяющая отрезки расстояния до н/п
+                Mod2.DrawLine(PBlack, (int)distance, m + y / 2 - 15,
+                    (int)distance, m + y / 2);//Конечный отрезок расстояния до н/п
+                Mod2.DrawString(TextDiametr, Font, BrBlack, (int)distance + border, m + y / 2 + 2);//Текст диаметра н/п
+                Mod2.DrawString(TextDistance, Font, BrBlack, x, m + y / 2 - 13);//Текст расстояния н/п
+            }
+
+            Mod2.DrawString(TextGlub, Font, BrBlack, l - 40, 5);//Текст глубины
+            //Mod2.DrawLine(PBlack, x - 2, m * 2 + 10, x - 2, m + y / 2);//
             Mod2.FillEllipse(BrBlack, x - 5, m + y / 2 - 3, point, point);//Очаг поражения (центр. точка)
+            
             //Вывод картинки
             picture.Image = bpm;
             picture2.Image = bpm2;

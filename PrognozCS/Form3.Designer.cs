@@ -38,10 +38,9 @@
             // 
             // picture
             // 
-            this.picture.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picture.Location = new System.Drawing.Point(0, 0);
+            this.picture.Location = new System.Drawing.Point(-11, -6);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(546, 295);
+            this.picture.Size = new System.Drawing.Size(559, 295);
             this.picture.TabIndex = 0;
             this.picture.TabStop = false;
             // 
@@ -62,10 +61,9 @@
             // picture2
             // 
             this.picture2.BackColor = System.Drawing.Color.Transparent;
-            this.picture2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picture2.Location = new System.Drawing.Point(0, 295);
+            this.picture2.Location = new System.Drawing.Point(-20, 295);
             this.picture2.Name = "picture2";
-            this.picture2.Size = new System.Drawing.Size(546, 137);
+            this.picture2.Size = new System.Drawing.Size(568, 137);
             this.picture2.TabIndex = 2;
             this.picture2.TabStop = false;
             // 
