@@ -45,9 +45,10 @@ namespace PrognozCS
             SolidBrush BrSilver = new SolidBrush(Color.Silver);
             SolidBrush BrWhite = new SolidBrush(Color.White);
             SolidBrush BrRed = new SolidBrush(Color.DarkSalmon);
+            Font Font = new Font(FontFamily.GenericSerif, 9, FontStyle.Regular);
 
             //Указатели
-            //Form1.f = 90;//////////////////////
+            //Form1.f = 180;//////////////////////
             //Form1.X = 72;////
             string TextGlub = Form1.G.ToString() + " км";
             string TextDistance = Form1.X.ToString() + " км";
@@ -74,6 +75,8 @@ namespace PrognozCS
             //p[4] = new Point( 5, 5);
 
             //Рисование
+            Mod.FillRectangle(BrSilver, 0, 0, 999, 999);//
+
             if (Form1.f == 360)
             {
                 Mod.FillEllipse(BrB, border, border, Se, Se);//Заполнение зоны поражения
@@ -177,6 +180,7 @@ namespace PrognozCS
                 Mod.FillEllipse(BrBlack, border - 4, O - 4, point + 1, point + 1);//Очаг поражения (центр. точка)
                 Mod.DrawArc(PTurq, border, border, Se, Se, 338, 46);//Дуговая обводка
             }
+            Mod2.FillRectangle(BrSilver, 0, 0, 999, 999);//
             //Расчетные данные
             int l = r + border + 138;//Условные величины
             int x = border;//для упрощения
@@ -198,23 +202,57 @@ namespace PrognozCS
             string TextDiametr = S.ToString() + " км";//Текст диаметра площади н/п
             Mod2.FillEllipse(BrBr, x - 2, -10, l + 195, m + y * 4);//Заполнение зоны поражения
 
+            string Text = "Населенный пункт не попал в зону \nпоражения!";//
+            string Text1z = "Населенный пункт попал в зону \nсмертельной " +
+                "концентрации!";//
+            string Text2z = "Населенный пункт попал в зону \nтяжелых поражений!";//
+            string Text3z = "Населенный пункт попал в зону \nпоражений " +
+                "средней тяжести!";//
+            string Text4z = "Населенный пункт попал в зону \nпоражений " +
+                "легкой тяжести!";//
+            string Text1z2 = "Населенный пункт попал в зоны \nсмертельной " +
+                "концентрации и \nтяжелых поражений!";//
+            string Text2z2 = "Населенный пункт попал в зоны \nтяжелых " +
+                "поражений и поражений \nсредней тяжести!";//
+            string Text3z2 = "Населенный пункт попал в зоны \nпоражений " +
+                "средней и легкой \nтяжести!";//
+            string Text1z3 = "Населенный пункт попал в зоны \nсмертельной " +
+                "концентрации, тяжелых \nпоражений и поражений средней тяжести!";//
+            string Text2z3 = "Населенный пункт попал в зоны \nтяжелых поражений, " +
+                "поражений средней \nи легкой тяжести!";//
+            string Text1z4 = "Населенный пункт попал в зоны \nсмертельной " +
+                "концентрации, тяжелых \nпоражений, поражений средней \nи легкой тяжести!";//
+
+            string TextZ1 = "Зона \nсмертельной \nконцентрации!";//
+            string TextZ2 = "Зона \nтяжелых \nпоражений!";//
+            string TextZ3 = "Зона \nпоражений \nсредней \nтяжести!";//
+            string TextZ4 = "Зона \nпоражений \nлегкой \nтяжести!";//
+
+
+
             //Н/п попадающий в 4 части зоны
             /////////////////////////////////////
-            if ((int)distance + (int)Plosh >= z * 4)
+            if ((int)distance + (int)Plosh >= z * 3)
             {
-                if (((int)distance > 0) && ((int)distance + (int)Plosh < z * 4))
+                if ((int)distance > 0 || ((int)distance + (int)Plosh < z * 4))
                 {
                     Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
                     Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrRed, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text1z4, Font, BrBlack, Se + 35, 
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text1z4;
                 }
-                if ((int)distance > z)
+                if ((int)distance > z && ((int)distance + (int)Plosh >= z * 4))
                 {
                     Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
                     Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text2z3, Font, BrBlack, Se + 35, 
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text2z3;
                 }
                 if ((int)distance > z * 2)
                 {
@@ -222,6 +260,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text3z2, Font, BrBlack, Se + 35, 
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text3z2;
                 }
                 if ((int)distance > z * 3)
                 {
@@ -229,6 +270,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text2z, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text4z;
                 }
                 if ((int)distance >= z * 4)
                 {
@@ -236,6 +280,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text;
                 }
             }
             //Н/п попадающий в 3 части зоны
@@ -248,6 +295,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrRed, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text1z3, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text1z3;
                 }
                 if (((int)distance > z) && ((int)distance + (int)Plosh < z * 4))
                 {
@@ -255,6 +305,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text2z3, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text2z3;
                 }
                 if ((int)distance > z * 2)
                 {
@@ -262,6 +315,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text3z2, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text3z2;
                 }
                 if ((int)distance > z * 3)
                 {
@@ -269,6 +325,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text4z, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text4z;
                 }
                 if ((int)distance >= z * 4)
                 {
@@ -276,6 +335,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text;
                 }
             }
             //Н/п попадающий в 2 части зоны
@@ -288,6 +350,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrRed, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text1z2, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text1z2;
                 }
                 if (((int)distance > z) && ((int)distance + (int)Plosh < z * 3))
                 {
@@ -295,6 +360,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text2z2, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text2z2;
                 }
                 if (((int)distance > z * 2) && ((int)distance + (int)Plosh < z * 4))
                 {
@@ -302,6 +370,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text3z2, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text3z2;
                 }
                 if ((int)distance > z * 3)
                 {
@@ -309,6 +380,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text4z, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text4z;
                 }
                 if ((int)distance >= z * 4)
                 {
@@ -316,6 +390,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text;
                 }
             }
             //Н/п попадающий в 1 часть зоны
@@ -328,6 +405,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrRed, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text1z, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text1z;
                 }
                 if (((int)distance > z) && ((int)distance < z * 2))
                 {
@@ -335,6 +415,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text2z, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text2z;
                 }
                 if (((int)distance > z * 2) && ((int)distance < z * 3))
                 {
@@ -342,6 +425,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text3z, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text3z;
                 }
                 if (((int)distance > z * 3) && ((int)distance < z * 4))
                 {
@@ -349,6 +435,9 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                    //Mod.DrawString(Text4z, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text4z;
                 }
                 if ((int)distance >= z * 4)
                 {
@@ -356,7 +445,18 @@ namespace PrognozCS
                     Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
                     Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
                     Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
+                    //Mod.DrawString(Text, Font, BrBlack, Se + 35,
+                    //    border);//Текст, указывающий зону поражения н/п
+                    TextZ.Text = Text;
                 }
+            }
+            if (distance == 0)
+            {
+                TextZ.Text = "Не указаны данные о населенном пункте!";
+                Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
+                Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
+                Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
+                Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
             }
 
             Mod2.DrawLine(PSilverB, x - 40, y - 18, l * 2, y - 77);//Отрезающая линия, для визуала 3
@@ -371,8 +471,24 @@ namespace PrognozCS
             f = 62;
             Mod2.DrawArc(PTurq, x + r * 2, y / 2, m * 4, m * 2, 360 - f / 2, f);//Дуговая обводка 4
 
+            Mod2.DrawLine(PBlack, x - 2, m + y / 2, x - 2, m * 3);//
+            Mod2.DrawLine(PBlack, L / 4 - 2, m + y / 2, L / 4 - 2, m * 3);//
+            Mod2.DrawLine(PBlack, L / 2 - 2, m + y / 2, L / 2 - 2, m * 3);//
+            Mod2.DrawLine(PBlack, L / 4 + L / 2 - 1, m + y / 2, L / 4 + L / 2 - 1, m * 3);//
+            Mod2.DrawLine(PBlack, L, m + y / 2, L, m * 3);//
+            Mod2.DrawLine(PBlack, x - 2, m * 2 + 22, L, m * 2 + 22);//
+
             Mod2.DrawLine(PTurq, x - 5, m + y / 2, l + 180, y / 2 + 13);//Отрезающая линия, для визуала 1
             Mod2.DrawLine(PTurq, x - 5, m + y / 2, l + 180, y / 2 + 101);//Отрезающая линия, для визуала 2
+
+            Mod2.DrawString(TextZ1, Font, BrBlack, x + 5,
+                       m + 35);//Текст, указывающий зону поражения н/п
+            Mod2.DrawString(TextZ2, Font, BrBlack, L / 4 + 5,
+                       m + 35);//Текст, указывающий зону поражения н/п
+            Mod2.DrawString(TextZ3, Font, BrBlack, L / 2 + 5,
+                       m + 25);//Текст, указывающий зону поражения н/п
+            Mod2.DrawString(TextZ4, Font, BrBlack, L / 4 + L / 2 + 5,
+                       m + 25);//Текст, указывающий зону поражения н/п
 
             Mod2.DrawLine(PBlack, L, 5, L, m + y / 2);//Конечный отрезок глубины
             Mod2.DrawLine(PBlack, x - 2, 5, x - 2, m + y / 2);//Начальный отрезок глубины

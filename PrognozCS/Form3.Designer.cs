@@ -32,13 +32,14 @@
             this.picture = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.picture2 = new System.Windows.Forms.PictureBox();
+            this.TextZ = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture2)).BeginInit();
             this.SuspendLayout();
             // 
             // picture
             // 
-            this.picture.Location = new System.Drawing.Point(-11, -6);
+            this.picture.Location = new System.Drawing.Point(-11, 3);
             this.picture.Name = "picture";
             this.picture.Size = new System.Drawing.Size(559, 295);
             this.picture.TabIndex = 0;
@@ -67,12 +68,22 @@
             this.picture2.TabIndex = 2;
             this.picture2.TabStop = false;
             // 
+            // TextZ
+            // 
+            this.TextZ.AutoSize = true;
+            this.TextZ.Location = new System.Drawing.Point(288, 9);
+            this.TextZ.Name = "TextZ";
+            this.TextZ.Size = new System.Drawing.Size(29, 13);
+            this.TextZ.TabIndex = 3;
+            this.TextZ.Text = "label";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(546, 484);
+            this.Controls.Add(this.TextZ);
             this.Controls.Add(this.picture2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.picture);
@@ -83,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -91,5 +103,6 @@
         private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox picture2;
+        private System.Windows.Forms.Label TextZ;
     }
 }
