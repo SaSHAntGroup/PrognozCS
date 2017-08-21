@@ -49,7 +49,8 @@ namespace PrognozCS
 
             //Указатели
             //Form1.f = 180;//////////////////////
-            //Form1.X = 72;////
+            //Form1.X = 6;//////////////
+            Form2.S = 270;//////////////////
             string TextGlub = Form1.G.ToString() + " км";
             string TextDistance = Form1.X.ToString() + " км";
 
@@ -59,11 +60,11 @@ namespace PrognozCS
             int r = 130;//Расстояния от края глубины поражения до очага
             int Se = r * 2;//Диаметр зоны поражения
             int O = r + border;//Расстояние от верха и края формы до очага поражения
-            double S = Form1.Sp / Form1.Sf;//Отношение зоны возможного заражения от фактической
+            double S = 2 * Math.Sqrt(Form2.S / 3.14);//Отношение зоны возможного заражения от фактической
 
             //Масштабирование значений на рисунок
             double distance = (Form1.X / Form1.G) * r;//Расстояние до н/п в пикселях
-            double Mas = r / 100;//Расчет шага 1% в пикселях от глубины
+            double Mas = (double)r / 100;//Расчет шага 1% в пикселях от глубины
             double Plosh = Mas * S;//Площадь н/п
 
             //Многоугольник (населеная местность)
@@ -75,7 +76,7 @@ namespace PrognozCS
             //p[4] = new Point( 5, 5);
 
             //Рисование
-            Mod.FillRectangle(BrSilver, 0, 0, 999, 999);//
+            Mod.FillRectangle(BrSilver, 0, 0, 999, 999);//Заполнение пикчербокса в рисунке
 
             if (Form1.f == 360)
             {
@@ -85,15 +86,16 @@ namespace PrognozCS
 
                 if (Form1.X > 0)
                 {
-                    Mod.DrawLine(PRed, O, O, O + (int)distance + (int)Plosh / 5, 
+                    Plosh = Plosh * 2;
+                    Mod.DrawLine(PRed, O, O, O + (int)distance , 
                         O);//Линия расстояния до н/п
-                    Mod.FillEllipse(BrWhite, O + (int)distance, 
-                        O - (int)Plosh / 2, (int)Plosh, (int)Plosh);//Заполнение площади н/п
-                    Mod.DrawEllipse(PBlack, O + (int)distance, 
-                        O - (int)Plosh / 2, (int)Plosh, (int)Plosh);//Обводка н/п
+                    Mod.FillEllipse(BrWhite, O + (int)distance - point / 2, 
+                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Заполнение площади н/п
+                    Mod.DrawEllipse(PBlack, O + (int)distance - point / 2,
+                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Обводка н/п
                     //Mod.FillPolygon(BrSilver, p);//Заполнение площади н/п
                     //Mod.DrawPolygon(PBlack, p);//Обводка н/п
-                    Mod.DrawString(TextDistance, Font, BrBlack, O + (int)distance - 35,
+                    Mod.DrawString(TextDistance, Font, BrBlack, O + (int)distance - 40,
                         O - 15);//Текст расстояния до н/п
                 }
 
@@ -110,15 +112,16 @@ namespace PrognozCS
 
                 if (Form1.X > 0)
                 {
-                    Mod.DrawLine(PRed, O, O, O + (int)distance + (int)Plosh / 5,
+                    Plosh = Plosh * 2;
+                    Mod.DrawLine(PRed, O, O, O + (int)distance,
                         O);//Линия расстояния до н/п
-                    Mod.FillEllipse(BrWhite, O + (int)distance,
-                        O - (int)Plosh / 2, (int)Plosh, (int)Plosh);//Заполнение площади н/п
-                    Mod.DrawEllipse(PBlack, O + (int)distance,
-                        O - (int)Plosh / 2, (int)Plosh, (int)Plosh);//Обводка н/п
+                    Mod.FillEllipse(BrWhite, O + (int)distance - point / 2,
+                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Заполнение площади н/п
+                    Mod.DrawEllipse(PBlack, O + (int)distance - point / 2,
+                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Обводка н/п
                     //Mod.FillPolygon(BrSilver, p);//Заполнение площади н/п
                     //Mod.DrawPolygon(PBlack, p);//Обводка н/п
-                    Mod.DrawString(TextDistance, Font, BrBlack, O + (int)distance - 35,
+                    Mod.DrawString(TextDistance, Font, BrBlack, O + (int)distance - 40,
                         O - 15);//Текст расстояния до н/п
                 }
 
@@ -139,13 +142,13 @@ namespace PrognozCS
                 {
                     Mod.DrawLine(PRed, border, O, border + (int)distance * 2,
                         O);//Линия расстояния до н/п
-                    Mod.FillEllipse(BrWhite, border + (int)distance * 2,
-                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Заполнение площади н/п
-                    Mod.DrawEllipse(PBlack, border + (int)distance * 2 ,
-                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Обводка н/п
+                    Mod.FillEllipse(BrWhite, border + (int)distance * 2 - point,
+                        O - (int)Plosh * 2, (int)Plosh * 4, (int)Plosh * 4);//Заполнение площади н/п
+                    Mod.DrawEllipse(PBlack, border + (int)distance * 2 - point,
+                        O - (int)Plosh * 2, (int)Plosh * 4, (int)Plosh * 4);//Обводка н/п
                     //Mod.FillPolygon(BrSilver, p);//Заполнение площади н/п
                     //Mod.DrawPolygon(PBlack, p);//Обводка н/п
-                    Mod.DrawString(TextDistance, Font, BrBlack, border + (int)distance * 2 - 35,
+                    Mod.DrawString(TextDistance, Font, BrBlack, border + (int)distance * 2 - 45,
                         O - 14);//Текст расстояния до н/п
                 }
 
@@ -164,15 +167,15 @@ namespace PrognozCS
 
                 if (Form1.X > 0)
                 {
-                    Mod.DrawLine(PRed, border, O, border + (int)distance * 2 + (int)Plosh / 2,
+                    Mod.DrawLine(PRed, border, O, border + (int)distance * 2,
                         O);//Линия расстояния до н/п
-                    Mod.FillEllipse(BrWhite, border + (int)distance * 2 + (int)Plosh / 2,
-                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Заполнение площади н/п
-                    Mod.DrawEllipse(PBlack, border + (int)distance * 2 + (int)Plosh / 2,
-                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Обводка н/п
+                    Mod.FillEllipse(BrWhite, border + (int)distance * 2 - point,
+                        O - (int)Plosh * 2, (int)Plosh * 4, (int)Plosh * 4);//Заполнение площади н/п
+                    Mod.DrawEllipse(PBlack, border + (int)distance * 2 - point,
+                        O - (int)Plosh * 2, (int)Plosh * 4, (int)Plosh * 4);//Обводка н/п
                     //Mod.FillPolygon(BrSilver, p);//Заполнение площади н/п
                     //Mod.DrawPolygon(PBlack, p);//Обводка н/п
-                    Mod.DrawString(TextDistance, Font, BrBlack, border + (int)distance * 2 - 25,
+                    Mod.DrawString(TextDistance, Font, BrBlack, border + (int)distance * 2 - 45,
                         O - 14);//Текст расстояния до н/п
                 }
                 
@@ -180,25 +183,30 @@ namespace PrognozCS
                 Mod.FillEllipse(BrBlack, border - 4, O - 4, point + 1, point + 1);//Очаг поражения (центр. точка)
                 Mod.DrawArc(PTurq, border, border, Se, Se, 338, 46);//Дуговая обводка
             }
-            Mod2.FillRectangle(BrSilver, 0, 0, 999, 999);//
+            Mod2.FillRectangle(BrSilver, 0, 0, 999, 999);//Заполнение пикчербокса в рисунке 2
             //Расчетные данные
             int l = r + border + 138;//Условные величины
             int x = border;//для упрощения
             int y = border;//расчета, px
 
             int L = l + 220;//Глубина поражения в пикселях в картинке 2
-            distance = distance / r * L;//Расстояние до города в пикселях в картинке 2
-            Mas = (double)L / 100;//Расчет шага 1% в пикселях от глубины в картинке 2
-            Plosh = Mas * S;//Площадь н/п в картинке 2
+            Mas = ((double)L - x) / 100;//Расчет шага 1% в пикселях от глубины в картинке 2
+            distance = ((distance / r) * L);//Расстояние до города в пикселях в картинке 2
+            Plosh = (Mas * S);//Площадь н/п в картинке 2
             int m = 57;//Средняя точка по у
-            double z = L / 4;//Разделение глубины поражения на 4 зоны
-            double I = L - (distance + Plosh);//
+            double z = ((double)L - (x - 2)) / 4;//Разделение глубины поражения на 4 зоны
+
+            if (Form1.f == 45) { Plosh = Plosh * 1.5 - 6; }
+            if (Form1.f == 90) { Plosh = Plosh * 2; }
+            if (Form1.f == 180) { Plosh = Plosh * 4; }
+            if (Form1.f == 360) { Plosh = Plosh * 4; }
 
             //Mod.DrawLine(PBlack, Se + border * 2, border - 15, Se + border * 2, l);//
             Mod.DrawLine(PBlack, border - 40, l - 1, Se * 2 + 150, l - 1);//Разделяющая черта рисунков
             Mod.DrawLine(PBlack, border - 40, l, Se * 2 + 150, l);//Разделяющая черта рисунков 2
-            
-            S = (int)S;
+            //Mod.DrawLine(PRed, x - 2, l, L, l);//Разделяющая черта рисунков 3
+
+            S = (int)S;//Перевод в целочисленое
             string TextDiametr = S.ToString() + " км";//Текст диаметра площади н/п
             Mod2.FillEllipse(BrBr, x - 2, -10, l + 195, m + y * 4);//Заполнение зоны поражения
 
@@ -227,8 +235,6 @@ namespace PrognozCS
             string TextZ2 = "Зона \nтяжелых \nпоражений!";//
             string TextZ3 = "Зона \nпоражений \nсредней \nтяжести!";//
             string TextZ4 = "Зона \nпоражений \nлегкой \nтяжести!";//
-
-
 
             //Н/п попадающий в 4 части зоны
             /////////////////////////////////////
@@ -471,12 +477,13 @@ namespace PrognozCS
             f = 62;
             Mod2.DrawArc(PTurq, x + r * 2, y / 2, m * 4, m * 2, 360 - f / 2, f);//Дуговая обводка 4
 
-            Mod2.DrawLine(PBlack, x - 2, m + y / 2, x - 2, m * 3);//
-            Mod2.DrawLine(PBlack, L / 4 - 2, m + y / 2, L / 4 - 2, m * 3);//
-            Mod2.DrawLine(PBlack, L / 2 - 2, m + y / 2, L / 2 - 2, m * 3);//
-            Mod2.DrawLine(PBlack, L / 4 + L / 2 - 1, m + y / 2, L / 4 + L / 2 - 1, m * 3);//
-            Mod2.DrawLine(PBlack, L, m + y / 2, L, m * 3);//
-            Mod2.DrawLine(PBlack, x - 2, m * 2 + 22, L, m * 2 + 22);//
+            Mod2.DrawLine(PBlack, x - 2, m + y / 2, x - 2, m * 3);//Отрезающая черта для зон поражения
+            Mod2.DrawLine(PBlack, L / 4, m + y / 2, L / 4, m * 3);//Отрезающая черта для зон поражения 2
+            Mod2.DrawLine(PBlack, L / 2, m + y / 2, L / 2, m * 3);//Отрезающая черта для зон поражения 3
+            Mod2.DrawLine(PBlack, L / 4 + L / 2 + 1, m + y / 2, 
+                L / 4 + L / 2 + 1, m * 3);//Отрезающая черта для зон поражения 4
+            Mod2.DrawLine(PBlack, L, m + y / 2, L, m * 3);//Отрезающая черта для зон поражения 5
+            Mod2.DrawLine(PBlack, x - 2, m * 2 + 22, L, m * 2 + 22);//Линия соединяющая отрезающие черты
 
             Mod2.DrawLine(PTurq, x - 5, m + y / 2, l + 180, y / 2 + 13);//Отрезающая линия, для визуала 1
             Mod2.DrawLine(PTurq, x - 5, m + y / 2, l + 180, y / 2 + 101);//Отрезающая линия, для визуала 2
@@ -496,15 +503,16 @@ namespace PrognozCS
 
             if ((int)distance > 0)
             {
-                Mod2.DrawLine(PGreen, (int)distance - 2, m + y / 2,
-                    (int)distance + (int)Plosh - 2, m + y / 2);//Радиус н/п
-                Mod2.DrawLine(PBlack, (int)distance + (int)Plosh - 2, m + y / 2 - 15,
-                    (int)distance + (int)Plosh - 2, m + y / 2);//Конечный отрезок радиуса н/п
-                Mod2.DrawLine(PRedS, x - 2, m + y / 2,
+                Mod2.DrawLine(PGreen, (int)distance, m + y / 2,
+                (int)distance + (int)Plosh, m + y / 2);//Радиус н/п
+                Mod2.DrawLine(PBlack, (int)distance + (int)Plosh, m + y / 2 - 15,
+                    (int)distance + (int)Plosh, m + y / 2);//Конечный отрезок радиуса н/п
+
+                Mod2.DrawLine(PRedS, x, m + y / 2,
                     (int)distance, m + y / 2);//Линия соединяющая отрезки расстояния до н/п
                 Mod2.DrawLine(PBlack, (int)distance, m + y / 2 - 15,
                     (int)distance, m + y / 2);//Конечный отрезок расстояния до н/п
-                Mod2.DrawString(TextDiametr, Font, BrBlack, (int)distance + border, m + y / 2 + 2);//Текст диаметра н/п
+                Mod2.DrawString(TextDiametr, Font, BrBlack, (int)distance + border, m + y / 2);//Текст диаметра н/п
                 Mod2.DrawString(TextDistance, Font, BrBlack, x, m + y / 2 - 13);//Текст расстояния н/п
             }
 
@@ -512,7 +520,7 @@ namespace PrognozCS
             //Mod2.DrawLine(PBlack, x - 2, m * 2 + 10, x - 2, m + y / 2);//
             Mod2.FillEllipse(BrBlack, x - 5, m + y / 2 - 3, point, point);//Очаг поражения (центр. точка)
             
-            //Вывод картинки
+            //Вывод картинок
             picture.Image = bpm;
             picture2.Image = bpm2;
         }

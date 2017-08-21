@@ -11,6 +11,7 @@ namespace PrognozCS
 {
     public partial class Form2 : Form
     {
+        public static double S;
         public Form2()
         {
             InitializeComponent();
@@ -23,7 +24,6 @@ namespace PrognozCS
             poteri1.Text = Form1.P1.ToString() + " чел";
             poteri2.Text = Form1.P2.ToString() + " чел";
             poteri3.Text = Form1.P3.ToString() + " чел";
-
         }
         public void button1_Click(object sender, EventArgs e)
         {
@@ -31,6 +31,8 @@ namespace PrognozCS
         }
         private void button2_Click(object sender, EventArgs e)
         {
+            if (ploshG.Text == "") { S = 12; }
+            else { S = Convert.ToDouble(ploshG.Text); }
             new Form3().Show();
         }
     }

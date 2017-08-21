@@ -39,7 +39,7 @@
             // 
             // picture
             // 
-            this.picture.Location = new System.Drawing.Point(-11, 3);
+            this.picture.Location = new System.Drawing.Point(-11, -1);
             this.picture.Name = "picture";
             this.picture.Size = new System.Drawing.Size(559, 295);
             this.picture.TabIndex = 0;
@@ -51,7 +51,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(12, 438);
+            this.button1.Location = new System.Drawing.Point(12, 443);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(522, 34);
             this.button1.TabIndex = 1;
@@ -62,7 +62,7 @@
             // picture2
             // 
             this.picture2.BackColor = System.Drawing.Color.Transparent;
-            this.picture2.Location = new System.Drawing.Point(-20, 295);
+            this.picture2.Location = new System.Drawing.Point(-11, 300);
             this.picture2.Name = "picture2";
             this.picture2.Size = new System.Drawing.Size(568, 137);
             this.picture2.TabIndex = 2;
@@ -82,7 +82,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(546, 484);
+            this.ClientSize = new System.Drawing.Size(546, 485);
             this.Controls.Add(this.TextZ);
             this.Controls.Add(this.picture2);
             this.Controls.Add(this.button1);
