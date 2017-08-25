@@ -48,9 +48,12 @@ namespace PrognozCS
             Font Font = new Font(FontFamily.GenericSerif, 9, FontStyle.Regular);
 
             //Указатели
+            //Значения, для упрощения отладки
             //Form1.f = 180;//////////////////////
             //Form1.X = 6;//////////////
-            Form2.S = 270;//////////////////
+            //Form2.S = 270;//////////////////
+            Form1.G = Math.Round(Form1.G, 2);
+            Form1.Sf = Math.Round(Form1.Sf, 2);
             string TextGlub = Form1.G.ToString() + " км";
             string TextDistance = Form1.X.ToString() + " км";
 
@@ -61,6 +64,7 @@ namespace PrognozCS
             int Se = r * 2;//Диаметр зоны поражения
             int O = r + border;//Расстояние от верха и края формы до очага поражения
             double S = 2 * Math.Sqrt(Form2.S / 3.14);//Отношение зоны возможного заражения от фактической
+            S = Math.Round(S, 0);
 
             //Масштабирование значений на рисунок
             double distance = (Form1.X / Form1.G) * r;//Расстояние до н/п в пикселях
@@ -206,7 +210,6 @@ namespace PrognozCS
             Mod.DrawLine(PBlack, border - 40, l, Se * 2 + 150, l);//Разделяющая черта рисунков 2
             //Mod.DrawLine(PRed, x - 2, l, L, l);//Разделяющая черта рисунков 3
 
-            S = (int)S;//Перевод в целочисленое
             string TextDiametr = S.ToString() + " км";//Текст диаметра площади н/п
             Mod2.FillEllipse(BrBr, x - 2, -10, l + 195, m + y * 4);//Заполнение зоны поражения
 
