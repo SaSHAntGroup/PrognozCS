@@ -7,6 +7,8 @@ namespace PrognozCS
 {
     class KoeffZ
     {
+        //
+
         //Городские НЕ оповещенные !!
         public static void GorNeOpovesh()
         {
@@ -125,7 +127,7 @@ namespace PrognozCS
                 if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.09; }
             }
         }
-        //Загородная зона,  НЕ зимой, оповещенные !!!
+        //Загородная зона, НЕ оповещенные ,зимой !!!
         public static void SelNeOpovZim()
         {
             if (Form1.N <= 0.25)

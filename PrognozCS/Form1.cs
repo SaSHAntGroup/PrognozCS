@@ -14,7 +14,8 @@ namespace PrognozCS
     public partial class Form1 : Form
     {
         //Заявление переменных для расчета
-        public static double M,M1,M2,M3,M4,M5,M6,//Молекулярная масса
+        public static double lockpanel,//переменная для определения кол-ва АХОВ на второй форме
+            M, M1,M2,M3,M4,M5,M6,//Молекулярная масса
             p,p1,p2,p3,p4,p5,p6,//Плотность вещества
             P,Pi1,Pi2,Pi3,Pi4,Pi5,Pi6,//Давление насыщенного пара Р при tкип
             D,D1,D2,D3,D4,D5,D6,//Пороговая токсодоза Д, мг * мин / л
@@ -41,7 +42,8 @@ namespace PrognozCS
             N,//время прошедшее с момента аварии, час
             L,//расстояния от химически опасного объекта до объекта попадающего в зону риска, км
             Tx,//время подхода облака зараженного воздуха к населенному пункту, час
-            Txh,Txm,Txh1,Txm1,//часы и минуты по отдельности для визуального оформления
+            Txh,Txm,Txh0,Txm0,Txh1,Txm1,Txh2,Txm2,Txh3,Txm3,Txh4,Txm4,Txh5,Txm5,Txh6,Txm6,
+            //часы и минуты по отдельности для визуального оформления
             Tsut,//время суток
             //первичное облако
             Ge1,//искомое значение глубины распространения зараженного АХОВ воздуха, км
@@ -85,6 +87,14 @@ namespace PrognozCS
             K6,K61,K62,K63,K64,K65,K66,//доп. коэф.
             K7,K711,K712,K73,K74,K75,K76,//коэффициент, учитывающий влияние температуры воздуха первичное облако
             K72,K721,K722,K723,K724,K725,K726;//коэффициент, учитывающий влияние температуры воздуха вторичное облако
+
+        public void help_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Значения по умолчанию: для скорости ветра = 3 м/с; " +
+                "для температуры воздуха = 20°C; для времени прошедшее после аварии = 4 часа. " +
+                "Для остальных не объявленных полей значения равны нулю!",
+                            "Справка!", MessageBoxButtons.OK);
+        }
 
         private void substance1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -273,6 +283,7 @@ namespace PrognozCS
             outAXOB.Visible = false;
             kolvoTOHHlabel.Visible = false;
             viborAXOB.Visible = true;
+            obsh.Visible = true;
         }
 
         private void AXOBkolvo1_CheckedChanged(object sender, EventArgs e)
@@ -283,6 +294,10 @@ namespace PrognozCS
             outAXOB.Visible = true;
             kolvoTOHHlabel.Visible = true;
             viborAXOB.Visible = false;
+            obsh.Visible = false;
+            plosh.Visible = false;
+            ploshlabel.Visible = false;
+            if (obsh.Checked) {  }
         }
 
         public Form1()
@@ -2858,7 +2873,7 @@ namespace PrognozCS
             }
             /*Коэффициенты защищенности населения в зависимости
              * от времени суток и времени года*/
-            if (opovesh.Checked)
+            if (opoveshZ.Checked)
             {
                 KoeffZ.GorOpovesh();
                 if (periodSH.Checked)
@@ -2870,7 +2885,7 @@ namespace PrognozCS
                     KoeffZ.SelOpovZim();
                 }
             }
-            if (noopovesh.Checked)
+            if (noopoveshZ.Checked)
             {
                 KoeffZ.GorNeOpovesh();
                 if (periodSH.Checked)
@@ -2921,6 +2936,7 @@ namespace PrognozCS
                 }
                 //Определение эквивалентного количества вещества по вторичному облаку
                 Qe2 = ((1 - K1) * K2 * K3 * K4 * K5 * K6 * K72 * Q0) / (h * p);
+                lockpanel = 0;
             }
             //Расчет для нескольких веществ
             ////////////////////////////////
@@ -2928,7 +2944,7 @@ namespace PrognozCS
             {
                 moreAXOB.koefAXOB();
                 //Время испарения АХОВ1
-                if (gaz1.Checked) { T1 = 0; }
+                if (gaz1.Checked) { T1 = 0; Q01 = Q01 * p1; }
                 else
                 {
                     T1 = (h * p1) / (K21 * K4 * K721);
@@ -2947,7 +2963,7 @@ namespace PrognozCS
                     K61 = 1;
                 }
                 //Время испарения АХОВ2
-                if (gaz2.Checked) { T2 = 0; }
+                if (gaz2.Checked) { T2 = 0; Q02 = Q02 * p2; }
                 else
                 {
                     T2 = (h * p2) / (K22 * K4 * K722);
@@ -2966,7 +2982,7 @@ namespace PrognozCS
                     K62 = 1;
                 }
                 //Время испарения АХОВ3
-                if (gaz3.Checked) { T3 = 0; }
+                if (gaz3.Checked) { T3 = 0; Q03 = Q03 * p3; }
                 else
                 {
                     T3 = (h * p3) / (K23 * K4 * K723);
@@ -2985,7 +3001,7 @@ namespace PrognozCS
                     K63 = 1;
                 }
                 //Время испарения АХОВ4
-                if (gaz4.Checked) { T4 = 0; }
+                if (gaz4.Checked) { T4 = 0; Q04 = Q04 * p4; }
                 else
                 {
                     T4 = (h * p4) / (K24 * K4 * K724);
@@ -3004,7 +3020,7 @@ namespace PrognozCS
                     K64 = 1;
                 }
                 //Время испарения АХОВ5
-                if (gaz5.Checked) { T5 = 0; }
+                if (gaz5.Checked) { T5 = 0; Q05 = Q05 * p5; }
                 else
                 {
                     T5 = (h * p5) / (K25 * K4 * K725);
@@ -3023,7 +3039,7 @@ namespace PrognozCS
                     K65 = 1;
                 }
                 //Время испарения АХОВ6
-                if (gaz6.Checked) { T6 = 0; }
+                if (gaz6.Checked) { T6 = 0; Q06 = Q06 * p6; }
                 else
                 {
                     T6 = (h * p6) / (K26 * K4 * K726);
@@ -3049,10 +3065,12 @@ namespace PrognozCS
                 if (p6 == 0) { p6 = 1; }
                 //Определение эквивалентного количества вещества по нескольким веществам
                 Qe2 = 20 * K4 * K5 * 
-                    (K21 * K31 * K61 * K711 * Q01 / p1 + K22 * K32 * K62 * K72 * Q02 / p2 +
+                    (K21 * K31 * K61 * K711 * Q01 / p1 + K22 * K32 * K62 * K722 * Q02 / p2 +
                     K23 * K33 * K63 * K73 * Q03 / p3 + K24 * K34 * K64 * K74 * Q04 / p4 +
                     K25 * K35 * K65 * K75 * Q05 / p5 + K26 * K36 * K66 * K76 * Q06 / p6);
                 Qe1 = Qe2;
+                //
+                lockpanel = 1;
             }
             //Определение большего и меньшего кол-ва АХОВ и глубины заражения облаками 
             KolvoAndGlub.Tabl();
@@ -3070,9 +3088,22 @@ namespace PrognozCS
             Gp = N * W;
             if (Ge < Gp) { G = Ge; }
             else { G = Gp; }
+            //Время испарения веществ
+            Txh0 = Math.Truncate(T);
+            Txm0 = (T - Txh0) * 60;
+            Txh1 = Math.Truncate(T1);
+            Txm1 = (T1 - Txh1) * 60;
+            Txh2 = Math.Truncate(T2);
+            Txm2 = (T2 - Txh2) * 60;
+            Txh3 = Math.Truncate(T3);
+            Txm3 = (T3 - Txh3) * 60;
+            Txh4 = Math.Truncate(T4);
+            Txm4 = (T4 - Txh4) * 60;
+            Txh5 = Math.Truncate(T5);
+            Txm5 = (T5 - Txh5) * 60;
+            Txh6 = Math.Truncate(T6);
+            Txm6 = (T6 - Txh6) * 60;
             //Определение времени подхода облака зараженного АХОВ к населенным пунктам
-            Txh1 = Math.Truncate(T);
-            Txm1 = (T - Txh1) * 60;
             Tx = X / W;
             Txh = Math.Truncate(Tx);
             Txm = (Tx - Txh) * 60;
@@ -3081,6 +3112,19 @@ namespace PrognozCS
             //Площадь фактического зажения АХОВ
             Sf = Kv * Math.Pow(G, 2) * Math.Pow(N, 0.2);
             //Вычисляем долю незащищенного населения в городе и загородной зоне
+            if (opoveshG.Checked) { KoeffZ.GorOpovesh(); }
+            if (noopoveshG.Checked) { KoeffZ.GorNeOpovesh(); }
+            if (opoveshZ.Checked)
+            {
+                if (periodSH.Checked) { KoeffZ.SelOpovSH(); }
+                if (periodZIMA.Checked) { KoeffZ.SelOpovZim(); }
+            }
+            if (noopoveshZ.Checked)
+            {
+                if (periodSH.Checked) { KoeffZ.SelNeOpovSH(); }
+                if (periodZIMA.Checked) { KoeffZ.SelNeOpovZim(); }
+            }
+            //Перевод в проценты
             N11 = n1g * 0.01; N12 = n1z * 0.01;
             N21 = n2g * 0.01; N22 = n2z * 0.01;
             Kg = 1 - N11 - N21;
