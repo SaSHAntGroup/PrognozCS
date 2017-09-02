@@ -39,6 +39,13 @@ namespace PrognozCS
             label05.Text = Form1.Txh5.ToString() + " часов " + Txm5.ToString() + " минут";
             label06.Text = Form1.Txh6.ToString() + " часов " + Txm6.ToString() + " минут";
 
+            if (Form1.Q01 == 0) { label01.Visible = false; labelTime1.Visible = false; }
+            if (Form1.Q02 == 0) { label02.Visible = false; labelTime2.Visible = false; }
+            if (Form1.Q03 == 0) { label03.Visible = false; labelTime3.Visible = false; }
+            if (Form1.Q04 == 0) { label04.Visible = false; labelTime4.Visible = false; }
+            if (Form1.Q05 == 0) { label05.Visible = false; labelTime5.Visible = false; }
+            if (Form1.Q06 == 0) { label06.Visible = false; labelTime6.Visible = false; }
+
             poteri1.Text = Form1.P1.ToString() + " чел";
             poteri2.Text = Form1.P2.ToString() + " чел";
             poteri3.Text = Form1.P3.ToString() + " чел";
