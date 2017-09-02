@@ -51,7 +51,6 @@
             this.distancelabel = new System.Windows.Forms.Label();
             this.distance = new System.Windows.Forms.TextBox();
             this.primichanie1 = new System.Windows.Forms.Label();
-            this.primichanie2 = new System.Windows.Forms.Label();
             this.plotNasGlabel = new System.Windows.Forms.Label();
             this.plotNasZlabel = new System.Windows.Forms.Label();
             this.protivoGAZlabel = new System.Windows.Forms.Label();
@@ -142,7 +141,6 @@
             this.substance = new System.Windows.Forms.ComboBox();
             this.GAZGG = new System.Windows.Forms.Label();
             this.jid = new System.Windows.Forms.RadioButton();
-            this.primichanie3 = new System.Windows.Forms.Label();
             this.outAXOB = new System.Windows.Forms.TextBox();
             this.kolvoTOHHlabel = new System.Windows.Forms.Label();
             this.outAXOBlabel = new System.Windows.Forms.Label();
@@ -167,7 +165,7 @@
             this.RASCHETbutt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RASCHETbutt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RASCHETbutt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.RASCHETbutt.Location = new System.Drawing.Point(11, 419);
+            this.RASCHETbutt.Location = new System.Drawing.Point(11, 439);
             this.RASCHETbutt.Name = "RASCHETbutt";
             this.RASCHETbutt.Size = new System.Drawing.Size(404, 33);
             this.RASCHETbutt.TabIndex = 0;
@@ -180,7 +178,7 @@
             this.EXITbutt.BackColor = System.Drawing.Color.WhiteSmoke;
             this.EXITbutt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EXITbutt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.EXITbutt.Location = new System.Drawing.Point(421, 419);
+            this.EXITbutt.Location = new System.Drawing.Point(421, 439);
             this.EXITbutt.Name = "EXITbutt";
             this.EXITbutt.Size = new System.Drawing.Size(112, 33);
             this.EXITbutt.TabIndex = 1;
@@ -371,22 +369,11 @@
             // primichanie1
             // 
             this.primichanie1.AutoSize = true;
-            this.primichanie1.Location = new System.Drawing.Point(13, 377);
+            this.primichanie1.Location = new System.Drawing.Point(10, 390);
             this.primichanie1.Name = "primichanie1";
-            this.primichanie1.Size = new System.Drawing.Size(526, 13);
+            this.primichanie1.Size = new System.Drawing.Size(29, 13);
             this.primichanie1.TabIndex = 24;
-            this.primichanie1.Text = "Значения по умолчанию для: скорости ветра = 3 м/с, температура воздуха = 20 °C, в" +
-    "ремя прошедшее";
-            // 
-            // primichanie2
-            // 
-            this.primichanie2.AutoSize = true;
-            this.primichanie2.Location = new System.Drawing.Point(13, 390);
-            this.primichanie2.Name = "primichanie2";
-            this.primichanie2.Size = new System.Drawing.Size(486, 13);
-            this.primichanie2.TabIndex = 26;
-            this.primichanie2.Text = "после аварии = 4 часа. Значение остальных не заполненых параметров будет равнятся" +
-    " нулю!";
+            this.primichanie1.Text = "label";
             // 
             // plotNasGlabel
             // 
@@ -604,7 +591,6 @@
             this.panel1.Controls.Add(this.substance);
             this.panel1.Controls.Add(this.GAZGG);
             this.panel1.Controls.Add(this.jid);
-            this.panel1.Controls.Add(this.primichanie3);
             this.panel1.Controls.Add(this.outAXOB);
             this.panel1.Controls.Add(this.km);
             this.panel1.Controls.Add(this.kolvoTOHHlabel);
@@ -642,7 +628,6 @@
             this.panel1.Controls.Add(this.GAZZ);
             this.panel1.Controls.Add(this.primichanie1);
             this.panel1.Controls.Add(this.GAZG);
-            this.panel1.Controls.Add(this.primichanie2);
             this.panel1.Controls.Add(this.plotNasG);
             this.panel1.Controls.Add(this.plotNasGlabel);
             this.panel1.Controls.Add(this.plotNasZ);
@@ -650,7 +635,7 @@
             this.panel1.Controls.Add(this.protivoGAZlabel);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(545, 463);
+            this.panel1.Size = new System.Drawing.Size(545, 483);
             this.panel1.TabIndex = 52;
             // 
             // panel3
@@ -1332,15 +1317,6 @@
             this.jid.UseVisualStyleBackColor = true;
             this.jid.Visible = false;
             // 
-            // primichanie3
-            // 
-            this.primichanie3.AutoSize = true;
-            this.primichanie3.Location = new System.Drawing.Point(12, 403);
-            this.primichanie3.Name = "primichanie3";
-            this.primichanie3.Size = new System.Drawing.Size(262, 13);
-            this.primichanie3.TabIndex = 52;
-            this.primichanie3.Text = "Дробные данные следует вводить через запятую!";
-            // 
             // outAXOB
             // 
             this.outAXOB.Location = new System.Drawing.Point(13, 107);
@@ -1385,13 +1361,13 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(546, 465);
+            this.ClientSize = new System.Drawing.Size(546, 485);
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Прогнозирование";
+            this.Text = "Прогнозирование: Ввод данных";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1442,7 +1418,6 @@
         private System.Windows.Forms.Label distancelabel;
         private System.Windows.Forms.TextBox distance;
         private System.Windows.Forms.Label primichanie1;
-        private System.Windows.Forms.Label primichanie2;
         private System.Windows.Forms.Label plotNasGlabel;
         private System.Windows.Forms.Label plotNasZlabel;
         private System.Windows.Forms.Label protivoGAZlabel;
@@ -1469,7 +1444,6 @@
         private System.Windows.Forms.Label km;
         private System.Windows.Forms.Label meter;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label primichanie3;
         private System.Windows.Forms.TabControl viborAXOB;
         private System.Windows.Forms.TabPage AXOB1;
         private System.Windows.Forms.Label vibAXOB;
