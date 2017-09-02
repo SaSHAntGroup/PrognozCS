@@ -1125,6 +1125,9 @@ namespace PrognozCS
             if (outAXOB.Text == "") { Q0 = 0; }
             else { Q0 = Convert.ToDouble(outAXOB.Text); }
             ///
+            if (outAXOB1.Text == "") { Q01 = 0; }
+            else { Q01 = Convert.ToDouble(outAXOB1.Text); }
+            ///
             if (outAXOB2.Text == "") { Q02 = 0; }
             else { Q02 = Convert.ToDouble(outAXOB2.Text); }
             ///
@@ -1458,16 +1461,16 @@ namespace PrognozCS
             }
             if (substance1.Text == "Аммиак")
             {
-                substanceAXOB.Ammiak();
+                substanceAXOB1.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
-                if (jid.Checked)
+                if (jid2.Checked)
                 {
-                    p = 0.681;
-                    if (t < tkip) { K7 = K72; }
+                    p1 = 0.681;
+                    if (t < tkip1) { K711 = K721; }
                 }
-                if (gaz.Checked)
+                if (gaz2.Checked)
                 {
-                    p = 0.0008;
+                    p1 = 0.0008;
                 }
             }
             if (substance1.Text == "Водород хлористый")
@@ -1709,16 +1712,16 @@ namespace PrognozCS
             }
             if (substance2.Text == "Аммиак")
             {
-                substanceAXOB.Ammiak();
+                substanceAXOB2.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
-                if (jid.Checked)
+                if (jid2.Checked)
                 {
-                    p = 0.681;
-                    if (t < tkip) { K7 = K72; }
+                    p2 = 0.681;
+                    if (t < tkip3) { K712 = K722; }
                 }
-                if (gaz.Checked)
+                if (gaz2.Checked)
                 {
-                    p = 0.0008;
+                    p2 = 0.0008;
                 }
             }
             if (substance2.Text == "Водород хлористый")
@@ -1902,16 +1905,16 @@ namespace PrognozCS
                 }
                 if (substance3.Text == "Аммиак")
                 {
-                    substanceAXOB.Ammiak();
+                    substanceAXOB3.Ammiak();
                     //Выбор АХОВ с агрегатным состоянием
-                    if (jid.Checked)
+                    if (jid3.Checked)
                     {
-                        p = 0.681;
-                        if (t < tkip) { K7 = K72; }
+                        p3 = 0.681;
+                        if (t < tkip3) { K73 = K723; }
                     }
-                    if (gaz.Checked)
+                    if (gaz3.Checked)
                     {
-                        p = 0.0008;
+                        p3 = 0.0008;
                     }
                 }
                 if (substance3.Text == "Водород хлористый")
@@ -2095,16 +2098,16 @@ namespace PrognozCS
             }
             if (substance4.Text == "Аммиак")
             {
-                substanceAXOB.Ammiak();
+                substanceAXOB4.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
-                if (jid.Checked)
+                if (jid4.Checked)
                 {
-                    p = 0.681;
-                    if (t < tkip) { K7 = K72; }
+                    p4 = 0.681;
+                    if (t < tkip4) { K74 = K724; }
                 }
-                if (gaz.Checked)
+                if (gaz4.Checked)
                 {
-                    p = 0.0008;
+                    p4 = 0.0008;
                 }
             }
             if (substance4.Text == "Водород хлористый")
@@ -2346,16 +2349,16 @@ namespace PrognozCS
             }
             if (substance5.Text == "Аммиак")
             {
-                substanceAXOB.Ammiak();
+                substanceAXOB5.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
-                if (jid.Checked)
+                if (jid5.Checked)
                 {
-                    p = 0.681;
-                    if (t < tkip) { K7 = K72; }
+                    p5 = 0.681;
+                    if (t < tkip5) { K75 = K725; }
                 }
-                if (gaz.Checked)
+                if (gaz5.Checked)
                 {
-                    p = 0.0008;
+                    p5 = 0.0008;
                 }
             }
             if (substance5.Text == "Водород хлористый")
@@ -2597,16 +2600,16 @@ namespace PrognozCS
             }
             if (substance6.Text == "Аммиак")
             {
-                substanceAXOB.Ammiak();
+                substanceAXOB6.Ammiak();
                 //Выбор АХОВ с агрегатным состоянием
-                if (jid.Checked)
+                if (jid6.Checked)
                 {
-                    p = 0.681;
-                    if (t < tkip) { K7 = K72; }
+                    p6 = 0.681;
+                    if (t < tkip6) { K76 = K726; }
                 }
-                if (gaz.Checked)
+                if (gaz6.Checked)
                 {
-                    p = 0.0008;
+                    p6 = 0.0008;
                 }
             }
             if (substance6.Text == "Водород хлористый")
@@ -2888,6 +2891,8 @@ namespace PrognozCS
             /////////////////////////////
             if (AXOBkolvo1.Checked)
             {
+                //
+                if (gaz.Checked) { Q0 = Q0 * p; }
                 //Коэффициенты К2, К3 и К4
                 if (K2 == 0) { K2 = 6.08 * Math.Pow(10, -5) * P * Math.Pow(M, 0.5); }
                 K3 = Dhlor / D;
@@ -2933,7 +2938,7 @@ namespace PrognozCS
                 {
                     K61 = Math.Pow(N, 0.8);
                 }
-                if (N > T2)
+                if (N > T1)
                 {
                     K61 = Math.Pow(T1, 0.8);
                 }
@@ -3036,11 +3041,17 @@ namespace PrognozCS
                 {
                     K66 = 1;
                 }
+                if (p1 == 0) { p1 = 1; }
+                if (p2 == 0) { p2 = 1; }
+                if (p3 == 0) { p3 = 1; }
+                if (p4 == 0) { p4 = 1; }
+                if (p5 == 0) { p5 = 1; }
+                if (p6 == 0) { p6 = 1; }
                 //Определение эквивалентного количества вещества по нескольким веществам
-                Qe2 = (20 * K4 * K5) * 
-                    (((K21 * K31 * K61 * K711 * Q01) / p + K22 * K32 * K62 * K72 * Q02) / p2 +
-                    (K23 * K33 * K63 * K73 * Q03) / p3 + (K24 * K34 * K64 * K74 * Q04) / p4 +
-                    (K25 * K35 * K65 * K75 * Q05) / p5 + (K26 * K36 * K66 * K76 * Q06) / p6);
+                Qe2 = 20 * K4 * K5 * 
+                    (K21 * K31 * K61 * K711 * Q01 / p1 + K22 * K32 * K62 * K72 * Q02 / p2 +
+                    K23 * K33 * K63 * K73 * Q03 / p3 + K24 * K34 * K64 * K74 * Q04 / p4 +
+                    K25 * K35 * K65 * K75 * Q05 / p5 + K26 * K36 * K66 * K76 * Q06 / p6);
                 Qe1 = Qe2;
             }
             //Определение большего и меньшего кол-ва АХОВ и глубины заражения облаками 
