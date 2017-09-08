@@ -59,7 +59,7 @@ namespace PrognozCS
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            if (ploshG.Text == "") { S = 5; }
+            if (ploshG.Text == "") { S = 12; }
             else { S = Convert.ToDouble(ploshG.Text); }
             new Form3().Show();
         }

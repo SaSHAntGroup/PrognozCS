@@ -215,7 +215,7 @@
             // 
             // ploshG
             // 
-            this.ploshG.Location = new System.Drawing.Point(421, 205);
+            this.ploshG.Location = new System.Drawing.Point(207, 205);
             this.ploshG.Name = "ploshG";
             this.ploshG.Size = new System.Drawing.Size(100, 20);
             this.ploshG.TabIndex = 16;
@@ -226,9 +226,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(12, 208);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(402, 13);
+            this.label1.Size = new System.Drawing.Size(189, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Расстояние от начальной до конечной точки населенного пункта:";
+            this.label1.Text = "Площадь населенного пункта:";
             // 
             // labelTime1
             // 
@@ -316,7 +316,7 @@
             this.panelAXOB.Controls.Add(this.labelTime4);
             this.panelAXOB.Location = new System.Drawing.Point(12, 231);
             this.panelAXOB.Name = "panelAXOB";
-            this.panelAXOB.Size = new System.Drawing.Size(408, 95);
+            this.panelAXOB.Size = new System.Drawing.Size(522, 95);
             this.panelAXOB.TabIndex = 25;
             // 
             // label06
