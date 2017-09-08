@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -46,6 +47,7 @@ namespace PrognozCS
             SolidBrush BrWhite = new SolidBrush(Color.White);
             SolidBrush BrRed = new SolidBrush(Color.DarkSalmon);
             Font Font = new Font(FontFamily.GenericSerif, 9, FontStyle.Regular);
+            HatchBrush hatchBrush = new HatchBrush(HatchStyle.Vertical, Color.Turquoise, Color.Silver);
 
             //Указатели
             //Значения, для упрощения отладки
@@ -63,21 +65,15 @@ namespace PrognozCS
             int r = 130;//Расстояния от края глубины поражения до очага
             int Se = r * 2;//Диаметр зоны поражения
             int O = r + border;//Расстояние от верха и края формы до очага поражения
-            double S = 2 * Math.Sqrt(Form2.S / 3.14);//Отношение зоны возможного заражения от фактической
+            double S = Form2.S;//Отношение зоны возможного заражения от фактической
             S = Math.Round(S, 0);
 
             //Масштабирование значений на рисунок
             double distance = (Form1.X / Form1.G) * r;//Расстояние до н/п в пикселях
-            double Mas = (double)r / Form1.G;//Расчет шага 1% в пикселях от глубины
+            double Mas = r / Form1.G;//Расчет шага 1% в пикселях от глубины
             double Plosh = Mas * S;//Площадь н/п
 
-            //Многоугольник (населеная местность)
-            //PointF[] p = new PointF[5];
-            //p[0] = new Point( 1, 1);
-            //p[1] = new Point( 2, 2);
-            //p[2] = new Point( 3, 3);
-            //p[3] = new Point( 4, 4);
-            //p[4] = new Point( 5, 5);
+            
 
             //Рисование
             Mod.FillRectangle(BrSilver, 0, 0, 999, 999);//Заполнение пикчербокса в рисунке
@@ -90,15 +86,22 @@ namespace PrognozCS
 
                 if (Form1.X > 0)
                 {
-              
+                    //Многоугольник (населеная местность)
+                    PointF[] p = new PointF[5];
+                    p[0] = new Point(O + (int)distance, O);
+                    p[1] = new Point(O + (int)distance + ((int)Plosh / 4), O - ((int)Plosh / 2));
+                    p[2] = new Point(O + (int)distance + ((int)Plosh / 2 + 5), O - ((int)Plosh / 2 - 5));
+                    p[3] = new Point(O + (int)distance + (int)Plosh, O);
+                    p[4] = new Point(O + (int)distance + ((int)Plosh / 4), O + ((int)Plosh / 2));
+
                     Mod.DrawLine(PRed, O, O, O + (int)distance , 
                         O);//Линия расстояния до н/п
-                    Mod.FillEllipse(BrWhite, O + (int)distance - point / 2, 
-                        O - (int)Plosh/2, (int)Plosh , (int)Plosh);//Заполнение площади н/п
-                    Mod.DrawEllipse(PBlack, O + (int)distance - point / 2,
-                        O - (int)Plosh/2, (int)Plosh, (int)Plosh);//Обводка н/п
-                    //Mod.FillPolygon(BrSilver, p);//Заполнение площади н/п
-                    //Mod.DrawPolygon(PBlack, p);//Обводка н/п
+                    //Mod.FillEllipse(BrWhite, O + (int)distance - point / 2, 
+                    //    O - (int)Plosh/2, (int)Plosh , (int)Plosh);//Заполнение площади н/п
+                    //Mod.DrawEllipse(PBlack, O + (int)distance - point / 2,
+                    //    O - (int)Plosh/2, (int)Plosh, (int)Plosh);//Обводка н/п
+                    Mod.FillPolygon(hatchBrush, p);//Заполнение площади н/п
+                    Mod.DrawPolygon(PBlack, p);//Обводка н/п
                     Mod.DrawString(TextDistance, Font, BrBlack, O + (int)distance - 40,
                         O - 15);//Текст расстояния до н/п
                 }
@@ -116,14 +119,22 @@ namespace PrognozCS
 
                 if (Form1.X > 0)
                 {
+                    //Многоугольник (населеная местность)
+                    PointF[] p = new PointF[5];
+                    p[0] = new Point(O + (int)distance, O);
+                    p[1] = new Point(O + (int)distance + ((int)Plosh / 4), O - ((int)Plosh / 2));
+                    p[2] = new Point(O + (int)distance + ((int)Plosh / 2 + 5), O - ((int)Plosh / 2 - 5));
+                    p[3] = new Point(O + (int)distance + (int)Plosh, O);
+                    p[4] = new Point(O + (int)distance + ((int)Plosh / 4), O + ((int)Plosh / 2));
+
                     Mod.DrawLine(PRed, O, O, O + (int)distance,
                         O);//Линия расстояния до н/п
-                    Mod.FillEllipse(BrWhite, O + (int)distance - point / 2,
-                        O - (int)Plosh/2, (int)Plosh, (int)Plosh);//Заполнение площади н/п
-                    Mod.DrawEllipse(PBlack, O + (int)distance - point / 2,
-                        O - (int)Plosh/2, (int)Plosh, (int)Plosh);//Обводка н/п
-                    //Mod.FillPolygon(BrSilver, p);//Заполнение площади н/п
-                    //Mod.DrawPolygon(PBlack, p);//Обводка н/п
+                    //Mod.FillEllipse(BrWhite, O + (int)distance - point / 2, 
+                    //    O - (int)Plosh/2, (int)Plosh , (int)Plosh);//Заполнение площади н/п
+                    //Mod.DrawEllipse(PBlack, O + (int)distance - point / 2,
+                    //    O - (int)Plosh/2, (int)Plosh, (int)Plosh);//Обводка н/п
+                    Mod.FillPolygon(hatchBrush, p);//Заполнение площади н/п
+                    Mod.DrawPolygon(PBlack, p);//Обводка н/п
                     Mod.DrawString(TextDistance, Font, BrBlack, O + (int)distance - 40,
                         O - 15);//Текст расстояния до н/п
                 }
@@ -143,15 +154,23 @@ namespace PrognozCS
 
                 if (Form1.X > 0)
                 {
+                    //Многоугольник (населеная местность)
+                    PointF[] p = new PointF[5];
+                    p[0] = new Point(border + (int)distance, O);
+                    p[1] = new Point(border + (int)distance + ((int)Plosh * 2 / 4), O - ((int)Plosh * 2 / 2));
+                    p[2] = new Point(border + (int)distance + ((int)Plosh * 2 / 2 + 5), O - ((int)Plosh * 2 / 2 - 5));
+                    p[3] = new Point(border + (int)distance + (int)Plosh * 2, O);
+                    p[4] = new Point(border + (int)distance + ((int)Plosh * 2 / 4), O + ((int)Plosh * 2 / 2));
+
                     Plosh = Plosh / 2;
                     Mod.DrawLine(PRed, border, O, border + (int)distance * 2,
                         O);//Линия расстояния до н/п
-                    Mod.FillEllipse(BrWhite, border + (int)distance * 2 - point,
-                        O - (int)Plosh * 2, (int)Plosh * 4, (int)Plosh * 4);//Заполнение площади н/п
-                    Mod.DrawEllipse(PBlack, border + (int)distance * 2 - point,
-                        O - (int)Plosh * 2, (int)Plosh * 4, (int)Plosh * 4);//Обводка н/п
-                    //Mod.FillPolygon(BrSilver, p);//Заполнение площади н/п
-                    //Mod.DrawPolygon(PBlack, p);//Обводка н/п
+                    //Mod.FillEllipse(BrWhite, border + (int)distance * 2 - point,
+                    //    O - (int)Plosh * 2, (int)Plosh * 4, (int)Plosh * 4);//Заполнение площади н/п
+                    //Mod.DrawEllipse(PBlack, border + (int)distance * 2 - point,
+                    //    O - (int)Plosh * 2, (int)Plosh * 4, (int)Plosh * 4);//Обводка н/п
+                    Mod.FillPolygon(hatchBrush, p);//Заполнение площади н/п
+                    Mod.DrawPolygon(PBlack, p);//Обводка н/п
                     Mod.DrawString(TextDistance, Font, BrBlack, border + (int)distance * 2 - 45,
                         O - 14);//Текст расстояния до н/п
                 }
@@ -171,15 +190,23 @@ namespace PrognozCS
 
                 if (Form1.X > 0)
                 {
-                    
+                    //Многоугольник (населеная местность)
+                    PointF[] p = new PointF[5];
+                    p[0] = new Point(border + (int)distance, O);
+                    p[1] = new Point(border + (int)distance + ((int)Plosh * 2 / 4), O - ((int)Plosh * 2 / 2));
+                    p[2] = new Point(border + (int)distance + ((int)Plosh * 2 / 2 + 5), O - ((int)Plosh * 2 / 2 - 5));
+                    p[3] = new Point(border + (int)distance + (int)Plosh * 2, O);
+                    p[4] = new Point(border + (int)distance + ((int)Plosh * 2 / 4), O + ((int)Plosh * 2 / 2));
+
+                    Plosh = Plosh / 2;
                     Mod.DrawLine(PRed, border, O, border + (int)distance * 2,
                         O);//Линия расстояния до н/п
-                    Mod.FillEllipse(BrWhite, border + (int)distance * 2 - point,
-                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Заполнение площади н/п
-                    Mod.DrawEllipse(PBlack, border + (int)distance * 2 - point,
-                        O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Обводка н/п
-                    //Mod.FillPolygon(BrSilver, p);//Заполнение площади н/п
-                    //Mod.DrawPolygon(PBlack, p);//Обводка н/п
+                    //Mod.FillEllipse(BrWhite, border + (int)distance * 2 - point,
+                    //    O - (int)Plosh * 2, (int)Plosh * 4, (int)Plosh * 4);//Заполнение площади н/п
+                    //Mod.DrawEllipse(PBlack, border + (int)distance * 2 - point,
+                    //    O - (int)Plosh * 2, (int)Plosh * 4, (int)Plosh * 4);//Обводка н/п
+                    Mod.FillPolygon(hatchBrush, p);//Заполнение площади н/п
+                    Mod.DrawPolygon(PBlack, p);//Обводка н/п
                     Mod.DrawString(TextDistance, Font, BrBlack, border + (int)distance * 2 - 45,
                         O - 14);//Текст расстояния до н/п
                 }
