@@ -27,6 +27,7 @@ namespace PrognozCS
             {
                 Form1.W = 21;
             }
+            Form1.vert = 1;
         }
         public static void Izotermia()
         {
@@ -92,6 +93,7 @@ namespace PrognozCS
             {
                 Form1.W = 88;
             }
+            Form1.vert = 2;
         }
         public static void Konvekcia()
         {
@@ -113,6 +115,7 @@ namespace PrognozCS
             {
                 Form1.W = 28;
             }
+            Form1.vert = 3;
         }
     }
 }

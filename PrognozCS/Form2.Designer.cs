@@ -61,7 +61,10 @@
             this.label02 = new System.Windows.Forms.Label();
             this.label01 = new System.Windows.Forms.Label();
             this.label00 = new System.Windows.Forms.Label();
+            this.pictureob1 = new System.Windows.Forms.PictureBox();
+            this.plosh = new System.Windows.Forms.Label();
             this.panelAXOB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureob1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -82,7 +85,7 @@
             // 
             this.glublabel.AutoSize = true;
             this.glublabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.glublabel.Location = new System.Drawing.Point(12, 19);
+            this.glublabel.Location = new System.Drawing.Point(540, 12);
             this.glublabel.Name = "glublabel";
             this.glublabel.Size = new System.Drawing.Size(403, 13);
             this.glublabel.TabIndex = 1;
@@ -92,7 +95,7 @@
             // 
             this.timelabel.AutoSize = true;
             this.timelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.timelabel.Location = new System.Drawing.Point(12, 47);
+            this.timelabel.Location = new System.Drawing.Point(540, 40);
             this.timelabel.Name = "timelabel";
             this.timelabel.Size = new System.Drawing.Size(408, 13);
             this.timelabel.TabIndex = 2;
@@ -102,7 +105,7 @@
             // 
             this.ploshadlabel.AutoSize = true;
             this.ploshadlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ploshadlabel.Location = new System.Drawing.Point(12, 181);
+            this.ploshadlabel.Location = new System.Drawing.Point(540, 174);
             this.ploshadlabel.Name = "ploshadlabel";
             this.ploshadlabel.Size = new System.Drawing.Size(285, 13);
             this.ploshadlabel.TabIndex = 3;
@@ -112,7 +115,7 @@
             // 
             this.poterilabel.AutoSize = true;
             this.poterilabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.poterilabel.Location = new System.Drawing.Point(12, 79);
+            this.poterilabel.Location = new System.Drawing.Point(540, 72);
             this.poterilabel.Name = "poterilabel";
             this.poterilabel.Size = new System.Drawing.Size(401, 13);
             this.poterilabel.TabIndex = 4;
@@ -121,7 +124,7 @@
             // poteri1label
             // 
             this.poteri1label.AutoSize = true;
-            this.poteri1label.Location = new System.Drawing.Point(28, 101);
+            this.poteri1label.Location = new System.Drawing.Point(556, 94);
             this.poteri1label.Name = "poteri1label";
             this.poteri1label.Size = new System.Drawing.Size(89, 13);
             this.poteri1label.TabIndex = 5;
@@ -130,7 +133,7 @@
             // poteri2label
             // 
             this.poteri2label.AutoSize = true;
-            this.poteri2label.Location = new System.Drawing.Point(28, 124);
+            this.poteri2label.Location = new System.Drawing.Point(556, 117);
             this.poteri2label.Name = "poteri2label";
             this.poteri2label.Size = new System.Drawing.Size(154, 13);
             this.poteri2label.TabIndex = 6;
@@ -139,7 +142,7 @@
             // poteri3label
             // 
             this.poteri3label.AutoSize = true;
-            this.poteri3label.Location = new System.Drawing.Point(28, 147);
+            this.poteri3label.Location = new System.Drawing.Point(556, 140);
             this.poteri3label.Name = "poteri3label";
             this.poteri3label.Size = new System.Drawing.Size(129, 13);
             this.poteri3label.TabIndex = 7;
@@ -148,7 +151,7 @@
             // glub
             // 
             this.glub.AutoSize = true;
-            this.glub.Location = new System.Drawing.Point(421, 19);
+            this.glub.Location = new System.Drawing.Point(949, 12);
             this.glub.Name = "glub";
             this.glub.Size = new System.Drawing.Size(35, 13);
             this.glub.TabIndex = 8;
@@ -157,7 +160,7 @@
             // time
             // 
             this.time.AutoSize = true;
-            this.time.Location = new System.Drawing.Point(421, 47);
+            this.time.Location = new System.Drawing.Point(949, 40);
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(35, 13);
             this.time.TabIndex = 9;
@@ -166,7 +169,7 @@
             // poteri1
             // 
             this.poteri1.AutoSize = true;
-            this.poteri1.Location = new System.Drawing.Point(197, 101);
+            this.poteri1.Location = new System.Drawing.Point(725, 94);
             this.poteri1.Name = "poteri1";
             this.poteri1.Size = new System.Drawing.Size(35, 13);
             this.poteri1.TabIndex = 11;
@@ -175,7 +178,7 @@
             // poteri2
             // 
             this.poteri2.AutoSize = true;
-            this.poteri2.Location = new System.Drawing.Point(197, 124);
+            this.poteri2.Location = new System.Drawing.Point(725, 117);
             this.poteri2.Name = "poteri2";
             this.poteri2.Size = new System.Drawing.Size(35, 13);
             this.poteri2.TabIndex = 12;
@@ -184,7 +187,7 @@
             // poteri3
             // 
             this.poteri3.AutoSize = true;
-            this.poteri3.Location = new System.Drawing.Point(197, 147);
+            this.poteri3.Location = new System.Drawing.Point(725, 140);
             this.poteri3.Name = "poteri3";
             this.poteri3.Size = new System.Drawing.Size(35, 13);
             this.poteri3.TabIndex = 13;
@@ -193,7 +196,7 @@
             // ploshad
             // 
             this.ploshad.AutoSize = true;
-            this.ploshad.Location = new System.Drawing.Point(318, 181);
+            this.ploshad.Location = new System.Drawing.Point(846, 174);
             this.ploshad.Name = "ploshad";
             this.ploshad.Size = new System.Drawing.Size(35, 13);
             this.ploshad.TabIndex = 14;
@@ -215,20 +218,20 @@
             // 
             // ploshG
             // 
-            this.ploshG.Location = new System.Drawing.Point(207, 205);
+            this.ploshG.Location = new System.Drawing.Point(424, 375);
             this.ploshG.Name = "ploshG";
-            this.ploshG.Size = new System.Drawing.Size(100, 20);
+            this.ploshG.Size = new System.Drawing.Size(83, 20);
             this.ploshG.TabIndex = 16;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 208);
+            this.label1.Location = new System.Drawing.Point(15, 378);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(189, 13);
+            this.label1.Size = new System.Drawing.Size(402, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Площадь населенного пункта:";
+            this.label1.Text = "Расстояние от начальной до конечной точки населенного пункта:";
             // 
             // labelTime1
             // 
@@ -294,7 +297,7 @@
             // 
             this.labelTime.AutoSize = true;
             this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTime.Location = new System.Drawing.Point(9, 239);
+            this.labelTime.Location = new System.Drawing.Point(9, 310);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(205, 13);
             this.labelTime.TabIndex = 24;
@@ -314,7 +317,7 @@
             this.panelAXOB.Controls.Add(this.labelTime2);
             this.panelAXOB.Controls.Add(this.labelTime5);
             this.panelAXOB.Controls.Add(this.labelTime4);
-            this.panelAXOB.Location = new System.Drawing.Point(12, 231);
+            this.panelAXOB.Location = new System.Drawing.Point(12, 274);
             this.panelAXOB.Name = "panelAXOB";
             this.panelAXOB.Size = new System.Drawing.Size(522, 95);
             this.panelAXOB.TabIndex = 25;
@@ -376,18 +379,37 @@
             // label00
             // 
             this.label00.AutoSize = true;
-            this.label00.Location = new System.Drawing.Point(220, 239);
+            this.label00.Location = new System.Drawing.Point(220, 310);
             this.label00.Name = "label00";
             this.label00.Size = new System.Drawing.Size(35, 13);
             this.label00.TabIndex = 32;
             this.label00.Text = "label7";
+            // 
+            // pictureob1
+            // 
+            this.pictureob1.Location = new System.Drawing.Point(12, 12);
+            this.pictureob1.Name = "pictureob1";
+            this.pictureob1.Size = new System.Drawing.Size(522, 256);
+            this.pictureob1.TabIndex = 33;
+            this.pictureob1.TabStop = false;
+            // 
+            // plosh
+            // 
+            this.plosh.AutoSize = true;
+            this.plosh.Location = new System.Drawing.Point(513, 378);
+            this.plosh.Name = "plosh";
+            this.plosh.Size = new System.Drawing.Size(21, 13);
+            this.plosh.TabIndex = 34;
+            this.plosh.Text = "км";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(546, 485);
+            this.ClientSize = new System.Drawing.Size(1059, 485);
+            this.Controls.Add(this.plosh);
+            this.Controls.Add(this.pictureob1);
             this.Controls.Add(this.panelAXOB);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.label1);
@@ -414,6 +436,7 @@
             this.Text = "Прогнозирование: Результаты расчетов";
             this.panelAXOB.ResumeLayout(false);
             this.panelAXOB.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureob1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,5 +476,7 @@
         private System.Windows.Forms.Label label02;
         private System.Windows.Forms.Label label01;
         private System.Windows.Forms.Label label00;
+        private System.Windows.Forms.PictureBox pictureob1;
+        private System.Windows.Forms.Label plosh;
     }
 }
