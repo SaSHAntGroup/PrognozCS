@@ -45,7 +45,8 @@ namespace PrognozCS
             Txh, Txm, Txh0, Txm0, Txh1, Txm1, Txh2, Txm2, Txh3, Txm3, Txh4, Txm4, Txh5, Txm5, Txh6, Txm6,
             //часы и минуты по отдельности для визуального оформления
             Tsut,//время суток
-                 //первичное облако
+            Api, Apo,//Численность рабочих и служащих на объекте и на открытых площадках
+                     //первичное облако
             Ge1,//искомое значение глубины распространения зараженного АХОВ воздуха, км
             Gm1,//меньшее значение глубины распространения зараженного АХОВ воздуха, км
             Gb1,//большее значение глубины распространения зараженного АХОВ воздуха, км
@@ -66,8 +67,12 @@ namespace PrognozCS
             f,//угловые размеры возможного заражения АХОВ
             Ag,//плотность населения в городе, чел/кв. км
             Az,//плотность населения в загородной зоне, чел/кв. км
-            n1g,//обеспеченость населения противогазами в городе, %
-            n1z,//обеспеченость населения противогазами в загородной зоне, %
+            n1g,//обеспеченость населения противогазами на открытой местности в городе, %
+            n3g,//обеспеченость населения противогазами в зданиях в городе, %
+            n1z,//обеспеченость населения противогазами на открытой местности в загородной зоне, %
+            n3z,//обеспеченость населения противогазами в зданиях в загородной зоне, %
+            n1o,//обеспеченость населения противогазами на открытой местности на объекте, %
+            n2o,//обеспеченость населения противогазами в зданиях на объекте, %
             n2g,//обеспеченость населения убежищами в городе, %
             n2z,//обеспеченость населения убежищами в загородной зоне, %
             Kg,//доля незащищенного населения в городе
@@ -76,8 +81,8 @@ namespace PrognozCS
             Kzk,//коэффициент населения в загородной зоне
             Pg, Pz,//сокращение действий в выраженний для расчета P0
             P0,//величина возможных потерь населения в очаге поражения АХОВ
-            P1, P2, P3,//для оперативных расчетов вычисление потерь: безвозвратные, санитарные и легкой формы
-            N11, N12, N21, N22,//перевод процентов в десятичные значения
+            P1, P2, P3, P11, P22, P33,//для оперативных расчетов вычисление потерь: безвозвратные, санитарные и легкой формы
+            N11, N12, N21, N22, N31, N32, N13, N23,//перевод процентов в десятичные значения
             Kv,//коэффициент, зависящий от степени вертикальной устойчивости воздуха
             K1, K11, K12, K13, K14, K15, K16,//коэффициент, зависящий от условий хранения АХОВ
             K2, K21, K22, K23, K24, K25, K26,//коэффициент, зависящий от физико-химических свойств АХОВ
@@ -1200,8 +1205,27 @@ namespace PrognozCS
             if (outubejZ.Text == "") { n2z = 0; }
             else { n2z = Convert.ToDouble(outubejZ.Text); }
             ///
+            if (inGAZG.Text == "") { n3g = 0; }
+            else { n3g = Convert.ToDouble(inGAZG.Text); }
+            ///
+            if (inGAZZ.Text == "") { n3z = 0; }
+            else { n3z = Convert.ToDouble(inGAZZ.Text); }
+            ///
             if (timeday.Text == "") { Tsut = 0; }
             else { Tsut = Convert.ToDouble(timeday.Text); }
+            ///
+            if (RGAZobj.Text == "") { n2o = 0; }
+            else { n2o = Convert.ToDouble(RGAZobj.Text); }
+            ///
+            if (RGAZopen.Text == "") { n1o = 0; }
+            else { n1o = Convert.ToDouble(RGAZopen.Text); }
+            ///
+            if (totalPeopleObj.Text == "") { Api = 0; }
+            else { Api = Convert.ToDouble(totalPeopleObj.Text); }
+            ///
+            if (totalPeopleOpen.Text == "") { Apo = 0; }
+            else { Apo = Convert.ToDouble(totalPeopleOpen.Text); }
+            ///
             //Присваивание параметров для вертикальной устойчивости атмосферы
             if (vertUst.Text == "Инверсия")
             {
@@ -2889,32 +2913,6 @@ namespace PrognozCS
                 h = Q0 / F * p;
                 podd = 2;
             }
-            /*Коэффициенты защищенности населения в зависимости
-             * от времени суток и времени года*/
-            if (opoveshZ.Checked)
-            {
-                KoeffZ.GorOpovesh();
-                if (periodSH.Checked)
-                {
-                    KoeffZ.SelOpovSH();
-                }
-                if (periodZIMA.Checked)
-                {
-                    KoeffZ.SelOpovZim();
-                }
-            }
-            if (noopoveshZ.Checked)
-            {
-                KoeffZ.GorNeOpovesh();
-                if (periodSH.Checked)
-                {
-                    KoeffZ.SelNeOpovSH();
-                }
-                if (periodZIMA.Checked)
-                {
-                    KoeffZ.SelNeOpovZim();
-                }
-            }
             //Угловые размеры возможного заражения АХОВ
             if (v <= 0.5) { f = 360; }
             if ((v > 0.5) && (v <= 1)) { f = 180; }
@@ -3134,31 +3132,77 @@ namespace PrognozCS
             Sp = 8.72 * Math.Pow(10,-3) * Math.Pow(G,2) * f;
             //Площадь фактического зажения АХОВ
             Sf = Kv * Math.Pow(G, 2) * Math.Pow(N, 0.2);
-            //Вычисляем долю незащищенного населения в городе и загородной зоне
-            if (opoveshG.Checked) { KoeffZ.GorOpovesh(); }
-            if (noopoveshG.Checked) { KoeffZ.GorNeOpovesh(); }
-            if (opoveshZ.Checked)
+            //
+            if (AVmest.Checked)
             {
-                if (periodSH.Checked) { KoeffZ.SelOpovSH(); }
-                if (periodZIMA.Checked) { KoeffZ.SelOpovZim(); }
+                /*Коэффициенты защищенности населения в зависимости
+                 * от времени суток и времени года*/
+                if (opoveshZ.Checked)
+                {
+                    KoeffZ.GorOpovesh();
+                    if (periodSH.Checked)
+                    {
+                        KoeffZ.SelOpovSH();
+                    }
+                    if (periodZIMA.Checked)
+                    {
+                        KoeffZ.SelOpovZim();
+                    }
+                }
+                if (noopoveshZ.Checked)
+                {
+                    KoeffZ.GorNeOpovesh();
+                    if (periodSH.Checked)
+                    {
+                        KoeffZ.SelNeOpovSH();
+                    }
+                    if (periodZIMA.Checked)
+                    {
+                        KoeffZ.SelNeOpovZim();
+                    }
+                }
+                //Вычисляем долю незащищенного населения в городе и загородной зоне
+                if (opoveshG.Checked) { KoeffZ.GorOpovesh(); }
+                if (noopoveshG.Checked) { KoeffZ.GorNeOpovesh(); }
+                if (opoveshZ.Checked)
+                {
+                    if (periodSH.Checked) { KoeffZ.SelOpovSH(); }
+                    if (periodZIMA.Checked) { KoeffZ.SelOpovZim(); }
+                }
+                if (noopoveshZ.Checked)
+                {
+                    if (periodSH.Checked) { KoeffZ.SelNeOpovSH(); }
+                    if (periodZIMA.Checked) { KoeffZ.SelNeOpovZim(); }
+                }
+                //Перевод в проценты
+                //N11 = n1g * 0.01; N12 = n1z * 0.01;
+                //N21 = n2g * 0.01; N22 = n2z * 0.01;
+                //N31 = n3g * 0.01; N32 = n3z * 0.01;
+                mestSIZ.percentOpenMest();
+                //Kg = (1 - N11 - N21) * Kgk;
+                //Kz = (1 - N12 - N22) * Kzk;
+                //Величина возможных потерь населения в очаге поражения АХОВ
+                Pg = (X / G) * Ag * Kgk * N11 * N21 * N31;
+                Pz = (1 - (X / G)) * Az * Kzk * N12 * N22 * N32;
+                P0 = Math.Truncate(Sf * (Pg + Pz));
+                P1 = Math.Truncate(P0 * 0.35);
+                P2 = Math.Truncate(P0 * 0.4);
+                P3 = Math.Truncate(P0 * 0.25);
             }
-            if (noopoveshZ.Checked)
+            if (AVobj.Checked)
             {
-                if (periodSH.Checked) { KoeffZ.SelNeOpovSH(); }
-                if (periodZIMA.Checked) { KoeffZ.SelNeOpovZim(); }
+                mestSIZ.percentInObject();
+                Pg = Api * N23;
+                P1 = Math.Truncate(Pg * 0.35);
+                P2 = Math.Truncate(Pg * 0.4);
+                P3 = Math.Truncate(Pg * 0.25);
+                Kg = P1 + P2;
+                Pz = Apo * N13;
+                P11 = Math.Truncate(Pz * 0.35);
+                P22 = Math.Truncate(Pz * 0.4);
+                P33 = Math.Truncate(Pz * 0.25);
+                Kz = P11 + P22;
             }
-            //Перевод в проценты
-            N11 = n1g * 0.01; N12 = n1z * 0.01;
-            N21 = n2g * 0.01; N22 = n2z * 0.01;
-            Kg = (1 - N11 - N21) * Kgk;
-            Kz = (1 - N12 - N22) * Kzk;
-            //Величина возможных потерь населения в очаге поражения АХОВ
-            Pg = (X / G) * Ag * Kg;
-            Pz = (1 - (X / G)) * Az * Kz;
-            P0 = Math.Truncate(Sf * (Pg + Pz));
-            P1 = Math.Truncate(P0 * 0.35);
-            P2 = Math.Truncate(P0 * 0.4);
-            P3 = Math.Truncate(P0 * 0.25);
             //Открытие формы с результатом
             if (F < 0)
             {

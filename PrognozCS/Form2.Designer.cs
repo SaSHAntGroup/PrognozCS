@@ -30,19 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.button1 = new System.Windows.Forms.Button();
-            this.glublabel = new System.Windows.Forms.Label();
             this.timelabel = new System.Windows.Forms.Label();
-            this.ploshadlabel = new System.Windows.Forms.Label();
-            this.poterilabel = new System.Windows.Forms.Label();
-            this.poteri1label = new System.Windows.Forms.Label();
-            this.poteri2label = new System.Windows.Forms.Label();
-            this.poteri3label = new System.Windows.Forms.Label();
-            this.glub = new System.Windows.Forms.Label();
             this.time = new System.Windows.Forms.Label();
-            this.poteri1 = new System.Windows.Forms.Label();
-            this.poteri2 = new System.Windows.Forms.Label();
-            this.poteri3 = new System.Windows.Forms.Label();
-            this.ploshad = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.ploshG = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -73,134 +62,32 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(12, 443);
+            this.button1.Location = new System.Drawing.Point(12, 483);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(522, 34);
+            this.button1.Size = new System.Drawing.Size(534, 34);
             this.button1.TabIndex = 0;
             this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // glublabel
-            // 
-            this.glublabel.AutoSize = true;
-            this.glublabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.glublabel.Location = new System.Drawing.Point(540, 12);
-            this.glublabel.Name = "glublabel";
-            this.glublabel.Size = new System.Drawing.Size(403, 13);
-            this.glublabel.TabIndex = 1;
-            this.glublabel.Text = "Глубина распространения зараженного облака АХОВ при аварии:";
-            // 
             // timelabel
             // 
             this.timelabel.AutoSize = true;
             this.timelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.timelabel.Location = new System.Drawing.Point(540, 40);
+            this.timelabel.Location = new System.Drawing.Point(9, 303);
             this.timelabel.Name = "timelabel";
             this.timelabel.Size = new System.Drawing.Size(408, 13);
             this.timelabel.TabIndex = 2;
             this.timelabel.Text = "Время подхода облака зараженного АХОВ до населенного пункта:";
             // 
-            // ploshadlabel
-            // 
-            this.ploshadlabel.AutoSize = true;
-            this.ploshadlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ploshadlabel.Location = new System.Drawing.Point(540, 174);
-            this.ploshadlabel.Name = "ploshadlabel";
-            this.ploshadlabel.Size = new System.Drawing.Size(285, 13);
-            this.ploshadlabel.TabIndex = 3;
-            this.ploshadlabel.Text = "Площадь зоны фактическог заражения АХОВ:";
-            // 
-            // poterilabel
-            // 
-            this.poterilabel.AutoSize = true;
-            this.poterilabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.poterilabel.Location = new System.Drawing.Point(540, 72);
-            this.poterilabel.Name = "poterilabel";
-            this.poterilabel.Size = new System.Drawing.Size(401, 13);
-            this.poterilabel.TabIndex = 4;
-            this.poterilabel.Text = "Величина возможных потерь населения в очаге поражения АХОВ";
-            // 
-            // poteri1label
-            // 
-            this.poteri1label.AutoSize = true;
-            this.poteri1label.Location = new System.Drawing.Point(556, 94);
-            this.poteri1label.Name = "poteri1label";
-            this.poteri1label.Size = new System.Drawing.Size(89, 13);
-            this.poteri1label.TabIndex = 5;
-            this.poteri1label.Text = "безвозвратные:";
-            // 
-            // poteri2label
-            // 
-            this.poteri2label.AutoSize = true;
-            this.poteri2label.Location = new System.Drawing.Point(556, 117);
-            this.poteri2label.Name = "poteri2label";
-            this.poteri2label.Size = new System.Drawing.Size(154, 13);
-            this.poteri2label.TabIndex = 6;
-            this.poteri2label.Text = "тяжелые и средней тяжести:";
-            // 
-            // poteri3label
-            // 
-            this.poteri3label.AutoSize = true;
-            this.poteri3label.Location = new System.Drawing.Point(556, 140);
-            this.poteri3label.Name = "poteri3label";
-            this.poteri3label.Size = new System.Drawing.Size(129, 13);
-            this.poteri3label.TabIndex = 7;
-            this.poteri3label.Text = "легкой формы тяжести:";
-            // 
-            // glub
-            // 
-            this.glub.AutoSize = true;
-            this.glub.Location = new System.Drawing.Point(949, 12);
-            this.glub.Name = "glub";
-            this.glub.Size = new System.Drawing.Size(35, 13);
-            this.glub.TabIndex = 8;
-            this.glub.Text = "label1";
-            // 
             // time
             // 
             this.time.AutoSize = true;
-            this.time.Location = new System.Drawing.Point(949, 40);
+            this.time.Location = new System.Drawing.Point(418, 303);
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(35, 13);
             this.time.TabIndex = 9;
             this.time.Text = "label2";
-            // 
-            // poteri1
-            // 
-            this.poteri1.AutoSize = true;
-            this.poteri1.Location = new System.Drawing.Point(725, 94);
-            this.poteri1.Name = "poteri1";
-            this.poteri1.Size = new System.Drawing.Size(35, 13);
-            this.poteri1.TabIndex = 11;
-            this.poteri1.Text = "label4";
-            // 
-            // poteri2
-            // 
-            this.poteri2.AutoSize = true;
-            this.poteri2.Location = new System.Drawing.Point(725, 117);
-            this.poteri2.Name = "poteri2";
-            this.poteri2.Size = new System.Drawing.Size(35, 13);
-            this.poteri2.TabIndex = 12;
-            this.poteri2.Text = "label5";
-            // 
-            // poteri3
-            // 
-            this.poteri3.AutoSize = true;
-            this.poteri3.Location = new System.Drawing.Point(725, 140);
-            this.poteri3.Name = "poteri3";
-            this.poteri3.Size = new System.Drawing.Size(35, 13);
-            this.poteri3.TabIndex = 13;
-            this.poteri3.Text = "label6";
-            // 
-            // ploshad
-            // 
-            this.ploshad.AutoSize = true;
-            this.ploshad.Location = new System.Drawing.Point(846, 174);
-            this.ploshad.Name = "ploshad";
-            this.ploshad.Size = new System.Drawing.Size(35, 13);
-            this.ploshad.TabIndex = 14;
-            this.ploshad.Text = "label7";
             // 
             // button2
             // 
@@ -208,9 +95,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(12, 403);
+            this.button2.Location = new System.Drawing.Point(12, 443);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(522, 34);
+            this.button2.Size = new System.Drawing.Size(534, 34);
             this.button2.TabIndex = 15;
             this.button2.Text = "Моделирование";
             this.button2.UseVisualStyleBackColor = false;
@@ -218,7 +105,7 @@
             // 
             // ploshG
             // 
-            this.ploshG.Location = new System.Drawing.Point(424, 375);
+            this.ploshG.Location = new System.Drawing.Point(418, 319);
             this.ploshG.Name = "ploshG";
             this.ploshG.Size = new System.Drawing.Size(83, 20);
             this.ploshG.TabIndex = 16;
@@ -227,7 +114,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(15, 378);
+            this.label1.Location = new System.Drawing.Point(9, 322);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(402, 13);
             this.label1.TabIndex = 17;
@@ -297,7 +184,7 @@
             // 
             this.labelTime.AutoSize = true;
             this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTime.Location = new System.Drawing.Point(9, 310);
+            this.labelTime.Location = new System.Drawing.Point(9, 350);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(205, 13);
             this.labelTime.TabIndex = 24;
@@ -317,9 +204,9 @@
             this.panelAXOB.Controls.Add(this.labelTime2);
             this.panelAXOB.Controls.Add(this.labelTime5);
             this.panelAXOB.Controls.Add(this.labelTime4);
-            this.panelAXOB.Location = new System.Drawing.Point(12, 274);
+            this.panelAXOB.Location = new System.Drawing.Point(12, 342);
             this.panelAXOB.Name = "panelAXOB";
-            this.panelAXOB.Size = new System.Drawing.Size(522, 95);
+            this.panelAXOB.Size = new System.Drawing.Size(534, 95);
             this.panelAXOB.TabIndex = 25;
             // 
             // label06
@@ -379,7 +266,7 @@
             // label00
             // 
             this.label00.AutoSize = true;
-            this.label00.Location = new System.Drawing.Point(220, 310);
+            this.label00.Location = new System.Drawing.Point(220, 350);
             this.label00.Name = "label00";
             this.label00.Size = new System.Drawing.Size(35, 13);
             this.label00.TabIndex = 32;
@@ -389,14 +276,14 @@
             // 
             this.pictureob1.Location = new System.Drawing.Point(12, 12);
             this.pictureob1.Name = "pictureob1";
-            this.pictureob1.Size = new System.Drawing.Size(522, 256);
+            this.pictureob1.Size = new System.Drawing.Size(534, 288);
             this.pictureob1.TabIndex = 33;
             this.pictureob1.TabStop = false;
             // 
             // plosh
             // 
             this.plosh.AutoSize = true;
-            this.plosh.Location = new System.Drawing.Point(513, 378);
+            this.plosh.Location = new System.Drawing.Point(507, 322);
             this.plosh.Name = "plosh";
             this.plosh.Size = new System.Drawing.Size(21, 13);
             this.plosh.TabIndex = 34;
@@ -407,7 +294,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1059, 485);
+            this.ClientSize = new System.Drawing.Size(558, 529);
             this.Controls.Add(this.plosh);
             this.Controls.Add(this.pictureob1);
             this.Controls.Add(this.panelAXOB);
@@ -415,19 +302,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ploshG);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.ploshad);
-            this.Controls.Add(this.poteri3);
-            this.Controls.Add(this.poteri2);
-            this.Controls.Add(this.poteri1);
             this.Controls.Add(this.time);
-            this.Controls.Add(this.glub);
-            this.Controls.Add(this.poteri3label);
-            this.Controls.Add(this.poteri2label);
-            this.Controls.Add(this.poteri1label);
-            this.Controls.Add(this.poterilabel);
-            this.Controls.Add(this.ploshadlabel);
             this.Controls.Add(this.timelabel);
-            this.Controls.Add(this.glublabel);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label00);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -445,19 +321,8 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label glublabel;
         private System.Windows.Forms.Label timelabel;
-        private System.Windows.Forms.Label ploshadlabel;
-        private System.Windows.Forms.Label poterilabel;
-        private System.Windows.Forms.Label poteri1label;
-        private System.Windows.Forms.Label poteri2label;
-        private System.Windows.Forms.Label poteri3label;
-        private System.Windows.Forms.Label glub;
         private System.Windows.Forms.Label time;
-        private System.Windows.Forms.Label poteri1;
-        private System.Windows.Forms.Label poteri2;
-        private System.Windows.Forms.Label poteri3;
-        private System.Windows.Forms.Label ploshad;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox ploshG;
         private System.Windows.Forms.Label label1;

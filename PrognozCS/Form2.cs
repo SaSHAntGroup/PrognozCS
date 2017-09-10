@@ -26,9 +26,7 @@ namespace PrognozCS
             int Txm4 = (int)Form1.Txm4;
             int Txm5 = (int)Form1.Txm5;
             int Txm6 = (int)Form1.Txm6;
-
-            glub.Text = Form1.G.ToString() + " км";
-            ploshad.Text = Form1.Sf.ToString() + " км²";
+            
             time.Text = Form1.Txh.ToString() + " часов " + Txm.ToString() + " минут";
 
             if (Form1.p == 0) { label00.Text = "Вещество не указано"; }
@@ -53,21 +51,19 @@ namespace PrognozCS
             if (Form1.Q05 == 0) { label05.Visible = false; labelTime5.Visible = false; }
             if (Form1.Q06 == 0) { label06.Visible = false; labelTime6.Visible = false; }
 
-            poteri1.Text = Form1.P1.ToString() + " чел";
-            poteri2.Text = Form1.P2.ToString() + " чел";
-            poteri3.Text = Form1.P3.ToString() + " чел";
-
             if (Form1.lockpanel == 1) { panelAXOB.Visible = true; }
             else { panelAXOB.Visible = false; }
             Tabl();
         }
+
         public void button1_Click(object sender, EventArgs e)
         {
             Close();
         }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            if (ploshG.Text == "") { S = 5; }
+            if (ploshG.Text == "") { S = 15; }
             else { S = Convert.ToDouble(ploshG.Text); }
             if (Form1.obj == 1)
             {
@@ -92,6 +88,11 @@ namespace PrognozCS
             SolidBrush BrSilver = new SolidBrush(Color.Silver);
 
             //Условия и текст
+            int K = (int)Form1.Kg + (int)Form1.Kz;
+            string open = "Всего со смертельным исходом и потерявших работоспособность " +
+                "на открытых площадках - " + Form1.Kz.ToString() + " чел.";
+            string obj = "Всего со смертельным исходом и потерявших работоспособность " +
+                "на объекте - " + Form1.Kg.ToString() + " чел.";
             string istZaraj = "Источник\nзаражения";
             string tipAXOB = "Тип\nАХОВ";
             string kolAXOBl = "Кол-во\nАХОВ";
@@ -103,6 +104,7 @@ namespace PrognozCS
             string kolvoAXOB = Convert.ToString(Form1.Q0) + " т";
             string glubZone = Form1.G.ToString() + " км";
             string obshPloshZar = Form1.Sf.ToString() + " км²";
+            string poteriT = K.ToString() + " чел";
             string Zaraj;
             string AXOB;
             string SIZ;
@@ -112,16 +114,16 @@ namespace PrognozCS
             switch (Form1.vert)
             {
                 case 1:
-                    vertUst = "Инверсия";
+                    vertUst = "инверсия";
                     break;
                 case 2:
-                    vertUst = "Изотермия";
+                    vertUst = "изотермия";
                     break;
                 case 3:
-                    vertUst = "Конвекция";
+                    vertUst = "конвекция";
                     break;
                 default:
-                    vertUst = "Не указано!";
+                    vertUst = "не указано!";
                     break;
             }
 
@@ -148,139 +150,139 @@ namespace PrognozCS
             {
                 case 1:
                     AXOB = "Хлор";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7";
                     break;
                 case 2:
                     AXOB = "Аммиак";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 3:
                     AXOB = "Водород хлористый";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 4:
                     AXOB = "Водород бромистый";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 5:
                     AXOB = "Сероводород";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7";
                     break;
                 case 6:
                     AXOB = "Фосген";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 7:
                     AXOB = "Фтор";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 8:
                     AXOB = "Хлорициан";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 9:
                     AXOB = "Водород фтористый";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 10:
                     AXOB = "Водород цианистый";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 11:
                     AXOB = "Двуокись азота";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 12:
                     AXOB = "Сернистый ангидрид";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7";
                     break;
                 case 13:
                     AXOB = "Сероуглерод";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 14:
                     AXOB = "Соляная кислота";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7";
                     break;
                 case 15:
                     AXOB = "Формальдегид";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 16:
                     AXOB = "Водород мышьяковистый";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 17:
                     AXOB = "Диметиламин";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 18:
                     AXOB = "Метиламин";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 19:
                     AXOB = "Метил хлористый";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 20:
                     AXOB = "Нитрил акриловая кислота";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 21:
                     AXOB = "Акролеин";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 22:
                     AXOB = "Ацетонитрил";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 23:
                     AXOB = "Ацетонциангидрид";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 24:
                     AXOB = "Метил бромистый";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 25:
                     AXOB = "Метилакрилат";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 26:
                     AXOB = "Метилмеркаптан";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 27:
                     AXOB = "Окись этилена";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 28:
                     AXOB = "Триметиламин";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 29:
                     AXOB = "Фосфор треххлористый";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "Промышл.\nпрот.";
                     break;
                 case 30:
                     AXOB = "Фосфора хлорокись";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "";
                     break;
                 case 31:
                     AXOB = "Хлорпикрин";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 32:
-                    AXOB = "Этиленимин";
-                    SIZ = "ГП-5\nГП-7";
+                    AXOB = "Этиленамин";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 33:
                     AXOB = "Этиленсульфид";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7\n+ДГП-1";
                     break;
                 case 34:
                     AXOB = "Этилмеркаптан";
-                    SIZ = "ГП-5\nГП-7";
+                    SIZ = "ГП-5,\nГП-7";
                     break;
                 default:
                     AXOB = "Нет данных!";
@@ -289,12 +291,55 @@ namespace PrognozCS
             }
 
             tbl.FillRectangle(BrSilver, 0, 0, 999, 999);//Заполнение пикчербокса в рисунке
-            if (Form1.obj == 1)
+            if (Form1.obj == 0)
             {
                 //Таблица
                 tbl.DrawLine(PBlack, 0, 0, 522, 0);//
+                tbl.DrawLine(PBlack, 0, 1, 522, 1);//
                 tbl.DrawLine(PBlack, 0, 50, 522, 50);//
                 tbl.DrawLine(PBlack, 0, 100, 522, 100);//
+                tbl.DrawLine(PBlack, 0, 101, 522, 101);//
+                tbl.DrawLine(PBlack, 0, 150, 522, 150);//
+                tbl.DrawLine(PBlack, 0, 200, 522, 200);//
+                tbl.DrawLine(PBlack, 0, 201, 522, 201);//
+
+                tbl.DrawLine(PBlack, 0, 0, 0, 200);//
+                tbl.DrawLine(PBlack, 1, 0, 1, 200);//
+                tbl.DrawLine(PBlack, 100, 0, 100, 200);//
+                tbl.DrawLine(PBlack, 167, 0, 167, 200);//
+                tbl.DrawLine(PBlack, 210, 0, 210, 200);//
+                tbl.DrawLine(PBlack, 270, 0, 270, 200);//
+                tbl.DrawLine(PBlack, 320, 0, 320, 200);//
+                tbl.DrawLine(PBlack, 360, 0, 360, 200);//
+                tbl.DrawLine(PBlack, 410, 0, 410, 200);//
+                tbl.DrawLine(PBlack, 520, 0, 520, 200);//
+                tbl.DrawLine(PBlack, 521, 0, 521, 200);//
+
+                //Текст в таблице
+                tbl.DrawString(istZaraj, Font, BrBlack, 1, 1);//
+                tbl.DrawString(tipAXOB, Font, BrBlack, 100, 1);//
+                tbl.DrawString(kolAXOBl, Font, BrBlack, 167, 1);//
+                tbl.DrawString(glubZonel, Font, BrBlack, 210, 1);//
+                tbl.DrawString(ukritie, Font, BrBlack, 270, 1);//
+                tbl.DrawString(poteri, Font, BrBlack, 320, 1);//
+                tbl.DrawString(tipSIZ, Font, BrBlack, 360, 1);//
+                tbl.DrawString(primNIS, Font, BrBlack, 410, 1);//
+
+                tbl.DrawString(Zaraj, Font, BrBlack, 1, 51);//
+                tbl.DrawString(AXOB, Font, BrBlack, 100, 60);//
+                tbl.DrawString(kolvoAXOB, Font, BrBlack, 170, 60);//
+                tbl.DrawString(glubZone, Font, BrBlack, 215, 60);//
+                tbl.DrawString("ukr", Font, BrBlack, 270, 60);//
+                tbl.DrawString("poteri", Font, BrBlack, 320, 60);//
+                tbl.DrawString(SIZ, Font, BrBlack, 360, 50);//
+                tbl.DrawString(NIS, Font, BrBlack, 410, 50);//
+            }
+            if (Form1.obj == 1)
+            {
+                //Таблица
+                tbl.DrawLine(PBlack, 0, 0, 534, 0);//
+                tbl.DrawLine(PBlack, 0, 50, 534, 50);//
+                tbl.DrawLine(PBlack, 0, 100, 534, 100);//
 
                 tbl.DrawLine(PBlack, 0, 0, 0, 100);//
                 tbl.DrawLine(PBlack, 100, 0, 100, 100);//
@@ -304,7 +349,7 @@ namespace PrognozCS
                 tbl.DrawLine(PBlack, 320, 0, 320, 100);//
                 tbl.DrawLine(PBlack, 360, 0, 360, 100);//
                 tbl.DrawLine(PBlack, 410, 0, 410, 100);//
-                tbl.DrawLine(PBlack, 521, 0, 521, 100);//
+                tbl.DrawLine(PBlack, 533, 0, 533, 100);//
 
                 //Текст в таблице
                 tbl.DrawString(istZaraj, Font, BrBlack, 0, 0);//
@@ -321,9 +366,12 @@ namespace PrognozCS
                 tbl.DrawString(kolvoAXOB, Font, BrBlack, 170, 60);//
                 tbl.DrawString(glubZone, Font, BrBlack, 215, 60);//
                 tbl.DrawString("ukr", Font, BrBlack, 270, 60);//
-                tbl.DrawString("poteri", Font, BrBlack, 320, 60);//
+                tbl.DrawString(poteriT, Font, BrBlack, 320, 60);//
                 tbl.DrawString(SIZ, Font, BrBlack, 360, 50);//
                 tbl.DrawString(NIS, Font, BrBlack, 410, 50);//
+
+                tbl.DrawString(obj, Font, BrBlack, 1, 235);//
+                tbl.DrawString(open, Font, BrBlack, 1, 260);//
             }
             //Вывод картинок
             pictureob1.Image = bpm;
