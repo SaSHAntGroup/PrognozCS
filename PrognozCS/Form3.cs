@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PrognozCS
@@ -81,6 +76,7 @@ namespace PrognozCS
                 Mod.FillEllipse(BrB, border, border, Se, Se);//Заполнение зоны поражения
 
                 Mod.DrawLine(PBlue, O, O, O + r - 39, O - r + 39);//Линия глубины
+                Mod.DrawEllipse(PTurq, border, border, Se, Se);//Круговая обводка
 
                 if (Form1.X > 0)
                 {
@@ -105,7 +101,6 @@ namespace PrognozCS
 
                 Mod.DrawString(TextGlub, Font, BrBlack, O + 15, O - 60);//Текст глубины
                 Mod.FillEllipse(BrBlack, O - 3, O - 3, point, point);//Очаг поражения (центр. точка)
-                Mod.DrawEllipse(PTurq, border, border, Se, Se);//Круговая обводка
             }
             if (Form1.f == 180)
             {
@@ -113,6 +108,7 @@ namespace PrognozCS
                 Mod.FillRectangle(BrSilver, 0, border, O, Se);//Отрезающий квадрат, для визуала
                 Mod.DrawLine(PTurq, O, border, O, Se + 27);//Отрезающая линия, для визуала
                 Mod.DrawLine(PBlue, O, O, O + r - 39, O - r + 39);//Линия глубины
+                Mod.DrawArc(PTurq, border, border, Se, Se, 270, 180);//Дуговая обводка
 
                 if (Form1.X > 0)
                 {
@@ -137,7 +133,6 @@ namespace PrognozCS
 
                 Mod.DrawString(TextGlub, Font, BrBlack, O + 15, O - 60);//Текст глубины
                 Mod.FillEllipse(BrBlack, O - 4, O - 3, point, point);//Очаг поражения (центр. точка)
-                Mod.DrawArc(PTurq, border, border, Se, Se, 270, 180);//Дуговая обводка
             }
             if (Form1.f == 90)
             {
@@ -147,6 +142,7 @@ namespace PrognozCS
                 Mod.DrawLine(PBlue, border + 4, O, Se + 16, O + 50);//Линия глубины
                 Mod.DrawLine(PTurq, border, O, O + 93, O - 92);//Отрезающая линия, для визуала 3
                 Mod.DrawLine(PTurq, border, O, O + 93, O + 92);//Отрезающая линия, для визуала 4
+                Mod.DrawArc(PTurq, border, border, Se, Se, 315, 90);//Дуговая обводка
 
                 if (Form1.X > 0)
                 {
@@ -172,7 +168,6 @@ namespace PrognozCS
 
                 Mod.DrawString(TextGlub, Font, BrBlack, O + 25, O + 37);//Текст глубины
                 Mod.FillEllipse(BrBlack, border - 4, O - 4, point + 1, point + 1);//Очаг поражения (центр. точка)
-                Mod.DrawArc(PTurq, border, border, Se, Se, 315, 90);//Дуговая обводка
             }
             if (Form1.f == 45)
             {
@@ -182,6 +177,7 @@ namespace PrognozCS
                 Mod.DrawLine(PTurq, border, O, O + 120, O - 48);//Отрезающая линия, для визуала 3
                 Mod.DrawLine(PTurq, border, O, O + 120, O + 51);//Отрезающая линия, для визуала 4
                 Mod.DrawLine(PBlue, border + 4, O, Se + 20, O + 38);//Линия глубины
+                Mod.DrawArc(PTurq, border, border, Se, Se, 338, 46);//Дуговая обводка
 
                 if (Form1.X > 0)
                 {
@@ -207,7 +203,6 @@ namespace PrognozCS
                 
                 Mod.DrawString(TextGlub, Font, BrBlack, O + 82, O + 37);//Текст глубины
                 Mod.FillEllipse(BrBlack, border - 4, O - 4, point + 1, point + 1);//Очаг поражения (центр. точка)
-                Mod.DrawArc(PTurq, border, border, Se, Se, 338, 46);//Дуговая обводка
             }
             Mod2.FillRectangle(BrSilver, 0, 0, 999, 999);//Заполнение пикчербокса в рисунке 2
             //Расчетные данные
@@ -222,11 +217,6 @@ namespace PrognozCS
             Plosh = (Mas * S);//Площадь н/п в картинке 2
             int m = 57;//Средняя точка по у
             double z = ((double)L - (x - 2)) / 4;//Разделение глубины поражения на 4 зоны
-
-            if (Form1.f == 45) { Plosh = Plosh * 1; }
-            if (Form1.f == 90) { Plosh = Plosh * 1; }
-            if (Form1.f == 180) { Plosh = Plosh * 1; }
-            if (Form1.f == 360) { Plosh = Plosh * 1; }
 
             //Mod.DrawLine(PBlack, Se + border * 2, border - 15, Se + border * 2, l);//
             Mod.DrawLine(PBlack, border - 40, l - 1, Se * 2 + 150, l - 1);//Разделяющая черта рисунков

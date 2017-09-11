@@ -170,6 +170,14 @@
             this.peoplelabel2 = new System.Windows.Forms.Label();
             this.percent7 = new System.Windows.Forms.Label();
             this.percent8 = new System.Windows.Forms.Label();
+            this.pron1 = new System.Windows.Forms.RadioButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.pron2 = new System.Windows.Forms.RadioButton();
+            this.pron3 = new System.Windows.Forms.RadioButton();
+            this.pron4 = new System.Windows.Forms.RadioButton();
+            this.pron5 = new System.Windows.Forms.RadioButton();
+            this.pron6 = new System.Windows.Forms.RadioButton();
+            this.pron7 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.panelall.SuspendLayout();
             this.panelobj0.SuspendLayout();
@@ -186,6 +194,7 @@
             this.groupBox3.SuspendLayout();
             this.panelSHZ.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // RASCHETbutt
@@ -603,6 +612,7 @@
             // 
             // panelobj0
             // 
+            this.panelobj0.Controls.Add(this.groupBox6);
             this.panelobj0.Controls.Add(this.percent8);
             this.panelobj0.Controls.Add(this.percent7);
             this.panelobj0.Controls.Add(this.peoplelabel2);
@@ -1537,7 +1547,7 @@
             // RGAZobjlabel
             // 
             this.RGAZobjlabel.AutoSize = true;
-            this.RGAZobjlabel.Location = new System.Drawing.Point(2, 61);
+            this.RGAZobjlabel.Location = new System.Drawing.Point(1, 52);
             this.RGAZobjlabel.Name = "RGAZobjlabel";
             this.RGAZobjlabel.Size = new System.Drawing.Size(341, 13);
             this.RGAZobjlabel.TabIndex = 0;
@@ -1545,7 +1555,7 @@
             // 
             // RGAZobj
             // 
-            this.RGAZobj.Location = new System.Drawing.Point(408, 58);
+            this.RGAZobj.Location = new System.Drawing.Point(408, 49);
             this.RGAZobj.Name = "RGAZobj";
             this.RGAZobj.Size = new System.Drawing.Size(93, 20);
             this.RGAZobj.TabIndex = 1;
@@ -1553,7 +1563,7 @@
             // RGAZopenlabel
             // 
             this.RGAZopenlabel.AutoSize = true;
-            this.RGAZopenlabel.Location = new System.Drawing.Point(1, 87);
+            this.RGAZopenlabel.Location = new System.Drawing.Point(4, 74);
             this.RGAZopenlabel.Name = "RGAZopenlabel";
             this.RGAZopenlabel.Size = new System.Drawing.Size(401, 13);
             this.RGAZopenlabel.TabIndex = 2;
@@ -1561,7 +1571,7 @@
             // 
             // RGAZopen
             // 
-            this.RGAZopen.Location = new System.Drawing.Point(408, 84);
+            this.RGAZopen.Location = new System.Drawing.Point(408, 71);
             this.RGAZopen.Name = "RGAZopen";
             this.RGAZopen.Size = new System.Drawing.Size(93, 20);
             this.RGAZopen.TabIndex = 3;
@@ -1585,7 +1595,7 @@
             // totalPeopleOpenlabel
             // 
             this.totalPeopleOpenlabel.AutoSize = true;
-            this.totalPeopleOpenlabel.Location = new System.Drawing.Point(2, 33);
+            this.totalPeopleOpenlabel.Location = new System.Drawing.Point(2, 29);
             this.totalPeopleOpenlabel.Name = "totalPeopleOpenlabel";
             this.totalPeopleOpenlabel.Size = new System.Drawing.Size(309, 13);
             this.totalPeopleOpenlabel.TabIndex = 6;
@@ -1593,7 +1603,7 @@
             // 
             // totalPeopleOpen
             // 
-            this.totalPeopleOpen.Location = new System.Drawing.Point(317, 29);
+            this.totalPeopleOpen.Location = new System.Drawing.Point(317, 26);
             this.totalPeopleOpen.Name = "totalPeopleOpen";
             this.totalPeopleOpen.Size = new System.Drawing.Size(184, 20);
             this.totalPeopleOpen.TabIndex = 7;
@@ -1610,7 +1620,7 @@
             // peoplelabel2
             // 
             this.peoplelabel2.AutoSize = true;
-            this.peoplelabel2.Location = new System.Drawing.Point(507, 33);
+            this.peoplelabel2.Location = new System.Drawing.Point(507, 29);
             this.peoplelabel2.Name = "peoplelabel2";
             this.peoplelabel2.Size = new System.Drawing.Size(27, 13);
             this.peoplelabel2.TabIndex = 9;
@@ -1619,7 +1629,7 @@
             // percent7
             // 
             this.percent7.AutoSize = true;
-            this.percent7.Location = new System.Drawing.Point(506, 61);
+            this.percent7.Location = new System.Drawing.Point(506, 52);
             this.percent7.Name = "percent7";
             this.percent7.Size = new System.Drawing.Size(15, 13);
             this.percent7.TabIndex = 10;
@@ -1628,11 +1638,105 @@
             // percent8
             // 
             this.percent8.AutoSize = true;
-            this.percent8.Location = new System.Drawing.Point(506, 87);
+            this.percent8.Location = new System.Drawing.Point(506, 74);
             this.percent8.Name = "percent8";
             this.percent8.Size = new System.Drawing.Size(15, 13);
             this.percent8.TabIndex = 11;
             this.percent8.Text = "%";
+            // 
+            // pron1
+            // 
+            this.pron1.AutoSize = true;
+            this.pron1.Checked = true;
+            this.pron1.Location = new System.Drawing.Point(5, 13);
+            this.pron1.Name = "pron1";
+            this.pron1.Size = new System.Drawing.Size(418, 30);
+            this.pron1.TabIndex = 13;
+            this.pron1.TabStop = true;
+            this.pron1.Text = "Наружные стены, перекрытия и покрытия жилых, общественных \r\nзданийи впомогательны" +
+    "х зданий и помещений промышленных предприятий.";
+            this.pron1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.pron7);
+            this.groupBox6.Controls.Add(this.pron6);
+            this.groupBox6.Controls.Add(this.pron5);
+            this.groupBox6.Controls.Add(this.pron4);
+            this.groupBox6.Controls.Add(this.pron3);
+            this.groupBox6.Controls.Add(this.pron2);
+            this.groupBox6.Controls.Add(this.pron1);
+            this.groupBox6.Location = new System.Drawing.Point(5, 88);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(544, 173);
+            this.groupBox6.TabIndex = 14;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Нормативная воздухопроницаемость ограждающих конструкций зданий и сооружений, кг/" +
+    "м² * ч:";
+            // 
+            // pron2
+            // 
+            this.pron2.AutoSize = true;
+            this.pron2.Location = new System.Drawing.Point(5, 43);
+            this.pron2.Name = "pron2";
+            this.pron2.Size = new System.Drawing.Size(381, 17);
+            this.pron2.TabIndex = 14;
+            this.pron2.TabStop = true;
+            this.pron2.Text = "Наружные стены, перекрытия и покрытия производственных зданий.";
+            this.pron2.UseVisualStyleBackColor = true;
+            // 
+            // pron3
+            // 
+            this.pron3.AutoSize = true;
+            this.pron3.Location = new System.Drawing.Point(202, 134);
+            this.pron3.Name = "pron3";
+            this.pron3.Size = new System.Drawing.Size(166, 17);
+            this.pron3.TabIndex = 15;
+            this.pron3.Text = "Входные двери в кватриры.";
+            this.pron3.UseVisualStyleBackColor = true;
+            // 
+            // pron4
+            // 
+            this.pron4.AutoSize = true;
+            this.pron4.Location = new System.Drawing.Point(5, 60);
+            this.pron4.Name = "pron4";
+            this.pron4.Size = new System.Drawing.Size(511, 43);
+            this.pron4.TabIndex = 16;
+            this.pron4.Text = resources.GetString("pron4.Text");
+            this.pron4.UseVisualStyleBackColor = true;
+            // 
+            // pron5
+            // 
+            this.pron5.AutoSize = true;
+            this.pron5.Location = new System.Drawing.Point(5, 103);
+            this.pron5.Name = "pron5";
+            this.pron5.Size = new System.Drawing.Size(505, 30);
+            this.pron5.TabIndex = 17;
+            this.pron5.Text = "Окна производственных зданий с незначительным избытком явного тепла не более 23 В" +
+    "т/м³\r\nв районах со средней температурой наиболее холодной пятидневки, свыше мину" +
+    "с 40°C.";
+            this.pron5.UseVisualStyleBackColor = true;
+            // 
+            // pron6
+            // 
+            this.pron6.AutoSize = true;
+            this.pron6.Location = new System.Drawing.Point(5, 134);
+            this.pron6.Name = "pron6";
+            this.pron6.Size = new System.Drawing.Size(188, 17);
+            this.pron6.TabIndex = 18;
+            this.pron6.Text = "То же с утечкой более 23 Вт/м³.";
+            this.pron6.UseVisualStyleBackColor = true;
+            // 
+            // pron7
+            // 
+            this.pron7.AutoSize = true;
+            this.pron7.Location = new System.Drawing.Point(5, 153);
+            this.pron7.Name = "pron7";
+            this.pron7.Size = new System.Drawing.Size(429, 17);
+            this.pron7.TabIndex = 19;
+            this.pron7.TabStop = true;
+            this.pron7.Text = "Воздухопроницаемость стыков между панелями наружних стен жилых зданий.";
+            this.pron7.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1682,6 +1786,8 @@
             this.panelSHZ.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1829,5 +1935,13 @@
         private System.Windows.Forms.Label totalPeopleOpenlabel;
         private System.Windows.Forms.Label totalPeopleObjlabel;
         private System.Windows.Forms.TextBox totalPeopleObj;
+        private System.Windows.Forms.RadioButton pron1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.RadioButton pron3;
+        private System.Windows.Forms.RadioButton pron2;
+        private System.Windows.Forms.RadioButton pron7;
+        private System.Windows.Forms.RadioButton pron6;
+        private System.Windows.Forms.RadioButton pron5;
+        private System.Windows.Forms.RadioButton pron4;
     }
 }
