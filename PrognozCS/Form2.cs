@@ -99,9 +99,9 @@ namespace PrognozCS
             string kolAXOBl = "Кол-во\nАХОВ";
             string glubZonel = "Глубина зоны\nзаражения";
             string poteri = "Потери от\nАХОВ";
-            string tipSIZ = "Тип СИЗ";
+            string tipSIZ = "Тип СИЗ.";
             string primNIS = "Примечание\nНИС";
-            string ukritie = "Укрытие.\nПроница-\nемость,\nкг / м * ч";
+            string ukritie = "Проницаемость\nчерез укрытие.";
             string potA = "Структура\nпотерь:";
             string potAs1 = "Со сметрельным\nисходом:";
             string potAs2 = "Средней и тяжелой\nстепени:";
@@ -138,25 +138,25 @@ namespace PrognozCS
             switch (Form1.pron)
             {
                 case 1:
-                    ukr = "0,5";
+                    ukr = "0,5 кг / м * ч";
                     break;
                 case 2:
-                    ukr = "1,0";
+                    ukr = "1,0 кг / м * ч";
                     break;
                 case 3:
-                    ukr = "1,5";
+                    ukr = "1,5 кг / м * ч";
                     break;
                 case 4:
-                    ukr = "10,0";
+                    ukr = "10,0 кг / м * ч";
                     break;
                 case 5:
-                    ukr = "15,0";
+                    ukr = "15,0 кг / м * ч";
                     break;
                 case 6:
-                    ukr = "30,0";
+                    ukr = "30,0 кг / м * ч";
                     break;
                 case 7:
-                    ukr = "0,5";
+                    ukr = "0,5 кг / м * ч";
                     break;
                 default:
                     ukr = "Не указано!";
@@ -389,7 +389,7 @@ namespace PrognozCS
                 tbl.DrawString(potA + "\n" + potAs3, Font, BrBlack, 1, 101);//
                 tbl.DrawString(potAs2, Font, BrBlack, 107, 101);//
                 tbl.DrawString(potAs1, Font, BrBlack, 213, 101);//
-                tbl.DrawString(tipSIZ, Font, BrBlack, 320, 101);//
+                tbl.DrawString(tipSIZ + "\n" + ukritie, Font, BrBlack, 320, 101);//
                 tbl.DrawString(primNIS, Font, BrBlack, 427, 101);//
 
                 tbl.DrawString(Zaraj, Font, BrBlack, 1, 51);//
@@ -400,7 +400,7 @@ namespace PrognozCS
                 tbl.DrawString(poteriAs3, Font, BrBlack, 1, 151);//
                 tbl.DrawString(poteriAs2, Font, BrBlack, 107, 151);//
                 tbl.DrawString(poteriAs1, Font, BrBlack, 213, 151);//
-                tbl.DrawString(SIZ, Font, BrBlack, 320, 151);//
+                tbl.DrawString(SIZ + "\n" + ukr, Font, BrBlack, 320, 151);//
                 tbl.DrawString(NIS, Font, BrBlack, 427, 151);//
                 
                 tbl.DrawString(open, Font, BrBlack, 0, 260);//

@@ -72,6 +72,26 @@
             this.km = new System.Windows.Forms.Label();
             this.panelall = new System.Windows.Forms.Panel();
             this.panelobj0 = new System.Windows.Forms.Panel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.pron7 = new System.Windows.Forms.RadioButton();
+            this.pron6 = new System.Windows.Forms.RadioButton();
+            this.pron5 = new System.Windows.Forms.RadioButton();
+            this.pron4 = new System.Windows.Forms.RadioButton();
+            this.pron3 = new System.Windows.Forms.RadioButton();
+            this.pron2 = new System.Windows.Forms.RadioButton();
+            this.pron1 = new System.Windows.Forms.RadioButton();
+            this.percent8 = new System.Windows.Forms.Label();
+            this.percent7 = new System.Windows.Forms.Label();
+            this.peoplelabel2 = new System.Windows.Forms.Label();
+            this.peoplelabel1 = new System.Windows.Forms.Label();
+            this.totalPeopleOpen = new System.Windows.Forms.TextBox();
+            this.totalPeopleOpenlabel = new System.Windows.Forms.Label();
+            this.totalPeopleObjlabel = new System.Windows.Forms.Label();
+            this.totalPeopleObj = new System.Windows.Forms.TextBox();
+            this.RGAZopen = new System.Windows.Forms.TextBox();
+            this.RGAZopenlabel = new System.Windows.Forms.Label();
+            this.RGAZobj = new System.Windows.Forms.TextBox();
+            this.RGAZobjlabel = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.AVmest = new System.Windows.Forms.RadioButton();
             this.AVobj = new System.Windows.Forms.RadioButton();
@@ -139,48 +159,29 @@
             this.timedaylabel = new System.Windows.Forms.Label();
             this.timeday = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.inGAZZ = new System.Windows.Forms.TextBox();
+            this.percent6 = new System.Windows.Forms.Label();
+            this.closeAreaZlabel = new System.Windows.Forms.Label();
+            this.openAreaZlabel = new System.Windows.Forms.Label();
             this.panelSHZ = new System.Windows.Forms.Panel();
             this.periodZIMA = new System.Windows.Forms.RadioButton();
             this.periodSH = new System.Windows.Forms.RadioButton();
             this.noopoveshZ = new System.Windows.Forms.RadioButton();
             this.opoveshZ = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.percent5 = new System.Windows.Forms.Label();
+            this.inGAZG = new System.Windows.Forms.TextBox();
+            this.closeAreaGlabel = new System.Windows.Forms.Label();
+            this.openAreaGlabel = new System.Windows.Forms.Label();
             this.protivoGAZGlabel = new System.Windows.Forms.Label();
             this.ubejishelabelG = new System.Windows.Forms.Label();
             this.noopoveshG = new System.Windows.Forms.RadioButton();
             this.opoveshG = new System.Windows.Forms.RadioButton();
             this.help = new System.Windows.Forms.Button();
-            this.openAreaGlabel = new System.Windows.Forms.Label();
-            this.closeAreaGlabel = new System.Windows.Forms.Label();
-            this.inGAZG = new System.Windows.Forms.TextBox();
-            this.percent5 = new System.Windows.Forms.Label();
-            this.openAreaZlabel = new System.Windows.Forms.Label();
-            this.closeAreaZlabel = new System.Windows.Forms.Label();
-            this.inGAZZ = new System.Windows.Forms.TextBox();
-            this.percent6 = new System.Windows.Forms.Label();
-            this.RGAZobjlabel = new System.Windows.Forms.Label();
-            this.RGAZobj = new System.Windows.Forms.TextBox();
-            this.RGAZopenlabel = new System.Windows.Forms.Label();
-            this.RGAZopen = new System.Windows.Forms.TextBox();
-            this.totalPeopleObj = new System.Windows.Forms.TextBox();
-            this.totalPeopleObjlabel = new System.Windows.Forms.Label();
-            this.totalPeopleOpenlabel = new System.Windows.Forms.Label();
-            this.totalPeopleOpen = new System.Windows.Forms.TextBox();
-            this.peoplelabel1 = new System.Windows.Forms.Label();
-            this.peoplelabel2 = new System.Windows.Forms.Label();
-            this.percent7 = new System.Windows.Forms.Label();
-            this.percent8 = new System.Windows.Forms.Label();
-            this.pron1 = new System.Windows.Forms.RadioButton();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.pron2 = new System.Windows.Forms.RadioButton();
-            this.pron3 = new System.Windows.Forms.RadioButton();
-            this.pron4 = new System.Windows.Forms.RadioButton();
-            this.pron5 = new System.Windows.Forms.RadioButton();
-            this.pron6 = new System.Windows.Forms.RadioButton();
-            this.pron7 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.panelall.SuspendLayout();
             this.panelobj0.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.viborAXOB.SuspendLayout();
@@ -194,7 +195,6 @@
             this.groupBox3.SuspendLayout();
             this.panelSHZ.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // RASCHETbutt
@@ -630,6 +630,200 @@
             this.panelobj0.Size = new System.Drawing.Size(552, 261);
             this.panelobj0.TabIndex = 63;
             this.panelobj0.Visible = false;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.pron7);
+            this.groupBox6.Controls.Add(this.pron6);
+            this.groupBox6.Controls.Add(this.pron5);
+            this.groupBox6.Controls.Add(this.pron4);
+            this.groupBox6.Controls.Add(this.pron3);
+            this.groupBox6.Controls.Add(this.pron2);
+            this.groupBox6.Controls.Add(this.pron1);
+            this.groupBox6.Location = new System.Drawing.Point(5, 88);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(544, 173);
+            this.groupBox6.TabIndex = 14;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Нормативная воздухопроницаемость ограждающих конструкций зданий и сооружений, кг/" +
+    "м² * ч:";
+            // 
+            // pron7
+            // 
+            this.pron7.AutoSize = true;
+            this.pron7.Location = new System.Drawing.Point(5, 153);
+            this.pron7.Name = "pron7";
+            this.pron7.Size = new System.Drawing.Size(429, 17);
+            this.pron7.TabIndex = 19;
+            this.pron7.TabStop = true;
+            this.pron7.Text = "Воздухопроницаемость стыков между панелями наружних стен жилых зданий.";
+            this.pron7.UseVisualStyleBackColor = true;
+            // 
+            // pron6
+            // 
+            this.pron6.AutoSize = true;
+            this.pron6.Location = new System.Drawing.Point(5, 134);
+            this.pron6.Name = "pron6";
+            this.pron6.Size = new System.Drawing.Size(188, 17);
+            this.pron6.TabIndex = 18;
+            this.pron6.Text = "То же с утечкой более 23 Вт/м³.";
+            this.pron6.UseVisualStyleBackColor = true;
+            // 
+            // pron5
+            // 
+            this.pron5.AutoSize = true;
+            this.pron5.Location = new System.Drawing.Point(5, 103);
+            this.pron5.Name = "pron5";
+            this.pron5.Size = new System.Drawing.Size(505, 30);
+            this.pron5.TabIndex = 17;
+            this.pron5.Text = "Окна производственных зданий с незначительным избытком явного тепла не более 23 В" +
+    "т/м³\r\nв районах со средней температурой наиболее холодной пятидневки, свыше мину" +
+    "с 40°C.";
+            this.pron5.UseVisualStyleBackColor = true;
+            // 
+            // pron4
+            // 
+            this.pron4.AutoSize = true;
+            this.pron4.Location = new System.Drawing.Point(5, 60);
+            this.pron4.Name = "pron4";
+            this.pron4.Size = new System.Drawing.Size(511, 43);
+            this.pron4.TabIndex = 16;
+            this.pron4.Text = resources.GetString("pron4.Text");
+            this.pron4.UseVisualStyleBackColor = true;
+            // 
+            // pron3
+            // 
+            this.pron3.AutoSize = true;
+            this.pron3.Location = new System.Drawing.Point(202, 134);
+            this.pron3.Name = "pron3";
+            this.pron3.Size = new System.Drawing.Size(166, 17);
+            this.pron3.TabIndex = 15;
+            this.pron3.Text = "Входные двери в кватриры.";
+            this.pron3.UseVisualStyleBackColor = true;
+            // 
+            // pron2
+            // 
+            this.pron2.AutoSize = true;
+            this.pron2.Location = new System.Drawing.Point(5, 43);
+            this.pron2.Name = "pron2";
+            this.pron2.Size = new System.Drawing.Size(381, 17);
+            this.pron2.TabIndex = 14;
+            this.pron2.TabStop = true;
+            this.pron2.Text = "Наружные стены, перекрытия и покрытия производственных зданий.";
+            this.pron2.UseVisualStyleBackColor = true;
+            // 
+            // pron1
+            // 
+            this.pron1.AutoSize = true;
+            this.pron1.Checked = true;
+            this.pron1.Location = new System.Drawing.Point(5, 13);
+            this.pron1.Name = "pron1";
+            this.pron1.Size = new System.Drawing.Size(418, 30);
+            this.pron1.TabIndex = 13;
+            this.pron1.TabStop = true;
+            this.pron1.Text = "Наружные стены, перекрытия и покрытия жилых, общественных \r\nзданийи впомогательны" +
+    "х зданий и помещений промышленных предприятий.";
+            this.pron1.UseVisualStyleBackColor = true;
+            // 
+            // percent8
+            // 
+            this.percent8.AutoSize = true;
+            this.percent8.Location = new System.Drawing.Point(506, 74);
+            this.percent8.Name = "percent8";
+            this.percent8.Size = new System.Drawing.Size(15, 13);
+            this.percent8.TabIndex = 11;
+            this.percent8.Text = "%";
+            // 
+            // percent7
+            // 
+            this.percent7.AutoSize = true;
+            this.percent7.Location = new System.Drawing.Point(506, 52);
+            this.percent7.Name = "percent7";
+            this.percent7.Size = new System.Drawing.Size(15, 13);
+            this.percent7.TabIndex = 10;
+            this.percent7.Text = "%";
+            // 
+            // peoplelabel2
+            // 
+            this.peoplelabel2.AutoSize = true;
+            this.peoplelabel2.Location = new System.Drawing.Point(507, 29);
+            this.peoplelabel2.Name = "peoplelabel2";
+            this.peoplelabel2.Size = new System.Drawing.Size(27, 13);
+            this.peoplelabel2.TabIndex = 9;
+            this.peoplelabel2.Text = "чел.";
+            // 
+            // peoplelabel1
+            // 
+            this.peoplelabel1.AutoSize = true;
+            this.peoplelabel1.Location = new System.Drawing.Point(507, 7);
+            this.peoplelabel1.Name = "peoplelabel1";
+            this.peoplelabel1.Size = new System.Drawing.Size(27, 13);
+            this.peoplelabel1.TabIndex = 8;
+            this.peoplelabel1.Text = "чел.";
+            // 
+            // totalPeopleOpen
+            // 
+            this.totalPeopleOpen.Location = new System.Drawing.Point(317, 26);
+            this.totalPeopleOpen.Name = "totalPeopleOpen";
+            this.totalPeopleOpen.Size = new System.Drawing.Size(184, 20);
+            this.totalPeopleOpen.TabIndex = 7;
+            // 
+            // totalPeopleOpenlabel
+            // 
+            this.totalPeopleOpenlabel.AutoSize = true;
+            this.totalPeopleOpenlabel.Location = new System.Drawing.Point(2, 29);
+            this.totalPeopleOpenlabel.Name = "totalPeopleOpenlabel";
+            this.totalPeopleOpenlabel.Size = new System.Drawing.Size(309, 13);
+            this.totalPeopleOpenlabel.TabIndex = 6;
+            this.totalPeopleOpenlabel.Text = "Численность рабочих и служащих на открытых площадках:";
+            // 
+            // totalPeopleObjlabel
+            // 
+            this.totalPeopleObjlabel.AutoSize = true;
+            this.totalPeopleObjlabel.Location = new System.Drawing.Point(2, 7);
+            this.totalPeopleObjlabel.Name = "totalPeopleObjlabel";
+            this.totalPeopleObjlabel.Size = new System.Drawing.Size(243, 13);
+            this.totalPeopleObjlabel.TabIndex = 5;
+            this.totalPeopleObjlabel.Text = "Численность рабочих и служащих на объекте:";
+            // 
+            // totalPeopleObj
+            // 
+            this.totalPeopleObj.Location = new System.Drawing.Point(317, 3);
+            this.totalPeopleObj.Name = "totalPeopleObj";
+            this.totalPeopleObj.Size = new System.Drawing.Size(184, 20);
+            this.totalPeopleObj.TabIndex = 4;
+            // 
+            // RGAZopen
+            // 
+            this.RGAZopen.Location = new System.Drawing.Point(408, 71);
+            this.RGAZopen.Name = "RGAZopen";
+            this.RGAZopen.Size = new System.Drawing.Size(93, 20);
+            this.RGAZopen.TabIndex = 3;
+            // 
+            // RGAZopenlabel
+            // 
+            this.RGAZopenlabel.AutoSize = true;
+            this.RGAZopenlabel.Location = new System.Drawing.Point(4, 74);
+            this.RGAZopenlabel.Name = "RGAZopenlabel";
+            this.RGAZopenlabel.Size = new System.Drawing.Size(401, 13);
+            this.RGAZopenlabel.TabIndex = 2;
+            this.RGAZopenlabel.Text = "Обеспеченность рабочих и служащих противогазами на открытой площадке:";
+            // 
+            // RGAZobj
+            // 
+            this.RGAZobj.Location = new System.Drawing.Point(408, 49);
+            this.RGAZobj.Name = "RGAZobj";
+            this.RGAZobj.Size = new System.Drawing.Size(93, 20);
+            this.RGAZobj.TabIndex = 1;
+            // 
+            // RGAZobjlabel
+            // 
+            this.RGAZobjlabel.AutoSize = true;
+            this.RGAZobjlabel.Location = new System.Drawing.Point(1, 52);
+            this.RGAZobjlabel.Name = "RGAZobjlabel";
+            this.RGAZobjlabel.Size = new System.Drawing.Size(341, 13);
+            this.RGAZobjlabel.TabIndex = 0;
+            this.RGAZobjlabel.Text = "Обеспеченность рабочих и служащих противогазами на объекте:";
             // 
             // groupBox5
             // 
@@ -1346,6 +1540,40 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "В загородной зоне:";
             // 
+            // inGAZZ
+            // 
+            this.inGAZZ.Location = new System.Drawing.Point(141, 188);
+            this.inGAZZ.Name = "inGAZZ";
+            this.inGAZZ.Size = new System.Drawing.Size(107, 20);
+            this.inGAZZ.TabIndex = 60;
+            // 
+            // percent6
+            // 
+            this.percent6.AutoSize = true;
+            this.percent6.Location = new System.Drawing.Point(249, 191);
+            this.percent6.Name = "percent6";
+            this.percent6.Size = new System.Drawing.Size(15, 13);
+            this.percent6.TabIndex = 60;
+            this.percent6.Text = "%";
+            // 
+            // closeAreaZlabel
+            // 
+            this.closeAreaZlabel.AutoSize = true;
+            this.closeAreaZlabel.Location = new System.Drawing.Point(3, 191);
+            this.closeAreaZlabel.Name = "closeAreaZlabel";
+            this.closeAreaZlabel.Size = new System.Drawing.Size(124, 13);
+            this.closeAreaZlabel.TabIndex = 59;
+            this.closeAreaZlabel.Text = "В простейших зданиях:";
+            // 
+            // openAreaZlabel
+            // 
+            this.openAreaZlabel.AutoSize = true;
+            this.openAreaZlabel.Location = new System.Drawing.Point(3, 169);
+            this.openAreaZlabel.Name = "openAreaZlabel";
+            this.openAreaZlabel.Size = new System.Drawing.Size(132, 13);
+            this.openAreaZlabel.TabIndex = 59;
+            this.openAreaZlabel.Text = "На открытой местности:";
+            // 
             // panelSHZ
             // 
             this.panelSHZ.Controls.Add(this.periodZIMA);
@@ -1423,6 +1651,40 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "В городе:";
             // 
+            // percent5
+            // 
+            this.percent5.AutoSize = true;
+            this.percent5.Location = new System.Drawing.Point(248, 150);
+            this.percent5.Name = "percent5";
+            this.percent5.Size = new System.Drawing.Size(15, 13);
+            this.percent5.TabIndex = 58;
+            this.percent5.Text = "%";
+            // 
+            // inGAZG
+            // 
+            this.inGAZG.Location = new System.Drawing.Point(142, 147);
+            this.inGAZG.Name = "inGAZG";
+            this.inGAZG.Size = new System.Drawing.Size(102, 20);
+            this.inGAZG.TabIndex = 57;
+            // 
+            // closeAreaGlabel
+            // 
+            this.closeAreaGlabel.AutoSize = true;
+            this.closeAreaGlabel.Location = new System.Drawing.Point(3, 150);
+            this.closeAreaGlabel.Name = "closeAreaGlabel";
+            this.closeAreaGlabel.Size = new System.Drawing.Size(124, 13);
+            this.closeAreaGlabel.TabIndex = 56;
+            this.closeAreaGlabel.Text = "В простейших зданиях:";
+            // 
+            // openAreaGlabel
+            // 
+            this.openAreaGlabel.AutoSize = true;
+            this.openAreaGlabel.Location = new System.Drawing.Point(3, 128);
+            this.openAreaGlabel.Name = "openAreaGlabel";
+            this.openAreaGlabel.Size = new System.Drawing.Size(132, 13);
+            this.openAreaGlabel.TabIndex = 55;
+            this.openAreaGlabel.Text = "На открытой местности:";
+            // 
             // protivoGAZGlabel
             // 
             this.protivoGAZGlabel.AutoSize = true;
@@ -1476,268 +1738,6 @@
             this.help.UseVisualStyleBackColor = false;
             this.help.Click += new System.EventHandler(this.help_Click);
             // 
-            // openAreaGlabel
-            // 
-            this.openAreaGlabel.AutoSize = true;
-            this.openAreaGlabel.Location = new System.Drawing.Point(3, 128);
-            this.openAreaGlabel.Name = "openAreaGlabel";
-            this.openAreaGlabel.Size = new System.Drawing.Size(132, 13);
-            this.openAreaGlabel.TabIndex = 55;
-            this.openAreaGlabel.Text = "На открытой местности:";
-            // 
-            // closeAreaGlabel
-            // 
-            this.closeAreaGlabel.AutoSize = true;
-            this.closeAreaGlabel.Location = new System.Drawing.Point(3, 150);
-            this.closeAreaGlabel.Name = "closeAreaGlabel";
-            this.closeAreaGlabel.Size = new System.Drawing.Size(124, 13);
-            this.closeAreaGlabel.TabIndex = 56;
-            this.closeAreaGlabel.Text = "В простейших зданиях:";
-            // 
-            // inGAZG
-            // 
-            this.inGAZG.Location = new System.Drawing.Point(142, 147);
-            this.inGAZG.Name = "inGAZG";
-            this.inGAZG.Size = new System.Drawing.Size(102, 20);
-            this.inGAZG.TabIndex = 57;
-            // 
-            // percent5
-            // 
-            this.percent5.AutoSize = true;
-            this.percent5.Location = new System.Drawing.Point(248, 150);
-            this.percent5.Name = "percent5";
-            this.percent5.Size = new System.Drawing.Size(15, 13);
-            this.percent5.TabIndex = 58;
-            this.percent5.Text = "%";
-            // 
-            // openAreaZlabel
-            // 
-            this.openAreaZlabel.AutoSize = true;
-            this.openAreaZlabel.Location = new System.Drawing.Point(3, 169);
-            this.openAreaZlabel.Name = "openAreaZlabel";
-            this.openAreaZlabel.Size = new System.Drawing.Size(132, 13);
-            this.openAreaZlabel.TabIndex = 59;
-            this.openAreaZlabel.Text = "На открытой местности:";
-            // 
-            // closeAreaZlabel
-            // 
-            this.closeAreaZlabel.AutoSize = true;
-            this.closeAreaZlabel.Location = new System.Drawing.Point(3, 191);
-            this.closeAreaZlabel.Name = "closeAreaZlabel";
-            this.closeAreaZlabel.Size = new System.Drawing.Size(124, 13);
-            this.closeAreaZlabel.TabIndex = 59;
-            this.closeAreaZlabel.Text = "В простейших зданиях:";
-            // 
-            // inGAZZ
-            // 
-            this.inGAZZ.Location = new System.Drawing.Point(141, 188);
-            this.inGAZZ.Name = "inGAZZ";
-            this.inGAZZ.Size = new System.Drawing.Size(107, 20);
-            this.inGAZZ.TabIndex = 60;
-            // 
-            // percent6
-            // 
-            this.percent6.AutoSize = true;
-            this.percent6.Location = new System.Drawing.Point(249, 191);
-            this.percent6.Name = "percent6";
-            this.percent6.Size = new System.Drawing.Size(15, 13);
-            this.percent6.TabIndex = 60;
-            this.percent6.Text = "%";
-            // 
-            // RGAZobjlabel
-            // 
-            this.RGAZobjlabel.AutoSize = true;
-            this.RGAZobjlabel.Location = new System.Drawing.Point(1, 52);
-            this.RGAZobjlabel.Name = "RGAZobjlabel";
-            this.RGAZobjlabel.Size = new System.Drawing.Size(341, 13);
-            this.RGAZobjlabel.TabIndex = 0;
-            this.RGAZobjlabel.Text = "Обеспеченность рабочих и служащих противогазами на объекте:";
-            // 
-            // RGAZobj
-            // 
-            this.RGAZobj.Location = new System.Drawing.Point(408, 49);
-            this.RGAZobj.Name = "RGAZobj";
-            this.RGAZobj.Size = new System.Drawing.Size(93, 20);
-            this.RGAZobj.TabIndex = 1;
-            // 
-            // RGAZopenlabel
-            // 
-            this.RGAZopenlabel.AutoSize = true;
-            this.RGAZopenlabel.Location = new System.Drawing.Point(4, 74);
-            this.RGAZopenlabel.Name = "RGAZopenlabel";
-            this.RGAZopenlabel.Size = new System.Drawing.Size(401, 13);
-            this.RGAZopenlabel.TabIndex = 2;
-            this.RGAZopenlabel.Text = "Обеспеченность рабочих и служащих противогазами на открытой площадке:";
-            // 
-            // RGAZopen
-            // 
-            this.RGAZopen.Location = new System.Drawing.Point(408, 71);
-            this.RGAZopen.Name = "RGAZopen";
-            this.RGAZopen.Size = new System.Drawing.Size(93, 20);
-            this.RGAZopen.TabIndex = 3;
-            // 
-            // totalPeopleObj
-            // 
-            this.totalPeopleObj.Location = new System.Drawing.Point(317, 3);
-            this.totalPeopleObj.Name = "totalPeopleObj";
-            this.totalPeopleObj.Size = new System.Drawing.Size(184, 20);
-            this.totalPeopleObj.TabIndex = 4;
-            // 
-            // totalPeopleObjlabel
-            // 
-            this.totalPeopleObjlabel.AutoSize = true;
-            this.totalPeopleObjlabel.Location = new System.Drawing.Point(2, 7);
-            this.totalPeopleObjlabel.Name = "totalPeopleObjlabel";
-            this.totalPeopleObjlabel.Size = new System.Drawing.Size(243, 13);
-            this.totalPeopleObjlabel.TabIndex = 5;
-            this.totalPeopleObjlabel.Text = "Численность рабочих и служащих на объекте:";
-            // 
-            // totalPeopleOpenlabel
-            // 
-            this.totalPeopleOpenlabel.AutoSize = true;
-            this.totalPeopleOpenlabel.Location = new System.Drawing.Point(2, 29);
-            this.totalPeopleOpenlabel.Name = "totalPeopleOpenlabel";
-            this.totalPeopleOpenlabel.Size = new System.Drawing.Size(309, 13);
-            this.totalPeopleOpenlabel.TabIndex = 6;
-            this.totalPeopleOpenlabel.Text = "Численность рабочих и служащих на открытых площадках:";
-            // 
-            // totalPeopleOpen
-            // 
-            this.totalPeopleOpen.Location = new System.Drawing.Point(317, 26);
-            this.totalPeopleOpen.Name = "totalPeopleOpen";
-            this.totalPeopleOpen.Size = new System.Drawing.Size(184, 20);
-            this.totalPeopleOpen.TabIndex = 7;
-            // 
-            // peoplelabel1
-            // 
-            this.peoplelabel1.AutoSize = true;
-            this.peoplelabel1.Location = new System.Drawing.Point(507, 7);
-            this.peoplelabel1.Name = "peoplelabel1";
-            this.peoplelabel1.Size = new System.Drawing.Size(27, 13);
-            this.peoplelabel1.TabIndex = 8;
-            this.peoplelabel1.Text = "чел.";
-            // 
-            // peoplelabel2
-            // 
-            this.peoplelabel2.AutoSize = true;
-            this.peoplelabel2.Location = new System.Drawing.Point(507, 29);
-            this.peoplelabel2.Name = "peoplelabel2";
-            this.peoplelabel2.Size = new System.Drawing.Size(27, 13);
-            this.peoplelabel2.TabIndex = 9;
-            this.peoplelabel2.Text = "чел.";
-            // 
-            // percent7
-            // 
-            this.percent7.AutoSize = true;
-            this.percent7.Location = new System.Drawing.Point(506, 52);
-            this.percent7.Name = "percent7";
-            this.percent7.Size = new System.Drawing.Size(15, 13);
-            this.percent7.TabIndex = 10;
-            this.percent7.Text = "%";
-            // 
-            // percent8
-            // 
-            this.percent8.AutoSize = true;
-            this.percent8.Location = new System.Drawing.Point(506, 74);
-            this.percent8.Name = "percent8";
-            this.percent8.Size = new System.Drawing.Size(15, 13);
-            this.percent8.TabIndex = 11;
-            this.percent8.Text = "%";
-            // 
-            // pron1
-            // 
-            this.pron1.AutoSize = true;
-            this.pron1.Checked = true;
-            this.pron1.Location = new System.Drawing.Point(5, 13);
-            this.pron1.Name = "pron1";
-            this.pron1.Size = new System.Drawing.Size(418, 30);
-            this.pron1.TabIndex = 13;
-            this.pron1.TabStop = true;
-            this.pron1.Text = "Наружные стены, перекрытия и покрытия жилых, общественных \r\nзданийи впомогательны" +
-    "х зданий и помещений промышленных предприятий.";
-            this.pron1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.pron7);
-            this.groupBox6.Controls.Add(this.pron6);
-            this.groupBox6.Controls.Add(this.pron5);
-            this.groupBox6.Controls.Add(this.pron4);
-            this.groupBox6.Controls.Add(this.pron3);
-            this.groupBox6.Controls.Add(this.pron2);
-            this.groupBox6.Controls.Add(this.pron1);
-            this.groupBox6.Location = new System.Drawing.Point(5, 88);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(544, 173);
-            this.groupBox6.TabIndex = 14;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Нормативная воздухопроницаемость ограждающих конструкций зданий и сооружений, кг/" +
-    "м² * ч:";
-            // 
-            // pron2
-            // 
-            this.pron2.AutoSize = true;
-            this.pron2.Location = new System.Drawing.Point(5, 43);
-            this.pron2.Name = "pron2";
-            this.pron2.Size = new System.Drawing.Size(381, 17);
-            this.pron2.TabIndex = 14;
-            this.pron2.TabStop = true;
-            this.pron2.Text = "Наружные стены, перекрытия и покрытия производственных зданий.";
-            this.pron2.UseVisualStyleBackColor = true;
-            // 
-            // pron3
-            // 
-            this.pron3.AutoSize = true;
-            this.pron3.Location = new System.Drawing.Point(202, 134);
-            this.pron3.Name = "pron3";
-            this.pron3.Size = new System.Drawing.Size(166, 17);
-            this.pron3.TabIndex = 15;
-            this.pron3.Text = "Входные двери в кватриры.";
-            this.pron3.UseVisualStyleBackColor = true;
-            // 
-            // pron4
-            // 
-            this.pron4.AutoSize = true;
-            this.pron4.Location = new System.Drawing.Point(5, 60);
-            this.pron4.Name = "pron4";
-            this.pron4.Size = new System.Drawing.Size(511, 43);
-            this.pron4.TabIndex = 16;
-            this.pron4.Text = resources.GetString("pron4.Text");
-            this.pron4.UseVisualStyleBackColor = true;
-            // 
-            // pron5
-            // 
-            this.pron5.AutoSize = true;
-            this.pron5.Location = new System.Drawing.Point(5, 103);
-            this.pron5.Name = "pron5";
-            this.pron5.Size = new System.Drawing.Size(505, 30);
-            this.pron5.TabIndex = 17;
-            this.pron5.Text = "Окна производственных зданий с незначительным избытком явного тепла не более 23 В" +
-    "т/м³\r\nв районах со средней температурой наиболее холодной пятидневки, свыше мину" +
-    "с 40°C.";
-            this.pron5.UseVisualStyleBackColor = true;
-            // 
-            // pron6
-            // 
-            this.pron6.AutoSize = true;
-            this.pron6.Location = new System.Drawing.Point(5, 134);
-            this.pron6.Name = "pron6";
-            this.pron6.Size = new System.Drawing.Size(188, 17);
-            this.pron6.TabIndex = 18;
-            this.pron6.Text = "То же с утечкой более 23 Вт/м³.";
-            this.pron6.UseVisualStyleBackColor = true;
-            // 
-            // pron7
-            // 
-            this.pron7.AutoSize = true;
-            this.pron7.Location = new System.Drawing.Point(5, 153);
-            this.pron7.Name = "pron7";
-            this.pron7.Size = new System.Drawing.Size(429, 17);
-            this.pron7.TabIndex = 19;
-            this.pron7.TabStop = true;
-            this.pron7.Text = "Воздухопроницаемость стыков между панелями наружних стен жилых зданий.";
-            this.pron7.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1761,6 +1761,8 @@
             this.panelall.PerformLayout();
             this.panelobj0.ResumeLayout(false);
             this.panelobj0.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -1786,8 +1788,6 @@
             this.panelSHZ.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }

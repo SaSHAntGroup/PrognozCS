@@ -105,7 +105,7 @@ namespace PrognozCS
             MessageBox.Show("Значения по умолчанию: для скорости ветра = 3 м/с; " +
                 "для температуры воздуха = 20°C; для времени прошедшее после аварии = 4 часа. " +
                 "Для остальных не объявленных полей значения равны нулю!",
-                            "Справка!", MessageBoxButtons.OK);
+                            "Справка", MessageBoxButtons.OK);
         }
 
         private void substance1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1342,7 +1342,7 @@ namespace PrognozCS
                 }
                 if (substance.Text == "Водород мышьяковистый")
                 {
-
+                    substanceAXOB.VodorodMishyak();
                     //Выбор АХОВ с агрегатным состоянием
                     if (jid.Checked)
                     {
@@ -1356,7 +1356,7 @@ namespace PrognozCS
                 }
                 if (substance.Text == "Диметиламин")
                 {
-
+                    substanceAXOB.Dimetilamin();
                     //Выбор АХОВ с агрегатным состоянием
                     if (jid.Checked)
                     {
@@ -1370,7 +1370,7 @@ namespace PrognozCS
                 }
                 if (substance.Text == "Метиламин")
                 {
-
+                    substanceAXOB.Metilamin();
                     //Выбор АХОВ с агрегатным состоянием
                     if (jid.Checked)
                     {
@@ -1384,7 +1384,7 @@ namespace PrognozCS
                 }
                 if (substance.Text == "Метил Хлористый")
                 {
-
+                    substanceAXOB.MetilChlor();
                     //Выбор АХОВ с агрегатным состоянием
                     if (jid.Checked)
                     {
@@ -3269,7 +3269,6 @@ namespace PrognozCS
                                                 {
                                                     new Form2().Show();
                                                 }
-
                                             }
                                         }
                                     }
