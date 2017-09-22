@@ -84,7 +84,7 @@ namespace PrognozCS
             K6, K61, K62, K63, K64, K65, K66,//доп. коэф.
             K7, K711, K712, K73, K74, K75, K76,//коэффициент, учитывающий влияние температуры воздуха первичное облако
             K72, K721, K722, K723, K724, K725, K726;//коэффициент, учитывающий влияние температуры воздуха вторичное облако
-        static public int subst, obj, podd, vert, pron;//
+        static public int subst, subst1, subst2, subst3, subst4, subst5, subst6, obj, podd, vert, pron;//
 
         public void AVmest_CheckedChanged(object sender, EventArgs e)
         {

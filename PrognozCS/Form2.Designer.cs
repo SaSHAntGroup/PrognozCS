@@ -62,7 +62,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(12, 483);
+            this.button1.Location = new System.Drawing.Point(12, 509);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(534, 34);
             this.button1.TabIndex = 0;
@@ -74,7 +74,7 @@
             // 
             this.timelabel.AutoSize = true;
             this.timelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.timelabel.Location = new System.Drawing.Point(9, 303);
+            this.timelabel.Location = new System.Drawing.Point(9, 329);
             this.timelabel.Name = "timelabel";
             this.timelabel.Size = new System.Drawing.Size(408, 13);
             this.timelabel.TabIndex = 2;
@@ -83,7 +83,7 @@
             // time
             // 
             this.time.AutoSize = true;
-            this.time.Location = new System.Drawing.Point(418, 303);
+            this.time.Location = new System.Drawing.Point(418, 329);
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(35, 13);
             this.time.TabIndex = 9;
@@ -95,7 +95,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button2.Location = new System.Drawing.Point(12, 443);
+            this.button2.Location = new System.Drawing.Point(12, 469);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(534, 34);
             this.button2.TabIndex = 15;
@@ -105,7 +105,7 @@
             // 
             // ploshG
             // 
-            this.ploshG.Location = new System.Drawing.Point(418, 319);
+            this.ploshG.Location = new System.Drawing.Point(418, 345);
             this.ploshG.Name = "ploshG";
             this.ploshG.Size = new System.Drawing.Size(83, 20);
             this.ploshG.TabIndex = 16;
@@ -114,7 +114,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(9, 322);
+            this.label1.Location = new System.Drawing.Point(9, 348);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(402, 13);
             this.label1.TabIndex = 17;
@@ -184,7 +184,7 @@
             // 
             this.labelTime.AutoSize = true;
             this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTime.Location = new System.Drawing.Point(9, 350);
+            this.labelTime.Location = new System.Drawing.Point(9, 376);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(205, 13);
             this.labelTime.TabIndex = 24;
@@ -204,7 +204,7 @@
             this.panelAXOB.Controls.Add(this.labelTime2);
             this.panelAXOB.Controls.Add(this.labelTime5);
             this.panelAXOB.Controls.Add(this.labelTime4);
-            this.panelAXOB.Location = new System.Drawing.Point(12, 342);
+            this.panelAXOB.Location = new System.Drawing.Point(12, 368);
             this.panelAXOB.Name = "panelAXOB";
             this.panelAXOB.Size = new System.Drawing.Size(534, 95);
             this.panelAXOB.TabIndex = 25;
@@ -266,7 +266,7 @@
             // label00
             // 
             this.label00.AutoSize = true;
-            this.label00.Location = new System.Drawing.Point(220, 350);
+            this.label00.Location = new System.Drawing.Point(220, 376);
             this.label00.Name = "label00";
             this.label00.Size = new System.Drawing.Size(35, 13);
             this.label00.TabIndex = 32;
@@ -276,14 +276,14 @@
             // 
             this.pictureob1.Location = new System.Drawing.Point(12, 12);
             this.pictureob1.Name = "pictureob1";
-            this.pictureob1.Size = new System.Drawing.Size(534, 288);
+            this.pictureob1.Size = new System.Drawing.Size(534, 314);
             this.pictureob1.TabIndex = 33;
             this.pictureob1.TabStop = false;
             // 
             // plosh
             // 
             this.plosh.AutoSize = true;
-            this.plosh.Location = new System.Drawing.Point(507, 322);
+            this.plosh.Location = new System.Drawing.Point(507, 348);
             this.plosh.Name = "plosh";
             this.plosh.Size = new System.Drawing.Size(21, 13);
             this.plosh.TabIndex = 34;
@@ -294,7 +294,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(558, 529);
+            this.ClientSize = new System.Drawing.Size(558, 548);
             this.Controls.Add(this.plosh);
             this.Controls.Add(this.pictureob1);
             this.Controls.Add(this.panelAXOB);

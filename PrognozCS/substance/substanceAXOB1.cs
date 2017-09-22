@@ -31,6 +31,7 @@ namespace PrognozCS
             if (Form1.t >= 40) { Form1.K711 = 1.4; Form1.K721 = 2; }
             //Коэффициент К1
             Form1.K11 = 0.18;
+            Form1.subst1 = 1;
         }
         //////////////////////////////////////
         public static void Ammiak()
@@ -47,6 +48,7 @@ namespace PrognozCS
             if (Form1.t >= 40) { Form1.K711 = 1.4; Form1.K721 = 1; }
             //Коэффициент К1
             Form1.K11 = 0.18;
+            Form1.subst1 = 2;
         }
         //////////////////////////////////////
         public static void VodorodChlor()
@@ -63,6 +65,7 @@ namespace PrognozCS
             if (Form1.t >= 40) { Form1.K711 = 1.2; Form1.K721 = 1; }
             //Коэффициент К1
             Form1.K11 = 0.28;
+            Form1.subst1 = 3;
         }
         //////////////////////////////////////
         public static void VodorodBrom()
@@ -79,6 +82,7 @@ namespace PrognozCS
             if (Form1.t >= 40) { Form1.K711 = 1.2; Form1.K721 = 1; }
             //Коэффициент К1
             Form1.K11 = 0.13;
+            Form1.subst1 = 4;
         }
         //////////////////////////////////////
         public static void Serovodorod()
@@ -95,6 +99,7 @@ namespace PrognozCS
             if (Form1.t >= 40) { Form1.K711 = 1.2; Form1.K721 = 1; }
             //Коэффициент К1
             Form1.K11 = 0.27;
+            Form1.subst1 = 5;
         }
         //////////////////////////////////////
         public static void Fosgen()
@@ -111,6 +116,7 @@ namespace PrognozCS
             if (Form1.t >= 40) { Form1.K711 = 2.2; Form1.K721 = 1; }
             //Коэффициент К1
             Form1.K11 = 0.05;
+            Form1.subst1 = 6;
         }
         //////////////////////////////////////
         public static void Ftor()
@@ -127,6 +133,7 @@ namespace PrognozCS
             if (Form1.t >= 40) { Form1.K711 = 1.1; Form1.K721 = 1; }
             //Коэффициент К1
             Form1.K11 = 0.95;
+            Form1.subst1 = 7;
         }
         //////////////////////////////////////
         public static void Chlorician()
@@ -143,6 +150,7 @@ namespace PrognozCS
             if (Form1.t >= 40) { Form1.K711 = 3.9; Form1.K721 = 1; }
             //Коэффициент К1
             Form1.K11 = 0.04;
+            Form1.subst1 = 8;
         }
         //////////////////////////////////////====================================
         public static void VodorodFtoristiy()
@@ -161,6 +169,7 @@ namespace PrognozCS
             Form1.K721 = Form1.K711;
             //Коэффициент К1
             Form1.K11 = 0;
+            Form1.subst1 = 9;
         }
         //////////////////////////////////////
         public static void VodorodCianistiy()
@@ -179,6 +188,7 @@ namespace PrognozCS
             Form1.K721 = Form1.K711;
             //Коэффициент К1
             Form1.K11 = 0;
+            Form1.subst1 = 10;
         }
         //////////////////////////////////////
         public static void DvuokisAzota()
@@ -197,6 +207,7 @@ namespace PrognozCS
             Form1.K721 = Form1.K711;
             //Коэффициент К1
             Form1.K11 = 0;
+            Form1.subst1 = 11;
         }
         //////////////////////////////////////
         public static void SernistiyAngidrid()
@@ -214,6 +225,7 @@ namespace PrognozCS
             if (Form1.t >= 40) { Form1.K711 = 1.7; Form1.K721 = 1; }
             //Коэффициент К1
             Form1.K11 = 0.11;
+            Form1.subst1 = 12;
         }
         //////////////////////////////////////
         public static void Serouglerod()
@@ -232,6 +244,7 @@ namespace PrognozCS
             Form1.K721 = Form1.K711;
             //Коэффициент К1
             Form1.K11 = 0;
+            Form1.subst1 = 13;
         }
         //////////////////////////////////////
         public static void SolyanayaKislota()
@@ -250,6 +263,7 @@ namespace PrognozCS
             Form1.K721 = Form1.K711;
             //Коэффициент К1
             Form1.K11 = 0;
+            Form1.subst1 = 14;
         }
         //////////////////////////////////////
         public static void Formaldegid()
@@ -267,6 +281,7 @@ namespace PrognozCS
             if (Form1.t >= 40) { Form1.K711 = 1.5; Form1.K721 = 1; }
             //Коэффициент К1
             Form1.K11 = 0.19;
+            Form1.subst1 = 15;
         }
         //////////////////////////////////////
         //////////////////////////////////////
@@ -283,6 +298,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0.17;
             Form1.K21 = 0.054;
+            Form1.subst1 = 16;
         }
         //////////////////////////////////////
         public static void Dimetilamin()
@@ -298,6 +314,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0.06;
             Form1.K21 = 0.041;
+            Form1.subst1 = 17;
         }
         //////////////////////////////////////
         public static void Metilamin()
@@ -313,6 +330,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0.13;
             Form1.K21 = 0.034;
+            Form1.subst1 = 18;
         }
         //////////////////////////////////////
         public static void MetilChlor()
@@ -328,6 +346,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0.125;
             Form1.K21 = 0.044;
+            Form1.subst1 = 19;
         }
         //////////////////////////////////////
         public static void NitrilAkrilKisl()
@@ -345,6 +364,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0;
             Form1.K21 = 0.007;
+            Form1.subst1 = 20;
         }
         /// <summary>
         /// ////////////////////////////////////////
@@ -364,6 +384,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0;
             Form1.K21 = 0.013;
+            Form1.subst1 = 21;
         }
         public static void Azetonitril()
         {
@@ -380,6 +401,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0;
             Form1.K21 = 0.004;
+            Form1.subst1 = 22;
         }
         public static void Azetonziangidrin()
         {
@@ -396,6 +418,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0;
             Form1.K21 = 0.002;
+            Form1.subst1 = 23;
         }
         public static void MetilBrom()
         {
@@ -412,6 +435,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0.04;
             Form1.K21 = 0.039;
+            Form1.subst1 = 24;
         }
         public static void Metilakrilat()
         {
@@ -428,6 +452,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0;
             Form1.K21 = 0.005;
+            Form1.subst1 = 25;
         }
         public static void Metilmerkaptan()
         {
@@ -444,6 +469,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0.06;
             Form1.K21 = 0.043;
+            Form1.subst1 = 26;
         }
         public static void OkisEtilen()
         {
@@ -460,6 +486,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0;
             Form1.K21 = 0.007;
+            Form1.subst1 = 27;
         }
         public static void Trimetilamin()
         {
@@ -476,6 +503,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0.07;
             Form1.K21 = 0.047;
+            Form1.subst1 = 28;
         }
         public static void FosforTrehchlor()
         {
@@ -492,6 +520,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0;
             Form1.K21 = 0.010;
+            Form1.subst1 = 29;
         }
         public static void FosforaChlorokis()
         {
@@ -508,6 +537,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0;
             Form1.K21 = 0.003;
+            Form1.subst1 = 30;
         }
         public static void Chlorpikrin()
         {
@@ -524,6 +554,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0;
             Form1.K21 = 0.002;
+            Form1.subst1 = 31;
         }
         public static void Etilenimin()
         {
@@ -540,6 +571,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0;
             Form1.K21 = 0.009;
+            Form1.subst1 = 32;
         }
         public static void Etilensulfid()
         {
@@ -556,6 +588,7 @@ namespace PrognozCS
             //Коэффициент К1
             Form1.K11 = 0;
             Form1.K21 = 0.013;
+            Form1.subst1 = 33;
         }
         public static void Etilmerkaptan()
         {
@@ -571,7 +604,8 @@ namespace PrognozCS
             Form1.K721 = Form1.K711;
             //Коэффициент К1
             Form1.K11 = 0;
-            Form1.K21 = 0.028; 
+            Form1.K21 = 0.028;
+            Form1.subst1 = 34;
         }
     }
 }
