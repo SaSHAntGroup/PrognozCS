@@ -456,53 +456,110 @@ namespace PrognozCS
             substance3.Items.Add("Этиленсульфид");
             substance3.Items.Add("Этилмеркаптан");
             //Добавление АХОВ4
+            substance4.Items.Add("Акролеин");
             substance4.Items.Add("Аммиак");
+            substance4.Items.Add("Ацетонитрил");
+            substance4.Items.Add("Ацетонциангидрин");
+            substance4.Items.Add("Водород мышьяковистый");
             substance4.Items.Add("Водород фтористый");
             substance4.Items.Add("Водород хлористый");
             substance4.Items.Add("Водород бромистый");
             substance4.Items.Add("Водород цианистый");
+            substance4.Items.Add("Диметиламин");
+            substance4.Items.Add("Метиламин");
+            substance4.Items.Add("Метил Хлористый");
+            substance4.Items.Add("Метил бромистый");
+            substance4.Items.Add("Метилакрилат");
+            substance4.Items.Add("Метилмеркаптан");
+            substance4.Items.Add("Нитрил акриловой кислоты");
             substance4.Items.Add("Двуокись азота");
+            substance4.Items.Add("Окись этилена");
             substance4.Items.Add("Сернистый ангидрид");
             substance4.Items.Add("Сероводород");
             substance4.Items.Add("Сероуглерод");
             substance4.Items.Add("Соляная кислота");
+            substance4.Items.Add("Триметиламин");
             substance4.Items.Add("Формальдегид");
             substance4.Items.Add("Фосген");
             substance4.Items.Add("Фтор");
+            substance4.Items.Add("Фосфор треххлористый");
+            substance4.Items.Add("Фосфора хлорокись");
             substance4.Items.Add("Хлор");
+            substance4.Items.Add("Хлорпикрин");
             substance4.Items.Add("Хлорциан");
+            substance4.Items.Add("Этиленимин");
+            substance4.Items.Add("Этиленсульфид");
+            substance4.Items.Add("Этилмеркаптан");
             //Добавление АХОВ5
+            substance5.Items.Add("Акролеин");
             substance5.Items.Add("Аммиак");
+            substance5.Items.Add("Ацетонитрил");
+            substance5.Items.Add("Ацетонциангидрин");
+            substance5.Items.Add("Водород мышьяковистый");
             substance5.Items.Add("Водород фтористый");
             substance5.Items.Add("Водород хлористый");
             substance5.Items.Add("Водород бромистый");
             substance5.Items.Add("Водород цианистый");
+            substance5.Items.Add("Диметиламин");
+            substance5.Items.Add("Метиламин");
+            substance5.Items.Add("Метил Хлористый");
+            substance5.Items.Add("Метил бромистый");
+            substance5.Items.Add("Метилакрилат");
+            substance5.Items.Add("Метилмеркаптан");
+            substance5.Items.Add("Нитрил акриловой кислоты");
             substance5.Items.Add("Двуокись азота");
+            substance5.Items.Add("Окись этилена");
             substance5.Items.Add("Сернистый ангидрид");
             substance5.Items.Add("Сероводород");
             substance5.Items.Add("Сероуглерод");
             substance5.Items.Add("Соляная кислота");
+            substance5.Items.Add("Триметиламин");
             substance5.Items.Add("Формальдегид");
             substance5.Items.Add("Фосген");
             substance5.Items.Add("Фтор");
+            substance5.Items.Add("Фосфор треххлористый");
+            substance5.Items.Add("Фосфора хлорокись");
             substance5.Items.Add("Хлор");
+            substance5.Items.Add("Хлорпикрин");
             substance5.Items.Add("Хлорциан");
+            substance5.Items.Add("Этиленимин");
+            substance5.Items.Add("Этиленсульфид");
+            substance5.Items.Add("Этилмеркаптан");
             //Добавление АХОВ6
+            substance6.Items.Add("Акролеин");
             substance6.Items.Add("Аммиак");
+            substance6.Items.Add("Ацетонитрил");
+            substance6.Items.Add("Ацетонциангидрин");
+            substance6.Items.Add("Водород мышьяковистый");
             substance6.Items.Add("Водород фтористый");
             substance6.Items.Add("Водород хлористый");
             substance6.Items.Add("Водород бромистый");
             substance6.Items.Add("Водород цианистый");
+            substance6.Items.Add("Диметиламин");
+            substance6.Items.Add("Метиламин");
+            substance6.Items.Add("Метил Хлористый");
+            substance6.Items.Add("Метил бромистый");
+            substance6.Items.Add("Метилакрилат");
+            substance6.Items.Add("Метилмеркаптан");
+            substance6.Items.Add("Нитрил акриловой кислоты");
             substance6.Items.Add("Двуокись азота");
+            substance6.Items.Add("Окись этилена");
             substance6.Items.Add("Сернистый ангидрид");
             substance6.Items.Add("Сероводород");
             substance6.Items.Add("Сероуглерод");
             substance6.Items.Add("Соляная кислота");
+            substance6.Items.Add("Триметиламин");
             substance6.Items.Add("Формальдегид");
             substance6.Items.Add("Фосген");
             substance6.Items.Add("Фтор");
+            substance6.Items.Add("Фосфор треххлористый");
+            substance6.Items.Add("Фосфора хлорокись");
             substance6.Items.Add("Хлор");
+            substance6.Items.Add("Хлорпикрин");
             substance6.Items.Add("Хлорциан");
+            substance6.Items.Add("Этиленимин");
+            substance6.Items.Add("Этиленсульфид");
+            substance6.Items.Add("Этилмеркаптан");
             //Вертикальная устойчивость атмосферы
             vertUst.Items.Add("Изотермия");
             vertUst.Items.Add("Инверсия");
@@ -1840,6 +1897,63 @@ namespace PrognozCS
                         p2 = 0.0021;
                     }
                 }
+                /////////////////////////////////////////////////
+                if (substance2.Text == "Водород мышьяковистый")
+                {
+                    substanceAXOB2.VodorodMishyak();
+                    //Выбор АХОВ с агрегатным состоянием
+                    if (jid2.Checked)
+                    {
+                        p2 = 1.64;
+                        if (t < tkip2) { K712 = K722; }
+                    }
+                    if (gaz2.Checked)
+                    {
+                        p2 = 0.0035;
+                    }
+                }
+                if (substance2.Text == "Диметиламин")
+                {
+                    substanceAXOB2.Dimetilamin();
+                    //Выбор АХОВ с агрегатным состоянием
+                    if (jid2.Checked)
+                    {
+                        p2 = 0.680;
+                        if (t < tkip2) { K712 = K722; }
+                    }
+                    if (gaz2.Checked)
+                    {
+                        p2 = 0.0020;
+                    }
+                }
+                if (substance2.Text == "Метиламин")
+                {
+                    substanceAXOB2.Metilamin();
+                    //Выбор АХОВ с агрегатным состоянием
+                    if (jid2.Checked)
+                    {
+                        p2 = 0.699;
+                        if (t < tkip2) { K712 = K722; }
+                    }
+                    if (gaz2.Checked)
+                    {
+                        p2 = 0.0014;
+                    }
+                }
+                if (substance2.Text == "Метил Хлористый")
+                {
+                    substanceAXOB2.MetilChlor();
+                    //Выбор АХОВ с агрегатным состоянием
+                    if (jid2.Checked)
+                    {
+                        p2 = 0.983;
+                        if (t < tkip2) { K712 = K722; }
+                    }
+                    if (gaz2.Checked)
+                    {
+                        p2 = 0.0023;
+                    }
+                }
                 if (substance2.Text == "Водород фтористый")
                 {
                     substanceAXOB2.VodorodFtoristiy();
@@ -1848,11 +1962,11 @@ namespace PrognozCS
                 {
                     substanceAXOB2.VodorodCianistiy();
                 }
-                if (substance.Text == "Двуокись азота")
+                if (substance2.Text == "Двуокись азота")
                 {
                     substanceAXOB2.DvuokisAzota();
                 }
-                if (substance.Text == "Сернистый ангидрид")
+                if (substance2.Text == "Сернистый ангидрид")
                 {
                     substanceAXOB2.SernistiyAngidrid();
                 }
@@ -2033,6 +2147,63 @@ namespace PrognozCS
                         p3 = 0.0021;
                     }
                 }
+                /////////////////////////////////////////////////
+                if (substance3.Text == "Водород мышьяковистый")
+                {
+                    substanceAXOB3.VodorodMishyak();
+                    //Выбор АХОВ с агрегатным состоянием
+                    if (jid3.Checked)
+                    {
+                        p3 = 1.64;
+                        if (t < tkip3) { K73 = K723; }
+                    }
+                    if (gaz3.Checked)
+                    {
+                        p3 = 0.0035;
+                    }
+                }
+                if (substance3.Text == "Диметиламин")
+                {
+                    substanceAXOB3.Dimetilamin();
+                    //Выбор АХОВ с агрегатным состоянием
+                    if (jid3.Checked)
+                    {
+                        p3 = 0.680;
+                        if (t < tkip3) { K73 = K723; }
+                    }
+                    if (gaz3.Checked)
+                    {
+                        p3 = 0.0020;
+                    }
+                }
+                if (substance3.Text == "Метиламин")
+                {
+                    substanceAXOB3.Metilamin();
+                    //Выбор АХОВ с агрегатным состоянием
+                    if (jid3.Checked)
+                    {
+                        p3 = 0.699;
+                        if (t < tkip3) { K73 = K723; }
+                    }
+                    if (gaz3.Checked)
+                    {
+                        p3 = 0.0014;
+                    }
+                }
+                if (substance3.Text == "Метил Хлористый")
+                {
+                    substanceAXOB3.MetilChlor();
+                    //Выбор АХОВ с агрегатным состоянием
+                    if (jid3.Checked)
+                    {
+                        p3 = 0.983;
+                        if (t < tkip3) { K73 = K723; }
+                    }
+                    if (gaz3.Checked)
+                    {
+                        p3 = 0.0023;
+                    }
+                }
                 if (substance3.Text == "Водород фтористый")
                 {
                     substanceAXOB3.VodorodFtoristiy();
@@ -2045,7 +2216,7 @@ namespace PrognozCS
                 {
                     substanceAXOB3.DvuokisAzota();
                 }
-                if (substance.Text == "Сернистый ангидрид")
+                if (substance3.Text == "Сернистый ангидрид")
                 {
                     substanceAXOB3.SernistiyAngidrid();
                 }

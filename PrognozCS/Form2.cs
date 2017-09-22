@@ -420,7 +420,7 @@ namespace PrognozCS
                 tbl.DrawString(ukritie, Font, BrBlack, 1, 101);//
                 tbl.DrawString(poteri, Font, BrBlack, 107, 101);//
                 tbl.DrawString(primNIS, Font, BrBlack, 213, 101);//
-                tbl.DrawString(tipSIZ, Font, BrBlack, 320, 101);//
+                //tbl.DrawString(tipSIZ, Font, BrBlack, 320, 101);//
 
                 tbl.DrawString(Zaraj, Font, BrBlack, 1, 51);//
                 tbl.DrawString(AXOB, Font, BrBlack, 107, 51);//
@@ -430,10 +430,59 @@ namespace PrognozCS
                 tbl.DrawString(ukr, Font, BrBlack, 1, 151);//
                 tbl.DrawString(poteriT, Font, BrBlack, 107, 151);//
                 tbl.DrawString(NIS, Font, BrBlack, 213, 151);//
-                tbl.DrawString(SIZ, Font, BrBlack, 320, 151);//
+                //tbl.DrawString(SIZ, Font, BrBlack, 320, 151);//
 
-                tbl.DrawString(obj, Font, BrBlack, 0, 235);//
-                tbl.DrawString(open, Font, BrBlack, 0, 260);//
+                tbl.DrawString(obj, Font, BrBlack, 0, 283);//
+                tbl.DrawString(open, Font, BrBlack, 0, 300);//
+
+                if (Form1.lockpanel == 0)
+                {
+                    //Текст в таблице
+                    tbl.DrawString(tipAXOB, Font, BrBlack, 320, 101);//
+                    tbl.DrawString(kolAXOBl, Font, BrBlack, 427, 101);//
+                    tbl.DrawString(tipSIZ + "\n" + ukritie, Font, BrBlack, 427, 1);//
+
+                    tbl.DrawString(AXOB, Font, BrBlack, 320, 151);//
+                    tbl.DrawString(kolvoAXOB, Font, BrBlack, 427, 151);//
+                    tbl.DrawString(SIZ + "\n" + ukr, Font, BrBlack, 427, 51);//
+                }
+                else
+                {
+                    //Таблица
+
+                    tbl.DrawLine(PBlack, 0, 280, 0, 200);//
+                    tbl.DrawLine(PBlack, 1, 280, 1, 200);//
+                    tbl.DrawLine(PBlack, 178, 280, 178, 200);//
+                    tbl.DrawLine(PBlack, 356, 280, 356, 200);//
+                    tbl.DrawLine(PBlack, 533, 280, 533, 200);//
+                    tbl.DrawLine(PBlack, 534, 280, 534, 200);//
+
+                    tbl.DrawLine(PBlack, 0, 280, 534, 280);//
+                    tbl.DrawLine(PBlack, 0, 281, 534, 281);//
+
+                    //Текст в таблице
+                    tbl.DrawString(tipAXOB + " №1", Font, BrBlack, 320, 101);//
+                    tbl.DrawString(kolAXOBl + " №1", Font, BrBlack, 427, 101);//
+                    tbl.DrawString(tipSIZ + " №1" + "\n" + ukritie, Font, BrBlack, 427, 1);//
+                    tbl.DrawString(AXOB1, Font, BrBlack, 320, 151);//
+                    tbl.DrawString(kolvoAXOB1, Font, BrBlack, 427, 151);//
+                    tbl.DrawString(SIZ1 + "\n" + ukr, Font, BrBlack, 427, 51);//
+
+                    tbl.DrawString(tipAXOB + " №2: ", Font, BrBlack, 2, 201);//
+                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№2: ", Font, BrBlack, 2, 225);//
+                    tbl.DrawString(AXOB2, Font, BrBlack, 80, 201);//
+                    tbl.DrawString("\n" + SIZ2 + "\n" + kolvoAXOB2, Font, BrBlack, 75, 225);//
+
+                    tbl.DrawString(tipAXOB + " №3: ", Font, BrBlack, 179, 201);//
+                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№3: ", Font, BrBlack, 179, 225);//
+                    tbl.DrawString(AXOB3, Font, BrBlack, 259, 201);//
+                    tbl.DrawString("\n" + SIZ3 + "\n" + kolvoAXOB3, Font, BrBlack, 254, 225);//
+
+                    tbl.DrawString(tipAXOB + " №4: ", Font, BrBlack, 357, 201);//
+                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№4: ", Font, BrBlack, 357, 225);//
+                    tbl.DrawString(AXOB4, Font, BrBlack, 437, 201);//
+                    tbl.DrawString("\n" + SIZ4 + "\n" + kolvoAXOB4, Font, BrBlack, 432, 225);//
+                }
             }
             //Вывод картинок
             pictureob1.Image = bpm;
