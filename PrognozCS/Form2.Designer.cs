@@ -50,9 +50,13 @@
             this.label02 = new System.Windows.Forms.Label();
             this.label01 = new System.Windows.Forms.Label();
             this.label00 = new System.Windows.Forms.Label();
-            this.pictureob1 = new System.Windows.Forms.PictureBox();
             this.plosh = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureob1 = new System.Windows.Forms.PictureBox();
             this.panelAXOB.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureob1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +68,7 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Location = new System.Drawing.Point(12, 509);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(534, 34);
+            this.button1.Size = new System.Drawing.Size(549, 34);
             this.button1.TabIndex = 0;
             this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = false;
@@ -85,9 +89,9 @@
             this.time.AutoSize = true;
             this.time.Location = new System.Drawing.Point(418, 329);
             this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(35, 13);
+            this.time.Size = new System.Drawing.Size(26, 13);
             this.time.TabIndex = 9;
-            this.time.Text = "label2";
+            this.time.Text = "time";
             // 
             // button2
             // 
@@ -97,7 +101,7 @@
             this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button2.Location = new System.Drawing.Point(12, 469);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(534, 34);
+            this.button2.Size = new System.Drawing.Size(549, 34);
             this.button2.TabIndex = 15;
             this.button2.Text = "Моделирование";
             this.button2.UseVisualStyleBackColor = false;
@@ -272,14 +276,6 @@
             this.label00.TabIndex = 32;
             this.label00.Text = "label7";
             // 
-            // pictureob1
-            // 
-            this.pictureob1.Location = new System.Drawing.Point(12, 12);
-            this.pictureob1.Name = "pictureob1";
-            this.pictureob1.Size = new System.Drawing.Size(534, 314);
-            this.pictureob1.TabIndex = 33;
-            this.pictureob1.TabStop = false;
-            // 
             // plosh
             // 
             this.plosh.AutoSize = true;
@@ -289,14 +285,54 @@
             this.plosh.TabIndex = 34;
             this.plosh.Text = "км";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 296);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "open";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 313);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(21, 13);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "obj";
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.pictureob1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(573, 282);
+            this.panel1.TabIndex = 37;
+            // 
+            // pictureob1
+            // 
+            this.pictureob1.Location = new System.Drawing.Point(12, 12);
+            this.pictureob1.Name = "pictureob1";
+            this.pictureob1.Size = new System.Drawing.Size(535, 362);
+            this.pictureob1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureob1.TabIndex = 37;
+            this.pictureob1.TabStop = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(558, 548);
+            this.ClientSize = new System.Drawing.Size(573, 555);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.plosh);
-            this.Controls.Add(this.pictureob1);
             this.Controls.Add(this.panelAXOB);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.label1);
@@ -312,6 +348,8 @@
             this.Text = "Прогнозирование: Результаты расчетов";
             this.panelAXOB.ResumeLayout(false);
             this.panelAXOB.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureob1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -341,7 +379,10 @@
         private System.Windows.Forms.Label label02;
         private System.Windows.Forms.Label label01;
         private System.Windows.Forms.Label label00;
-        private System.Windows.Forms.PictureBox pictureob1;
         private System.Windows.Forms.Label plosh;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureob1;
     }
 }

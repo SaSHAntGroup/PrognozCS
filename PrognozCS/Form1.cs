@@ -84,20 +84,70 @@ namespace PrognozCS
             K6, K61, K62, K63, K64, K65, K66,//доп. коэф.
             K7, K711, K712, K73, K74, K75, K76,//коэффициент, учитывающий влияние температуры воздуха первичное облако
             K72, K721, K722, K723, K724, K725, K726;//коэффициент, учитывающий влияние температуры воздуха вторичное облако
+        
+        private void trackBar1_Scroll_1(object sender, EventArgs e)
+        {
+            if (trackBar1.Value == 1)
+            {
+                pron = 1;
+                trackBarlabel.Text = "Наружные стены, перекрытия и покрытия жилых, общественных " +
+                    "\nзданий и впомогательных зданий и помещений промышленных предприятий.";
+            }
+            if (trackBar1.Value == 2)
+            {
+                pron = 2;
+                trackBarlabel.Text = "Наружные стены, перекрытия и покрытия производственных зданий.";
+            }
+            if (trackBar1.Value == 3)
+            {
+                pron = 3;
+                trackBarlabel.Text = "Входные двери в кватриры.";
+            }
+            if (trackBar1.Value == 4)
+            {
+                pron = 4;
+                trackBarlabel.Text = "Окна и балконные двери жилых и общественных зданий, " +
+                    "помещений промышленных зданий," +
+                    "\nдвери, окна и ворота производственных зданий(в районах со средней" +
+                    " температурой наиболее\n" +
+                    "холодной пятидневки свыше минус 40°C).";
+            }
+            if (trackBar1.Value == 5)
+            {
+                pron = 5;
+                trackBarlabel.Text = "Окна производственных зданий с незначительным избытком" +
+                    " явного тепла не более 23 Вт/м³\n" +
+                    "в районах со средней температурой наиболее холодной пятидневки, свыше минус 40°C.";
+            }
+            if (trackBar1.Value == 6)
+            {
+                pron = 6;
+                trackBarlabel.Text = "Окна производственных зданий с незначительным избытком" +
+                    " явного тепла более 23 Вт/м³\n" +
+                    "в районах со средней температурой наиболее холодной пятидневки, свыше минус 40°C.";
+            }
+            if (trackBar1.Value == 7)
+            {
+                pron = 7;
+                trackBarlabel.Text = "Воздухопроницаемость стыков между панелями " +
+                    "наружних стен жилых зданий.";
+            }
+        }
+
         static public int subst, subst1, subst2, subst3, subst4, subst5, subst6, obj, podd, vert, pron;//
 
         public void AVmest_CheckedChanged(object sender, EventArgs e)
         {
             obj = 0;
             panelobj1.Visible = true;
-            panelobj0.Visible = false;
+            groupBox6.Location = new System.Drawing.Point(11, 484);
         }
 
         public void AVobj_CheckedChanged(object sender, EventArgs e)
         {
             obj = 1;
-            panelobj0.Visible = true;
             panelobj1.Visible = false;
+            groupBox6.Location = new System.Drawing.Point(11, 360);
         }
 
         public void help_Click(object sender, EventArgs e)
@@ -1290,13 +1340,7 @@ namespace PrognozCS
                 {
                     verUstAir.Konvekcia();
                 }
-                if (pron1.Checked) { pron = 1; }
-                if (pron2.Checked) { pron = 2; }
-                if (pron3.Checked) { pron = 3; }
-                if (pron4.Checked) { pron = 4; }
-                if (pron5.Checked) { pron = 5; }
-                if (pron6.Checked) { pron = 6; }
-                if (pron7.Checked) { pron = 7; }
+                
                 //Выбор химически опасного вещества
                 //////////////////////////////////////////////////////////////////////
                 if (substance.Text == "Хлор")

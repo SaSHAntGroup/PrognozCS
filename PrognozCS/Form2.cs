@@ -278,7 +278,10 @@ namespace PrognozCS
                     "- " + P.ToString() + " чел.";
                         break;
                 }
-                
+
+                label2.Text = open;
+                label3.Text = "";
+
                 //Таблица
                 tbl.DrawLine(PBlack, 0, 0, 534, 0);//
                 tbl.DrawLine(PBlack, 0, 1, 534, 1);//
@@ -331,7 +334,6 @@ namespace PrognozCS
                 else
                 {
                     //Таблица
-
                     tbl.DrawLine(PBlack, 0, 280, 0, 200);//
                     tbl.DrawLine(PBlack, 1, 280, 1, 200);//
                     tbl.DrawLine(PBlack, 178, 280, 178, 200);//
@@ -339,8 +341,16 @@ namespace PrognozCS
                     tbl.DrawLine(PBlack, 533, 280, 533, 200);//
                     tbl.DrawLine(PBlack, 534, 280, 534, 200);//
 
+                    tbl.DrawLine(PBlack, 0, 280, 0, 360);//
+                    tbl.DrawLine(PBlack, 1, 280, 1, 360);//
+                    tbl.DrawLine(PBlack, 267, 280, 267, 360);//
+                    tbl.DrawLine(PBlack, 533, 280, 533, 360);//
+                    tbl.DrawLine(PBlack, 534, 280, 534, 360);//
+
                     tbl.DrawLine(PBlack, 0, 280, 534, 280);//
                     tbl.DrawLine(PBlack, 0, 281, 534, 281);//
+                    tbl.DrawLine(PBlack, 0, 360, 534, 360);//
+                    tbl.DrawLine(PBlack, 0, 361, 534, 361);//
 
                     //Текст в таблице
                     tbl.DrawString(tipAXOB + " №1", Font, BrBlack, 320, 101);//
@@ -364,9 +374,19 @@ namespace PrognozCS
                     tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№4: ", Font, BrBlack, 357, 225);//
                     tbl.DrawString(AXOB4, Font, BrBlack, 437, 201);//
                     tbl.DrawString("\n" + SIZ4 + "\n" + kolvoAXOB4, Font, BrBlack, 432, 225);//
+
+                    tbl.DrawString(tipAXOB + " №5: ", Font, BrBlack, 2, 282);//
+                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№5: ", Font, BrBlack, 2, 306);//
+                    tbl.DrawString(AXOB5, Font, BrBlack, 80, 282);//
+                    tbl.DrawString("\n" + SIZ5 + "\n" + kolvoAXOB5, Font, BrBlack, 75, 306);//
+
+                    tbl.DrawString(tipAXOB + " №6: ", Font, BrBlack, 269, 282);//
+                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№6: ", Font, BrBlack, 269, 306);//
+                    tbl.DrawString(AXOB6, Font, BrBlack, 349, 282);//
+                    tbl.DrawString("\n" + SIZ6 + "\n" + kolvoAXOB6, Font, BrBlack, 344, 306);//
                 }
                 
-                tbl.DrawString(open, Font, BrBlack, 0, 285);//
+                //tbl.DrawString(open, Font, BrBlack, 0, 285);//
             }
             if (Form1.obj == 1)
             {
@@ -390,6 +410,10 @@ namespace PrognozCS
                         "на объекте - " + Form1.Kg.ToString() + " чел.";
                         break;
                 }
+
+                label2.Text = open;
+                label3.Text = obj;
+
                 if ((Form1.Kz + Form1.Kg) == 0) { poteriT = "Нет данных!"; }
                 
                 //Таблица
@@ -432,8 +456,8 @@ namespace PrognozCS
                 tbl.DrawString(NIS, Font, BrBlack, 213, 151);//
                 //tbl.DrawString(SIZ, Font, BrBlack, 320, 151);//
 
-                tbl.DrawString(obj, Font, BrBlack, 0, 283);//
-                tbl.DrawString(open, Font, BrBlack, 0, 300);//
+                //tbl.DrawString(obj, Font, BrBlack, 0, 283);//
+                //tbl.DrawString(open, Font, BrBlack, 0, 300);//
 
                 if (Form1.lockpanel == 0)
                 {
@@ -449,7 +473,6 @@ namespace PrognozCS
                 else
                 {
                     //Таблица
-
                     tbl.DrawLine(PBlack, 0, 280, 0, 200);//
                     tbl.DrawLine(PBlack, 1, 280, 1, 200);//
                     tbl.DrawLine(PBlack, 178, 280, 178, 200);//
@@ -457,8 +480,16 @@ namespace PrognozCS
                     tbl.DrawLine(PBlack, 533, 280, 533, 200);//
                     tbl.DrawLine(PBlack, 534, 280, 534, 200);//
 
+                    tbl.DrawLine(PBlack, 0, 280, 0, 360);//
+                    tbl.DrawLine(PBlack, 1, 280, 1, 360);//
+                    tbl.DrawLine(PBlack, 267, 280, 267, 360);//
+                    tbl.DrawLine(PBlack, 533, 280, 533, 360);//
+                    tbl.DrawLine(PBlack, 534, 280, 534, 360);//
+
                     tbl.DrawLine(PBlack, 0, 280, 534, 280);//
                     tbl.DrawLine(PBlack, 0, 281, 534, 281);//
+                    tbl.DrawLine(PBlack, 0, 360, 534, 360);//
+                    tbl.DrawLine(PBlack, 0, 361, 534, 361);//
 
                     //Текст в таблице
                     tbl.DrawString(tipAXOB + " №1", Font, BrBlack, 320, 101);//
@@ -482,6 +513,16 @@ namespace PrognozCS
                     tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№4: ", Font, BrBlack, 357, 225);//
                     tbl.DrawString(AXOB4, Font, BrBlack, 437, 201);//
                     tbl.DrawString("\n" + SIZ4 + "\n" + kolvoAXOB4, Font, BrBlack, 432, 225);//
+
+                    tbl.DrawString(tipAXOB + " №5: ", Font, BrBlack, 2, 282);//
+                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№5: ", Font, BrBlack, 2, 306);//
+                    tbl.DrawString(AXOB5, Font, BrBlack, 80, 282);//
+                    tbl.DrawString("\n" + SIZ5 + "\n" + kolvoAXOB5, Font, BrBlack, 75, 306);//
+
+                    tbl.DrawString(tipAXOB + " №6: ", Font, BrBlack, 269, 282);//
+                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№6: ", Font, BrBlack, 269, 306);//
+                    tbl.DrawString(AXOB6, Font, BrBlack, 349, 282);//
+                    tbl.DrawString("\n" + SIZ6 + "\n" + kolvoAXOB6, Font, BrBlack, 344, 306);//
                 }
             }
             //Вывод картинок
