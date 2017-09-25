@@ -3312,7 +3312,7 @@ namespace PrognozCS
                 KolvoAndGlub.Tabl();
                 //Глубина распространения первичного и вторичного облаков АХОВ
                 Ge1 = Gm1 + ((Gb1 - Gm1) / (Qb1 - Qm1)) * (Qe1 - Qm1);
-                Ge2 = Ge1;
+                Ge2 = Ge1; Ge = Ge1;
                 Gp = N * W;
                 if (Ge < Gp) { G = Ge; }
                 else { G = Gp; }
