@@ -85,75 +85,42 @@ namespace PrognozCS
             K7, K711, K712, K73, K74, K75, K76,//коэффициент, учитывающий влияние температуры воздуха первичное облако
             K72, K721, K722, K723, K724, K725, K726;//коэффициент, учитывающий влияние температуры воздуха вторичное облако
         
-        private void trackBar1_Scroll_1(object sender, EventArgs e)
-        {
-            if (trackBar1.Value == 1)
-            {
-                pron = 1;
-                trackBarlabel.Text = "Наружные стены, перекрытия и покрытия жилых, общественных " +
-                    "\nзданий и впомогательных зданий и помещений промышленных предприятий.";
-            }
-            if (trackBar1.Value == 2)
-            {
-                pron = 2;
-                trackBarlabel.Text = "Наружные стены, перекрытия и покрытия производственных зданий.";
-            }
-            if (trackBar1.Value == 3)
-            {
-                pron = 3;
-                trackBarlabel.Text = "Входные двери в кватриры.";
-            }
-            if (trackBar1.Value == 4)
-            {
-                pron = 4;
-                trackBarlabel.Text = "Окна и балконные двери жилых и общественных зданий, " +
-                    "помещений промышленных зданий," +
-                    "\nдвери, окна и ворота производственных зданий(в районах со средней" +
-                    " температурой наиболее\n" +
-                    "холодной пятидневки свыше минус 40°C).";
-            }
-            if (trackBar1.Value == 5)
-            {
-                pron = 5;
-                trackBarlabel.Text = "Окна производственных зданий с незначительным избытком" +
-                    " явного тепла не более 23 Вт/м³\n" +
-                    "в районах со средней температурой наиболее холодной пятидневки, свыше минус 40°C.";
-            }
-            if (trackBar1.Value == 6)
-            {
-                pron = 6;
-                trackBarlabel.Text = "Окна производственных зданий с незначительным избытком" +
-                    " явного тепла более 23 Вт/м³\n" +
-                    "в районах со средней температурой наиболее холодной пятидневки, свыше минус 40°C.";
-            }
-            if (trackBar1.Value == 7)
-            {
-                pron = 7;
-                trackBarlabel.Text = "Воздухопроницаемость стыков между панелями " +
-                    "наружних стен жилых зданий.";
-            }
-        }
-
         static public int subst, subst1, subst2, subst3, subst4, subst5, subst6, obj, podd, vert, pron;//
+
+        public void StartZnach()
+        {
+            substance.Text = "Аммиак";
+            outAXOB.Text = "500";
+            time.Text = "2";
+            //sam.Checked = true;
+            //visPod.Text = "2";
+            vertUst.Text = "Инверсия";
+            speedAir.Text = "1";
+            tempAir.Text = "20";
+            distance.Text = "2";
+            plotNasG.Text = "";
+            plotNasZ.Text = "";
+            outubejG.Text = "";
+            outubejZ.Text = "";
+            timeday.Text = "";
+        }
 
         public void AVmest_CheckedChanged(object sender, EventArgs e)
         {
             obj = 0;
             panelobj1.Visible = true;
-            groupBox6.Location = new System.Drawing.Point(11, 484);
         }
 
         public void AVobj_CheckedChanged(object sender, EventArgs e)
         {
             obj = 1;
             panelobj1.Visible = false;
-            groupBox6.Location = new System.Drawing.Point(11, 360);
         }
 
         public void help_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Значения по умолчанию: для скорости ветра = 3 м/с; " +
-                "для температуры воздуха = 20°C; для времени прошедшее после аварии = 4 часа. " +
+            MessageBox.Show("Значения по умолчанию:\n   - для скорости ветра = 3 м/с; " +
+                "\n   - для температуры воздуха = 20°C;\n   - для времени прошедшее после аварии = 4 часа.\n " +
                 "Для остальных не объявленных полей значения равны нулю!",
                             "Справка", MessageBoxButtons.OK);
         }
@@ -365,6 +332,7 @@ namespace PrognozCS
         public Form1()
         {
             InitializeComponent();
+            StartZnach();
             //Добавление АХОВ
             substance.Items.Add("Акролеин");
             substance.Items.Add("Аммиак");
@@ -1293,12 +1261,6 @@ namespace PrognozCS
                 ///
                 if (plotNasZ.Text == "") { Az = 0; }
                 else { Az = Convert.ToDouble(plotNasZ.Text); }
-                ///
-                if (outGAZG.Text == "") { n1g = 0; }
-                else { n1g = Convert.ToDouble(outGAZG.Text); }
-                ///
-                if (outGAZZ.Text == "") { n1z = 0; }
-                else { n1z = Convert.ToDouble(outGAZZ.Text); }
                 ///
                 if (outubejG.Text == "") { n2g = 0; }
                 else { n2g = Convert.ToDouble(outubejG.Text); }
@@ -3130,49 +3092,31 @@ namespace PrognozCS
                 if (AXOBkolvo1.Checked)
                 {
                     //
-                    if (gaz.Checked) { Q0 = Q0 * p; }
+                    if (gaz.Checked) Q0 = Q0 * p; 
                     //Коэффициенты К2, К3 и К4
-                    if (K2 == 0) { K2 = 6.08 * Math.Pow(10, -5) * P * Math.Pow(M, 0.5); }
+                    if (K2 == 0) K2 = 6.08 * Math.Pow(10, -5) * P * Math.Pow(M, 0.5); 
                     K3 = Dhlor / D;
-                    if (D == 0) { K3 = 0; }
+                    if (D == 0) K3 = 0; 
                     K4 = v / 3 + 0.67;
                     //Определение эквивалентного количества вещества по первичному облаку
-                    Qe1 = K1 * K3 * K5 * K7 * Q0;
+                    Qe1 = K1 * K3 * K7 * Q0;
                     //Время испарения АХОВ
-                    if (gaz.Checked) { T = 0; }
-                    else
-                    {
-                        T = (h * p) / (K2 * K4 * K72);
-                    }
+                    if (gaz.Checked) T = 0; 
+                    else T = (h * p) / (K2 * K4 * K72);
                     //Определение коэффициента К6
-                    if (N < T)
-                    {
-                        K6 = Math.Pow(N, 0.8);
-                    }
-                    if (N > T)
-                    {
-                        K6 = Math.Pow(T, 0.8);
-                    }
-                    if (T < 1)
-                    {
-                        K6 = 1;
-                    }
+                    if (N < T) K6 = Math.Pow(N, 0.8);
+                    if (N > T) K6 = Math.Pow(T, 0.8);
+                    if (T < 1) K6 = 1;
                     //Определение эквивалентного количества вещества по вторичному облаку
-                    Qe2 = ((1 - K1) * K2 * K3 * K4 * K5 * K6 * K72 * Q0) / (h * p);
+                    Qe2 = ((1 - K1) * K2 * K3 * K4 * K6 * K72 * Q0) / (h * p);
                     lockpanel = 0;
                     //Определение большего и меньшего кол-ва АХОВ и глубины заражения облаками 
                     KolvoAndGlub.Tabl();
                     //Глубина распространения первичного и вторичного облаков АХОВ
                     Ge1 = Gm1 + ((Gb1 - Gm1) / (Qb1 - Qm1)) * (Qe1 - Qm1);
                     Ge2 = Gm2 + ((Gb2 - Gm2) / (Qb2 - Qm2)) * (Qe2 - Qm2);
-                    if (Ge1 > Ge2)
-                    {
-                        Ge = Ge1 + 0.5 * Ge2;
-                    }
-                    else
-                    {
-                        Ge = Ge2 + 0.5 * Ge1;
-                    }
+                    if (Ge1 > Ge2) Ge = Ge1 + 0.5 * Ge2;
+                    else Ge = Ge2 + 0.5 * Ge1;
                 }
                 //Расчет для нескольких веществ
                 ////////////////////////////////
@@ -3200,23 +3144,11 @@ namespace PrognozCS
                     }
                     //Время испарения АХОВ2
                     if (gaz2.Checked) { T2 = 0; Q02 = Q02 * p2; }
-                    else
-                    {
-                        T2 = (h * p2) / (K22 * K4 * K722);
-                    }
+                    else T2 = (h * p2) / (K22 * K4 * K722);
                     //Определение коэффициента К6
-                    if (N < T2)
-                    {
-                        K62 = Math.Pow(N, 0.8);
-                    }
-                    if (N > T2)
-                    {
-                        K62 = Math.Pow(T2, 0.8);
-                    }
-                    if (T2 < 1)
-                    {
-                        K62 = 1;
-                    }
+                    if (N < T2) K62 = Math.Pow(N, 0.8);
+                    if (N > T2) K62 = Math.Pow(T2, 0.8);
+                    if (T2 < 1) K62 = 1;
                     //Время испарения АХОВ3
                     if (gaz3.Checked) { T3 = 0; Q03 = Q03 * p3; }
                     else
@@ -3293,12 +3225,12 @@ namespace PrognozCS
                     {
                         K66 = 1;
                     }
-                    if (p1 == 0) { p1 = 1; }
-                    if (p2 == 0) { p2 = 1; }
-                    if (p3 == 0) { p3 = 1; }
-                    if (p4 == 0) { p4 = 1; }
-                    if (p5 == 0) { p5 = 1; }
-                    if (p6 == 0) { p6 = 1; }
+                    if (p1 == 0) p1 = 1; 
+                    if (p2 == 0) p2 = 1; 
+                    if (p3 == 0) p3 = 1; 
+                    if (p4 == 0) p4 = 1; 
+                    if (p5 == 0) p5 = 1; 
+                    if (p6 == 0) p6 = 1; 
                     //Определение эквивалентного количества вещества по нескольким веществам
                     Qe2 = 20 * K4 * K5 *
                         (K21 * K31 * K61 * K711 * Q01 / p1 + K22 * K32 * K62 * K722 * Q02 / p2 +
@@ -3307,12 +3239,12 @@ namespace PrognozCS
                     Qe1 = Qe2;
                     //переменная для определения кол-ва АХОВ на второй форме
                     lockpanel = 1;
+                    //Определение большего и меньшего кол-ва АХОВ и глубины заражения облаками 
+                    KolvoAndGlub.Tabl();
+                    //Глубина распространения первичного и вторичного облаков АХОВ
+                    Ge1 = Gm1 + ((Gb1 - Gm1) / (Qb1 - Qm1)) * (Qe1 - Qm1);
+                    Ge2 = Ge1; Ge = Ge1;
                 }
-                //Определение большего и меньшего кол-ва АХОВ и глубины заражения облаками 
-                KolvoAndGlub.Tabl();
-                //Глубина распространения первичного и вторичного облаков АХОВ
-                Ge1 = Gm1 + ((Gb1 - Gm1) / (Qb1 - Qm1)) * (Qe1 - Qm1);
-                Ge2 = Ge1; Ge = Ge1;
                 Gp = N * W;
                 if (Ge < Gp) { G = Ge; }
                 else { G = Gp; }

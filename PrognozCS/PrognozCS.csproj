@@ -64,10 +64,10 @@
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="KoeffZ.cs" />
-    <Compile Include="KolvoAndGlub.cs" />
-    <Compile Include="mestSIZ.cs" />
-    <Compile Include="moreAXOB.cs" />
+    <Compile Include="Koeffs\KoeffZ.cs" />
+    <Compile Include="Koeffs\KolvoAndGlub.cs" />
+    <Compile Include="Koeffs\mestSIZ.cs" />
+    <Compile Include="Koeffs\moreAXOB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="substance\substanceAXOB6.cs" />
@@ -77,8 +77,8 @@
     <Compile Include="substance\substanceAXOB.cs" />
     <Compile Include="substance\substanceAXOB1.cs" />
     <Compile Include="substance\substanceAXOB2.cs" />
-    <Compile Include="switchCaseTabl.cs" />
-    <Compile Include="verUstAir.cs" />
+    <Compile Include="Koeffs\switchCaseTabl.cs" />
+    <Compile Include="Koeffs\verUstAir.cs" />
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>

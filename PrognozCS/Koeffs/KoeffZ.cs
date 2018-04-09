@@ -21,7 +21,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kgk = 0.72; }
                 if (Form1.Tsut >= 15) { Form1.Kgk = 0.68; }
                 if (Form1.Tsut >= 17) { Form1.Kgk = 0.69; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.88; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kgk = 0.88; }
             }
             if (Form1.N <= 0.5)
             {
@@ -32,7 +32,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kgk = 0.64; }
                 if (Form1.Tsut >= 15) { Form1.Kgk = 0.58; }
                 if (Form1.Tsut >= 17) { Form1.Kgk = 0.62; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.82; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kgk = 0.82; }
             }
             if (Form1.N <= 1)
             {
@@ -43,7 +43,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kgk = 0.47; }
                 if (Form1.Tsut >= 15) { Form1.Kgk = 0.37; }
                 if (Form1.Tsut >= 17) { Form1.Kgk = 0.47; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.67; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kgk = 0.67; }
             }
             if (Form1.N <= 2)
             {
@@ -54,7 +54,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kgk = 0.20; }
                 if (Form1.Tsut >= 15) { Form1.Kgk = 0.15; }
                 if (Form1.Tsut >= 17) { Form1.Kgk = 0.19; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.30; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kgk = 0.30; }
             }
             if (Form1.N > 2)
             {
@@ -65,7 +65,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kgk = 0.04; }
                 if (Form1.Tsut >= 15) { Form1.Kgk = 0.03; }
                 if (Form1.Tsut >= 17) { Form1.Kgk = 0.04; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.07; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kgk = 0.07; }
             }
         }
         //Городские  оповещенные !!!
@@ -80,7 +80,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kgk = 0.83; }
                 if (Form1.Tsut >= 15) { Form1.Kgk = 0.79; }
                 if (Form1.Tsut >= 17) { Form1.Kgk = 0.86; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.91; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kgk = 0.91; }
             }
             if (Form1.N <= 0.5)
             {
@@ -91,7 +91,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kgk = 0.74; }
                 if (Form1.Tsut >= 15) { Form1.Kgk = 0.69; }
                 if (Form1.Tsut >= 17) { Form1.Kgk = 0.78; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.85; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kgk = 0.85; }
             }
             if (Form1.N <= 1)
             {
@@ -102,7 +102,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kgk = 0.56; }
                 if (Form1.Tsut >= 15) { Form1.Kgk = 0.49; }
                 if (Form1.Tsut >= 17) { Form1.Kgk = 0.63; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.71; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kgk = 0.71; }
             }
             if (Form1.N <= 2)
             {
@@ -113,7 +113,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kgk = 0.25; }
                 if (Form1.Tsut >= 15) { Form1.Kgk = 0.22; }
                 if (Form1.Tsut >= 17) { Form1.Kgk = 0.28; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.34; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kgk = 0.34; }
             }
             if (Form1.N > 2)
             {
@@ -124,7 +124,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kgk = 0.05; }
                 if (Form1.Tsut >= 15) { Form1.Kgk = 0.04; }
                 if (Form1.Tsut >= 17) { Form1.Kgk = 0.06; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kgk = 0.09; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kgk = 0.09; }
             }
         }
         //Загородная зона, НЕ оповещенные ,зимой !!!
@@ -139,7 +139,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.24; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.48; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.59; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.78; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.78; }
             }
             if (Form1.N <= 0.5)
             {
@@ -150,7 +150,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.23; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.46; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.57; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.78; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.78; }
             }
             if (Form1.N <= 1)
             {
@@ -161,7 +161,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.20; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.40; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.48; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.64; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.64; }
             }
             if (Form1.N <= 2)
             {
@@ -172,7 +172,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.10; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.19; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.23; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.30; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.30; }
             }
             if (Form1.N > 2)
             {
@@ -183,7 +183,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.02; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.05; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.05; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.07; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.07; }
             }
         }
         //Загородная зона, зимой, оповещенные !!!
@@ -198,7 +198,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.39; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.59; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.66; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.81; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.81; }
             }
             if (Form1.N <= 0.5)
             {
@@ -209,7 +209,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.37; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.57; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.62; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.77; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.77; }
             }
             if (Form1.N <= 1)
             {
@@ -220,7 +220,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.32; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.48; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.55; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.67; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.67; }
             }
             if (Form1.N <= 2)
             {
@@ -231,7 +231,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.15; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.23; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.26; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.32; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.32; }
             }
             if (Form1.N > 2)
             {
@@ -242,7 +242,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.04; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.05; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.04; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.06; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.06; }
             }
         }
         //Загородная зона, с\х период,  НЕ оповещенные !!
@@ -257,7 +257,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.17; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.15; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.19; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.48; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.48; }
             }
             if (Form1.N <= 0.5)
             {
@@ -268,7 +268,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.14; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.14; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.18; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.46; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.46; }
             }
             if (Form1.N <= 1)
             {
@@ -279,7 +279,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.12; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.12; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.16; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.40; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.40; }
             }
             if (Form1.N <= 2)
             {
@@ -290,7 +290,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.06; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.06; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.08; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.19; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.19; }
             }
             if (Form1.N > 2)
             {
@@ -301,7 +301,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.02; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.02; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.02; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.05; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.05; }
             }
         }
         //Загородная зона, с\х период, оповещенные !!
@@ -316,7 +316,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.31; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.31; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.35; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.59; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.59; }
             }
             if (Form1.N <= 0.5)
             {
@@ -327,7 +327,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.30; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.30; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.33; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.57; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.57; }
             }
             if (Form1.N <= 1)
             {
@@ -338,7 +338,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.26; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.26; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.29; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.48; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.48; }
             }
             if (Form1.N <= 2)
             {
@@ -349,7 +349,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.12; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.12; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.14; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.23; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.23; }
             }
             if (Form1.N > 2)
             {
@@ -360,7 +360,7 @@ namespace PrognozCS
                 if (Form1.Tsut >= 13) { Form1.Kzk = 0.03; }
                 if (Form1.Tsut >= 15) { Form1.Kzk = 0.05; }
                 if (Form1.Tsut >= 17) { Form1.Kzk = 0.03; }
-                if ((Form1.Tsut >= 19) || (Form1.Tsut < 1)) { Form1.Kzk = 0.7; }
+                if ((Form1.Tsut >= 19) && (Form1.Tsut < 1)) { Form1.Kzk = 0.7; }
             }
         }
     }

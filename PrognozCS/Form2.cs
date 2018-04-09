@@ -8,6 +8,14 @@ namespace PrognozCS
     {
         public static double S;
         public static string AXOB, AXOB1, AXOB2, AXOB3, AXOB4, AXOB5, AXOB6;
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Извините, данная опция пока в разработке!",
+                                "Внимание", MessageBoxButtons.OK);
+            //new Form4().Show();
+        }
+
         public static string SIZ, SIZ1, SIZ2, SIZ3, SIZ4, SIZ5, SIZ6;
         public Form2()
         {
@@ -268,7 +276,7 @@ namespace PrognozCS
                 switch (P)
                 {
                     case 0:
-                        open = "Не достаточно данных для расчета!";
+                        open = "Не достаточно данных для расчета пострадавшего населения!";
                         poteriAs1 = "Не указано!";
                         poteriAs2 = "Не указано!";
                         poteriAs3 = "Не указано!";
@@ -393,7 +401,7 @@ namespace PrognozCS
                 switch (Form1.Kz)
                 {
                     case 0:
-                        open = "Не достаточно данных для расчета!";
+                        open = "Не достаточно данных для расчета пострадавшего населения!";
                         break;
                     default:
                         open = "Всего со смертельным исходом и потерявших работоспособность " +
@@ -403,7 +411,7 @@ namespace PrognozCS
                 switch (Form1.Kg)
                 {
                     case 0:
-                        obj = "Не достаточно данных для расчета!";
+                        obj = "Не достаточно данных для расчета пострадавшего населения!";
                         break;
                     default:
                         obj = "Всего со смертельным исходом и потерявших работоспособность " +
