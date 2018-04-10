@@ -100,9 +100,6 @@ namespace PrognozCS
             distance.Text = "2";
             plotNasG.Text = "";
             plotNasZ.Text = "";
-            outubejG.Text = "";
-            outubejZ.Text = "";
-            timeday.Text = "";
         }
 
         public void AVmest_CheckedChanged(object sender, EventArgs e)
@@ -1262,20 +1259,11 @@ namespace PrognozCS
                 if (plotNasZ.Text == "") { Az = 0; }
                 else { Az = Convert.ToDouble(plotNasZ.Text); }
                 ///
-                if (outubejG.Text == "") { n2g = 0; }
-                else { n2g = Convert.ToDouble(outubejG.Text); }
-                ///
-                if (outubejZ.Text == "") { n2z = 0; }
-                else { n2z = Convert.ToDouble(outubejZ.Text); }
-                ///
                 if (inGAZG.Text == "") { n3g = 0; }
                 else { n3g = Convert.ToDouble(inGAZG.Text); }
                 ///
                 if (inGAZZ.Text == "") { n3z = 0; }
                 else { n3z = Convert.ToDouble(inGAZZ.Text); }
-                ///
-                if (timeday.Text == "") { Tsut = 0; }
-                else { Tsut = Convert.ToDouble(timeday.Text); }
                 ///
                 if (RGAZobj.Text == "") { n2o = 0; }
                 else { n2o = Convert.ToDouble(RGAZobj.Text); }
@@ -3274,45 +3262,6 @@ namespace PrognozCS
                 //
                 if (AVmest.Checked)
                 {
-                    /*Коэффициенты защищенности населения в зависимости
-                     * от времени суток и времени года*/
-                    if (opoveshZ.Checked)
-                    {
-                        KoeffZ.GorOpovesh();
-                        if (periodSH.Checked)
-                        {
-                            KoeffZ.SelOpovSH();
-                        }
-                        if (periodZIMA.Checked)
-                        {
-                            KoeffZ.SelOpovZim();
-                        }
-                    }
-                    if (noopoveshZ.Checked)
-                    {
-                        KoeffZ.GorNeOpovesh();
-                        if (periodSH.Checked)
-                        {
-                            KoeffZ.SelNeOpovSH();
-                        }
-                        if (periodZIMA.Checked)
-                        {
-                            KoeffZ.SelNeOpovZim();
-                        }
-                    }
-                    //Вычисляем долю незащищенного населения в городе и загородной зоне
-                    if (opoveshG.Checked) { KoeffZ.GorOpovesh(); }
-                    if (noopoveshG.Checked) { KoeffZ.GorNeOpovesh(); }
-                    if (opoveshZ.Checked)
-                    {
-                        if (periodSH.Checked) { KoeffZ.SelOpovSH(); }
-                        if (periodZIMA.Checked) { KoeffZ.SelOpovZim(); }
-                    }
-                    if (noopoveshZ.Checked)
-                    {
-                        if (periodSH.Checked) { KoeffZ.SelNeOpovSH(); }
-                        if (periodZIMA.Checked) { KoeffZ.SelNeOpovZim(); }
-                    }
                     //Перевод в проценты
                     //N11 = n1g * 0.01; N12 = n1z * 0.01;
                     //N21 = n2g * 0.01; N22 = n2z * 0.01;

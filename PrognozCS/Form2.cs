@@ -17,6 +17,7 @@ namespace PrognozCS
         }
 
         public static string SIZ, SIZ1, SIZ2, SIZ3, SIZ4, SIZ5, SIZ6;
+
         public Form2()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace PrognozCS
             int Txm4 = (int)Form1.Txm4;
             int Txm5 = (int)Form1.Txm5;
             int Txm6 = (int)Form1.Txm6;
-            
+
             time.Text = Form1.Txh.ToString() + " часов " + Txm.ToString() + " минут";
 
             if (Form1.p == 0) { label00.Text = "Вещество не указано!"; }
@@ -48,7 +49,7 @@ namespace PrognozCS
             else { label05.Text = Form1.Txh5.ToString() + " часов " + Txm5.ToString() + " минут"; }
             if (Form1.p6 == 0) { label06.Text = "Вещество не указано!"; }
             else { label06.Text = Form1.Txh6.ToString() + " часов " + Txm6.ToString() + " минут"; }
-            
+
             if (Form1.Q01 == 0) { label01.Visible = false; labelTime1.Visible = false; }
             if (Form1.Q02 == 0) { label02.Visible = false; labelTime2.Visible = false; }
             if (Form1.Q03 == 0) { label03.Visible = false; labelTime3.Visible = false; }
@@ -92,32 +93,9 @@ namespace PrognozCS
 
         public void Tabl()
         {
-            //Создаем картинку
-            Bitmap bpm = new Bitmap(pictureob1.Width, pictureob1.Height);
-            //Импортируем созданную картинку
-            Graphics tbl = Graphics.FromImage(bpm);
-            //Карандаши
-            Pen PBlack = new Pen(Color.Black, 1);
-            SolidBrush BrBlack = new SolidBrush(Color.Black);
-            SolidBrush BrSilver = new SolidBrush(Color.Silver);
-
             //Условия и текст
             int K = (int)Form1.Kg + (int)Form1.Kz;
 
-            string istZaraj = "Источник\nзаражения";
-            string tipAXOB = "Тип АХОВ";
-            string kolAXOBl = "Кол-во АХОВ";
-            string glubZonel = "Глубина зоны\nзаражения";
-            string poteri = "Потери от\nАХОВ";
-            string tipSIZ = "Тип СИЗ.";
-            string primNIS = "Примечание\nНИС";
-            string ukritie = "Проницаемость\nчерез укрытие.";
-            string potA = "Структура\nпотерь:";
-            string potAs1 = "Со сметрельным\nисходом:";
-            string potAs2 = "Средней и тяжелой\nстепени:";
-            string potAs3 = "Легкой степени:";
-            string PloshZar = "Общая площадь\nзоны заражения";
-            
             string glubZone = Form1.G.ToString() + " км";
             string obshPloshZar = Form1.Sf.ToString() + " км²";
             string poteriT = K.ToString() + " чел";
@@ -133,69 +111,21 @@ namespace PrognozCS
             string open;
             string obj;
 
-            switch (Form1.Q0)
+            string AmountSubstanceView(double Q)
             {
-                case 0:
-                    kolvoAXOB = "Не указано!";
-                    break;
-                default:
-                    kolvoAXOB = Form1.Q0.ToString() + " т";
-                    break;
+                string outPut;
+                if (Q == 0) outPut = $"{Q.ToString()} т";
+                else outPut = "Не указано!";
+                return outPut;
             }
-            switch (Form1.Q01)
-            {
-                case 0:
-                    kolvoAXOB1 = "Не указано!";
-                    break;
-                default:
-                    kolvoAXOB1 = Form1.Q01.ToString() + " т";
-                    break;
-            }
-            switch (Form1.Q02)
-            {
-                case 0:
-                    kolvoAXOB2 = "Не указано!";
-                    break;
-                default:
-                    kolvoAXOB2 = Form1.Q02.ToString() + " т";
-                    break;
-            }
-            switch (Form1.Q03)
-            {
-                case 0:
-                    kolvoAXOB3 = "Не указано!";
-                    break;
-                default:
-                    kolvoAXOB3 = Form1.Q03.ToString() + " т";
-                    break;
-            }
-            switch (Form1.Q04)
-            {
-                case 0:
-                    kolvoAXOB4 = "Не указано!";
-                    break;
-                default:
-                    kolvoAXOB4 = Form1.Q04.ToString() + " т";
-                    break;
-            }
-            switch (Form1.Q05)
-            {
-                case 0:
-                    kolvoAXOB5 = "Не указано!";
-                    break;
-                default:
-                    kolvoAXOB5 = Form1.Q05.ToString() + " т";
-                    break;
-            }
-            switch (Form1.Q06)
-            {
-                case 0:
-                    kolvoAXOB6 = "Не указано!";
-                    break;
-                default:
-                    kolvoAXOB6 = Form1.Q06.ToString() + " т";
-                    break;
-            }
+
+            kolvoAXOB = AmountSubstanceView(Form1.Q0);
+            kolvoAXOB1 = AmountSubstanceView(Form1.Q01);
+            kolvoAXOB2 = AmountSubstanceView(Form1.Q02);
+            kolvoAXOB3 = AmountSubstanceView(Form1.Q03);
+            kolvoAXOB4 = AmountSubstanceView(Form1.Q04);
+            kolvoAXOB5 = AmountSubstanceView(Form1.Q05);
+            kolvoAXOB6 = AmountSubstanceView(Form1.Q06);
 
             switch (Form1.pron)
             {
@@ -241,7 +171,7 @@ namespace PrognozCS
                     break;
             }
 
-            string NIS = "Верт. уст.воздуха:\n" + vertUst + ", V =" + Form1.v.ToString() + 
+            string NIS = "Верт. уст.воздуха:\n" + vertUst + ", V =" + Form1.v.ToString() +
                 " м/с,\n t = " + Form1.t.ToString() + " °C";
 
             switch (Form1.podd)
@@ -257,7 +187,7 @@ namespace PrognozCS
                     break;
                 default:
                     Zaraj = "Нет данных!";
-                break;
+                    break;
             }
 
             switchCaseTabl.substA();
@@ -268,7 +198,6 @@ namespace PrognozCS
             switchCaseTabl.substA5();
             switchCaseTabl.substA6();
 
-            tbl.FillRectangle(BrSilver, 0, 0, 999, 999);//Заполнение пикчербокса в рисунке
             if (Form1.obj == 0)
             {
                 int P = (int)Form1.P1 + (int)Form1.P2;
@@ -290,110 +219,6 @@ namespace PrognozCS
                 label2.Text = open;
                 label3.Text = "";
 
-                //Таблица
-                tbl.DrawLine(PBlack, 0, 0, 534, 0);//
-                tbl.DrawLine(PBlack, 0, 1, 534, 1);//
-                tbl.DrawLine(PBlack, 0, 50, 534, 50);//
-                tbl.DrawLine(PBlack, 0, 100, 534, 100);//
-                tbl.DrawLine(PBlack, 0, 101, 534, 101);//
-                tbl.DrawLine(PBlack, 0, 150, 534, 150);//
-                tbl.DrawLine(PBlack, 0, 200, 534, 200);//
-                tbl.DrawLine(PBlack, 0, 201, 534, 201);//
-
-                tbl.DrawLine(PBlack, 0, 0, 0, 200);//
-                tbl.DrawLine(PBlack, 1, 0, 1, 200);//
-                tbl.DrawLine(PBlack, 107, 0, 107, 200);//
-                tbl.DrawLine(PBlack, 213, 0, 213, 200);//
-                tbl.DrawLine(PBlack, 320, 0, 320, 200);//
-                tbl.DrawLine(PBlack, 427, 0, 427, 200);//
-                tbl.DrawLine(PBlack, 533, 0, 533, 200);//
-                tbl.DrawLine(PBlack, 534, 0, 534, 200);//
-
-                //Текст в таблице
-                tbl.DrawString(istZaraj, Font, BrBlack, 1, 1);//
-                tbl.DrawString(glubZonel, Font, BrBlack, 107, 1);//
-                tbl.DrawString(PloshZar, Font, BrBlack, 213, 1);//
-                tbl.DrawString(primNIS, Font, BrBlack, 320, 1);//
-                tbl.DrawString(potA + "\n" + potAs3, Font, BrBlack, 1, 101);//
-                tbl.DrawString(potAs2, Font, BrBlack, 107, 101);//
-                tbl.DrawString(potAs1, Font, BrBlack, 213, 101);//
-                
-
-                tbl.DrawString(Zaraj, Font, BrBlack, 1, 51);//
-                tbl.DrawString(glubZone, Font, BrBlack, 107, 51);//
-                tbl.DrawString(obshPloshZar, Font, BrBlack, 213, 51);//
-                tbl.DrawString(NIS, Font, BrBlack, 320, 51);//
-                tbl.DrawString(poteriAs3, Font, BrBlack, 1, 151);//
-                tbl.DrawString(poteriAs2, Font, BrBlack, 107, 151);//
-                tbl.DrawString(poteriAs1, Font, BrBlack, 213, 151);//
-                
-
-                if (Form1.lockpanel == 0)
-                {
-                    //Текст в таблице
-                    tbl.DrawString(tipAXOB, Font, BrBlack, 320, 101);//
-                    tbl.DrawString(kolAXOBl, Font, BrBlack, 427, 101);//
-                    tbl.DrawString(tipSIZ + "\n" + ukritie, Font, BrBlack, 427, 1);//
-
-                    tbl.DrawString(AXOB, Font, BrBlack, 320, 151);//
-                    tbl.DrawString(kolvoAXOB, Font, BrBlack, 427, 151);//
-                    tbl.DrawString(SIZ + "\n" + ukr, Font, BrBlack, 427, 51);//
-                }
-                else
-                {
-                    //Таблица
-                    tbl.DrawLine(PBlack, 0, 280, 0, 200);//
-                    tbl.DrawLine(PBlack, 1, 280, 1, 200);//
-                    tbl.DrawLine(PBlack, 178, 280, 178, 200);//
-                    tbl.DrawLine(PBlack, 356, 280, 356, 200);//
-                    tbl.DrawLine(PBlack, 533, 280, 533, 200);//
-                    tbl.DrawLine(PBlack, 534, 280, 534, 200);//
-
-                    tbl.DrawLine(PBlack, 0, 280, 0, 360);//
-                    tbl.DrawLine(PBlack, 1, 280, 1, 360);//
-                    tbl.DrawLine(PBlack, 267, 280, 267, 360);//
-                    tbl.DrawLine(PBlack, 533, 280, 533, 360);//
-                    tbl.DrawLine(PBlack, 534, 280, 534, 360);//
-
-                    tbl.DrawLine(PBlack, 0, 280, 534, 280);//
-                    tbl.DrawLine(PBlack, 0, 281, 534, 281);//
-                    tbl.DrawLine(PBlack, 0, 360, 534, 360);//
-                    tbl.DrawLine(PBlack, 0, 361, 534, 361);//
-
-                    //Текст в таблице
-                    tbl.DrawString(tipAXOB + " №1", Font, BrBlack, 320, 101);//
-                    tbl.DrawString(kolAXOBl + " №1", Font, BrBlack, 427, 101);//
-                    tbl.DrawString(tipSIZ + " №1" + "\n" + ukritie, Font, BrBlack, 427, 1);//
-                    tbl.DrawString(AXOB1, Font, BrBlack, 320, 151);//
-                    tbl.DrawString(kolvoAXOB1, Font, BrBlack, 427, 151);//
-                    tbl.DrawString(SIZ1 + "\n" + ukr, Font, BrBlack, 427, 51);//
-
-                    tbl.DrawString(tipAXOB + " №2: ", Font, BrBlack, 2, 201);//
-                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№2: ", Font, BrBlack, 2, 225);//
-                    tbl.DrawString(AXOB2, Font, BrBlack, 80, 201);//
-                    tbl.DrawString("\n" + SIZ2 + "\n" + kolvoAXOB2, Font, BrBlack, 75, 225);//
-
-                    tbl.DrawString(tipAXOB + " №3: ", Font, BrBlack, 179, 201);//
-                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№3: ", Font, BrBlack, 179, 225);//
-                    tbl.DrawString(AXOB3, Font, BrBlack, 259, 201);//
-                    tbl.DrawString("\n" + SIZ3 + "\n" + kolvoAXOB3, Font, BrBlack, 254, 225);//
-
-                    tbl.DrawString(tipAXOB + " №4: ", Font, BrBlack, 357, 201);//
-                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№4: ", Font, BrBlack, 357, 225);//
-                    tbl.DrawString(AXOB4, Font, BrBlack, 437, 201);//
-                    tbl.DrawString("\n" + SIZ4 + "\n" + kolvoAXOB4, Font, BrBlack, 432, 225);//
-
-                    tbl.DrawString(tipAXOB + " №5: ", Font, BrBlack, 2, 282);//
-                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№5: ", Font, BrBlack, 2, 306);//
-                    tbl.DrawString(AXOB5, Font, BrBlack, 80, 282);//
-                    tbl.DrawString("\n" + SIZ5 + "\n" + kolvoAXOB5, Font, BrBlack, 75, 306);//
-
-                    tbl.DrawString(tipAXOB + " №6: ", Font, BrBlack, 269, 282);//
-                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№6: ", Font, BrBlack, 269, 306);//
-                    tbl.DrawString(AXOB6, Font, BrBlack, 349, 282);//
-                    tbl.DrawString("\n" + SIZ6 + "\n" + kolvoAXOB6, Font, BrBlack, 344, 306);//
-                }
-                
                 //tbl.DrawString(open, Font, BrBlack, 0, 285);//
             }
             if (Form1.obj == 1)
@@ -423,118 +248,7 @@ namespace PrognozCS
                 label3.Text = obj;
 
                 if ((Form1.Kz + Form1.Kg) == 0) { poteriT = "Нет данных!"; }
-                
-                //Таблица
-                tbl.DrawLine(PBlack, 0, 0, 534, 0);//
-                tbl.DrawLine(PBlack, 0, 1, 534, 1);//
-                tbl.DrawLine(PBlack, 0, 50, 534, 50);//
-                tbl.DrawLine(PBlack, 0, 100, 534, 100);//
-                tbl.DrawLine(PBlack, 0, 101, 534, 101);//
-                tbl.DrawLine(PBlack, 0, 150, 534, 150);//
-                tbl.DrawLine(PBlack, 0, 200, 534, 200);//
-                tbl.DrawLine(PBlack, 0, 201, 534, 201);//
-
-                tbl.DrawLine(PBlack, 0, 0, 0, 200);//
-                tbl.DrawLine(PBlack, 1, 0, 1, 200);//
-                tbl.DrawLine(PBlack, 107, 0, 107, 200);//
-                tbl.DrawLine(PBlack, 213, 0, 213, 200);//
-                tbl.DrawLine(PBlack, 320, 0, 320, 200);//
-                tbl.DrawLine(PBlack, 427, 0, 427, 200);//
-                tbl.DrawLine(PBlack, 533, 0, 533, 200);//
-                tbl.DrawLine(PBlack, 534, 0, 534, 200);//
-
-                //Текст в таблице
-                tbl.DrawString(istZaraj, Font, BrBlack, 1, 1);//
-                tbl.DrawString(tipAXOB, Font, BrBlack, 107, 1);//
-                tbl.DrawString(kolAXOBl, Font, BrBlack, 213, 1);//
-                tbl.DrawString(glubZonel, Font, BrBlack, 320, 1);//
-                //tbl.DrawString(PloshZar, Font, BrBlack, 427, 1);//
-                tbl.DrawString(ukritie, Font, BrBlack, 1, 101);//
-                tbl.DrawString(poteri, Font, BrBlack, 107, 101);//
-                tbl.DrawString(primNIS, Font, BrBlack, 213, 101);//
-                //tbl.DrawString(tipSIZ, Font, BrBlack, 320, 101);//
-
-                tbl.DrawString(Zaraj, Font, BrBlack, 1, 51);//
-                tbl.DrawString(AXOB, Font, BrBlack, 107, 51);//
-                tbl.DrawString(kolvoAXOB, Font, BrBlack, 213, 51);//
-                tbl.DrawString(glubZone, Font, BrBlack, 320, 51);//
-                //tbl.DrawString(obshPloshZar, Font, BrBlack, 427, 51);//
-                tbl.DrawString(ukr, Font, BrBlack, 1, 151);//
-                tbl.DrawString(poteriT, Font, BrBlack, 107, 151);//
-                tbl.DrawString(NIS, Font, BrBlack, 213, 151);//
-                //tbl.DrawString(SIZ, Font, BrBlack, 320, 151);//
-
-                //tbl.DrawString(obj, Font, BrBlack, 0, 283);//
-                //tbl.DrawString(open, Font, BrBlack, 0, 300);//
-
-                if (Form1.lockpanel == 0)
-                {
-                    //Текст в таблице
-                    tbl.DrawString(tipAXOB, Font, BrBlack, 320, 101);//
-                    tbl.DrawString(kolAXOBl, Font, BrBlack, 427, 101);//
-                    tbl.DrawString(tipSIZ + "\n" + ukritie, Font, BrBlack, 427, 1);//
-
-                    tbl.DrawString(AXOB, Font, BrBlack, 320, 151);//
-                    tbl.DrawString(kolvoAXOB, Font, BrBlack, 427, 151);//
-                    tbl.DrawString(SIZ + "\n" + ukr, Font, BrBlack, 427, 51);//
-                }
-                else
-                {
-                    //Таблица
-                    tbl.DrawLine(PBlack, 0, 280, 0, 200);//
-                    tbl.DrawLine(PBlack, 1, 280, 1, 200);//
-                    tbl.DrawLine(PBlack, 178, 280, 178, 200);//
-                    tbl.DrawLine(PBlack, 356, 280, 356, 200);//
-                    tbl.DrawLine(PBlack, 533, 280, 533, 200);//
-                    tbl.DrawLine(PBlack, 534, 280, 534, 200);//
-
-                    tbl.DrawLine(PBlack, 0, 280, 0, 360);//
-                    tbl.DrawLine(PBlack, 1, 280, 1, 360);//
-                    tbl.DrawLine(PBlack, 267, 280, 267, 360);//
-                    tbl.DrawLine(PBlack, 533, 280, 533, 360);//
-                    tbl.DrawLine(PBlack, 534, 280, 534, 360);//
-
-                    tbl.DrawLine(PBlack, 0, 280, 534, 280);//
-                    tbl.DrawLine(PBlack, 0, 281, 534, 281);//
-                    tbl.DrawLine(PBlack, 0, 360, 534, 360);//
-                    tbl.DrawLine(PBlack, 0, 361, 534, 361);//
-
-                    //Текст в таблице
-                    tbl.DrawString(tipAXOB + " №1", Font, BrBlack, 320, 101);//
-                    tbl.DrawString(kolAXOBl + " №1", Font, BrBlack, 427, 101);//
-                    tbl.DrawString(tipSIZ + " №1" + "\n" + ukritie, Font, BrBlack, 427, 1);//
-                    tbl.DrawString(AXOB1, Font, BrBlack, 320, 151);//
-                    tbl.DrawString(kolvoAXOB1, Font, BrBlack, 427, 151);//
-                    tbl.DrawString(SIZ1 + "\n" + ukr, Font, BrBlack, 427, 51);//
-
-                    tbl.DrawString(tipAXOB + " №2: ", Font, BrBlack, 2, 201);//
-                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№2: ", Font, BrBlack, 2, 225);//
-                    tbl.DrawString(AXOB2, Font, BrBlack, 80, 201);//
-                    tbl.DrawString("\n" + SIZ2 + "\n" + kolvoAXOB2, Font, BrBlack, 75, 225);//
-
-                    tbl.DrawString(tipAXOB + " №3: ", Font, BrBlack, 179, 201);//
-                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№3: ", Font, BrBlack, 179, 225);//
-                    tbl.DrawString(AXOB3, Font, BrBlack, 259, 201);//
-                    tbl.DrawString("\n" + SIZ3 + "\n" + kolvoAXOB3, Font, BrBlack, 254, 225);//
-
-                    tbl.DrawString(tipAXOB + " №4: ", Font, BrBlack, 357, 201);//
-                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№4: ", Font, BrBlack, 357, 225);//
-                    tbl.DrawString(AXOB4, Font, BrBlack, 437, 201);//
-                    tbl.DrawString("\n" + SIZ4 + "\n" + kolvoAXOB4, Font, BrBlack, 432, 225);//
-
-                    tbl.DrawString(tipAXOB + " №5: ", Font, BrBlack, 2, 282);//
-                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№5: ", Font, BrBlack, 2, 306);//
-                    tbl.DrawString(AXOB5, Font, BrBlack, 80, 282);//
-                    tbl.DrawString("\n" + SIZ5 + "\n" + kolvoAXOB5, Font, BrBlack, 75, 306);//
-
-                    tbl.DrawString(tipAXOB + " №6: ", Font, BrBlack, 269, 282);//
-                    tbl.DrawString("\n" + tipSIZ + "\n" + kolAXOBl + "\n№6: ", Font, BrBlack, 269, 306);//
-                    tbl.DrawString(AXOB6, Font, BrBlack, 349, 282);//
-                    tbl.DrawString("\n" + SIZ6 + "\n" + kolvoAXOB6, Font, BrBlack, 344, 306);//
-                }
             }
-            //Вывод картинок
-            pictureob1.Image = bpm;
         }
     }
 }

@@ -53,12 +53,11 @@
             this.plosh = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureob1 = new System.Windows.Forms.PictureBox();
+            this.outputPanel = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelAXOB.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureob1)).BeginInit();
+            this.outputPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -304,24 +303,15 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "obj";
             // 
-            // panel1
+            // outputPanel
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.pictureob1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(573, 282);
-            this.panel1.TabIndex = 37;
-            // 
-            // pictureob1
-            // 
-            this.pictureob1.Location = new System.Drawing.Point(12, 12);
-            this.pictureob1.Name = "pictureob1";
-            this.pictureob1.Size = new System.Drawing.Size(535, 362);
-            this.pictureob1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureob1.TabIndex = 37;
-            this.pictureob1.TabStop = false;
+            this.outputPanel.AutoScroll = true;
+            this.outputPanel.Controls.Add(this.panel1);
+            this.outputPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.outputPanel.Location = new System.Drawing.Point(0, 0);
+            this.outputPanel.Name = "outputPanel";
+            this.outputPanel.Size = new System.Drawing.Size(573, 282);
+            this.outputPanel.TabIndex = 37;
             // 
             // button3
             // 
@@ -337,6 +327,13 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(549, 289);
+            this.panel1.TabIndex = 0;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,7 +342,7 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(573, 555);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.outputPanel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.plosh);
@@ -365,9 +362,7 @@
             this.Text = "Прогнозирование: Результаты расчетов";
             this.panelAXOB.ResumeLayout(false);
             this.panelAXOB.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureob1)).EndInit();
+            this.outputPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,8 +394,8 @@
         private System.Windows.Forms.Label plosh;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureob1;
+        private System.Windows.Forms.Panel outputPanel;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel1;
     }
 }
