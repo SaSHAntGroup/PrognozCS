@@ -3264,16 +3264,12 @@ namespace PrognozCS
                 //
                 if (AVmest.Checked)
                 {
-                    //Перевод в проценты
-                    //N11 = n1g * 0.01; N12 = n1z * 0.01;
-                    //N21 = n2g * 0.01; N22 = n2z * 0.01;
-                    //N31 = n3g * 0.01; N32 = n3z * 0.01;
                     mestSIZ.percentOpenMest();
-                    //Kg = (1 - N11 - N21) * Kgk;
-                    //Kz = (1 - N12 - N22) * Kzk;
+                    Kg = (1 - N31 - N21);
+                    Kz = (1 - N32 - N22);
                     //Величина возможных потерь населения в очаге поражения АХОВ
-                    Pg = (X / G) * Ag * Kgk * N11 * N21 * N31;
-                    Pz = (1 - (X / G)) * Az * Kzk * N12 * N22 * N32;
+                    Pg = (X / G) * Ag * Kg * N31;
+                    Pz = (1 - (X / G)) * Az * Kz * N32;
                     P0 = Math.Truncate(Sf * (Pg + Pz));
                     P1 = Math.Truncate(P0 * 0.35);
                     P2 = Math.Truncate(P0 * 0.4);
