@@ -89,17 +89,19 @@ namespace PrognozCS
 
         public void StartZnach()
         {
-            substance.Text = "Аммиак";
-            outAXOB.Text = "500";
+            substance.Text = "Хлор";
+            outAXOB.Text = "150";
             time.Text = "2";
             //sam.Checked = true;
             //visPod.Text = "2";
             vertUst.Text = "Инверсия";
-            speedAir.Text = "1";
+            speedAir.Text = "3";
             tempAir.Text = "20";
-            distance.Text = "2";
-            plotNasG.Text = "";
-            plotNasZ.Text = "";
+            distance.Text = "5";
+            plotNasG.Text = "900";
+            inGAZG.Text = "90";
+            plotNasZ.Text = "900";
+            inGAZZ.Text = "90";
         }
 
         public void AVmest_CheckedChanged(object sender, EventArgs e)

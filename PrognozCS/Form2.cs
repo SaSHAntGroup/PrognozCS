@@ -32,11 +32,7 @@ namespace PrognozCS
             int Txm4 = (int)Form1.Txm4;
             int Txm5 = (int)Form1.Txm5;
             int Txm6 = (int)Form1.Txm6;
-
-            time.Text = Form1.Txh.ToString() + " часов " + Txm.ToString() + " минут";
-
-            if (Form1.p == 0) { label00.Text = "Вещество не указано!"; }
-            else { label00.Text = Form1.Txh0.ToString() + " часов " + Txm0.ToString() + " минут"; }
+            
             if (Form1.p1 == 0) { label01.Text = "Вещество не указано!"; }
             else { label01.Text = Form1.Txh1.ToString() + " часов " + Txm1.ToString() + " минут"; }
             if (Form1.p2 == 0) { label02.Text = "Вещество не указано!"; }
@@ -95,9 +91,6 @@ namespace PrognozCS
         {
             //Условия и текст
             int K = (int)Form1.Kg + (int)Form1.Kz;
-
-            string glubZone = Form1.G.ToString() + " км";
-            string obshPloshZar = Form1.Sf.ToString() + " км²";
             string poteriT = K.ToString() + " чел";
             string poteriA = Form1.P0.ToString() + " чел";
             string poteriAs1 = Form1.P1.ToString() + " чел";
@@ -105,7 +98,6 @@ namespace PrognozCS
             string poteriAs3 = Form1.P3.ToString() + " чел";
 
             string Zaraj;
-            string kolvoAXOB, kolvoAXOB1, kolvoAXOB2, kolvoAXOB3, kolvoAXOB4, kolvoAXOB5, kolvoAXOB6;
             string vertUst;
             string ukr;
             string open;
@@ -114,18 +106,10 @@ namespace PrognozCS
             string AmountSubstanceView(double Q)
             {
                 string outPut;
-                if (Q == 0) outPut = $"{Q.ToString()} т";
+                if (Q != 0) outPut = $"{Q.ToString()} т";
                 else outPut = "Не указано!";
                 return outPut;
             }
-
-            kolvoAXOB = AmountSubstanceView(Form1.Q0);
-            kolvoAXOB1 = AmountSubstanceView(Form1.Q01);
-            kolvoAXOB2 = AmountSubstanceView(Form1.Q02);
-            kolvoAXOB3 = AmountSubstanceView(Form1.Q03);
-            kolvoAXOB4 = AmountSubstanceView(Form1.Q04);
-            kolvoAXOB5 = AmountSubstanceView(Form1.Q05);
-            kolvoAXOB6 = AmountSubstanceView(Form1.Q06);
 
             switch (Form1.pron)
             {
@@ -170,9 +154,6 @@ namespace PrognozCS
                     vertUst = "не указана!";
                     break;
             }
-
-            string NIS = "Верт. уст.воздуха:\n" + vertUst + ", V =" + Form1.v.ToString() +
-                " м/с,\n t = " + Form1.t.ToString() + " °C";
 
             switch (Form1.podd)
             {
@@ -221,6 +202,72 @@ namespace PrognozCS
 
                 //tbl.DrawString(open, Font, BrBlack, 0, 285);//
             }
+            resultLabel.Text = $"Аварийно химически-опасное вещество:                                          \n" +
+                    $"Количество вещества:                                                                     \n" +
+                    $"Толщина слоя разлившегося АХОВ:                                                          \n" +
+                    $"Скорость ветра:                                                                             \n" +
+                    $"Температура воздуха:                                                                     \n" +
+                    $"Время прошедшее с момента аварии:                                                        \n" +
+                    $"Время подхода зараженного облака до населенного пункта:                                  \n" +
+                    $"Время полного испарения АХОВ:                                                            \n" +
+                    $"Фактическая глубина распространения зараженного облака:                                  \n" +
+                    $"Предельная глубина распространения зараженного облака:                                   \n" +
+                    $"Площадь фактического поражения:                                                          \n" +
+                    $"Площадь возможного поражения:                                                            \n\n" +
+                    $"Дополнительные сведенья: \n\n" +
+                    $"Молекулярная масса вещества: \n" +
+                    $"Плотность вещества: \n" +
+                    $"Давление насыщенного пара: \n" +
+                    $"Пороговая токсодоза: \n" +
+                    $"Температура кипения: \n" +
+                    $"Удельная теплоемкость АХОВ: \n" +
+                    $"Удельная теплота испарения АХОВ при температуре испарения: \n" +
+                    $"Продолжительность поражаюшего действия: \n" +
+                    $"Эквивалентное кол-во АХОВ в первичном облаке: \n" +
+                    $"Эквивалентное кол-во АХОВ во вторичном облаке: \n" +
+                    $"Коэф., зависящий от степени верт. уст. воздуха: \n" +
+                    $"Коэф., зависящий от условий хранения АХОВ:\n" +
+                    $"Коэф., зависящий от физико-химических свойств АХОВ:\n" +
+                    $"Коэф., отношение токсодозы хлора к выбранному веществу:\n" +
+                    $"Дополнительный коэффициент (К4):\n" +
+                    $"Коэф., влияние степени вертикальной устойчивости атмосферы:\n" +
+                    $"Дополнительный коэффициент (К6):\n" +
+                    $"Коэф., учитывающий влияние температуры воздуха (перв. облако):\n" +
+                    $"Коэф., учитывающий влияние температуры воздуха (втор. облако):\n";
+
+            result.Text = $"{AXOB} \n" +
+                $"{AmountSubstanceView(Form1.Q0)} \n" +
+                $"{Form1.h} м\n" +
+                $"{Form1.v} м/с\n" +
+                $"{Form1.t} °C\n" +
+                $"{Form1.N} ч\n" +
+                $"{Form1.Txh} часов {Math.Round(Form1.Txm, 0)} минут\n" +
+                $"{Form1.Txh0} часов {Math.Round(Form1.Txm0, 0)} минут\n" +
+                $"{Form1.Ge} км\n" +
+                $"{Form1.Gp} км\n" +
+                $"{Form1.Sf} км²\n" +
+                $"{Form1.Sp} км²\n\n" +
+                $"\n\n" +
+                $"{Form1.M} \n" +
+                $"{Form1.p} \n" +
+                $"{Form1.P} \n" +
+                $"{Form1.D} \n" +
+                $"{Form1.tkip} \n" +
+                $"{Form1.Cp} \n" +
+                $"{Form1.dHisp} \n" +
+                $"{Form1.T} \n" +
+                $"{Form1.Qe1} \n" +
+                $"{Form1.Qe2} \n" +
+                $"{Form1.Kv} \n" +
+                $"{Form1.K1} \n" +
+                $"{Form1.K2} \n" +
+                $"{Form1.K3} \n" +
+                $"{Form1.K4} \n" +
+                $"{Form1.K5} \n" +
+                $"{Form1.K6} \n" +
+                $"{Form1.K7} \n" +
+                $"{Form1.K72} \n" +
+                $"{poteriT}";
             if (Form1.obj == 1)
             {
                 switch (Form1.Kz)

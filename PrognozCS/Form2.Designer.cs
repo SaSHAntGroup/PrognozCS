@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.button1 = new System.Windows.Forms.Button();
-            this.timelabel = new System.Windows.Forms.Label();
-            this.time = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.ploshG = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,7 +39,6 @@
             this.labelTime4 = new System.Windows.Forms.Label();
             this.labelTime5 = new System.Windows.Forms.Label();
             this.labelTime6 = new System.Windows.Forms.Label();
-            this.labelTime = new System.Windows.Forms.Label();
             this.panelAXOB = new System.Windows.Forms.Panel();
             this.label06 = new System.Windows.Forms.Label();
             this.label05 = new System.Windows.Forms.Label();
@@ -49,15 +46,17 @@
             this.label03 = new System.Windows.Forms.Label();
             this.label02 = new System.Windows.Forms.Label();
             this.label01 = new System.Windows.Forms.Label();
-            this.label00 = new System.Windows.Forms.Label();
             this.plosh = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.outputPanel = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.resultLabel = new System.Windows.Forms.Label();
+            this.result = new System.Windows.Forms.Label();
             this.panelAXOB.SuspendLayout();
             this.outputPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -73,25 +72,6 @@
             this.button1.Text = "ОК";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // timelabel
-            // 
-            this.timelabel.AutoSize = true;
-            this.timelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.timelabel.Location = new System.Drawing.Point(9, 329);
-            this.timelabel.Name = "timelabel";
-            this.timelabel.Size = new System.Drawing.Size(408, 13);
-            this.timelabel.TabIndex = 2;
-            this.timelabel.Text = "Время подхода облака зараженного АХОВ до населенного пункта:";
-            // 
-            // time
-            // 
-            this.time.AutoSize = true;
-            this.time.Location = new System.Drawing.Point(418, 329);
-            this.time.Name = "time";
-            this.time.Size = new System.Drawing.Size(26, 13);
-            this.time.TabIndex = 9;
-            this.time.Text = "time";
             // 
             // button2
             // 
@@ -184,16 +164,6 @@
             this.labelTime6.TabIndex = 23;
             this.labelTime6.Text = "Время полного испарения АХОВ №6:";
             // 
-            // labelTime
-            // 
-            this.labelTime.AutoSize = true;
-            this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelTime.Location = new System.Drawing.Point(9, 376);
-            this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(205, 13);
-            this.labelTime.TabIndex = 24;
-            this.labelTime.Text = "Время полного испарения АХОВ:";
-            // 
             // panelAXOB
             // 
             this.panelAXOB.Controls.Add(this.label06);
@@ -267,15 +237,6 @@
             this.label01.TabIndex = 26;
             this.label01.Text = "label7";
             // 
-            // label00
-            // 
-            this.label00.AutoSize = true;
-            this.label00.Location = new System.Drawing.Point(220, 376);
-            this.label00.Name = "label00";
-            this.label00.Size = new System.Drawing.Size(35, 13);
-            this.label00.TabIndex = 32;
-            this.label00.Text = "label7";
-            // 
             // plosh
             // 
             this.plosh.AutoSize = true;
@@ -313,6 +274,15 @@
             this.outputPanel.Size = new System.Drawing.Size(573, 282);
             this.outputPanel.TabIndex = 37;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.result);
+            this.panel1.Controls.Add(this.resultLabel);
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(549, 467);
+            this.panel1.TabIndex = 0;
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -327,12 +297,25 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // panel1
+            // resultLabel
             // 
-            this.panel1.Location = new System.Drawing.Point(4, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(549, 289);
-            this.panel1.TabIndex = 0;
+            this.resultLabel.AutoSize = true;
+            this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.resultLabel.Location = new System.Drawing.Point(3, 5);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(69, 13);
+            this.resultLabel.TabIndex = 0;
+            this.resultLabel.Text = "resultLabel";
+            // 
+            // result
+            // 
+            this.result.AutoSize = true;
+            this.result.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.result.Location = new System.Drawing.Point(408, 5);
+            this.result.Name = "result";
+            this.result.Size = new System.Drawing.Size(32, 13);
+            this.result.TabIndex = 1;
+            this.result.Text = "result";
             // 
             // Form2
             // 
@@ -347,14 +330,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.plosh);
             this.Controls.Add(this.panelAXOB);
-            this.Controls.Add(this.labelTime);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ploshG);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.time);
-            this.Controls.Add(this.timelabel);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label00);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
@@ -363,6 +342,8 @@
             this.panelAXOB.ResumeLayout(false);
             this.panelAXOB.PerformLayout();
             this.outputPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -371,8 +352,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label timelabel;
-        private System.Windows.Forms.Label time;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox ploshG;
         private System.Windows.Forms.Label label1;
@@ -382,7 +361,6 @@
         private System.Windows.Forms.Label labelTime4;
         private System.Windows.Forms.Label labelTime5;
         private System.Windows.Forms.Label labelTime6;
-        private System.Windows.Forms.Label labelTime;
         public System.Windows.Forms.Panel panelAXOB;
         private System.Windows.Forms.Label label06;
         private System.Windows.Forms.Label label05;
@@ -390,12 +368,13 @@
         private System.Windows.Forms.Label label03;
         private System.Windows.Forms.Label label02;
         private System.Windows.Forms.Label label01;
-        private System.Windows.Forms.Label label00;
         private System.Windows.Forms.Label plosh;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel outputPanel;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label resultLabel;
+        private System.Windows.Forms.Label result;
     }
 }
