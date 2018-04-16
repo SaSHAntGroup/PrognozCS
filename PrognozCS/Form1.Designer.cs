@@ -372,7 +372,7 @@
             // plotNasGlabel
             // 
             this.plotNasGlabel.AutoSize = true;
-            this.plotNasGlabel.Location = new System.Drawing.Point(1, 20);
+            this.plotNasGlabel.Location = new System.Drawing.Point(5, 20);
             this.plotNasGlabel.Name = "plotNasGlabel";
             this.plotNasGlabel.Size = new System.Drawing.Size(118, 13);
             this.plotNasGlabel.TabIndex = 27;
@@ -405,7 +405,7 @@
             // 
             // plotNasG
             // 
-            this.plotNasG.Location = new System.Drawing.Point(4, 33);
+            this.plotNasG.Location = new System.Drawing.Point(8, 33);
             this.plotNasG.Name = "plotNasG";
             this.plotNasG.Size = new System.Drawing.Size(203, 20);
             this.plotNasG.TabIndex = 31;
@@ -431,7 +431,7 @@
             // menkm1
             // 
             this.menkm1.AutoSize = true;
-            this.menkm1.Location = new System.Drawing.Point(211, 40);
+            this.menkm1.Location = new System.Drawing.Point(215, 40);
             this.menkm1.Name = "menkm1";
             this.menkm1.Size = new System.Drawing.Size(46, 13);
             this.menkm1.TabIndex = 48;
@@ -1050,7 +1050,7 @@
             this.groupBox3.Size = new System.Drawing.Size(272, 85);
             this.groupBox3.TabIndex = 62;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "В загородной зоне:";
+            this.groupBox3.Text = "Вне зоны населенного пункта:";
             // 
             // inGAZZ
             // 
@@ -1081,12 +1081,12 @@
             this.groupBox2.Size = new System.Drawing.Size(268, 85);
             this.groupBox2.TabIndex = 61;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "В городе:";
+            this.groupBox2.Text = "В населенном пункте:";
             // 
             // percent5
             // 
             this.percent5.AutoSize = true;
-            this.percent5.Location = new System.Drawing.Point(242, 62);
+            this.percent5.Location = new System.Drawing.Point(246, 62);
             this.percent5.Name = "percent5";
             this.percent5.Size = new System.Drawing.Size(15, 13);
             this.percent5.TabIndex = 58;
@@ -1094,7 +1094,7 @@
             // 
             // inGAZG
             // 
-            this.inGAZG.Location = new System.Drawing.Point(182, 59);
+            this.inGAZG.Location = new System.Drawing.Point(186, 59);
             this.inGAZG.Name = "inGAZG";
             this.inGAZG.Size = new System.Drawing.Size(57, 20);
             this.inGAZG.TabIndex = 57;
@@ -1102,7 +1102,7 @@
             // protivoGAZGlabel
             // 
             this.protivoGAZGlabel.AutoSize = true;
-            this.protivoGAZGlabel.Location = new System.Drawing.Point(1, 62);
+            this.protivoGAZGlabel.Location = new System.Drawing.Point(5, 62);
             this.protivoGAZGlabel.Name = "protivoGAZGlabel";
             this.protivoGAZGlabel.Size = new System.Drawing.Size(175, 13);
             this.protivoGAZGlabel.TabIndex = 54;

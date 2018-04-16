@@ -47,13 +47,11 @@
             this.label02 = new System.Windows.Forms.Label();
             this.label01 = new System.Windows.Forms.Label();
             this.plosh = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.outputPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.resultLabel = new System.Windows.Forms.Label();
             this.result = new System.Windows.Forms.Label();
+            this.resultLabel = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panelAXOB.SuspendLayout();
             this.outputPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -246,24 +244,6 @@
             this.plosh.TabIndex = 34;
             this.plosh.Text = "км";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 296);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 35;
-            this.label2.Text = "open";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 313);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(21, 13);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "obj";
-            // 
             // outputPanel
             // 
             this.outputPanel.AutoScroll = true;
@@ -271,7 +251,7 @@
             this.outputPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.outputPanel.Location = new System.Drawing.Point(0, 0);
             this.outputPanel.Name = "outputPanel";
-            this.outputPanel.Size = new System.Drawing.Size(573, 282);
+            this.outputPanel.Size = new System.Drawing.Size(573, 339);
             this.outputPanel.TabIndex = 37;
             // 
             // panel1
@@ -280,8 +260,28 @@
             this.panel1.Controls.Add(this.resultLabel);
             this.panel1.Location = new System.Drawing.Point(4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(549, 467);
+            this.panel1.Size = new System.Drawing.Size(549, 536);
             this.panel1.TabIndex = 0;
+            // 
+            // result
+            // 
+            this.result.AutoSize = true;
+            this.result.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.result.Location = new System.Drawing.Point(408, 5);
+            this.result.Name = "result";
+            this.result.Size = new System.Drawing.Size(32, 13);
+            this.result.TabIndex = 1;
+            this.result.Text = "result";
+            // 
+            // resultLabel
+            // 
+            this.resultLabel.AutoSize = true;
+            this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.resultLabel.Location = new System.Drawing.Point(3, 5);
+            this.resultLabel.Name = "resultLabel";
+            this.resultLabel.Size = new System.Drawing.Size(69, 13);
+            this.resultLabel.TabIndex = 0;
+            this.resultLabel.Text = "resultLabel";
             // 
             // button3
             // 
@@ -297,26 +297,6 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // resultLabel
-            // 
-            this.resultLabel.AutoSize = true;
-            this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.resultLabel.Location = new System.Drawing.Point(3, 5);
-            this.resultLabel.Name = "resultLabel";
-            this.resultLabel.Size = new System.Drawing.Size(69, 13);
-            this.resultLabel.TabIndex = 0;
-            this.resultLabel.Text = "resultLabel";
-            // 
-            // result
-            // 
-            this.result.AutoSize = true;
-            this.result.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.result.Location = new System.Drawing.Point(408, 5);
-            this.result.Name = "result";
-            this.result.Size = new System.Drawing.Size(32, 13);
-            this.result.TabIndex = 1;
-            this.result.Text = "result";
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,8 +306,6 @@
             this.ClientSize = new System.Drawing.Size(573, 555);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.outputPanel);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.plosh);
             this.Controls.Add(this.panelAXOB);
             this.Controls.Add(this.label1);
@@ -369,8 +347,6 @@
         private System.Windows.Forms.Label label02;
         private System.Windows.Forms.Label label01;
         private System.Windows.Forms.Label plosh;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel outputPanel;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel1;

@@ -196,9 +196,6 @@ namespace PrognozCS
                     "- " + P.ToString() + " чел.";
                         break;
                 }
-
-                label2.Text = open;
-                label3.Text = "";
             }
             if (Form1.obj == 1)
             {
@@ -222,9 +219,6 @@ namespace PrognozCS
                         "на объекте - " + Form1.Kg.ToString() + " чел.";
                         break;
                 }
-
-                label2.Text = open;
-                label3.Text = obj;
 
                 if ((Form1.Kz + Form1.Kg) == 0) { poteriT = "Нет данных!"; }
             }

@@ -13,17 +13,17 @@ namespace PrognozCS
              * Для города 
              */
             //В противогазах на открытой месtности
-            //if (Form1.n1g >= 0 && Form1.n1g < 10) { Form1.N11 = 1; }
-            //if (Form1.n1g >= 10 && Form1.n1g < 20) { Form1.N11 = 0.9; }
-            //if (Form1.n1g >= 20 && Form1.n1g < 30) { Form1.N11 = 0.75; }
-            //if (Form1.n1g >= 30 && Form1.n1g < 40) { Form1.N11 = 0.65; }
-            //if (Form1.n1g >= 40 && Form1.n1g < 50) { Form1.N11 = 0.58; }
-            //if (Form1.n1g >= 50 && Form1.n1g < 60) { Form1.N11 = 0.50; }
-            //if (Form1.n1g >= 60 && Form1.n1g < 70) { Form1.N11 = 0.40; }
-            //if (Form1.n1g >= 70 && Form1.n1g < 80) { Form1.N11 = 0.35; }
-            //if (Form1.n1g >= 80 && Form1.n1g < 90) { Form1.N11 = 0.25; }
-            //if (Form1.n1g >= 90 && Form1.n1g < 100) { Form1.N11 = 0.18; }
-            //if (Form1.n1g == 100) { Form1.N11 = 0.10; }
+            if (Form1.n1g >= 0 && Form1.n1g < 10) { Form1.N11 = 1; }
+            if (Form1.n1g >= 10 && Form1.n1g < 20) { Form1.N11 = 0.9; }
+            if (Form1.n1g >= 20 && Form1.n1g < 30) { Form1.N11 = 0.75; }
+            if (Form1.n1g >= 30 && Form1.n1g < 40) { Form1.N11 = 0.65; }
+            if (Form1.n1g >= 40 && Form1.n1g < 50) { Form1.N11 = 0.58; }
+            if (Form1.n1g >= 50 && Form1.n1g < 60) { Form1.N11 = 0.50; }
+            if (Form1.n1g >= 60 && Form1.n1g < 70) { Form1.N11 = 0.40; }
+            if (Form1.n1g >= 70 && Form1.n1g < 80) { Form1.N11 = 0.35; }
+            if (Form1.n1g >= 80 && Form1.n1g < 90) { Form1.N11 = 0.25; }
+            if (Form1.n1g >= 90 && Form1.n1g < 100) { Form1.N11 = 0.18; }
+            if (Form1.n1g == 100) { Form1.N11 = 0.10; }
             //В противогазах в зданиях
             if (Form1.n3g >= 0 && Form1.n3g < 10) { Form1.N31 = 0.50; }
             if (Form1.n3g >= 10 && Form1.n3g < 20) { Form1.N31 = 0.50; }
@@ -43,17 +43,17 @@ namespace PrognozCS
              * Для загородной зоны
              */
             //В противогазах на открытой месtности
-            //if (Form1.n1z >= 0 && Form1.n1z < 10) { Form1.N12 = 1; }
-            //if (Form1.n1z >= 10 && Form1.n1z < 20) { Form1.N12 = 0.9; }
-            //if (Form1.n1z >= 20 && Form1.n1z < 30) { Form1.N12 = 0.75; }
-            //if (Form1.n1z >= 30 && Form1.n1z < 40) { Form1.N12 = 0.65; }
-            //if (Form1.n1z >= 40 && Form1.n1z < 50) { Form1.N12 = 0.58; }
-            //if (Form1.n1z >= 50 && Form1.n1z < 60) { Form1.N12 = 0.50; }
-            //if (Form1.n1z >= 60 && Form1.n1z < 70) { Form1.N12 = 0.40; }
-            //if (Form1.n1z >= 70 && Form1.n1z < 80) { Form1.N12 = 0.35; }
-            //if (Form1.n1z >= 80 && Form1.n1z < 90) { Form1.N12 = 0.25; }
-            //if (Form1.n1z >= 90 && Form1.n1z < 100) { Form1.N12 = 0.18; }
-            //if (Form1.n1z == 100) { Form1.N12 = 0.10; }
+            if (Form1.n1z >= 0 && Form1.n1z < 10) { Form1.N12 = 1; }
+            if (Form1.n1z >= 10 && Form1.n1z < 20) { Form1.N12 = 0.9; }
+            if (Form1.n1z >= 20 && Form1.n1z < 30) { Form1.N12 = 0.75; }
+            if (Form1.n1z >= 30 && Form1.n1z < 40) { Form1.N12 = 0.65; }
+            if (Form1.n1z >= 40 && Form1.n1z < 50) { Form1.N12 = 0.58; }
+            if (Form1.n1z >= 50 && Form1.n1z < 60) { Form1.N12 = 0.50; }
+            if (Form1.n1z >= 60 && Form1.n1z < 70) { Form1.N12 = 0.40; }
+            if (Form1.n1z >= 70 && Form1.n1z < 80) { Form1.N12 = 0.35; }
+            if (Form1.n1z >= 80 && Form1.n1z < 90) { Form1.N12 = 0.25; }
+            if (Form1.n1z >= 90 && Form1.n1z < 100) { Form1.N12 = 0.18; }
+            if (Form1.n1z == 100) { Form1.N12 = 0.10; }
             //В противогазах в зданиях
             if (Form1.n3z >= 0 && Form1.n3z < 10) { Form1.N32 = 0.50; }
             if (Form1.n3z >= 10 && Form1.n3z < 20) { Form1.N32 = 0.50; }
@@ -74,17 +74,17 @@ namespace PrognozCS
         static public void percentInObject()
         {
             //В противогазах на открытой месtности
-            //if (Form1.n1o >= 0 && Form1.n1o < 10) { Form1.N13 = 1; }
-            //if (Form1.n1o >= 10 && Form1.n1o < 20) { Form1.N13 = 0.9; }
-            //if (Form1.n1o >= 20 && Form1.n1o < 30) { Form1.N13 = 0.75; }
-            //if (Form1.n1o >= 30 && Form1.n1o < 40) { Form1.N13 = 0.65; }
-            //if (Form1.n1o >= 40 && Form1.n1o < 50) { Form1.N13 = 0.58; }
-            //if (Form1.n1o >= 50 && Form1.n1o < 60) { Form1.N13 = 0.50; }
-            //if (Form1.n1o >= 60 && Form1.n1o < 70) { Form1.N13 = 0.40; }
-            //if (Form1.n1o >= 70 && Form1.n1o < 80) { Form1.N13 = 0.35; }
-            //if (Form1.n1o >= 80 && Form1.n1o < 90) { Form1.N13 = 0.25; }
-            //if (Form1.n1o >= 90 && Form1.n1o < 100) { Form1.N13 = 0.18; }
-            //if (Form1.n1o == 100) { Form1.N13 = 0.10; }
+            if (Form1.n1o >= 0 && Form1.n1o < 10) { Form1.N13 = 1; }
+            if (Form1.n1o >= 10 && Form1.n1o < 20) { Form1.N13 = 0.9; }
+            if (Form1.n1o >= 20 && Form1.n1o < 30) { Form1.N13 = 0.75; }
+            if (Form1.n1o >= 30 && Form1.n1o < 40) { Form1.N13 = 0.65; }
+            if (Form1.n1o >= 40 && Form1.n1o < 50) { Form1.N13 = 0.58; }
+            if (Form1.n1o >= 50 && Form1.n1o < 60) { Form1.N13 = 0.50; }
+            if (Form1.n1o >= 60 && Form1.n1o < 70) { Form1.N13 = 0.40; }
+            if (Form1.n1o >= 70 && Form1.n1o < 80) { Form1.N13 = 0.35; }
+            if (Form1.n1o >= 80 && Form1.n1o < 90) { Form1.N13 = 0.25; }
+            if (Form1.n1o >= 90 && Form1.n1o < 100) { Form1.N13 = 0.18; }
+            if (Form1.n1o == 100) { Form1.N13 = 0.10; }
             //В противогазах в зданиях
             if (Form1.n2o >= 0 && Form1.n2o < 10) { Form1.N23 = 0.50; }
             if (Form1.n2o >= 10 && Form1.n2o < 20) { Form1.N23 = 0.50; }

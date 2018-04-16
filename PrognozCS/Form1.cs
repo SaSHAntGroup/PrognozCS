@@ -100,8 +100,8 @@ namespace PrognozCS
             distance.Text = "5";
             plotNasG.Text = "900";
             inGAZG.Text = "90";
-            plotNasZ.Text = "900";
-            inGAZZ.Text = "90";
+            plotNasZ.Text = "";
+            inGAZZ.Text = "";
         }
 
         public void AVmest_CheckedChanged(object sender, EventArgs e)
@@ -3265,11 +3265,11 @@ namespace PrognozCS
                 if (AVmest.Checked)
                 {
                     mestSIZ.percentOpenMest();
-                    Kg = (1 - N31 - N21);
-                    Kz = (1 - N32 - N22);
+                    Kg = (1 - N31 - N11);
+                    Kz = (1 - N32 - N12);
                     //Величина возможных потерь населения в очаге поражения АХОВ
-                    Pg = (X / G) * Ag * Kg * N31;
-                    Pz = (1 - (X / G)) * Az * Kz * N32;
+                    Pg = (X / G) * Ag * N31 * N11;
+                    Pz = (1 - (X / G)) * Az * N32 * N12;
                     P0 = Math.Truncate(Sf * (Pg + Pz));
                     P1 = Math.Truncate(P0 * 0.35);
                     P2 = Math.Truncate(P0 * 0.4);
