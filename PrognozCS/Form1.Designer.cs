@@ -51,14 +51,9 @@
             this.distancelabel = new System.Windows.Forms.Label();
             this.distance = new System.Windows.Forms.TextBox();
             this.plotNasGlabel = new System.Windows.Forms.Label();
-            this.plotNasZlabel = new System.Windows.Forms.Label();
-            this.protivoGAZlabel = new System.Windows.Forms.Label();
-            this.plotNasZ = new System.Windows.Forms.TextBox();
-            this.plotNasG = new System.Windows.Forms.TextBox();
             this.celsium = new System.Windows.Forms.Label();
             this.MvS = new System.Windows.Forms.Label();
             this.menkm1 = new System.Windows.Forms.Label();
-            this.menkm2 = new System.Windows.Forms.Label();
             this.hours = new System.Windows.Forms.Label();
             this.km = new System.Windows.Forms.Label();
             this.panelall = new System.Windows.Forms.Panel();
@@ -112,9 +107,6 @@
             this.outAXOBlabel6 = new System.Windows.Forms.Label();
             this.outAXOB6 = new System.Windows.Forms.TextBox();
             this.panelobj1 = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.inGAZZ = new System.Windows.Forms.TextBox();
-            this.percent6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.percent5 = new System.Windows.Forms.Label();
             this.inGAZG = new System.Windows.Forms.TextBox();
@@ -145,6 +137,10 @@
             this.outAXOBlabel = new System.Windows.Forms.Label();
             this.gaz = new System.Windows.Forms.RadioButton();
             this.help = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.plotNaselenia = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.panelall.SuspendLayout();
             this.viborAXOB.SuspendLayout();
@@ -155,7 +151,6 @@
             this.AXOB5.SuspendLayout();
             this.AXOB6.SuspendLayout();
             this.panelobj1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -372,43 +367,11 @@
             // plotNasGlabel
             // 
             this.plotNasGlabel.AutoSize = true;
-            this.plotNasGlabel.Location = new System.Drawing.Point(5, 20);
+            this.plotNasGlabel.Location = new System.Drawing.Point(286, 14);
             this.plotNasGlabel.Name = "plotNasGlabel";
             this.plotNasGlabel.Size = new System.Drawing.Size(118, 13);
             this.plotNasGlabel.TabIndex = 27;
             this.plotNasGlabel.Text = "Плотность населения";
-            // 
-            // plotNasZlabel
-            // 
-            this.plotNasZlabel.AutoSize = true;
-            this.plotNasZlabel.Location = new System.Drawing.Point(6, 21);
-            this.plotNasZlabel.Name = "plotNasZlabel";
-            this.plotNasZlabel.Size = new System.Drawing.Size(118, 13);
-            this.plotNasZlabel.TabIndex = 28;
-            this.plotNasZlabel.Text = "Плотность населения";
-            // 
-            // protivoGAZlabel
-            // 
-            this.protivoGAZlabel.AutoSize = true;
-            this.protivoGAZlabel.Location = new System.Drawing.Point(6, 62);
-            this.protivoGAZlabel.Name = "protivoGAZlabel";
-            this.protivoGAZlabel.Size = new System.Drawing.Size(175, 13);
-            this.protivoGAZlabel.TabIndex = 29;
-            this.protivoGAZlabel.Text = "Обеспеченность противогазами:";
-            // 
-            // plotNasZ
-            // 
-            this.plotNasZ.Location = new System.Drawing.Point(9, 33);
-            this.plotNasZ.Name = "plotNasZ";
-            this.plotNasZ.Size = new System.Drawing.Size(211, 20);
-            this.plotNasZ.TabIndex = 30;
-            // 
-            // plotNasG
-            // 
-            this.plotNasG.Location = new System.Drawing.Point(8, 33);
-            this.plotNasG.Name = "plotNasG";
-            this.plotNasG.Size = new System.Drawing.Size(203, 20);
-            this.plotNasG.TabIndex = 31;
             // 
             // celsium
             // 
@@ -431,20 +394,11 @@
             // menkm1
             // 
             this.menkm1.AutoSize = true;
-            this.menkm1.Location = new System.Drawing.Point(215, 40);
+            this.menkm1.Location = new System.Drawing.Point(495, 14);
             this.menkm1.Name = "menkm1";
             this.menkm1.Size = new System.Drawing.Size(46, 13);
             this.menkm1.TabIndex = 48;
             this.menkm1.Text = "чел/км²";
-            // 
-            // menkm2
-            // 
-            this.menkm2.AutoSize = true;
-            this.menkm2.Location = new System.Drawing.Point(223, 36);
-            this.menkm2.Name = "menkm2";
-            this.menkm2.Size = new System.Drawing.Size(46, 13);
-            this.menkm2.TabIndex = 49;
-            this.menkm2.Text = "чел/км²";
             // 
             // hours
             // 
@@ -1030,63 +984,34 @@
             // 
             // panelobj1
             // 
-            this.panelobj1.Controls.Add(this.groupBox3);
             this.panelobj1.Controls.Add(this.groupBox2);
             this.panelobj1.Location = new System.Drawing.Point(0, 264);
             this.panelobj1.Name = "panelobj1";
-            this.panelobj1.Size = new System.Drawing.Size(553, 99);
+            this.panelobj1.Size = new System.Drawing.Size(553, 203);
             this.panelobj1.TabIndex = 65;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.inGAZZ);
-            this.groupBox3.Controls.Add(this.percent6);
-            this.groupBox3.Controls.Add(this.plotNasZ);
-            this.groupBox3.Controls.Add(this.menkm2);
-            this.groupBox3.Controls.Add(this.plotNasZlabel);
-            this.groupBox3.Controls.Add(this.protivoGAZlabel);
-            this.groupBox3.Location = new System.Drawing.Point(278, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(272, 85);
-            this.groupBox3.TabIndex = 62;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Вне зоны населенного пункта:";
-            // 
-            // inGAZZ
-            // 
-            this.inGAZZ.Location = new System.Drawing.Point(182, 59);
-            this.inGAZZ.Name = "inGAZZ";
-            this.inGAZZ.Size = new System.Drawing.Size(61, 20);
-            this.inGAZZ.TabIndex = 60;
-            // 
-            // percent6
-            // 
-            this.percent6.AutoSize = true;
-            this.percent6.Location = new System.Drawing.Point(249, 62);
-            this.percent6.Name = "percent6";
-            this.percent6.Size = new System.Drawing.Size(15, 13);
-            this.percent6.TabIndex = 60;
-            this.percent6.Text = "%";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.plotNaselenia);
+            this.groupBox2.Controls.Add(this.radioButton3);
+            this.groupBox2.Controls.Add(this.radioButton2);
+            this.groupBox2.Controls.Add(this.radioButton1);
             this.groupBox2.Controls.Add(this.percent5);
             this.groupBox2.Controls.Add(this.inGAZG);
             this.groupBox2.Controls.Add(this.protivoGAZGlabel);
             this.groupBox2.Controls.Add(this.plotNasGlabel);
-            this.groupBox2.Controls.Add(this.plotNasG);
             this.groupBox2.Controls.Add(this.menkm1);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(268, 85);
+            this.groupBox2.Size = new System.Drawing.Size(547, 115);
             this.groupBox2.TabIndex = 61;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "В населенном пункте:";
+            this.groupBox2.Text = "Статистические данные:";
             // 
             // percent5
             // 
             this.percent5.AutoSize = true;
-            this.percent5.Location = new System.Drawing.Point(246, 62);
+            this.percent5.Location = new System.Drawing.Point(248, 87);
             this.percent5.Name = "percent5";
             this.percent5.Size = new System.Drawing.Size(15, 13);
             this.percent5.TabIndex = 58;
@@ -1094,7 +1019,7 @@
             // 
             // inGAZG
             // 
-            this.inGAZG.Location = new System.Drawing.Point(186, 59);
+            this.inGAZG.Location = new System.Drawing.Point(188, 84);
             this.inGAZG.Name = "inGAZG";
             this.inGAZG.Size = new System.Drawing.Size(57, 20);
             this.inGAZG.TabIndex = 57;
@@ -1102,7 +1027,7 @@
             // protivoGAZGlabel
             // 
             this.protivoGAZGlabel.AutoSize = true;
-            this.protivoGAZGlabel.Location = new System.Drawing.Point(5, 62);
+            this.protivoGAZGlabel.Location = new System.Drawing.Point(7, 87);
             this.protivoGAZGlabel.Name = "protivoGAZGlabel";
             this.protivoGAZGlabel.Size = new System.Drawing.Size(175, 13);
             this.protivoGAZGlabel.TabIndex = 54;
@@ -1196,6 +1121,7 @@
             this.groupBox4.TabIndex = 63;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Выбор количества веществ на объекте";
+            this.groupBox4.Visible = false;
             // 
             // AXOBkolvo2
             // 
@@ -1359,6 +1285,50 @@
             this.help.UseVisualStyleBackColor = false;
             this.help.Click += new System.EventHandler(this.help_Click);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(13, 17);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(147, 17);
+            this.radioButton1.TabIndex = 59;
+            this.radioButton1.Text = "Районы города Саратов";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(13, 39);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(105, 17);
+            this.radioButton2.TabIndex = 60;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Города области";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(13, 62);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(108, 17);
+            this.radioButton3.TabIndex = 61;
+            this.radioButton3.Text = "Районы области";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // plotNaselenia
+            // 
+            this.plotNaselenia.FormattingEnabled = true;
+            this.plotNaselenia.Location = new System.Drawing.Point(289, 31);
+            this.plotNaselenia.Name = "plotNaselenia";
+            this.plotNaselenia.Size = new System.Drawing.Size(252, 21);
+            this.plotNaselenia.TabIndex = 62;
+            this.plotNaselenia.Text = "Саратов";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1395,8 +1365,6 @@
             this.AXOB6.ResumeLayout(false);
             this.AXOB6.PerformLayout();
             this.panelobj1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -1430,14 +1398,9 @@
         private System.Windows.Forms.Label distancelabel;
         private System.Windows.Forms.TextBox distance;
         private System.Windows.Forms.Label plotNasGlabel;
-        private System.Windows.Forms.Label plotNasZlabel;
-        private System.Windows.Forms.Label protivoGAZlabel;
-        private System.Windows.Forms.TextBox plotNasZ;
-        private System.Windows.Forms.TextBox plotNasG;
         private System.Windows.Forms.Label celsium;
         private System.Windows.Forms.Label MvS;
         private System.Windows.Forms.Label menkm1;
-        private System.Windows.Forms.Label menkm2;
         private System.Windows.Forms.Label hours;
         private System.Windows.Forms.Label km;
         private System.Windows.Forms.Label meter;
@@ -1500,7 +1463,6 @@
         private System.Windows.Forms.Label kolvoTOHHlabel1;
         public System.Windows.Forms.RadioButton AXOBkolvo2;
         public System.Windows.Forms.RadioButton AXOBkolvo1;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button help;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -1509,8 +1471,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label protivoGAZGlabel;
         private System.Windows.Forms.Panel panelobj1;
-        private System.Windows.Forms.TextBox inGAZZ;
-        private System.Windows.Forms.Label percent6;
         private System.Windows.Forms.Label percent5;
         private System.Windows.Forms.TextBox inGAZG;
         private System.Windows.Forms.TextBox RGAZopen;
@@ -1525,5 +1485,9 @@
         private System.Windows.Forms.Label totalPeopleOpenlabel;
         private System.Windows.Forms.Label totalPeopleObjlabel;
         private System.Windows.Forms.TextBox totalPeopleObj;
+        private System.Windows.Forms.ComboBox plotNaselenia;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }

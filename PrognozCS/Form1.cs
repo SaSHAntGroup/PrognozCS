@@ -84,7 +84,52 @@ namespace PrognozCS
             K6, K61, K62, K63, K64, K65, K66,//доп. коэф.
             K7, K711, K712, K73, K74, K75, K76,//коэффициент, учитывающий влияние температуры воздуха первичное облако
             K72, K721, K722, K723, K724, K725, K726;//коэффициент, учитывающий влияние температуры воздуха вторичное облако
-        
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            plotNaselenia.Items.Clear();
+            plotNaselenia.Items.Add("Александрово-Гайский");
+            plotNaselenia.Items.Add("Аркадакский");
+            plotNaselenia.Items.Add("Аткарский");
+            plotNaselenia.Items.Add("Базарно-Карабулакский");
+            plotNaselenia.Items.Add("Балашовский");
+            plotNaselenia.Items.Add("Балаковский");
+            plotNaselenia.Items.Add("Балтайский");
+            plotNaselenia.Items.Add("Вольский");
+            plotNaselenia.Items.Add("Воскресенский");
+            plotNaselenia.Items.Add("Дергачевский");
+            plotNaselenia.Items.Add("Духовницкий");
+            plotNaselenia.Items.Add("Екатириновский");
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            plotNaselenia.Items.Clear();
+            plotNaselenia.Items.Add("Саратов");
+            plotNaselenia.Items.Add("Аткарск");
+            plotNaselenia.Items.Add("Балаково");
+            plotNaselenia.Items.Add("Балашов");
+            plotNaselenia.Items.Add("Вольск");
+            plotNaselenia.Items.Add("Красноармейск");
+            plotNaselenia.Items.Add("Маркс");
+            plotNaselenia.Items.Add("Петровск");
+            plotNaselenia.Items.Add("Пугачев");
+            plotNaselenia.Items.Add("Ртищево");
+            plotNaselenia.Items.Add("Хвалынск");
+            plotNaselenia.Items.Add("Энгельс");
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            plotNaselenia.Items.Clear();
+            plotNaselenia.Items.Add("Волжский");
+            plotNaselenia.Items.Add("Заводской");
+            plotNaselenia.Items.Add("Кировский");
+            plotNaselenia.Items.Add("Ленинский");
+            plotNaselenia.Items.Add("Октябрьский");
+            plotNaselenia.Items.Add("Фрунзенский");
+        }
+
         static public int subst, subst1, subst2, subst3, subst4, subst5, subst6, obj, podd, vert, pron;//
 
         public void StartZnach()
@@ -98,10 +143,7 @@ namespace PrognozCS
             speedAir.Text = "3";
             tempAir.Text = "20";
             distance.Text = "5";
-            plotNasG.Text = "900";
-            inGAZG.Text = "90";
-            plotNasZ.Text = "";
-            inGAZZ.Text = "";
+            inGAZG.Text = "30";
         }
 
         public void AVmest_CheckedChanged(object sender, EventArgs e)
@@ -581,6 +623,19 @@ namespace PrognozCS
             vertUst.Items.Add("Изотермия");
             vertUst.Items.Add("Инверсия");
             vertUst.Items.Add("Конвекция");
+            //
+            plotNaselenia.Items.Add("Саратов");
+            plotNaselenia.Items.Add("Аткарск");
+            plotNaselenia.Items.Add("Балаково");
+            plotNaselenia.Items.Add("Балашов");
+            plotNaselenia.Items.Add("Вольск");
+            plotNaselenia.Items.Add("Красноармейск");
+            plotNaselenia.Items.Add("Маркс");
+            plotNaselenia.Items.Add("Петровск");
+            plotNaselenia.Items.Add("Пугачев");
+            plotNaselenia.Items.Add("Ртищево");
+            plotNaselenia.Items.Add("Хвалынск");
+            plotNaselenia.Items.Add("Энгельс");
         }
 
         public void svob_CheckedChanged(object sender, EventArgs e)
@@ -1217,6 +1272,102 @@ namespace PrognozCS
         {
             try
             {
+                switch(plotNaselenia.Text)
+                {
+                    case "Александрово-Гайский":
+                        Ag = 6.6;
+                        break;
+                    case "Аркадакский":
+                        Ag = 15.3;
+                        break;
+                    case "Аткарский":
+                        Ag = 6.5;
+                        break;
+                    case "Базарно-Карабулакский":
+                        Ag = 15.9;
+                        break;
+                    case "Балашовский":
+                        Ag = 6.5;
+                        break;
+                    case "Балаковский":
+                        Ag = 12.7;
+                        break;
+                    case "Балтайский":
+                        Ag = 9.7;
+                        break;
+                    case "Вольский":
+                        Ag = 8.4;
+                        break;
+                    case "Воскресенский":
+                        Ag = 9.1;
+                        break;
+                    case "Дергачевский":
+                        Ag = 6.9;
+                        break;
+                    case "Духовницкий":
+                        Ag = 8.5;
+                        break;
+                    case "Екатириновский":
+                        Ag = 7.9;
+                        break;
+                    case "Саратов":
+                        Ag = 2255.3;
+                        break;
+                    case "Аткарск":
+                        Ag = 2730;
+                        break;
+                    case "Балаково":
+                        Ag = 4146;
+                        break;
+                    case "Балашов":
+                        Ag = 1370;
+                        break;
+                    case "Вольск":
+                        Ag = 648;
+                        break;
+                    case "Красноармейск":
+                        Ag = 2520;
+                        break;
+                    case "Маркс":
+                        Ag = 3260;
+                        break;
+                    case "Петровск":
+                        Ag = 1765;
+                        break;
+                    case "Пугачев":
+                        Ag = 520;
+                        break;
+                    case "Ртищево":
+                        Ag = 1420;
+                        break;
+                    case "Хвалынск":
+                        Ag = 292;
+                        break;
+                    case "Энгельс":
+                        Ag = 1845;
+                        break;
+                    case "Волжский":
+                        Ag = 1911.4;
+                        break;
+                    case "Заводской":
+                        Ag = 2161.9;
+                        break;
+                    case "Кировский":
+                        Ag = 4593.9;
+                        break;
+                    case "Ленинский":
+                        Ag = 2354.7;
+                        break;
+                    case "Октябрьский":
+                        Ag = 7039.9;
+                        break;
+                    case "Фрунзенский":
+                        Ag = 6812.5;
+                        break;
+                    default:
+                        Ag = 0;
+                        break;
+                }
                 //Определение случаев когда пользователь не ввел значения в текстовые поля
                 if (distance.Text == "") { X = 0; }
                 else { X = Convert.ToDouble(distance.Text); }
@@ -1255,17 +1406,8 @@ namespace PrognozCS
                 if (tempAir.Text == "") { t = 20; }
                 else { t = Convert.ToDouble(tempAir.Text); }
                 //////
-                if (plotNasG.Text == "") { Ag = 0; }
-                else { Ag = Convert.ToDouble(plotNasG.Text); }
-                ///
-                if (plotNasZ.Text == "") { Az = 0; }
-                else { Az = Convert.ToDouble(plotNasZ.Text); }
-                ///
-                if (inGAZG.Text == "") { n3g = 0; }
-                else { n3g = Convert.ToDouble(inGAZG.Text); }
-                ///
-                if (inGAZZ.Text == "") { n3z = 0; }
-                else { n3z = Convert.ToDouble(inGAZZ.Text); }
+                if (inGAZG.Text == "") { n1g = 0; }
+                else { n1g = Convert.ToDouble(inGAZG.Text); }
                 ///
                 if (RGAZobj.Text == "") { n2o = 0; }
                 else { n2o = Convert.ToDouble(RGAZobj.Text); }
@@ -3265,12 +3407,12 @@ namespace PrognozCS
                 if (AVmest.Checked)
                 {
                     mestSIZ.percentOpenMest();
-                    Kg = (1 - N31 - N11);
-                    Kz = (1 - N32 - N12);
+                    //Kg = (1 - N31 - N11);
+                    //Kz = (1 - N32 - N12);
                     //Величина возможных потерь населения в очаге поражения АХОВ
-                    Pg = (X / G) * Ag * N31 * N11;
-                    Pz = (1 - (X / G)) * Az * N32 * N12;
-                    P0 = Math.Truncate(Sf * (Pg + Pz));
+                    Pg = (X / G) * Ag * N11;
+                    //Pz = (1 - (X / G)) * Az * N32 * N12;
+                    P0 = Math.Truncate(Sf * Pg);
                     P1 = Math.Truncate(P0 * 0.35);
                     P2 = Math.Truncate(P0 * 0.4);
                     P3 = Math.Truncate(P0 * 0.25);
@@ -3297,7 +3439,6 @@ namespace PrognozCS
                 }
                 else
                 {
-
                     if (H < 0)
                     {
                         MessageBox.Show("Укажите реальную высоту поддона (обвалования)!",
