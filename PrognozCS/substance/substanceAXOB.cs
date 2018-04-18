@@ -243,7 +243,7 @@ namespace PrognozCS
             if (Form1.t >= 40) { Form1.K7 = 2.1; }
             Form1.K72 = Form1.K7;
             //Коэффициент К1
-            Form1.K1 = 0;
+            Form1.K1 = 0.021;
             Form1.subst = 13;
         }
         //////////////////////////////////////
@@ -262,7 +262,7 @@ namespace PrognozCS
             if (Form1.t >= 40) { Form1.K7 = 1.6; }
             Form1.K72 = Form1.K7;
             //Коэффициент К1
-            Form1.K1 = 0;
+            Form1.K1 = 0.007;
             Form1.subst = 14;
         }
         //////////////////////////////////////

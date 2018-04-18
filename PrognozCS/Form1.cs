@@ -139,7 +139,7 @@ namespace PrognozCS
             time.Text = "2";
             //sam.Checked = true;
             //visPod.Text = "2";
-            vertUst.Text = "Инверсия";
+            vertUst.Text = "Изотермия";
             speedAir.Text = "3";
             tempAir.Text = "20";
             distance.Text = "5";
@@ -365,9 +365,6 @@ namespace PrognozCS
             kolvoTOHHlabel.Visible = true;
             viborAXOB.Visible = false;
             obsh.Visible = false;
-            plosh.Visible = false;
-            ploshlabel.Visible = false;
-            if (obsh.Checked) {  }
         }
 
         public Form1()

@@ -108,6 +108,10 @@
             this.outAXOB6 = new System.Windows.Forms.TextBox();
             this.panelobj1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.plotNaselenia = new System.Windows.Forms.ComboBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.percent5 = new System.Windows.Forms.Label();
             this.inGAZG = new System.Windows.Forms.TextBox();
             this.protivoGAZGlabel = new System.Windows.Forms.Label();
@@ -137,10 +141,6 @@
             this.outAXOBlabel = new System.Windows.Forms.Label();
             this.gaz = new System.Windows.Forms.RadioButton();
             this.help = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.plotNaselenia = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.panelall.SuspendLayout();
             this.viborAXOB.SuspendLayout();
@@ -234,7 +234,6 @@
             this.obsh.TabIndex = 10;
             this.obsh.Text = "В общий поддон от нескольких источников";
             this.obsh.UseVisualStyleBackColor = true;
-            this.obsh.Visible = false;
             this.obsh.CheckedChanged += new System.EventHandler(this.obsh_CheckedChanged);
             // 
             // groupBox1
@@ -1008,6 +1007,50 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Статистические данные:";
             // 
+            // plotNaselenia
+            // 
+            this.plotNaselenia.FormattingEnabled = true;
+            this.plotNaselenia.Location = new System.Drawing.Point(289, 31);
+            this.plotNaselenia.Name = "plotNaselenia";
+            this.plotNaselenia.Size = new System.Drawing.Size(252, 21);
+            this.plotNaselenia.TabIndex = 62;
+            this.plotNaselenia.Text = "Саратов";
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(13, 62);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(108, 17);
+            this.radioButton3.TabIndex = 61;
+            this.radioButton3.Text = "Районы области";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(13, 39);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(105, 17);
+            this.radioButton2.TabIndex = 60;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Города области";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(13, 17);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(147, 17);
+            this.radioButton1.TabIndex = 59;
+            this.radioButton1.Text = "Районы города Саратов";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
             // percent5
             // 
             this.percent5.AutoSize = true;
@@ -1284,50 +1327,6 @@
             this.help.TabIndex = 63;
             this.help.UseVisualStyleBackColor = false;
             this.help.Click += new System.EventHandler(this.help_Click);
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(13, 17);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(147, 17);
-            this.radioButton1.TabIndex = 59;
-            this.radioButton1.Text = "Районы города Саратов";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(13, 39);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(105, 17);
-            this.radioButton2.TabIndex = 60;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Города области";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(13, 62);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(108, 17);
-            this.radioButton3.TabIndex = 61;
-            this.radioButton3.Text = "Районы области";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
-            // plotNaselenia
-            // 
-            this.plotNaselenia.FormattingEnabled = true;
-            this.plotNaselenia.Location = new System.Drawing.Point(289, 31);
-            this.plotNaselenia.Name = "plotNaselenia";
-            this.plotNaselenia.Size = new System.Drawing.Size(252, 21);
-            this.plotNaselenia.TabIndex = 62;
-            this.plotNaselenia.Text = "Саратов";
             // 
             // Form1
             // 

@@ -96,12 +96,8 @@ namespace PrognozCS
             string poteriAs1 = Form1.P1.ToString() + " чел";
             string poteriAs2 = Form1.P2.ToString() + " чел";
             string poteriAs3 = Form1.P3.ToString() + " чел";
-
-            string Zaraj;
+            
             string vertUst;
-            string ukr;
-            string open;
-            string obj;
 
             string AmountSubstanceView(double Q)
             {
@@ -109,34 +105,6 @@ namespace PrognozCS
                 if (Q != 0) outPut = $"{Q.ToString()} т";
                 else outPut = "Не указано!";
                 return outPut;
-            }
-
-            switch (Form1.pron)
-            {
-                case 1:
-                    ukr = "0,5 кг / м * ч";
-                    break;
-                case 2:
-                    ukr = "1,0 кг / м * ч";
-                    break;
-                case 3:
-                    ukr = "1,5 кг / м * ч";
-                    break;
-                case 4:
-                    ukr = "10,0 кг / м * ч";
-                    break;
-                case 5:
-                    ukr = "15,0 кг / м * ч";
-                    break;
-                case 6:
-                    ukr = "30,0 кг / м * ч";
-                    break;
-                case 7:
-                    ukr = "0,5 кг / м * ч";
-                    break;
-                default:
-                    ukr = "Не указано!";
-                    break;
             }
 
             switch (Form1.vert)
@@ -155,22 +123,6 @@ namespace PrognozCS
                     break;
             }
 
-            switch (Form1.podd)
-            {
-                case 0:
-                    Zaraj = "Разрушена\nемкость\n(обвалована)!";
-                    break;
-                case 1:
-                    Zaraj = "Вещество\nпопало в\nсамостоятельную\nобваловку!";
-                    break;
-                case 2:
-                    Zaraj = "Вещества\nпопали в\nобщую обваловку!";
-                    break;
-                default:
-                    Zaraj = "Нет данных!";
-                    break;
-            }
-
             switchCaseTabl.substA();
             switchCaseTabl.substA1();
             switchCaseTabl.substA2();
@@ -186,14 +138,10 @@ namespace PrognozCS
                 switch (P)
                 {
                     case 0:
-                        open = "Не достаточно данных для расчета количества пострадавшего населения!";
-                        poteriAs1 = "Не указано!";
-                        poteriAs2 = "Не указано!";
-                        poteriAs3 = "Не указано!";
+                        
                         break;
                     default:
-                        open = "Всего со смертельным исходом и потерявших работоспособность " +
-                    "- " + P.ToString() + " чел.";
+                       
                         break;
                 }
             }
@@ -202,21 +150,19 @@ namespace PrognozCS
                 switch (Form1.Kz)
                 {
                     case 0:
-                        open = "Не достаточно данных для расчета пострадавшего населения!";
+                        
                         break;
                     default:
-                        open = "Всего со смертельным исходом и потерявших работоспособность " +
-                        "на открытых площадках - " + Form1.Kz.ToString() + " чел.";
+                        
                         break;
                 }
                 switch (Form1.Kg)
                 {
                     case 0:
-                        obj = "Не достаточно данных для расчета пострадавшего населения!";
+                        
                         break;
                     default:
-                        obj = "Всего со смертельным исходом и потерявших работоспособность " +
-                        "на объекте - " + Form1.Kg.ToString() + " чел.";
+                        
                         break;
                 }
 
