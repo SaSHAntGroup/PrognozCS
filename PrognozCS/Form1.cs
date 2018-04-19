@@ -6,7 +6,8 @@ namespace PrognozCS
     public partial class Form1 : Form
     {
         //Заявление переменных для расчета
-        public static double lockpanel,//переменная для определения кол-ва АХОВ на второй форме
+        public static double x, y,
+            lockpanel,//переменная для определения кол-ва АХОВ на второй форме
             M, M1, M2, M3, M4, M5, M6,//Молекулярная масса
             p, p1, p2, p3, p4, p5, p6,//Плотность вещества
             P, Pi1, Pi2, Pi3, Pi4, Pi5, Pi6,//Давление насыщенного пара Р при tкип
@@ -130,7 +131,7 @@ namespace PrognozCS
             plotNaselenia.Items.Add("Фрунзенский");
         }
 
-        static public int subst, subst1, subst2, subst3, subst4, subst5, subst6, obj, podd, vert, pron;//
+        static public int subst, subst1, subst2, subst3, subst4, subst5, subst6, obj, podd, vert, pron, zoom;//
 
         public void StartZnach()
         {
@@ -1308,6 +1309,9 @@ namespace PrognozCS
                         Ag = 7.9;
                         break;
                     case "Саратов":
+                        x = 51.5324801;
+                        y = 45.9950273;
+                        zoom = 11;
                         Ag = 2255.3;
                         break;
                     case "Аткарск":
@@ -1341,6 +1345,9 @@ namespace PrognozCS
                         Ag = 292;
                         break;
                     case "Энгельс":
+                        x = 51.4706414;
+                        y = 46.1197382;
+                        zoom = 12;
                         Ag = 1845;
                         break;
                     case "Волжский":

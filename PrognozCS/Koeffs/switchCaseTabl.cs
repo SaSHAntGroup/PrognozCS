@@ -48,11 +48,11 @@ namespace PrognozCS
                     Form2.SIZ = "ГП-5, ГП-7\n+ДГП-1";
                     break;
                 case 10:
-                    Form2.AXOB = "Водород\nцианистый";
+                    Form2.AXOB = "Водород цианистый";
                     Form2.SIZ = "ГП-5, ГП-7\n+ДГП-1";
                     break;
                 case 11:
-                    Form2.AXOB = "Двуокись\nазота";
+                    Form2.AXOB = "Двуокись азота";
                     Form2.SIZ = "ГП-5, ГП-7\n+ДГП-1";
                     break;
                 case 12:
@@ -100,23 +100,23 @@ namespace PrognozCS
                     Form2.SIZ = "ГП-5, ГП-7\n+ДГП-1";
                     break;
                 case 23:
-                    Form2.AXOB = "Ацетонциан-\nгидрид";
+                    Form2.AXOB = "Ацетонциангидрид";
                     Form2.SIZ = "ГП-5, ГП-7\n+ДГП-1";
                     break;
                 case 24:
-                    Form2.AXOB = "Метил\nбромистый";
+                    Form2.AXOB = "Метил бромистый";
                     Form2.SIZ = "ГП-5, ГП-7\n+ДГП-1";
                     break;
                 case 25:
-                    Form2.AXOB = "Метила-\nкрилат";
+                    Form2.AXOB = "Метилакрилат";
                     Form2.SIZ = "ГП-5, ГП-7\n+ДГП-1";
                     break;
                 case 26:
-                    Form2.AXOB = "Метилмер-\nкаптан";
+                    Form2.AXOB = "Метилмеркаптан";
                     Form2.SIZ = "ГП-5, ГП-7\n+ДГП-1";
                     break;
                 case 27:
-                    Form2.AXOB = "Окись\nэтилена";
+                    Form2.AXOB = "Окись этилена";
                     Form2.SIZ = "ГП-5, ГП-7\n+ДГП-1";
                     break;
                 case 28:
@@ -124,12 +124,12 @@ namespace PrognozCS
                     Form2.SIZ = "ГП-5, ГП-7\n+ДГП-1";
                     break;
                 case 29:
-                    Form2.AXOB = "Фосфор\nтреххлористый";
-                    Form2.SIZ = "Промышленный\nпротивогаз";
+                    Form2.AXOB = "Фосфор треххлористый";
+                    Form2.SIZ = "Промышленный противогаз";
                     break;
                 case 30:
-                    Form2.AXOB = "Фосфора\nхлорокись";
-                    Form2.SIZ = "Промышленный\nпротивогаз";
+                    Form2.AXOB = "Фосфора хлорокись";
+                    Form2.SIZ = "Промышленный противогаз";
                     break;
                 case 31:
                     Form2.AXOB = "Хлорпикрин";
@@ -140,11 +140,11 @@ namespace PrognozCS
                     Form2.SIZ = "ГП-5, ГП-7\n+ДГП-1";
                     break;
                 case 33:
-                    Form2.AXOB = "Этилен-\nсульфид";
+                    Form2.AXOB = "Этиленсульфид";
                     Form2.SIZ = "ГП-5, ГП-7\n+ДГП-1";
                     break;
                 case 34:
-                    Form2.AXOB = "Этилмер-\nкаптан";
+                    Form2.AXOB = "Этилмеркаптан";
                     Form2.SIZ = "ГП-5, ГП-7";
                     break;
                 default:

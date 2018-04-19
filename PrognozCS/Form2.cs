@@ -67,8 +67,7 @@ namespace PrognozCS
         {
             try
             {
-                if (ploshG.Text == "") { S = 5; }
-                else { S = Convert.ToDouble(ploshG.Text); }
+                S = 5;
                 if (Form1.obj == 1)
                 {
                     MessageBox.Show("Моделирование работает только для аварии на открытой местности!",

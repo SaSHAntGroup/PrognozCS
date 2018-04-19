@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using GMap.NET;
 using System.Windows.Forms;
 
 namespace PrognozCS
@@ -10,7 +11,29 @@ namespace PrognozCS
         public Form3()
         {
             InitializeComponent();
-            Model();
+            //Model();
+            Map();
+        }
+
+        private void Map()
+        {
+            double[] pointOnMap = { Form1.x, Form1.y};
+
+            gMapControl1.Bearing = 0;
+            gMapControl1.CanDragMap = false;
+            gMapControl1.MaxZoom = Form1.zoom + 1;
+            gMapControl1.MinZoom = Form1.zoom - 1;
+            gMapControl1.MouseWheelZoomType = MouseWheelZoomType.ViewCenter;
+            gMapControl1.NegativeMode = false;
+            gMapControl1.PolygonsEnabled = true;
+            gMapControl1.ShowTileGridLines = false;
+            gMapControl1.Zoom = Form1.zoom;
+            gMapControl1.Dock = DockStyle.Top;
+            gMapControl1.MapProvider = GMap.NET.MapProviders.GMapProviders.GoogleMap;
+            GMaps.Instance.Mode = AccessMode.ServerOnly;
+            gMapControl1.Position = new PointLatLng(pointOnMap[0], pointOnMap[1]);
+
+            
         }
 
         public void Model()
