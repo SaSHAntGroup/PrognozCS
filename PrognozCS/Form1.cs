@@ -135,16 +135,16 @@ namespace PrognozCS
 
         public void StartZnach()
         {
-            substance.Text = "Хлор";
-            outAXOB.Text = "150";
+            substance.Text = "Хлор";//нитрил акриловая кислота / аммиак
+            outAXOB.Text = "55";//3740 / 1800
             time.Text = "2";
             //sam.Checked = true;
             //visPod.Text = "2";
             vertUst.Text = "Изотермия";
             speedAir.Text = "3";
             tempAir.Text = "20";
-            distance.Text = "5";
-            inGAZG.Text = "30";
+            distance.Text = "2.5";
+            inGAZG.Text = "0";
         }
 
         public void AVmest_CheckedChanged(object sender, EventArgs e)
