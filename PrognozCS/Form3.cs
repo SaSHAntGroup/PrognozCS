@@ -21,8 +21,8 @@ namespace PrognozCS
 
             gMapControl1.Bearing = 0;
             gMapControl1.CanDragMap = false;
-            gMapControl1.MaxZoom = Form1.zoom + 1;
-            gMapControl1.MinZoom = Form1.zoom - 1;
+            gMapControl1.MaxZoom = Form1.zoom;
+            gMapControl1.MinZoom = Form1.zoom;
             gMapControl1.MouseWheelZoomType = MouseWheelZoomType.ViewCenter;
             gMapControl1.NegativeMode = false;
             gMapControl1.PolygonsEnabled = true;
@@ -32,8 +32,6 @@ namespace PrognozCS
             gMapControl1.MapProvider = GMap.NET.MapProviders.GMapProviders.GoogleMap;
             GMaps.Instance.Mode = AccessMode.ServerOnly;
             gMapControl1.Position = new PointLatLng(pointOnMap[0], pointOnMap[1]);
-
-            
         }
 
         public void Model()
@@ -568,6 +566,11 @@ namespace PrognozCS
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            new Form4().Show();
         }
     }
 }

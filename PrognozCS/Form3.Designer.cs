@@ -29,45 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            this.picture = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.picture2 = new System.Windows.Forms.PictureBox();
             this.TextZ = new System.Windows.Forms.Label();
+            this.picture = new System.Windows.Forms.PictureBox();
+            this.picture2 = new System.Windows.Forms.PictureBox();
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picture2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picture
-            // 
-            this.picture.Location = new System.Drawing.Point(-5, -1);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(579, 361);
-            this.picture.TabIndex = 0;
-            this.picture.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(12, 509);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(549, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "ОК";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // picture2
-            // 
-            this.picture2.BackColor = System.Drawing.Color.Transparent;
-            this.picture2.Location = new System.Drawing.Point(-5, 366);
-            this.picture2.Name = "picture2";
-            this.picture2.Size = new System.Drawing.Size(579, 137);
-            this.picture2.TabIndex = 2;
-            this.picture2.TabStop = false;
             // 
             // TextZ
             // 
@@ -77,6 +47,23 @@
             this.TextZ.Size = new System.Drawing.Size(29, 13);
             this.TextZ.TabIndex = 3;
             this.TextZ.Text = "label";
+            // 
+            // picture
+            // 
+            this.picture.Location = new System.Drawing.Point(-5, -1);
+            this.picture.Name = "picture";
+            this.picture.Size = new System.Drawing.Size(579, 361);
+            this.picture.TabIndex = 0;
+            this.picture.TabStop = false;
+            // 
+            // picture2
+            // 
+            this.picture2.BackColor = System.Drawing.Color.Transparent;
+            this.picture2.Location = new System.Drawing.Point(-5, 366);
+            this.picture2.Name = "picture2";
+            this.picture2.Size = new System.Drawing.Size(579, 137);
+            this.picture2.TabIndex = 2;
+            this.picture2.TabStop = false;
             // 
             // gMapControl1
             // 
@@ -104,12 +91,41 @@
             this.gMapControl1.TabIndex = 4;
             this.gMapControl1.Zoom = 0D;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Location = new System.Drawing.Point(12, 509);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(171, 34);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Нанести рисунок";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button1.Location = new System.Drawing.Point(189, 509);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(372, 34);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "ОК";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(573, 555);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.gMapControl1);
             this.Controls.Add(this.TextZ);
             this.Controls.Add(this.picture2);
@@ -117,6 +133,8 @@
             this.Controls.Add(this.picture);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form3";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Прогнозирование: Моделирование";
@@ -128,11 +146,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox picture;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox picture2;
         private System.Windows.Forms.Label TextZ;
+        private System.Windows.Forms.PictureBox picture;
+        private System.Windows.Forms.PictureBox picture2;
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }

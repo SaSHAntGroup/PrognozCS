@@ -1,13 +1,29 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 
 namespace PrognozCS
 {
     public partial class Form2 : Form
     {
+        public static int x, y;
         public static double S;
-        public static string AXOB, AXOB1, AXOB2, AXOB3, AXOB4, AXOB5, AXOB6;
+        public static string AXOB, AXOB1, AXOB2, AXOB3, AXOB4, AXOB5, AXOB6, side = "s";
+        public static Point p0 = new Point();
+        public static Point[] ap = new Point[3];
+        public static Point pLast = new Point();
+        public static Bitmap bpm;
+        public static Graphics mod;
+        public static Font font = new Font("Arial", 12, FontStyle.Bold);
+
+        Pen PBlack = new Pen(Color.Black, 2);
+        Pen PRed = new Pen(Color.Red, 4);
+        SolidBrush BrChocolate = new SolidBrush(Color.Chocolate);
+        SolidBrush BrSkyBlue = new SolidBrush(Color.SkyBlue);
+        SolidBrush BrRed = new SolidBrush(Color.Red);
+        SolidBrush BrBlack = new SolidBrush(Color.Black);
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -23,6 +39,12 @@ namespace PrognozCS
             InitializeComponent();
             Form1.G = Math.Round(Form1.G, 2);
             Form1.Sf = Math.Round(Form1.Sf, 2);
+            x = comp.Height;
+            y = comp.Width;
+            //Создаем картинку
+            bpm = new Bitmap(x, y);
+            //Импортируем созданную картинку
+            mod = Graphics.FromImage(bpm);
 
             int Txm = (int)Form1.Txm;
             int Txm0 = (int)Form1.Txm0;
@@ -32,32 +54,126 @@ namespace PrognozCS
             int Txm4 = (int)Form1.Txm4;
             int Txm5 = (int)Form1.Txm5;
             int Txm6 = (int)Form1.Txm6;
-            
-            if (Form1.p1 == 0) { label01.Text = "Вещество не указано!"; }
-            else { label01.Text = Form1.Txh1.ToString() + " часов " + Txm1.ToString() + " минут"; }
-            if (Form1.p2 == 0) { label02.Text = "Вещество не указано!"; }
-            else { label02.Text = Form1.Txh2.ToString() + " часов " + Txm2.ToString() + " минут"; }
-            if (Form1.p3 == 0) { label03.Text = "Вещество не указано!"; }
-            else { label03.Text = Form1.Txh3.ToString() + " часов " + Txm3.ToString() + " минут"; }
-            if (Form1.p4 == 0) { label04.Text = "Вещество не указано!"; }
-            else { label04.Text = Form1.Txh4.ToString() + " часов " + Txm4.ToString() + " минут"; }
-            if (Form1.p5 == 0) { label05.Text = "Вещество не указано!"; }
-            else { label05.Text = Form1.Txh5.ToString() + " часов " + Txm5.ToString() + " минут"; }
-            if (Form1.p6 == 0) { label06.Text = "Вещество не указано!"; }
-            else { label06.Text = Form1.Txh6.ToString() + " часов " + Txm6.ToString() + " минут"; }
-
-            if (Form1.Q01 == 0) { label01.Visible = false; labelTime1.Visible = false; }
-            if (Form1.Q02 == 0) { label02.Visible = false; labelTime2.Visible = false; }
-            if (Form1.Q03 == 0) { label03.Visible = false; labelTime3.Visible = false; }
-            if (Form1.Q04 == 0) { label04.Visible = false; labelTime4.Visible = false; }
-            if (Form1.Q05 == 0) { label05.Visible = false; labelTime5.Visible = false; }
-            if (Form1.Q06 == 0) { label06.Visible = false; labelTime6.Visible = false; }
-
-            if (Form1.lockpanel == 1) { panelAXOB.Visible = true; }
-            else { panelAXOB.Visible = false; }
             Tabl();
+            Compas(bpm, mod, side, PRed, PBlack, BrChocolate, BrSkyBlue);
         }
 
+        private void Compas(Bitmap bpm, Graphics mod, string side, Pen PRed, Pen PBlack, SolidBrush BrChocolate, SolidBrush BrSkyBlue)
+        {
+            p0.X = comp.Width / 2;
+            p0.Y = comp.Height / 2;
+
+            comp.MouseClick += comp_MouseClick;
+
+            switch (side)
+            {
+                case "n":
+                    pLast.X = comp.Width / 2;
+                    pLast.Y = 21;
+                    ap[0] = pLast;
+                    ap[1].X = comp.Width / 2 - 3;
+                    ap[1].Y = 29;
+                    ap[2].X = comp.Width / 2 + 3;
+                    ap[2].Y = 29;
+                    break;
+                case "s":
+                    pLast.X = comp.Width / 2;
+                    pLast.Y = comp.Height - 21;
+                    ap[0] = pLast;
+                    ap[1].X = comp.Width / 2 - 3;
+                    ap[1].Y = comp.Height - 29;
+                    ap[2].X = comp.Width / 2 + 3;
+                    ap[2].Y = comp.Height - 29;
+                    break;
+                case "w":
+                    pLast.X = 21;
+                    pLast.Y = comp.Height / 2;
+                    ap[0] = pLast;
+                    ap[1].X = 29;
+                    ap[1].Y = comp.Height / 2 - 3;
+                    ap[2].X = 29;
+                    ap[2].Y = comp.Height / 2 + 3;
+                    break;
+                case "e":
+                    pLast.X = comp.Width - 21;
+                    pLast.Y = comp.Height / 2;
+                    ap[0] = pLast;
+                    ap[1].X = comp.Width - 29;
+                    ap[1].Y = comp.Height / 2 - 3;
+                    ap[2].X = comp.Width - 29;
+                    ap[2].Y = comp.Height / 2 + 3;
+                    break;
+                case "nw":
+                    pLast.X = comp.Width / 3 - 6;
+                    pLast.Y = 30;
+                    ap[0] = pLast;
+                    ap[1].X = comp.Width / 3 - 3;
+                    ap[1].Y = 39;
+                    ap[2].X = comp.Width / 3 + 3;
+                    ap[2].Y = 34;
+                    break;
+                case "ne":
+                    pLast.X = 2 * comp.Width / 3 + 6;
+                    pLast.Y = 30;
+                    ap[0] = pLast;
+                    ap[1].X = 2 * comp.Width / 3 + 3;
+                    ap[1].Y = 39;
+                    ap[2].X = 2 * comp.Width / 3 - 3;
+                    ap[2].Y = 34;
+                    break;
+                case "sw":
+                    pLast.X = comp.Width / 3 - 6;
+                    pLast.Y = comp.Height - 30;
+                    ap[0] = pLast;
+                    ap[1].X = comp.Width / 3 - 3;
+                    ap[1].Y = comp.Height - 39;
+                    ap[2].X = comp.Width / 3 + 3;
+                    ap[2].Y = comp.Height - 34;
+                    break;
+                case "se":
+                    pLast.X = 2 * comp.Width / 3 + 6;
+                    pLast.Y = comp.Height - 30;
+                    ap[0] = pLast;
+                    ap[1].X = 2 * comp.Width / 3 + 3;
+                    ap[1].Y = comp.Height - 39;
+                    ap[2].X = 2 * comp.Width / 3 - 3;
+                    ap[2].Y = comp.Height - 34;
+                    break;
+            }
+
+            mod.FillEllipse(BrSkyBlue, 0, 0, comp.Width - 1, comp.Height - 1);
+            mod.DrawLine(PRed, p0, pLast);
+            mod.DrawPolygon(PRed, ap);
+
+            mod.DrawString("С", font, BrRed, comp.Width / 2 - 8, 0);
+            mod.DrawString("Ю", font, BrBlack, comp.Width / 2 - 10, comp.Height - 18);
+            mod.DrawString("З", font, BrBlack, comp.Width - 16, comp.Height / 2 - 8);
+            mod.DrawString("В", font, BrBlack, 0, comp.Height / 2 - 8);
+            mod.DrawLine(PBlack, comp.Width / 6 - 3, comp.Width / 6 - 3, comp.Width / 6 + 3, comp.Width / 6 + 3);
+            mod.DrawLine(PBlack, 5 * comp.Width / 6 - 3, 5 * comp.Width / 6 - 3, 5 * comp.Width / 6 + 3, 5 * comp.Width / 6 + 3);
+            mod.DrawLine(PBlack, 5 * comp.Width / 6 + 3, comp.Width / 6 - 3, 5 * comp.Width / 6 - 3, comp.Width / 6 + 3);
+            mod.DrawLine(PBlack, comp.Width / 6 - 3, 5 * comp.Width / 6 + 3, comp.Width / 6 + 3, 5 * comp.Width / 6 - 3);
+
+            mod.DrawEllipse(PBlack, 0, 0, comp.Width, comp.Height);
+            mod.FillEllipse(BrChocolate, comp.Width / 2 - 5, comp.Height / 2 - 5, 10, 10);
+
+            //Вывод картинки
+            comp.Image = bpm;
+        }
+
+        void comp_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.X > comp.Width / 3 && e.X < 2 * comp.Width / 3 && e.Y > 0 && e.Y < comp.Height / 3) side = "n";
+            if (e.X > comp.Width / 3 && e.X < 2 * comp.Width / 3 && e.Y > 2 * comp.Height / 3 && e.Y < comp.Height) side = "s";
+            if (e.X > 2 * comp.Width / 3 && e.X < comp.Width && e.Y < 2 * comp.Height / 3 && e.Y > comp.Height / 3) side = "e";
+            if (e.X > 0 && e.X < comp.Width / 3 && e.Y > comp.Height / 3 && e.Y < 2 * comp.Height / 3) side = "w";
+            if (e.X > 0 && e.X < comp.Width / 3 && e.Y > 0 && e.Y < comp.Height / 3) side = "nw";
+            if (e.X > 2 * comp.Width / 3 && e.X < comp.Width && e.Y > 0 && e.Y < comp.Height / 3) side = "ne";
+            if (e.X > 0 && e.X < comp.Width / 3 && e.Y > 2 * comp.Height / 3 && e.Y < comp.Height) side = "sw";
+            if (e.X > 2 * comp.Width / 3 && e.X < comp.Width && e.Y > 2 * comp.Height / 3 && e.Y < comp.Height) side = "se";
+            Compas(bpm, mod, side, PRed, PBlack, BrChocolate, BrSkyBlue);
+        }
+                
         public void button1_Click(object sender, EventArgs e)
         {
             Close();
@@ -177,8 +293,7 @@ namespace PrognozCS
                     $"Время прошедшее с момента аварии:                                                        \n" +
                     $"Время подхода зараженного облака до населенного пункта:                                  \n" +
                     $"Время полного испарения АХОВ:                                                            \n" +
-                    $"Фактическая глубина распространения зараженного облака:                                  \n" +
-                    $"Предельная глубина распространения зараженного облака:                                   \n" +
+                    $"Глубина распространения зараженного облака:                                              \n" +
                     $"Площадь фактического поражения:                                                          \n" +
                     $"Площадь возможного поражения:                                                            \n" +
                     $"Плотность населения:                                                                     \n" +
@@ -216,8 +331,7 @@ namespace PrognozCS
                 $"{Form1.N} ч\n" +
                 $"{Form1.Txh} часов {Math.Round(Form1.Txm, 0)} минут\n" +
                 $"{Form1.Txh0} часов {Math.Round(Form1.Txm0, 0)} минут\n" +
-                $"{Form1.Ge} км\n" +
-                $"{Form1.Gp} км\n" +
+                $"{Form1.G} км\n" +
                 $"{Form1.Sf} км²\n" +
                 $"{Form1.Sp} км²\n" +
                 $"{Form1.Ag} чел/км²\n" +

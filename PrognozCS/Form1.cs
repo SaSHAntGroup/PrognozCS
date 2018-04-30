@@ -131,7 +131,7 @@ namespace PrognozCS
             plotNaselenia.Items.Add("Фрунзенский");
         }
 
-        static public int subst, subst1, subst2, subst3, subst4, subst5, subst6, obj, podd, vert, pron, zoom;//
+        static public int subst, subst1, subst2, subst3, subst4, subst5, subst6, obj, podd, vert, pron, zoom, pix;//
 
         public void StartZnach()
         {
@@ -1313,6 +1313,7 @@ namespace PrognozCS
                         y = 45.9950273;
                         zoom = 11;
                         Ag = 2255.3;
+                        pix = 108;
                         break;
                     case "Аткарск":
                         Ag = 2730;
@@ -1349,6 +1350,7 @@ namespace PrognozCS
                         y = 46.1197382;
                         zoom = 12;
                         Ag = 1845;
+                        pix = 90;
                         break;
                     case "Волжский":
                         Ag = 1911.4;

@@ -162,7 +162,7 @@
             this.RASCHETbutt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RASCHETbutt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.RASCHETbutt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.RASCHETbutt.Location = new System.Drawing.Point(8, 481);
+            this.RASCHETbutt.Location = new System.Drawing.Point(13, 509);
             this.RASCHETbutt.Name = "RASCHETbutt";
             this.RASCHETbutt.Size = new System.Drawing.Size(408, 34);
             this.RASCHETbutt.TabIndex = 0;
@@ -175,7 +175,7 @@
             this.EXITbutt.BackColor = System.Drawing.Color.WhiteSmoke;
             this.EXITbutt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EXITbutt.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.EXITbutt.Location = new System.Drawing.Point(422, 481);
+            this.EXITbutt.Location = new System.Drawing.Point(427, 509);
             this.EXITbutt.Name = "EXITbutt";
             this.EXITbutt.Size = new System.Drawing.Size(94, 34);
             this.EXITbutt.TabIndex = 1;
@@ -463,7 +463,7 @@
             this.panelall.Controls.Add(this.time);
             this.panelall.Location = new System.Drawing.Point(1, 1);
             this.panelall.Name = "panelall";
-            this.panelall.Size = new System.Drawing.Size(555, 470);
+            this.panelall.Size = new System.Drawing.Size(570, 502);
             this.panelall.TabIndex = 52;
             // 
             // viborAXOB
@@ -986,7 +986,7 @@
             this.panelobj1.Controls.Add(this.groupBox2);
             this.panelobj1.Location = new System.Drawing.Point(0, 264);
             this.panelobj1.Name = "panelobj1";
-            this.panelobj1.Size = new System.Drawing.Size(553, 203);
+            this.panelobj1.Size = new System.Drawing.Size(553, 126);
             this.panelobj1.TabIndex = 65;
             // 
             // groupBox2
@@ -1321,7 +1321,7 @@
             this.help.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("help.BackgroundImage")));
             this.help.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.help.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.help.Location = new System.Drawing.Point(522, 481);
+            this.help.Location = new System.Drawing.Point(527, 509);
             this.help.Name = "help";
             this.help.Size = new System.Drawing.Size(34, 34);
             this.help.TabIndex = 63;
@@ -1335,7 +1335,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Silver;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(568, 523);
+            this.ClientSize = new System.Drawing.Size(573, 555);
             this.Controls.Add(this.help);
             this.Controls.Add(this.panelall);
             this.Controls.Add(this.RASCHETbutt);
@@ -1343,6 +1343,8 @@
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Прогнозирование: Ввод данных";
