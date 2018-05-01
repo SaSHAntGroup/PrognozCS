@@ -88,44 +88,47 @@ namespace PrognozCS
 
         private void distance_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(e);
+            testChar(distance.Text, e);
         }
 
         private void time_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(e);
+            testChar(time.Text, e);
         }
 
         private void tempAir_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(e);
+            testChar(tempAir.Text, e);
         }
 
         private void speedAir_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(e);
+            testChar(speedAir.Text, e);
         }
 
         private void visPod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(e);
+            testChar(visPod.Text, e);
         }
 
         private void plosh_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(e);
+            testChar(plosh.Text, e);
         }
 
         private void outAXOB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(e);
+            testChar(outAXOB.Text, e);
         }
 
-        private void testChar(KeyPressEventArgs e)
+        private void testChar(string n, KeyPressEventArgs e)
         {
-            if (Char.IsNumber(e.KeyChar) | (Char.IsPunctuation(e.KeyChar)) || e.KeyChar == 8) return;
-            else
-                e.Handled = true;
+            if (Char.IsNumber(e.KeyChar) | (Char.IsPunctuation(e.KeyChar)) || e.KeyChar == 8)
+            {
+                n.Replace('.', ',');
+                return;
+            } 
+            else e.Handled = true;
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
@@ -1426,18 +1429,8 @@ namespace PrognozCS
                 }
                 ///
                 if (visPod.Text == "") { H = 0; }
-                else
-                {
-                    ploshlabel.Text.Replace('.', ',');
-                    H = Convert.ToDouble(visPod.Text);
-                }
                 ///
                 if (ploshlabel.Text == "") { F = 0; }
-                else
-                {
-                    ploshlabel.Text.Replace('.', ',');
-                    F = Convert.ToDouble(ploshlabel.Text);
-                }
                 ///
                 if (outAXOB.Text == "") { Q0 = 0; }
                 else
