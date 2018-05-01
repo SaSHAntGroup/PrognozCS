@@ -86,6 +86,48 @@ namespace PrognozCS
             K7, K711, K712, K73, K74, K75, K76,//коэффициент, учитывающий влияние температуры воздуха первичное облако
             K72, K721, K722, K723, K724, K725, K726;//коэффициент, учитывающий влияние температуры воздуха вторичное облако
 
+        private void distance_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            testChar(e);
+        }
+
+        private void time_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            testChar(e);
+        }
+
+        private void tempAir_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            testChar(e);
+        }
+
+        private void speedAir_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            testChar(e);
+        }
+
+        private void visPod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            testChar(e);
+        }
+
+        private void plosh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            testChar(e);
+        }
+
+        private void outAXOB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            testChar(e);
+        }
+
+        private void testChar(KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar) | (Char.IsPunctuation(e.KeyChar)) || e.KeyChar == 8) return;
+            else
+                e.Handled = true;
+        }
+
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             plotNaselenia.Items.Clear();
@@ -1266,6 +1308,7 @@ namespace PrognozCS
                 gaz6.Visible = false;
             }
         }
+
         public void RASCHETbutt_Click(object sender, EventArgs e)
         {
             try
@@ -1376,14 +1419,32 @@ namespace PrognozCS
                 }
                 //Определение случаев когда пользователь не ввел значения в текстовые поля
                 if (distance.Text == "") { X = 0; }
-                else { X = Convert.ToDouble(distance.Text); }
+                else
+                {
+                    distance.Text.Replace('.', ',');
+                    X = Convert.ToDouble(distance.Text);
+                }
                 ///
                 if (visPod.Text == "") { H = 0; }
+                else
+                {
+                    ploshlabel.Text.Replace('.', ',');
+                    H = Convert.ToDouble(visPod.Text);
+                }
                 ///
                 if (ploshlabel.Text == "") { F = 0; }
+                else
+                {
+                    ploshlabel.Text.Replace('.', ',');
+                    F = Convert.ToDouble(ploshlabel.Text);
+                }
                 ///
                 if (outAXOB.Text == "") { Q0 = 0; }
-                else { Q0 = Convert.ToDouble(outAXOB.Text); }
+                else
+                {
+                    outAXOB.Text.Replace('.', ',');
+                    Q0 = Convert.ToDouble(outAXOB.Text);
+                }
                 ///
                 if (outAXOB1.Text == "") { Q01 = 0; }
                 else { Q01 = Convert.ToDouble(outAXOB1.Text); }
@@ -1404,13 +1465,25 @@ namespace PrognozCS
                 else { Q06 = Convert.ToDouble(outAXOB6.Text); }
                 ///
                 if (time.Text == "") { N = 4; }
-                else { N = Convert.ToDouble(time.Text); }
+                else
+                {
+                    time.Text.Replace('.', ',');
+                    N = Convert.ToDouble(time.Text);
+                }
                 ///
                 if (speedAir.Text == "") { v = 3; }
-                else { v = Convert.ToDouble(speedAir.Text); }
+                else
+                {
+                    speedAir.Text.Replace('.', ',');
+                    v = Convert.ToDouble(speedAir.Text);
+                }
                 ///
                 if (tempAir.Text == "") { t = 20; }
-                else { t = Convert.ToDouble(tempAir.Text); }
+                else
+                {
+                    tempAir.Text.Replace('.', ',');
+                    t = Convert.ToDouble(tempAir.Text);
+                }
                 //////
                 if (inGAZG.Text == "") { n1g = 0; }
                 else { n1g = Convert.ToDouble(inGAZG.Text); }
@@ -3519,10 +3592,9 @@ namespace PrognozCS
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Ввод данных не коректен! В поля ввода должны вносится только числа! " +
-                    "Данные с плавающей точкой должны указываться через запятую!",
+                MessageBox.Show("Ввод данных не коректен! В поля ввода должны вносится только числа! \nКод ошибки:\n" + ex,
                                  "Ошибка!", MessageBoxButtons.OK);
             }
         }

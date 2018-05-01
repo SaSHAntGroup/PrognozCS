@@ -22,24 +22,17 @@ namespace PrognozCS
             Graphics mod = Graphics.FromImage(bpm);
 
             //Создание карандашей
-            Pen PTurq = new Pen(Color.Turquoise, 2);
             Pen PBlue = new Pen(Color.Blue, 2);
-            Pen PBlueS = new Pen(Color.Blue, 1);
             Pen PRed = new Pen(Color.Red, 2);
             Pen PGreen = new Pen(Color.Green, 1);
-            Pen PRedS = new Pen(Color.Red, 1);
             Pen PBlack = new Pen(Color.Black, 2);
             Pen PSilver = new Pen(Color.Silver, 400);
             Pen PTrans = new Pen(Color.Transparent, 130);
             SolidBrush BrB = new SolidBrush(Color.Beige);
             SolidBrush BrBr = new SolidBrush(Color.SkyBlue);
-            SolidBrush BrBl = new SolidBrush(Color.Blue);
             SolidBrush BrBlack = new SolidBrush(Color.Black);
-            SolidBrush BrSilver = new SolidBrush(Color.Silver);
-            SolidBrush BrWhite = new SolidBrush(Color.White);
-            SolidBrush BrRed = new SolidBrush(Color.DarkSalmon);
+            SolidBrush BrRed = new SolidBrush(Color.DarkRed);
             Font Font = new Font(FontFamily.GenericSerif, 9, FontStyle.Regular);
-            HatchBrush hatchBrush = new HatchBrush(HatchStyle.BackwardDiagonal, Color.Aqua, Color.Silver);
 
             int xm = pic.Width;
             int ym = pic.Height - 38;
@@ -53,7 +46,8 @@ namespace PrognozCS
 
             if (Form1.f == 360)
             {
-                mod.FillEllipse(BrBlack, 0, 0, xm, ym);
+                mod.FillEllipse(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist);
+                mod.DrawEllipse(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist);
             }
             else
             {
@@ -62,12 +56,8 @@ namespace PrognozCS
                     case "n":
                         if (Form1.f == 45)
                         {
-                            mod.FillEllipse(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist);
-                            mod.DrawEllipse(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist);
-                            mod.DrawLine(PBlack, xm / 2, ym / 2, xm / 2 - dist / 4, ym / 2 - dist + G / 2);
-                            mod.DrawLine(PBlack, xm / 2, ym / 2, xm / 2 + dist / 4, ym / 2 - dist + G / 2);
-                            mod.DrawLine(PSilver, xm / 2 + 118, ym + 100, xm / 2 + dist / 4 + 207, ym / 2 - dist + G / 2);
-                            mod.DrawLine(PSilver, xm / 2 - 118, ym + 100, xm / 2 - dist / 4 - 207, ym / 2 - dist + G / 2);
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 248, 45);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 248, 45);
                         }
                         if (Form1.f == 90)
                         {
@@ -81,12 +71,8 @@ namespace PrognozCS
                     case "s":
                         if (Form1.f == 45)
                         {
-                            mod.FillEllipse(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist);
-                            mod.DrawEllipse(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist);
-                            mod.DrawLine(PBlack, xm / 2, ym / 2, xm / 2 - dist / 4, ym / 2 + dist + G / 2);
-                            mod.DrawLine(PBlack, xm / 2, ym / 2, xm / 2 + dist / 4, ym / 2 + dist + G / 2);
-                            //mod.DrawLine(PSilver, xm / 2 - dist / 4 - 207, ym / 2 - dist + G / 2, xm / 2 - 118, ym + 100);
-                            //mod.DrawLine(PSilver, -118, ym - 100, xm / 2 - dist / 4 - 207, ym / 2 - dist + G / 2);
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 68, 45);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 68, 45);
                         }
                         if (Form1.f == 90)
                         {
@@ -100,7 +86,8 @@ namespace PrognozCS
                     case "w":
                         if (Form1.f == 45)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 158, 45);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 158, 45);
                         }
                         if (Form1.f == 90)
                         {
@@ -114,7 +101,8 @@ namespace PrognozCS
                     case "e":
                         if (Form1.f == 45)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 338, 45);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 338, 45);
                         }
                         if (Form1.f == 90)
                         {

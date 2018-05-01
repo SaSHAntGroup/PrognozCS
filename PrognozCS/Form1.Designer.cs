@@ -270,6 +270,7 @@
             this.plosh.Size = new System.Drawing.Size(183, 20);
             this.plosh.TabIndex = 14;
             this.plosh.Visible = false;
+            this.plosh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.plosh_KeyPress);
             // 
             // ploshlabel
             // 
@@ -298,6 +299,7 @@
             this.visPod.Size = new System.Drawing.Size(183, 20);
             this.visPod.TabIndex = 11;
             this.visPod.Visible = false;
+            this.visPod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.visPod_KeyPress);
             // 
             // timelabel
             // 
@@ -332,6 +334,7 @@
             this.time.Name = "time";
             this.time.Size = new System.Drawing.Size(203, 20);
             this.time.TabIndex = 15;
+            this.time.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.time_KeyPress);
             // 
             // speedAir
             // 
@@ -339,6 +342,7 @@
             this.speedAir.Name = "speedAir";
             this.speedAir.Size = new System.Drawing.Size(88, 20);
             this.speedAir.TabIndex = 16;
+            this.speedAir.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.speedAir_KeyPress);
             // 
             // tempAir
             // 
@@ -346,6 +350,7 @@
             this.tempAir.Name = "tempAir";
             this.tempAir.Size = new System.Drawing.Size(87, 20);
             this.tempAir.TabIndex = 17;
+            this.tempAir.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tempAir_KeyPress);
             // 
             // distancelabel
             // 
@@ -362,6 +367,7 @@
             this.distance.Name = "distance";
             this.distance.Size = new System.Drawing.Size(203, 20);
             this.distance.TabIndex = 23;
+            this.distance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.distance_KeyPress);
             // 
             // plotNasGlabel
             // 
@@ -1285,6 +1291,7 @@
             this.outAXOB.Name = "outAXOB";
             this.outAXOB.Size = new System.Drawing.Size(160, 20);
             this.outAXOB.TabIndex = 53;
+            this.outAXOB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.outAXOB_KeyPress);
             // 
             // kolvoTOHHlabel
             // 
