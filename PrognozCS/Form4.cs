@@ -61,11 +61,12 @@ namespace PrognozCS
                         }
                         if (Form1.f == 90)
                         {
-                            mod.FillEllipse(BrBlack, 0, 0, xm, ym);
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 225, 90);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 225, 90);
                         }
                         if (Form1.f == 180)
                         {
-                            mod.FillEllipse(BrBlack, 0, 0, xm, ym);
+                            
                         }
                         break;
                     case "s":
@@ -76,7 +77,8 @@ namespace PrognozCS
                         }
                         if (Form1.f == 90)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 45, 90);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 45, 90);
                         }
                         if (Form1.f == 180)
                         {
@@ -91,7 +93,8 @@ namespace PrognozCS
                         }
                         if (Form1.f == 90)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 135, 90);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 135, 90);
                         }
                         if (Form1.f == 180)
                         {
@@ -106,7 +109,8 @@ namespace PrognozCS
                         }
                         if (Form1.f == 90)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 315, 90);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 315, 90);
                         }
                         if (Form1.f == 180)
                         {
@@ -116,11 +120,13 @@ namespace PrognozCS
                     case "nw":
                         if (Form1.f == 45)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 203, 45);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 203, 45);
                         }
                         if (Form1.f == 90)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 180, 90);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 180, 90);
                         }
                         if (Form1.f == 180)
                         {
@@ -130,11 +136,13 @@ namespace PrognozCS
                     case "ne":
                         if (Form1.f == 45)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 293, 45);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 293, 45);
                         }
                         if (Form1.f == 90)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 270, 90);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 270, 90);
                         }
                         if (Form1.f == 180)
                         {
@@ -144,11 +152,13 @@ namespace PrognozCS
                     case "sw":
                         if (Form1.f == 45)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 113, 45);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 113, 45);
                         }
                         if (Form1.f == 90)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 90, 90);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 90, 90);
                         }
                         if (Form1.f == 180)
                         {
@@ -158,11 +168,13 @@ namespace PrognozCS
                     case "se":
                         if (Form1.f == 45)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 23, 45);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 23, 45);
                         }
                         if (Form1.f == 90)
                         {
-
+                            mod.FillPie(BrB, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 0, 90);
+                            mod.DrawPie(PBlack, xm / 2 - dist, ym / 2 - dist, 2 * dist, 2 * dist, 0, 90);
                         }
                         if (Form1.f == 180)
                         {

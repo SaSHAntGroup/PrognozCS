@@ -10,7 +10,7 @@ namespace PrognozCS
     {
         public static int x, y;
         public static double S;
-        public static string AXOB, AXOB1, AXOB2, AXOB3, AXOB4, AXOB5, AXOB6, side = "w";
+        public static string AXOB, AXOB1, AXOB2, AXOB3, AXOB4, AXOB5, AXOB6, side = "n";
         public static Point p0 = new Point();
         public static Point[] ap = new Point[3];
         public static Point pLast = new Point();
