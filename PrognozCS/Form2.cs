@@ -8,15 +8,16 @@ namespace PrognozCS
 {
     public partial class Form2 : Form
     {
-        public static int x, y;
-        public static double S;
-        public static string AXOB, AXOB1, AXOB2, AXOB3, AXOB4, AXOB5, AXOB6, side = "n";
+        public static int x, y, pix, zoom;
+        public static double S, xMap, yMap;
+        public static string AXOB, AXOB1, AXOB2, AXOB3, AXOB4, AXOB5, AXOB6, side = "e";
         public static Point p0 = new Point();
         public static Point[] ap = new Point[3];
         public static Point pLast = new Point();
         public static Bitmap bpm;
         public static Graphics mod;
         public static Font font = new Font("Arial", 12, FontStyle.Bold);
+        public static Font font1 = new Font("Arial", 7);
 
         Pen PBlack = new Pen(Color.Black, 2);
         Pen PRed = new Pen(Color.Red, 4);
@@ -24,6 +25,33 @@ namespace PrognozCS
         SolidBrush BrSkyBlue = new SolidBrush(Color.SkyBlue);
         SolidBrush BrRed = new SolidBrush(Color.Red);
         SolidBrush BrBlack = new SolidBrush(Color.Black);
+
+        private void setObj_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(setObject.Text)
+            {
+                case "Саратоворгсинтез":
+                    xMap = 51.443456;
+                    yMap = 45.902397;
+                    zoom = 12;
+                    pix = 108;
+                    break;
+                case "ВК-3":
+                    xMap = 51.560110;
+                    yMap = 46.089379;
+                    zoom = 12;
+                    pix = 108;
+                    break;
+                case "ОАО 'Аппатит'":
+                    xMap = 51.9222724;
+                    yMap = 47.8879836;
+                    zoom = 12;
+                    pix = 108;
+                    break;
+                default:
+                    break;
+            }
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -145,12 +173,12 @@ namespace PrognozCS
 
             mod.DrawString("С", font, BrRed, comp.Width / 2 - 8, 0);
             mod.DrawString("Ю", font, BrBlack, comp.Width / 2 - 10, comp.Height - 18);
-            mod.DrawString("З", font, BrBlack, comp.Width - 16, comp.Height / 2 - 8);
-            mod.DrawString("В", font, BrBlack, 0, comp.Height / 2 - 8);
-            mod.DrawLine(PBlack, comp.Width / 6 - 3, comp.Width / 6 - 3, comp.Width / 6 + 3, comp.Width / 6 + 3);
-            mod.DrawLine(PBlack, 5 * comp.Width / 6 - 3, 5 * comp.Width / 6 - 3, 5 * comp.Width / 6 + 3, 5 * comp.Width / 6 + 3);
-            mod.DrawLine(PBlack, 5 * comp.Width / 6 + 3, comp.Width / 6 - 3, 5 * comp.Width / 6 - 3, comp.Width / 6 + 3);
-            mod.DrawLine(PBlack, comp.Width / 6 - 3, 5 * comp.Width / 6 + 3, comp.Width / 6 + 3, 5 * comp.Width / 6 - 3);
+            mod.DrawString("В", font, BrBlack, comp.Width - 16, comp.Height / 2 - 8);
+            mod.DrawString("З", font, BrBlack, 0, comp.Height / 2 - 8);
+            mod.DrawString("СЗ", font1, BrBlack, comp.Width / 6 - 3, comp.Width / 6);
+            mod.DrawString("ЮВ", font1, BrBlack, 5 * comp.Width / 6 - 16, 5 * comp.Width / 6 - 5);
+            mod.DrawString("СВ", font1, BrBlack, 5 * comp.Width / 6 - 12, comp.Width / 6);
+            mod.DrawString("ЮЗ", font1, BrBlack, comp.Width / 6 - 4, 5 * comp.Width / 6 - 5);
 
             mod.DrawEllipse(PBlack, 0, 0, comp.Width, comp.Height);
             mod.FillEllipse(BrChocolate, comp.Width / 2 - 5, comp.Height / 2 - 5, 10, 10);
@@ -189,7 +217,9 @@ namespace PrognozCS
                 }
                 else
                 {
-                    new Form3().Show();
+                    if (setObject.Text == "- Выберите объект -") MessageBox.Show("Выберите объект для моделирования возможной области поражения в результате аварии!",
+                                "Внимание!", MessageBoxButtons.OK);
+                    else new Form3().Show();
                 }
             }
             catch
@@ -306,19 +336,19 @@ namespace PrognozCS
                     $"Пороговая токсодоза:                                                                        \n" +
                     $"Температура кипения:                                                                        \n" +
                     $"Удельная теплоемкость АХОВ:                                                                 \n" +
-                    $"Удельная теплота испарения АХОВ при температуре испарения:                                  \n" +
+                    $"Удельная теплота испарения АХОВ при температуре испарения:                               \n" +
                     $"Продолжительность поражаюшего действия:                                                     \n" +
                     $"Эквивалентное кол-во АХОВ в первичном облаке:                                              \n" +
                     $"Эквивалентное кол-во АХОВ во вторичном облаке:                                             \n" +
                     $"Коэф., зависящий от степени верт. уст. воздуха:                                            \n" +
                     $"Коэф., зависящий от условий хранения АХОВ:                                                 \n" +
                     $"Коэф., зависящий от физико-химических свойств АХОВ:                                        \n" +
-                    $"Коэф., отношение токсодозы хлора к выбранному веществу:                                    \n" +
+                    $"Коэф., отношение токсодозы хлора к выбранному веществу:                                   \n" +
                     $"Дополнительный коэффициент (К4):                                                           \n" +
-                    $"Коэф., влияние степени вертикальной устойчивости атмосферы:                                \n" +
+                    $"Коэф., влияние степени вертикальной устойчивости атмосферы:                               \n" +
                     $"Дополнительный коэффициент (К6):                                                           \n" +
-                    $"Коэф., учитывающий влияние температуры воздуха (перв. облако):                             \n" +
-                    $"Коэф., учитывающий влияние температуры воздуха (втор. облако):                             \n";
+                    $"Коэф., учитывающий влияние температуры воздуха (перв. облако):                            \n" +
+                    $"Коэф., учитывающий влияние температуры воздуха (втор. облако):                            \n";
 
             result.Text = $"{AXOB} \n" +
                 $"{AmountSubstanceView(Form1.Q0)} \n" +

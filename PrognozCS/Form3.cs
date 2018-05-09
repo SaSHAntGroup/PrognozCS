@@ -2,7 +2,10 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using GMap.NET;
+using GMap.NET.WindowsForms;
 using System.Windows.Forms;
+using System.Collections.Generic;
+using GMap.NET.WindowsForms.Markers;
 
 namespace PrognozCS
 {
@@ -17,550 +20,22 @@ namespace PrognozCS
 
         private void Map()
         {
-            double[] pointOnMap = { Form1.x, Form1.y};
+            double[] pointOnMap = { Form2.xMap, Form2.yMap};
 
             gMapControl1.Bearing = 0;
-            gMapControl1.CanDragMap = false;
-            gMapControl1.MaxZoom = Form1.zoom;
-            gMapControl1.MinZoom = Form1.zoom;
-            gMapControl1.MouseWheelZoomType = MouseWheelZoomType.ViewCenter;
+            gMapControl1.CanDragMap = true;
+            gMapControl1.DragButton = MouseButtons.Left;
+            gMapControl1.MaxZoom = Form2.zoom + 4;
+            gMapControl1.MinZoom = Form2.zoom - 3;
+            gMapControl1.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;
             gMapControl1.NegativeMode = false;
             gMapControl1.PolygonsEnabled = true;
             gMapControl1.ShowTileGridLines = false;
-            gMapControl1.Zoom = Form1.zoom;
+            gMapControl1.Zoom = Form2.zoom;
             gMapControl1.Dock = DockStyle.Top;
             gMapControl1.MapProvider = GMap.NET.MapProviders.GMapProviders.GoogleMap;
-            GMaps.Instance.Mode = AccessMode.ServerOnly;
+            GMaps.Instance.Mode = AccessMode.ServerAndCache;
             gMapControl1.Position = new PointLatLng(pointOnMap[0], pointOnMap[1]);
-        }
-
-        public void Model()
-        {
-            //Создаем картинку
-            Bitmap bpm = new Bitmap(picture.Width, picture.Height);
-            //Импортируем созданную картинку
-            Graphics Mod = Graphics.FromImage(bpm);
-            //Создаем картинку 2
-            Bitmap bpm2 = new Bitmap(picture2.Width, picture2.Height);
-            //Импортируем созданную картинку 2
-            Graphics Mod2 = Graphics.FromImage(bpm2);
-
-            //Создание карандашей
-            Pen PTurq = new Pen(Color.Turquoise, 2);
-            Pen PBlue = new Pen(Color.Blue, 2);
-            Pen PBlueS = new Pen(Color.Blue, 1);
-            Pen PRed = new Pen(Color.Red, 2);
-            Pen PGreen = new Pen(Color.Green, 1);
-            Pen PRedS = new Pen(Color.Red, 1);
-            Pen PBlack = new Pen(Color.Black, 1);
-            Pen PSilver = new Pen(Color.Silver, 1);
-            Pen PSilverB = new Pen(Color.Silver, 130);
-            SolidBrush BrB = new SolidBrush(Color.Beige);
-            SolidBrush BrBr = new SolidBrush(Color.SkyBlue);
-            SolidBrush BrBl = new SolidBrush(Color.Blue);
-            SolidBrush BrBlack = new SolidBrush(Color.Black);
-            SolidBrush BrSilver = new SolidBrush(Color.Silver);
-            SolidBrush BrWhite = new SolidBrush(Color.White);
-            SolidBrush BrRed = new SolidBrush(Color.DarkSalmon);
-            Font Font = new Font(FontFamily.GenericSerif, 9, FontStyle.Regular);
-            HatchBrush hatchBrush = new HatchBrush(HatchStyle.BackwardDiagonal, Color.Aqua, Color.Silver);
-
-            //Указатели
-            //Значения, для упрощения отладки
-            //Form1.f = 180;//////////////////////
-            //Form1.X = 6;//////////////
-            //Form2.S = 270;//////////////////
-            Form1.G = Math.Round(Form1.G, 2);
-            Form1.Sf = Math.Round(Form1.Sf, 2);
-            string TextGlub = Form1.G.ToString() + " км";
-            string TextDistance = Form1.X.ToString() + " км";
-
-            //Переменные
-            int border = 26;//Расстояние от верхней и нижней границы формы
-            int point = 6;//Очаг поражения
-            int r = 130;//Расстояния от края глубины поражения до очага
-            int Se = r * 2;//Диаметр зоны поражения
-            int O = r + border;//Расстояние от верха и края формы до очага поражения
-            //double S = 2 * Math.Sqrt(Form2.S / 3.14);//Отношение зоны возможного заражения от фактической
-            double S = Form2.S; 
-            S = Math.Round(S, 0);
-
-            //Масштабирование значений на рисунок
-            double distance = (Form1.X / Form1.G) * r;//Расстояние до н/п в пикселях
-            double Mas = r / Form1.G;//Расчет шага 1% в пикселях от глубины
-            double Plosh = Mas * S;//Площадь н/п
-
-            //Рисование
-            Mod.FillRectangle(BrSilver, 0, 0, 999, 999);//Заполнение пикчербокса в рисунке
-
-            if (Form1.f == 360)
-            {
-                Mod.FillEllipse(BrB, border, border, Se, Se);//Заполнение зоны поражения
-
-                Mod.DrawLine(PBlue, O, O, O + r - 39, O - r + 39);//Линия глубины
-                Mod.DrawEllipse(PTurq, border, border, Se, Se);//Круговая обводка
-
-                if (Form1.X > 0)
-                {
-                    //Многоугольник (населеная местность)
-                    PointF[] p = new PointF[5];
-                    p[0] = new Point(O + (int)distance, O);
-                    p[1] = new Point(O + (int)distance + (int)Plosh / 4, O - (int)Plosh / 2);
-                    p[2] = new Point(O + (int)distance + (int)Plosh / 2 + 10, O - (int)Plosh / 2);
-                    p[3] = new Point(O + (int)distance + (int)Plosh, O);
-                    p[4] = new Point(O + (int)distance + (int)Plosh / 3, O + (int)Plosh / 2);
-
-                    Mod.DrawLine(PRed, O, O, O + (int)distance , O);//Линия расстояния до н/п
-                    //Mod.FillEllipse(BrWhite, O + (int)distance - point / 2, 
-                    //    O - (int)Plosh/2, (int)Plosh , (int)Plosh);//Заполнение площади н/п
-                    //Mod.DrawEllipse(PBlack, O + (int)distance - point / 2,
-                    //    O - (int)Plosh/2, (int)Plosh, (int)Plosh);//Обводка н/п
-                    Mod.FillPolygon(hatchBrush, p);//Заполнение площади н/п
-                    Mod.DrawPolygon(PBlack, p);//Обводка н/п
-                    Mod.DrawString(TextDistance, Font, BrBlack, O + (int)distance - 40,
-                        O - 15);//Текст расстояния до н/п
-                }
-
-                Mod.DrawString(TextGlub, Font, BrBlack, O + 15, O - 60);//Текст глубины
-                Mod.FillEllipse(BrBlack, O - 3, O - 3, point, point);//Очаг поражения (центр. точка)
-            }
-            if (Form1.f == 180)
-            {
-                Mod.FillEllipse(BrB, border, border, Se, Se);//Заполнение зоны поражения
-                Mod.FillRectangle(BrSilver, 0, border, O, Se);//Отрезающий квадрат, для визуала
-                Mod.DrawLine(PTurq, O, border, O, Se + 27);//Отрезающая линия, для визуала
-                Mod.DrawLine(PBlue, O, O, O + r - 39, O - r + 39);//Линия глубины
-                Mod.DrawArc(PTurq, border, border, Se, Se, 270, 180);//Дуговая обводка
-
-                if (Form1.X > 0)
-                {
-                    //Многоугольник (населеная местность)
-                    PointF[] p = new PointF[5];
-                    p[0] = new Point(O + (int)distance, O);
-                    p[1] = new Point(O + (int)distance + (int)Plosh / 4, O - (int)Plosh / 2);
-                    p[2] = new Point(O + (int)distance + (int)Plosh / 2 + 10, O - (int)Plosh / 2);
-                    p[3] = new Point(O + (int)distance + (int)Plosh, O);
-                    p[4] = new Point(O + (int)distance + (int)Plosh / 3, O + (int)Plosh / 2);
-
-                    Mod.DrawLine(PRed, O, O, O + (int)distance, O);//Линия расстояния до н/п
-                    //Mod.FillEllipse(BrWhite, O + (int)distance - point / 2, 
-                    //    O - (int)Plosh/2, (int)Plosh , (int)Plosh);//Заполнение площади н/п
-                    //Mod.DrawEllipse(PBlack, O + (int)distance - point / 2,
-                    //    O - (int)Plosh/2, (int)Plosh, (int)Plosh);//Обводка н/п
-                    Mod.FillPolygon(hatchBrush, p);//Заполнение площади н/п
-                    Mod.DrawPolygon(PBlack, p);//Обводка н/п
-                    Mod.DrawString(TextDistance, Font, BrBlack, O + (int)distance - 40,
-                        O - 15);//Текст расстояния до н/п
-                }
-
-                Mod.DrawString(TextGlub, Font, BrBlack, O + 15, O - 60);//Текст глубины
-                Mod.FillEllipse(BrBlack, O - 4, O - 3, point, point);//Очаг поражения (центр. точка)
-            }
-            if (Form1.f == 90)
-            {
-                Mod.FillEllipse(BrB, border, border, Se, Se);//Заполнение зоны поражения
-                Mod.DrawLine(PSilverB, border - 25, O - 60, Se, border - 36);//Отрезающая линия, для визуала
-                Mod.DrawLine(PSilverB, border - 25, O + 60, Se, Se + 62);//Отрезающая линия, для визуала 2
-                Mod.DrawLine(PBlue, border + 4, O, Se + 16, O + 50);//Линия глубины
-                Mod.DrawLine(PTurq, border, O, O + 93, O - 92);//Отрезающая линия, для визуала 3
-                Mod.DrawLine(PTurq, border, O, O + 93, O + 92);//Отрезающая линия, для визуала 4
-                Mod.DrawArc(PTurq, border, border, Se, Se, 315, 90);//Дуговая обводка
-
-                if (Form1.X > 0)
-                {
-                    //Многоугольник (населеная местность)
-                    PointF[] p = new PointF[5];
-                    p[0] = new Point(border + (int)distance * 2, O);
-                    p[1] = new Point(border + (int)distance * 2 + (int)Plosh / 4, O - (int)Plosh / 2);
-                    p[2] = new Point(border + (int)distance * 2 + (int)Plosh / 2 + 10, O - (int)Plosh / 2);
-                    p[3] = new Point(border + (int)distance * 2 + (int)Plosh, O);
-                    p[4] = new Point(border + (int)distance * 2 + (int)Plosh / 3, O + (int)Plosh / 2);
-
-                    Mod.DrawLine(PRed, border, O, border + (int)distance * 2,
-                        O);//Линия расстояния до н/п
-                    //Mod.FillEllipse(BrWhite, border + (int)distance * 2 - point,
-                    //    O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Заполнение площади н/п
-                    //Mod.DrawEllipse(PBlack, border + (int)distance * 2 - point,
-                    //    O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Обводка н/п
-                    Mod.FillPolygon(hatchBrush, p);//Заполнение площади н/п
-                    Mod.DrawPolygon(PBlack, p);//Обводка н/п
-                    Mod.DrawString(TextDistance, Font, BrBlack, border + (int)distance * 2 - 45,
-                        O - 14);//Текст расстояния до н/п
-                }
-
-                Mod.DrawString(TextGlub, Font, BrBlack, O + 25, O + 37);//Текст глубины
-                Mod.FillEllipse(BrBlack, border - 4, O - 4, point + 1, point + 1);//Очаг поражения (центр. точка)
-            }
-            if (Form1.f == 45)
-            {
-                Mod.FillEllipse(BrB, border, border, Se, Se);//Заполнение зоны поражения
-                Mod.DrawLine(PSilverB, border - 13, O - 65, Se + 10, border + 18);//Отрезающая линия, для визуала
-                Mod.DrawLine(PSilverB, border - 13, O + 65, Se + 10, Se + 13);//Отрезающая линия, для визуала 2
-                Mod.DrawLine(PTurq, border, O, O + 120, O - 48);//Отрезающая линия, для визуала 3
-                Mod.DrawLine(PTurq, border, O, O + 120, O + 51);//Отрезающая линия, для визуала 4
-                Mod.DrawLine(PBlue, border + 4, O, Se + 20, O + 38);//Линия глубины
-                Mod.DrawArc(PTurq, border, border, Se, Se, 338, 46);//Дуговая обводка
-
-                if (Form1.X > 0)
-                {
-                    //Многоугольник (населеная местность)
-                    PointF[] p = new PointF[5];
-                    p[0] = new Point(border + (int)distance * 2, O);
-                    p[1] = new Point(border + (int)distance * 2 + (int)Plosh / 4, O - (int)Plosh / 2);
-                    p[2] = new Point(border + (int)distance * 2 + (int)Plosh / 2 + 10, O - (int)Plosh / 2);
-                    p[3] = new Point(border + (int)distance * 2 + (int)Plosh, O);
-                    p[4] = new Point(border + (int)distance * 2 + (int)Plosh / 3, O + (int)Plosh / 2);
-
-                    Mod.DrawLine(PRed, border, O, border + (int)distance * 2,
-                        O);//Линия расстояния до н/п
-                    //Mod.FillEllipse(BrWhite, border + (int)distance * 2 - point,
-                    //    O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Заполнение площади н/п
-                    //Mod.DrawEllipse(PBlack, border + (int)distance * 2 - point,
-                    //    O - (int)Plosh, (int)Plosh * 2, (int)Plosh * 2);//Обводка н/п
-                    Mod.FillPolygon(hatchBrush, p);//Заполнение площади н/п
-                    Mod.DrawPolygon(PBlack, p);//Обводка н/п
-                    Mod.DrawString(TextDistance, Font, BrBlack, border + (int)distance * 2 - 45,
-                        O - 14);//Текст расстояния до н/п
-                }
-                
-                Mod.DrawString(TextGlub, Font, BrBlack, O + 82, O + 37);//Текст глубины
-                Mod.FillEllipse(BrBlack, border - 4, O - 4, point + 1, point + 1);//Очаг поражения (центр. точка)
-            }
-            Mod2.FillRectangle(BrSilver, 0, 0, 999, 999);//Заполнение пикчербокса в рисунке 2
-            //Расчетные данные
-            int l = r + border + 138;//Условные величины
-            int x = border;//для упрощения
-            int y = border;//расчета, px
-
-            int L = l + 220;//Глубина поражения в пикселях в картинке 2
-            Mas = ((double)L - x) / Form1.G ;//Расчет шага 1% в пикселях от глубины в картинке 2
-           // Mas = Math.Ceiling(Mas);
-           distance = ((distance / r) * L);//Расстояние до города в пикселях в картинке 2
-            Plosh = (Mas * S);//Площадь н/п в картинке 2
-            int m = 57;//Средняя точка по у
-            double z = ((double)L - (x - 2)) / 4;//Разделение глубины поражения на 4 зоны
-
-            //Mod.DrawLine(PBlack, Se + border * 2, border - 15, Se + border * 2, l);//
-            Mod.DrawLine(PBlack, border - 40, l - 1, Se * 2 + 150, l - 1);//Разделяющая черта рисунков
-            Mod.DrawLine(PBlack, border - 40, l, Se * 2 + 150, l);//Разделяющая черта рисунков 2
-            //Mod.DrawLine(PRed, x - 2, l, L, l);//Разделяющая черта рисунков 3
-
-            string TextDiametr = S.ToString() + " км";//Текст диаметра площади н/п
-            Mod2.FillEllipse(BrBr, x - 2, -10, l + 195, m + y * 4);//Заполнение зоны поражения
-
-            string Text = "Населенный пункт не попал в зону \nпоражения!";//
-            string Text1z = "Населенный пункт попал в зону \nсмертельной " +
-                "концентрации!";//
-            string Text2z = "Населенный пункт попал в зону \nтяжелых поражений!";//
-            string Text3z = "Населенный пункт попал в зону \nпоражений " +
-                "средней тяжести!";//
-            string Text4z = "Населенный пункт попал в зону \nпоражений " +
-                "легкой тяжести!";//
-            string Text1z2 = "Населенный пункт попал в зоны \nсмертельной " +
-                "концентрации и \nтяжелых поражений!";//
-            string Text2z2 = "Населенный пункт попал в зоны \nтяжелых " +
-                "поражений и поражений \nсредней тяжести!";//
-            string Text3z2 = "Населенный пункт попал в зоны \nпоражений " +
-                "средней и легкой \nтяжести!";//
-            string Text1z3 = "Населенный пункт попал в зоны \nсмертельной " +
-                "концентрации, тяжелых \nпоражений и поражений средней тяжести!";//
-            string Text2z3 = "Населенный пункт попал в зоны \nтяжелых поражений, " +
-                "поражений средней \nи легкой тяжести!";//
-            string Text1z4 = "Населенный пункт попал в зоны \nсмертельной " +
-                "концентрации, тяжелых \nпоражений, поражений средней \nи легкой тяжести!";//
-
-            string TextZ1 = "Зона \nсмертельной \nконцентрации!";//
-            string TextZ2 = "Зона \nтяжелых \nпоражений!";//
-            string TextZ3 = "Зона \nпоражений \nсредней \nтяжести!";//
-            string TextZ4 = "Зона \nпоражений \nлегкой \nтяжести!";//
-
-            //Н/п попадающий в 4 части зоны
-            /////////////////////////////////////
-            if ((int)distance + (int)Plosh >= z * 3)
-            {
-                if ((int)distance > 0 || ((int)distance + (int)Plosh < z * 4))
-                {
-                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrRed, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text1z4, Font, BrBlack, Se + 35, 
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text1z4;
-                }
-                if ((int)distance > z && ((int)distance + (int)Plosh >= z * 4))
-                {
-                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text2z3, Font, BrBlack, Se + 35, 
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text2z3;
-                }
-                if ((int)distance > z * 2)
-                {
-                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text3z2, Font, BrBlack, Se + 35, 
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text3z2;
-                }
-                if ((int)distance > z * 3)
-                {
-                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text2z, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text4z;
-                }
-                if ((int)distance >= z * 4)
-                {
-                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text;
-                }
-            }
-            //Н/п попадающий в 3 части зоны
-            ///////////////////////////////////
-            if (((int)distance + (int)Plosh < z * 4))
-            {
-                if (((int)distance > 0) && ((int)distance + (int)Plosh < z * 3))
-                {
-                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrRed, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text1z3, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text1z3;
-                }
-                if (((int)distance > z) && ((int)distance + (int)Plosh < z * 4))
-                {
-                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text2z3, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text2z3;
-                }
-                if ((int)distance > z * 2)
-                {
-                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text3z2, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text3z2;
-                }
-                if ((int)distance > z * 3)
-                {
-                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text4z, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text4z;
-                }
-                if ((int)distance >= z * 4)
-                {
-                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text;
-                }
-            }
-            //Н/п попадающий в 2 части зоны
-            ////////////////////////////////////
-            if (((int)distance + (int)Plosh < z * 3))
-            {
-                if (((int)distance > 0) && ((int)distance + (int)Plosh < z * 2))
-                {
-                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrRed, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text1z2, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text1z2;
-                }
-                if (((int)distance > z) && ((int)distance + (int)Plosh < z * 3))
-                {
-                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text2z2, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text2z2;
-                }
-                if (((int)distance > z * 2) && ((int)distance + (int)Plosh < z * 4))
-                {
-                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text3z2, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text3z2;
-                }
-                if ((int)distance > z * 3)
-                {
-                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text4z, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text4z;
-                }
-                if ((int)distance >= z * 4)
-                {
-                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text;
-                }
-            }
-            //Н/п попадающий в 1 часть зоны
-            //////////////////////////////////////
-            if (((int)distance + (int)Plosh < z))
-            {
-                if (((int)distance < z) && ((int)distance > 0))
-                {
-                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrRed, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text1z, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text1z;
-                }
-                if (((int)distance > z) && ((int)distance < z * 2))
-                {
-                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrRed, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text2z, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text2z;
-                }
-                if (((int)distance > z * 2) && ((int)distance < z * 3))
-                {
-                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrRed, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text3z, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text3z;
-                }
-                if (((int)distance > z * 3) && ((int)distance < z * 4))
-                {
-                    Mod2.FillEllipse(BrRed, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    //Mod.DrawString(Text4z, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text4z;
-                }
-                if ((int)distance >= z * 4)
-                {
-                    Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                    Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                    Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                    Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-                    //Mod.DrawString(Text, Font, BrBlack, Se + 35,
-                    //    border);//Текст, указывающий зону поражения н/п
-                    TextZ.Text = Text;
-                }
-            }
-            if (distance == 0)
-            {
-                TextZ.Text = "Не указаны данные о населенном пункте!";
-                Mod2.FillEllipse(BrBr, x + r * 2, y / 2, m * 4, m * 2);//Дуговая обводка 4
-                Mod2.FillEllipse(BrBr, x + r, y / 2, m * 4, m * 2);//Дуговая обводка 3
-                Mod2.FillEllipse(BrBr, x, y / 2, m * 4, m * 2);//Дуговая обводка 2
-                Mod2.FillEllipse(BrBr, x - r, y / 2, m * 4, m * 2);//Дуговая обводка
-            }
-
-            Mod2.DrawLine(PSilverB, x - 40, y - 18, l * 2, y - 77);//Отрезающая линия, для визуала 3
-            Mod2.DrawLine(PSilverB, x - 40, y + 106, l * 2, y + 165);//Отрезающая линия, для визуала 4
-
-            int f = 10;
-            Mod2.DrawArc(PTurq, x - r, y / 2, m * 4, m * 2, 360 - f / 2, f);//Дуговая обводка
-            f = 22;
-            Mod2.DrawArc(PTurq, x, y / 2, m * 4, m * 2, 360 - f / 2, f);//Дуговая обводка 2
-            f = 38;
-            Mod2.DrawArc(PTurq, x + r, y / 2, m * 4, m * 2, 360 - f / 2, f);//Дуговая обводка 3
-            f = 62;
-            Mod2.DrawArc(PTurq, x + r * 2, y / 2, m * 4, m * 2, 360 - f / 2, f);//Дуговая обводка 4
-
-            Mod2.DrawLine(PBlack, x - 2, m + y / 2, x - 2, m * 3);//Отрезающая черта для зон поражения
-            Mod2.DrawLine(PBlack, L / 4, m + y / 2, L / 4, m * 3);//Отрезающая черта для зон поражения 2
-            Mod2.DrawLine(PBlack, L / 2, m + y / 2, L / 2, m * 3);//Отрезающая черта для зон поражения 3
-            Mod2.DrawLine(PBlack, L / 4 + L / 2 + 1, m + y / 2, 
-                L / 4 + L / 2 + 1, m * 3);//Отрезающая черта для зон поражения 4
-            Mod2.DrawLine(PBlack, L, m + y / 2, L, m * 3);//Отрезающая черта для зон поражения 5
-            Mod2.DrawLine(PBlack, x - 2, m * 2 + 22, L, m * 2 + 22);//Линия соединяющая отрезающие черты
-
-            Mod2.DrawLine(PTurq, x - 5, m + y / 2, l + 180, y / 2 + 13);//Отрезающая линия, для визуала 1
-            Mod2.DrawLine(PTurq, x - 5, m + y / 2, l + 180, y / 2 + 101);//Отрезающая линия, для визуала 2
-
-            Mod2.DrawString(TextZ1, Font, BrBlack, x + 5,
-                       m + 35);//Текст, указывающий зону поражения н/п
-            Mod2.DrawString(TextZ2, Font, BrBlack, L / 4 + 5,
-                       m + 35);//Текст, указывающий зону поражения н/п
-            Mod2.DrawString(TextZ3, Font, BrBlack, L / 2 + 5,
-                       m + 25);//Текст, указывающий зону поражения н/п
-            Mod2.DrawString(TextZ4, Font, BrBlack, L / 4 + L / 2 + 5,
-                       m + 25);//Текст, указывающий зону поражения н/п
-
-            Mod2.DrawLine(PBlack, L, 5, L, m + y / 2);//Конечный отрезок глубины
-            Mod2.DrawLine(PBlack, x - 2, 5, x - 2, m + y / 2);//Начальный отрезок глубины
-            Mod2.DrawLine(PBlueS, border - 2, 18, L, 18);//Линия соединяющая отрезки глубины
-
-            if ((int)distance > 0)
-            {
-                Mod2.DrawLine(PGreen, (int)distance, m + y / 2,
-                (int)distance + (int)Plosh, m + y / 2);//Радиус н/п
-                Mod2.DrawLine(PBlack, (int)distance + (int)Plosh, m + y / 2 - 15,
-                    (int)distance + (int)Plosh, m + y / 2);//Конечный отрезок радиуса н/п
-
-                Mod2.DrawLine(PRedS, x, m + y / 2,
-                    (int)distance, m + y / 2);//Линия соединяющая отрезки расстояния до н/п
-                Mod2.DrawLine(PBlack, (int)distance, m + y / 2 - 15,
-                    (int)distance, m + y / 2);//Конечный отрезок расстояния до н/п
-                Mod2.DrawString(TextDiametr, Font, BrBlack, (int)distance + border, m + y / 2);//Текст диаметра н/п
-                Mod2.DrawString(TextDistance, Font, BrBlack, x, m + y / 2 - 13);//Текст расстояния н/п
-            }
-
-            Mod2.DrawString(TextGlub, Font, BrBlack, l - 40, 5);//Текст глубины
-            //Mod2.DrawLine(PBlack, x - 2, m * 2 + 10, x - 2, m + y / 2);//
-            Mod2.FillEllipse(BrBlack, x - 5, m + y / 2 - 3, point, point);//Очаг поражения (центр. точка)
-            
-            //Вывод картинок
-            picture.Image = bpm;
-            picture2.Image = bpm2;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -568,9 +43,315 @@ namespace PrognozCS
             Close();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void Form3_Load(object sender, EventArgs e)
         {
-            new Form4().Show();
+            CreateCircle(5 /*Form1.G*/);
+        }
+
+        private void CreateCircle(double dist)
+        {            
+            GMapOverlay polyOverlay = new GMapOverlay("polygons");
+            List<PointLatLng> points = new List<PointLatLng>();
+
+            if (Form1.f == 360)
+            {
+                double seg = Math.PI * 2 / 1000;
+
+                for (int i = 0; i < 1000; i++)
+                {
+                    double theta = seg * i;
+                    double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                    double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                    PointLatLng gpoi = new PointLatLng(a, b);
+                    points.Add(gpoi);
+                }
+            }
+            else
+            {
+                switch (Form2.side)
+                {
+                    case "n":
+                        if (Form1.f == 45)
+                        {
+                            PointLatLng gpoi = new PointLatLng(Form2.xMap, Form2.yMap);
+                            points.Add(gpoi);
+
+                            double seg = 15 * Math.PI / 7 / 1000;
+
+                            for (int i = 875; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        if (Form1.f == 90)
+                        {
+                            PointLatLng gpoi = new PointLatLng(Form2.xMap, Form2.yMap);
+                            points.Add(gpoi);
+
+                            double seg = 9 * Math.PI / 4 / 1000;
+
+                            for (int i = 782; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        if (Form1.f == 180)
+                        {
+
+                        }
+                        break;
+                    case "s":
+                        if (Form1.f == 45)
+                        {
+                            PointLatLng gpoi = new PointLatLng(Form2.xMap, Form2.yMap);
+                            points.Add(gpoi);
+
+                            double seg = 8 * Math.PI / 7 / 1000;
+
+                            for (int i = 750; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        if (Form1.f == 90)
+                        {
+                            PointLatLng gpoi = new PointLatLng(Form2.xMap, Form2.yMap);
+                            points.Add(gpoi);
+
+                            double seg = 5 * Math.PI / 4 / 1000;
+
+                            for (int i = 602; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        if (Form1.f == 180)
+                        {
+
+                        }
+                        break;
+                    case "w":
+                        if (Form1.f == 45)
+                        {
+                            PointLatLng gpoi = new PointLatLng(Form2.xMap, Form2.yMap);
+                            points.Add(gpoi);
+
+                            double seg = 21 * Math.PI / 13 / 1000;
+
+                            for (int i = 862; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        if (Form1.f == 90)
+                        {
+                            PointLatLng gpoi = new PointLatLng(Form2.xMap, Form2.yMap);
+                            points.Add(gpoi);
+
+                            double seg = 7 * Math.PI / 4 / 1000;
+
+                            for (int i = 722; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        if (Form1.f == 180)
+                        {
+
+                        }
+                        break;
+                    case "e":
+                        if (Form1.f == 45)
+                        {
+                            PointLatLng gpoi = new PointLatLng(Form2.xMap, Form2.yMap);
+                            points.Add(gpoi);
+
+                            double seg = 8 * Math.PI / 13 / 1000;
+
+                            for (int i = 622; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        if (Form1.f == 90)
+                        {
+                            PointLatLng gpoi = new PointLatLng(Form2.xMap, Form2.yMap);
+                            points.Add(gpoi);
+
+                            double seg = 3 * Math.PI / 4 / 1000;
+
+                            for (int i = 372; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        if (Form1.f == 180)
+                        {
+                            double seg = Math.PI / 1000;
+
+                            for (int i = 0; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                PointLatLng gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        break;
+                    case "nw":
+                        if (Form1.f == 45)
+                        {
+                            PointLatLng gpoi = new PointLatLng(Form2.xMap, Form2.yMap);
+                            points.Add(gpoi);
+
+                            double seg = 13 * Math.PI / 7 / 1000;
+
+                            for (int i = 875; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        if (Form1.f == 90)
+                        {
+                            
+                        }
+                        if (Form1.f == 180)
+                        {
+
+                        }
+                        break;
+                    case "ne":
+                        if (Form1.f == 45)
+                        {
+                            PointLatLng gpoi = new PointLatLng(Form2.xMap, Form2.yMap);
+                            points.Add(gpoi);
+
+                            double seg = 5 * Math.PI / 13 / 1000;
+
+                            for (int i = 375; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        if (Form1.f == 90)
+                        {
+                            
+                        }
+                        if (Form1.f == 180)
+                        {
+
+                        }
+                        break;
+                    case "sw":
+                        if (Form1.f == 45)
+                        {
+                            PointLatLng gpoi = new PointLatLng(Form2.xMap, Form2.yMap);
+                            points.Add(gpoi);
+
+                            double seg = 18 * Math.PI / 13 / 1000;
+
+                            for (int i = 800; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        if (Form1.f == 90)
+                        {
+                            
+                        }
+                        if (Form1.f == 180)
+                        {
+
+                        }
+                        break;
+                    case "se":
+                        if (Form1.f == 45)
+                        {
+                            PointLatLng gpoi = new PointLatLng(Form2.xMap, Form2.yMap);
+                            points.Add(gpoi);
+
+                            double seg = 17 * Math.PI / 19 / 1000;
+
+                            for (int i = 700; i < 1000; i++)
+                            {
+                                double theta = seg * i;
+                                double a = Form2.xMap + Math.Cos(theta) / 102 * dist;
+                                double b = Form2.yMap + Math.Sin(theta) / 62 * dist;
+                                gpoi = new PointLatLng(a, b);
+                                points.Add(gpoi);
+                            }
+                        }
+                        if (Form1.f == 90)
+                        {
+                            
+                        }
+                        if (Form1.f == 180)
+                        {
+
+                        }
+                        break;
+                }
+            }
+
+            GMapPolygon polygon = new GMapPolygon(points, "mypolygon");
+            polygon.Fill = new SolidBrush(Color.FromArgb(50, Color.OrangeRed));
+            polygon.Stroke = new Pen(Color.Red, 1);
+            polyOverlay.Polygons.Add(polygon);
+            gMapControl1.Overlays.Add(polyOverlay);
+
+            GMapOverlay markersOverlay = new GMapOverlay("markers");
+            GMarkerGoogle marker = new GMarkerGoogle(new PointLatLng(Form2.xMap, Form2.yMap),
+              GMarkerGoogleType.yellow_dot);
+            markersOverlay.Markers.Add(marker);
+            gMapControl1.Overlays.Add(markersOverlay);
+
+            gMapControl1.Zoom = Form2.zoom + 1;
+            gMapControl1.Zoom = Form2.zoom;
         }
     }
 }
