@@ -10,7 +10,7 @@ namespace PrognozCS
     {
         public static int x, y, pix, zoom;
         public static double S, xMap, yMap;
-        public static string AXOB, AXOB1, AXOB2, AXOB3, AXOB4, AXOB5, AXOB6, side = "e";
+        public static string AXOB, AXOB1, AXOB2, AXOB3, AXOB4, AXOB5, AXOB6, side = "n";
         public static Point p0 = new Point();
         public static Point[] ap = new Point[3];
         public static Point pLast = new Point();
@@ -177,8 +177,8 @@ namespace PrognozCS
             mod.DrawString("З", font, BrBlack, 0, comp.Height / 2 - 8);
             mod.DrawString("СЗ", font1, BrBlack, comp.Width / 6 - 3, comp.Width / 6);
             mod.DrawString("ЮВ", font1, BrBlack, 5 * comp.Width / 6 - 16, 5 * comp.Width / 6 - 5);
-            mod.DrawString("СВ", font1, BrBlack, 5 * comp.Width / 6 - 12, comp.Width / 6);
-            mod.DrawString("ЮЗ", font1, BrBlack, comp.Width / 6 - 4, 5 * comp.Width / 6 - 5);
+            mod.DrawString("СВ", font1, BrBlack, 5 * comp.Width / 6 - 13, comp.Width / 6);
+            mod.DrawString("ЮЗ", font1, BrBlack, comp.Width / 6 - 3, 5 * comp.Width / 6 - 5);
 
             mod.DrawEllipse(PBlack, 0, 0, comp.Width, comp.Height);
             mod.FillEllipse(BrChocolate, comp.Width / 2 - 5, comp.Height / 2 - 5, 10, 10);

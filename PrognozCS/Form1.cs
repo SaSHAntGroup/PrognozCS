@@ -186,9 +186,9 @@ namespace PrognozCS
             //sam.Checked = true;
             //visPod.Text = "2";
             vertUst.Text = "Изотермия";
-            speedAir.Text = "2";
+            speedAir.Text = "3";
             tempAir.Text = "20";
-            distance.Text = "2.5";
+            distance.Text = "2,5";
             inGAZG.Text = "0";
         }
 
@@ -416,7 +416,7 @@ namespace PrognozCS
         public Form1()
         {
             InitializeComponent();
-            StartZnach();
+            //StartZnach();
             //Добавление АХОВ
             substance.Items.Add("Акролеин");
             substance.Items.Add("Аммиак");
@@ -3295,7 +3295,7 @@ namespace PrognozCS
                     if (D == 0) K3 = 0; 
                     K4 = v / 3 + 0.67;
                     //Определение эквивалентного количества вещества по первичному облаку
-                    Qe1 = K1 * K3 * K7 * Q0;
+                    Qe1 = K1 * K3 * K5 * K7 * Q0;
                     //Время испарения АХОВ
                     if (gaz.Checked) T = 0; 
                     else T = (h * p) / (K2 * K4 * K72);
@@ -3304,7 +3304,7 @@ namespace PrognozCS
                     if (N > T) K6 = Math.Pow(T, 0.8);
                     if (T < 1) K6 = 1;
                     //Определение эквивалентного количества вещества по вторичному облаку
-                    Qe2 = ((1 - K1) * K2 * K3 * K4 * K6 * K72 * Q0) / (h * p);
+                    Qe2 = ((1 - K1) * K2 * K3 * K4 * K5 * K6 * K72 * Q0) / (h * p);
                     lockpanel = 0;
                     //Определение большего и меньшего кол-ва АХОВ и глубины заражения облаками 
                     KolvoAndGlub.Tabl();
@@ -3477,9 +3477,9 @@ namespace PrognozCS
                     Pg = (X / G) * Ag * N11;
                     //Pz = (1 - (X / G)) * Az * N32 * N12;
                     P0 = Math.Truncate(Sf * Pg);
-                    P1 = Math.Truncate(P0 * 0.35);
+                    P1 = Math.Truncate(P0 * 0.25);
                     P2 = Math.Truncate(P0 * 0.4);
-                    P3 = Math.Truncate(P0 * 0.25);
+                    P3 = Math.Truncate(P0 * 0.35);
                 }
                 if (AVobj.Checked)
                 {

@@ -45,7 +45,7 @@ namespace PrognozCS
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            CreateCircle(5 /*Form1.G*/);
+            CreateCircle(Form1.G);
         }
 
         private void CreateCircle(double dist)

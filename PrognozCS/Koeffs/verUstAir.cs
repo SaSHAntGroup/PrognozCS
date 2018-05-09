@@ -32,7 +32,7 @@ namespace PrognozCS
         public static void Izotermia()
         {
             Form1.K5 = 0.23;
-            Form1.Kv = 0.0133;
+            Form1.Kv = 0.133;
             if (Form1.v <= 1)
             {
                 Form1.W = 6;
