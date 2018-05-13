@@ -64,28 +64,29 @@ namespace PrognozCS
             try
             {
                 if (Form1.obj == 1) MessageBox.Show("Моделирование работает только для аварии на открытой местности!",
-                                "Внимание!", MessageBoxButtons.OK);
+                                "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                 {
                     if (staticPlace.Checked && setObject.Text == "- Выберите объект -")
 
                         MessageBox.Show("Необходимо выбрать объект экономики, на котором произошла авария!",
-                                "Внимание", MessageBoxButtons.OK);
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else new Form3().Show();
                 }
             }
-            catch
+            catch(Exception ex)
             {
                 MessageBox.Show("Ввод данных не коректен! В поля ввода должны вносится только числа!" +
-                    " Данные с плавающей точкой должны указываться через запятую!",
-                                 "Ошибка!", MessageBoxButtons.OK);
+                    "Данные с плавающей точкой должны указываться через запятую!" +
+                    "\nПодробнее смотрите ниже...\nКод ошибки:\n" + ex,
+                                 "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Извините, данная опция пока в разработке!",
-                                "Внимание", MessageBoxButtons.OK);
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             //new Form4().Show();
         }
 

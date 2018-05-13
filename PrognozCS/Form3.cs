@@ -31,8 +31,8 @@ namespace PrognozCS
             gMapControl1.Bearing = 0;
             gMapControl1.CanDragMap = true;
             gMapControl1.DragButton = MouseButtons.Left;
-            gMapControl1.MaxZoom = 16;
-            gMapControl1.MinZoom = 8;
+            gMapControl1.MaxZoom = 15;
+            gMapControl1.MinZoom = 7;
             gMapControl1.MouseWheelZoomType = MouseWheelZoomType.MousePositionAndCenter;
             gMapControl1.NegativeMode = false;
             gMapControl1.PolygonsEnabled = true;

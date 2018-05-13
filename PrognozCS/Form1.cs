@@ -88,44 +88,44 @@ namespace PrognozCS
 
         private void distance_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(distance.Text, e);
+            testChar(e);
         }
 
         private void time_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(time.Text, e);
+            testChar(e);
         }
 
         private void tempAir_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(tempAir.Text, e);
+            testChar(e);
         }
 
         private void speedAir_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(speedAir.Text, e);
+            testChar(e);
         }
 
         private void visPod_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(visPod.Text, e);
+            testChar(e);
         }
 
         private void plosh_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(plosh.Text, e);
+            testChar(e);
         }
 
         private void outAXOB_KeyPress(object sender, KeyPressEventArgs e)
         {
-            testChar(outAXOB.Text, e);
+            testChar( e);
         }
 
-        private void testChar(string n, KeyPressEventArgs e)
+        private void testChar(KeyPressEventArgs e)
         {
             if (Char.IsNumber(e.KeyChar) | (Char.IsPunctuation(e.KeyChar)) || e.KeyChar == 8)
             {
-                n.Replace('.', ',');
+                if (e.KeyChar == '.') e.KeyChar = ',';
                 return;
             } 
             else e.Handled = true;
@@ -186,7 +186,7 @@ namespace PrognozCS
             //sam.Checked = true;
             //visPod.Text = "2";
             vertUst.Text = "Изотермия";
-            speedAir.Text = "1";
+            speedAir.Text = "3";
             tempAir.Text = "20";
             distance.Text = "2,5";
             inGAZG.Text = "0";
@@ -209,7 +209,7 @@ namespace PrognozCS
             MessageBox.Show("Значения по умолчанию:\n   - для скорости ветра = 3 м/с; " +
                 "\n   - для температуры воздуха = 20°C;\n   - для времени прошедшее после аварии = 4 часа.\n " +
                 "Для остальных не объявленных полей значения равны нулю!",
-                            "Справка", MessageBoxButtons.OK);
+                            "Справка", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void substance1_SelectedIndexChanged(object sender, EventArgs e)
@@ -416,7 +416,7 @@ namespace PrognozCS
         public Form1()
         {
             InitializeComponent();
-            //StartZnach();
+            StartZnach();
             //Добавление АХОВ
             substance.Items.Add("Акролеин");
             substance.Items.Add("Аммиак");
@@ -1416,7 +1416,6 @@ namespace PrognozCS
                 if (distance.Text == "") { X = 0; }
                 else
                 {
-                    distance.Text.Replace('.', ',');
                     X = Convert.ToDouble(distance.Text);
                 }
                 ///
@@ -1427,7 +1426,6 @@ namespace PrognozCS
                 if (outAXOB.Text == "") { Q0 = 0; }
                 else
                 {
-                    outAXOB.Text.Replace('.', ',');
                     Q0 = Convert.ToDouble(outAXOB.Text);
                 }
                 ///
@@ -1452,21 +1450,18 @@ namespace PrognozCS
                 if (time.Text == "") { N = 4; }
                 else
                 {
-                    time.Text.Replace('.', ',');
                     N = Convert.ToDouble(time.Text);
                 }
                 ///
                 if (speedAir.Text == "") { v = 3; }
                 else
                 {
-                    speedAir.Text.Replace('.', ',');
                     v = Convert.ToDouble(speedAir.Text);
                 }
                 ///
                 if (tempAir.Text == "") { t = 20; }
                 else
                 {
-                    tempAir.Text.Replace('.', ',');
                     t = Convert.ToDouble(tempAir.Text);
                 }
                 //////
@@ -3499,14 +3494,14 @@ namespace PrognozCS
                 if (F < 0)
                 {
                     MessageBox.Show("Укажите реальную площадь общего поддона (обвалования)!",
-                        "Уточните параметры!", MessageBoxButtons.OK);
+                        "Уточните параметры!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     if (H < 0)
                     {
                         MessageBox.Show("Укажите реальную высоту поддона (обвалования)!",
-                            "Уточните параметры!", MessageBoxButtons.OK);
+                            "Уточните параметры!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -3514,7 +3509,7 @@ namespace PrognozCS
                         {
                             MessageBox.Show("Введите реальные данные для " +
                                 "'Обеспеченные противогазами населения в городе'!",
-                            "Уточните параметры!", MessageBoxButtons.OK);
+                            "Уточните параметры!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
@@ -3522,7 +3517,7 @@ namespace PrognozCS
                             {
                                 MessageBox.Show("Введите реальные данные для " +
                                     "'Обеспеченные противогазами населения в загoродной зоне'!",
-                                "Уточните параметры!", MessageBoxButtons.OK);
+                                "Уточните параметры!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
                             {
@@ -3530,7 +3525,7 @@ namespace PrognozCS
                                 {
                                     MessageBox.Show("Введите реальные данные для " +
                                         "'Обеспеченные убежищами населения в городе'!",
-                                    "Уточните параметры!", MessageBoxButtons.OK);
+                                    "Уточните параметры!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 }
                                 else
                                 {
@@ -3538,7 +3533,7 @@ namespace PrognozCS
                                     {
                                         MessageBox.Show("Введите реальные данные для " +
                                             "'Обеспеченные убежищами населения в загородной зоне'!",
-                                        "Уточните параметры!", MessageBoxButtons.OK);
+                                        "Уточните параметры!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     }
                                     else
                                     {
@@ -3546,7 +3541,7 @@ namespace PrognozCS
                                         {
                                             MessageBox.Show("Введите реальные данные для " +
                                             "параметра 'Скорость ветра'!",
-                                        "Уточните параметры!", MessageBoxButtons.OK);
+                                        "Уточните параметры!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                         }
                                         else
                                         {
@@ -3554,7 +3549,7 @@ namespace PrognozCS
                                             {
                                                 MessageBox.Show("Введите реальные данные для " +
                                                 "поля 'АХОВ, выброшеные в окружающую среду'!",
-                                            "Уточните параметры!", MessageBoxButtons.OK);
+                                            "Уточните параметры!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             }
                                             else
                                             {
@@ -3562,7 +3557,7 @@ namespace PrognozCS
                                                 if ((AXOBkolvo1.Checked == false) && (AXOBkolvo2.Checked == false))
                                                 {
                                                     MessageBox.Show("Укажите количество АХОВ!",
-                                        "Уточните параметры!", MessageBoxButtons.OK);
+                                        "Уточните параметры!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                                 }
                                                 else
                                                 {
@@ -3579,8 +3574,9 @@ namespace PrognozCS
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Ввод данных не коректен! В поля ввода должны вносится только числа! \nКод ошибки:\n" + ex,
-                                 "Ошибка!", MessageBoxButtons.OK);
+                MessageBox.Show("Ввод данных не коректен! В поля ввода должны вносится только числа, дробные через запятую! " +
+                    "\nПодробнее смотрите ниже...\nКод ошибки:\n" + ex,
+                                 "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void EXITbutt_Click(object sender, EventArgs e)
