@@ -38,6 +38,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.comp = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dinamicPlace = new System.Windows.Forms.RadioButton();
+            this.staticPlace = new System.Windows.Forms.RadioButton();
             this.setObject = new System.Windows.Forms.ComboBox();
             this.outputPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -137,6 +139,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dinamicPlace);
+            this.groupBox1.Controls.Add(this.staticPlace);
             this.groupBox1.Controls.Add(this.setObject);
             this.groupBox1.Controls.Add(this.comp);
             this.groupBox1.Location = new System.Drawing.Point(12, 336);
@@ -144,7 +148,32 @@
             this.groupBox1.Size = new System.Drawing.Size(541, 129);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Выбирите объект, на котором произошла авария и направление ветра";
+            this.groupBox1.Text = "Выбирите место аварии и направление ветра";
+            // 
+            // dinamicPlace
+            // 
+            this.dinamicPlace.AutoSize = true;
+            this.dinamicPlace.Location = new System.Drawing.Point(7, 43);
+            this.dinamicPlace.Name = "dinamicPlace";
+            this.dinamicPlace.Size = new System.Drawing.Size(262, 17);
+            this.dinamicPlace.TabIndex = 34;
+            this.dinamicPlace.TabStop = true;
+            this.dinamicPlace.Text = "Самостоятельно выбрать место аварии (ПКМ)";
+            this.dinamicPlace.UseVisualStyleBackColor = true;
+            this.dinamicPlace.CheckedChanged += new System.EventHandler(this.dinamicPlase_CheckedChanged);
+            // 
+            // staticPlace
+            // 
+            this.staticPlace.AutoSize = true;
+            this.staticPlace.Checked = true;
+            this.staticPlace.Location = new System.Drawing.Point(7, 20);
+            this.staticPlace.Name = "staticPlace";
+            this.staticPlace.Size = new System.Drawing.Size(278, 17);
+            this.staticPlace.TabIndex = 33;
+            this.staticPlace.TabStop = true;
+            this.staticPlace.Text = "Объект экономики (выберите в поле со списком)";
+            this.staticPlace.UseVisualStyleBackColor = true;
+            this.staticPlace.CheckedChanged += new System.EventHandler(this.staticPlase_CheckedChanged);
             // 
             // setObject
             // 
@@ -153,7 +182,7 @@
             "Саратоворгсинтез",
             "ВК-3",
             "ОАО \'Аппатит\'"});
-            this.setObject.Location = new System.Drawing.Point(7, 20);
+            this.setObject.Location = new System.Drawing.Point(7, 66);
             this.setObject.Name = "setObject";
             this.setObject.Size = new System.Drawing.Size(328, 21);
             this.setObject.TabIndex = 0;
@@ -184,6 +213,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comp)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -200,5 +230,7 @@
         public System.Windows.Forms.PictureBox comp;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox setObject;
+        private System.Windows.Forms.RadioButton dinamicPlace;
+        private System.Windows.Forms.RadioButton staticPlace;
     }
 }

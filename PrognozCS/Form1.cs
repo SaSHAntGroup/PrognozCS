@@ -186,7 +186,7 @@ namespace PrognozCS
             //sam.Checked = true;
             //visPod.Text = "2";
             vertUst.Text = "Изотермия";
-            speedAir.Text = "3";
+            speedAir.Text = "1";
             tempAir.Text = "20";
             distance.Text = "2,5";
             inGAZG.Text = "0";

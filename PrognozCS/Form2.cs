@@ -18,10 +18,24 @@ namespace PrognozCS
         public static Graphics mod;
         public static Font font = new Font("Arial", 12, FontStyle.Bold);
         public static Font font1 = new Font("Arial", 7);
+        public static bool placeCrash = true;
 
         Pen PBlack = new Pen(Color.Black, 2);
         Pen PRed = new Pen(Color.Red, 4);
         SolidBrush BrChocolate = new SolidBrush(Color.Chocolate);
+
+        private void staticPlase_CheckedChanged(object sender, EventArgs e)
+        {
+            setObject.Visible = true;
+            placeCrash = true;
+        }
+
+        private void dinamicPlase_CheckedChanged(object sender, EventArgs e)
+        {
+            setObject.Visible = false;
+            placeCrash = false;
+        }
+
         SolidBrush BrSkyBlue = new SolidBrush(Color.SkyBlue);
         SolidBrush BrRed = new SolidBrush(Color.Red);
         SolidBrush BrBlack = new SolidBrush(Color.Black);
@@ -33,23 +47,38 @@ namespace PrognozCS
                 case "Саратоворгсинтез":
                     xMap = 51.443456;
                     yMap = 45.902397;
-                    zoom = 12;
-                    pix = 108;
                     break;
                 case "ВК-3":
                     xMap = 51.560110;
                     yMap = 46.089379;
-                    zoom = 12;
-                    pix = 108;
                     break;
                 case "ОАО 'Аппатит'":
                     xMap = 51.9222724;
                     yMap = 47.8879836;
-                    zoom = 12;
-                    pix = 108;
                     break;
-                default:
-                    break;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Form1.obj == 1) MessageBox.Show("Моделирование работает только для аварии на открытой местности!",
+                                "Внимание!", MessageBoxButtons.OK);
+                else
+                {
+                    if (staticPlace.Checked && setObject.Text == "- Выберите объект -")
+
+                        MessageBox.Show("Необходимо выбрать объект экономики, на котором произошла авария!",
+                                "Внимание", MessageBoxButtons.OK);
+                    else new Form3().Show();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ввод данных не коректен! В поля ввода должны вносится только числа!" +
+                    " Данные с плавающей точкой должны указываться через запятую!",
+                                 "Ошибка!", MessageBoxButtons.OK);
             }
         }
 
@@ -200,36 +229,8 @@ namespace PrognozCS
             Compas(bpm, mod, side, PRed, PBlack, BrChocolate, BrSkyBlue);
         }
                 
-        public void button1_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                S = 5;
-                if (Form1.obj == 1)
-                {
-                    MessageBox.Show("Моделирование работает только для аварии на открытой местности!",
-                                "Внимание!", MessageBoxButtons.OK);
-                }
-                else
-                {
-                    if (setObject.Text == "- Выберите объект -") MessageBox.Show("Выберите объект для моделирования возможной области поражения в результате аварии!",
-                                "Внимание!", MessageBoxButtons.OK);
-                    else new Form3().Show();
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Ввод данных не коректен! В поля ввода должны вносится только числа!" +
-                    " Данные с плавающей точкой должны указываться через запятую!",
-                                 "Ошибка!", MessageBoxButtons.OK);
-            }
-        }
-
+        public void button1_Click(object sender, EventArgs e) => Close();
+        
         public void Tabl()
         {
             //Условия и текст
