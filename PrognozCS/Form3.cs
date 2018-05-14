@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
+using System.IO;
 using GMap.NET;
 using GMap.NET.WindowsForms;
 using System.Windows.Forms;
@@ -16,11 +16,12 @@ namespace PrognozCS
         GMarkerGoogle marker;
         GMapPolygon polygon;
         int zoom = 12;
-
+        Cache cache = new Cache();
+        
         public Form3()
         {
             InitializeComponent();
-            //Model();
+            cache.CreateCache();
             Map();
         }
 
@@ -51,7 +52,16 @@ namespace PrognozCS
             if (Form2.placeCrash) CreateCircle(Form2.xMap, Form2.yMap, Form1.G);
             else
             {
-                gMapControl1.Position = new PointLatLng(51.5320473, 46.0074807);
+                NotifyIcon NI = new NotifyIcon();
+                NI.BalloonTipText = "Поставить маркер можно правой кнопкой мыши. " +
+                    "Удаления маркера с карты с помощью средней кнопки мыши (колесо прокрутки).";
+                NI.BalloonTipTitle = "Информация по работе с картой";
+                NI.BalloonTipIcon = ToolTipIcon.Info;
+                NI.Icon = Icon;
+                NI.Visible = true;
+                NI.ShowBalloonTip(1500);
+
+                gMapControl1.Position = new PointLatLng(51.5320473, 46.0074807);                
                 gMapControl1.MouseClick += (s, me) =>
                 {
                     if (me.Button == MouseButtons.Right)
@@ -69,6 +79,19 @@ namespace PrognozCS
                         {
                             PointLatLng point = gMapControl1.FromLocalToLatLng(me.X, me.Y);
                             CreateCircle(point.Lat, point.Lng, Form1.G);
+                        }
+                    }
+                    if (me.Button == MouseButtons.Middle)
+                    {
+                        try
+                        {
+                            markersOverlay.Markers.Remove(marker);
+                            polyOverlay.Polygons.Remove(polygon);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("На карте нету маркеров для очистки!",
+                                "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 };

@@ -416,7 +416,7 @@ namespace PrognozCS
         public Form1()
         {
             InitializeComponent();
-            StartZnach();
+            //StartZnach();
             //Добавление АХОВ
             substance.Items.Add("Акролеин");
             substance.Items.Add("Аммиак");
