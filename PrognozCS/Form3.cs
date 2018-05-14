@@ -21,7 +21,7 @@ namespace PrognozCS
         public Form3()
         {
             InitializeComponent();
-            cache.CreateCache();
+            //cache.CreateCache();
             Map();
         }
 
