@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
@@ -14,12 +15,20 @@ namespace PrognozCS
 
         public void CreateCache()
         {
-            string filePathInApp = Application.StartupPath + @"\Cache\Data.gmdb";
+            string filePathInApp = Application.StartupPath + @"\Cache\GMap.NET";
             string filePathInOS = @"C:\Users\" + Environment.UserName
-                + @"\AppData\Local\GMap.NET\TileDBv5\en\Data.gmdb";
+                + @"\AppData\Local\GMap.NET";
 
-            if (!CheckCache(filePathInOS))
-                File.Copy(filePathInApp, filePathInOS, true);
+            CreateProcess(filePathInApp, filePathInOS);
+        }
+
+        public void CreateProcess(string SourcePath, string DestinationPath)
+        {
+            Process proc = new Process();
+            proc.StartInfo.UseShellExecute = true;
+            proc.StartInfo.FileName = @"C:\WINDOWS\system32\xcopy.exe";
+            proc.StartInfo.Arguments = $"{SourcePath}\\*.* {DestinationPath}\\*.* /E /I";
+            proc.Start();
         }
     }
 }

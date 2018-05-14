@@ -52,15 +52,19 @@ namespace PrognozCS
             if (Form2.placeCrash) CreateCircle(Form2.xMap, Form2.yMap, Form1.G);
             else
             {
-                NotifyIcon NI = new NotifyIcon();
-                NI.BalloonTipText = "Поставить маркер можно правой кнопкой мыши. " +
-                    "Удаления маркера с карты с помощью средней кнопки мыши (колесо прокрутки).";
-                NI.BalloonTipTitle = "Информация по работе с картой";
-                NI.BalloonTipIcon = ToolTipIcon.Info;
-                NI.Icon = Icon;
-                NI.Visible = true;
-                NI.ShowBalloonTip(1500);
-
+                if (!Form2.notify)
+                {
+                    NotifyIcon NI = new NotifyIcon();
+                    NI.BalloonTipText = "Поставить маркер можно правой кнопкой мыши. " +
+                        "Удаления маркера с карты с помощью средней кнопки мыши (колесо прокрутки).";
+                    NI.BalloonTipTitle = "Информация по работе с картой";
+                    NI.BalloonTipIcon = ToolTipIcon.Info;
+                    NI.Icon = Icon;
+                    NI.Visible = true;
+                    NI.ShowBalloonTip(1000);
+                    Form2.notify = true;
+                }
+                
                 gMapControl1.Position = new PointLatLng(51.5320473, 46.0074807);                
                 gMapControl1.MouseClick += (s, me) =>
                 {

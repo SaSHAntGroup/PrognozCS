@@ -18,7 +18,7 @@ namespace PrognozCS
         public static Graphics mod;
         public static Font font = new Font("Arial", 12, FontStyle.Bold);
         public static Font font1 = new Font("Arial", 7);
-        public static bool placeCrash = true;
+        public static bool placeCrash = true, notify = false;
 
         Pen PBlack = new Pen(Color.Black, 2);
         Pen PRed = new Pen(Color.Red, 4);
